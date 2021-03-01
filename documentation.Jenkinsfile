@@ -22,8 +22,6 @@ ansiColor('xterm') {
       }
       stage('Build & Publish') {
         container(template) {
-          // Copy configuration to be included in Installation Guide
-          sh(script: 'cp modules/app/web/main/src/main/resources/frontline-defaults.conf frontline-docs/installation-guide/')
           dir('frontline-docs') {
             // Build
             def documents = sh(script: 'find . -name "FrontLine*.adoc"', returnStdout: true).trim().split('\r?\n')

@@ -2,5 +2,5 @@
 == Default FrontLine Configuration
 
 ----
-include::../../modules/app/web/main/src/main/resources/frontline-defaults.conf[]
+include::../commons/frontline-defaults.conf[]
 ----
