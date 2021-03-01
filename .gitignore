@@ -1,0 +1,19 @@
+# Asciidocs
+*.html
+*.pdf
+
+# Eclipse
+.cache
+.classpath
+.project
+.settings
+
+# IntelliJ
+.idea
+*.iml
+
+# OSX
+.DS_Store
+
+# VSCode
+.metals
