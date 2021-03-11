@@ -19,59 +19,10 @@ FrontLine's injector image is publicly accessible on https://hub.docker.com/r/ga
 
 This manifest setups a single-node Cassandra cluster, along with a service to expose it
 
+.kubernetes-cassandra.yml
 [source,yaml]
 ----
-apiVersion: v1
-kind: Service
-metadata:
-  name: cassandra
-  namespace: frontline
-spec:
-  ports:
-    - name: tcp
-      port: 9042
-  selector:
-    app: cassandra
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: cassandra
-  namespace: frontline
-spec:
-  replicas: 1
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: cassandra
-  template:
-    metadata:
-      labels:
-        app: cassandra
-    spec:
-      containers:
-        - name: cassandra
-          image: cassandra:3.11
-          imagePullPolicy: IfNotPresent
-          resources:
-            requests:
-              cpu: 2
-              memory: 3Gi
-          ports:
-            - containerPort: 9042
-          volumeMounts:
-            - mountPath: /var/lib/cassandra
-              name: cassandra-data
-          securityContext:
-            capabilities:
-              add:
-                - IPC_LOCK
-      volumes:
-        - name: cassandra-data
-          # Prefer PersistentVolumeClaims for durability
-          hostPath:
-            path: <local storage path for Cassandra data>
+include::includes/kubernetes-cassandra.yml[]
 ----
 
 === Setup FrontLine
@@ -102,95 +53,10 @@ kubectl create secret docker-registry docker-hub-credentials \
 This manifest sets up FrontLine, pre configured with your license key and admin credentials.
 You can then expose FrontLine using LoadBalancer/NodePort services, Ingress, etc...
 
+.kubernetes-frontline.yml
 [source, yaml]
 ----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: frontline-conf
-  namespace: frontline
-data:
-  frontline.conf: |
-    frontline.licenseKey = <YOUR FRONTLINE LICENSE KEY>
-    frontline.security.superAdminPassword = <YOUR SUPER ADMIN PASSWORD>
-    frontline.security.secretKey = <YOUR ENCRYPTION SECRET KEY>
-    frontline.cassandra.contactPoints = [{
-      host = cassandra.frontline.svc.cluster.local
-      port = 9042
-    }]
-  logback.xml: |
-    <?xml version="1.0" encoding="UTF-8"?>
-    <configuration>
-      <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
-        <resetJUL>true</resetJUL>
-      </contextListener>
-      <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-          <pattern>%d [%-5level] %logger{15} - %msg%n%rEx</pattern>
-        </encoder>
-        <immediateFlush>false</immediateFlush>
-      </appender>
-      <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
-      </root>
-    </configuration>
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontline
-  namespace: frontline
-spec:
-  ports:
-    - name: http
-      port: 10542
-  selector:
-    app: frontline
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: frontline
-  namespace: frontline
-spec:
-  replicas: 1
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: frontline
-  template:
-    metadata:
-      labels:
-        app: frontline
-    spec:
-      # Required unless you mirror FrontLine in your private registry
-      imagePullSecrets:
-        - name: docker-hub-credentials
-      serviceAccountName: frontline-sa
-      containers:
-        - name: frontline
-          imagePullPolicy: Never
-          image: gatlingcorp/frontline:{revnumber}
-          resources:
-            requests:
-              cpu: 2
-              memory: 4Gi
-          ports:
-            - containerPort: 10542
-          volumeMounts:
-            - mountPath: /opt/frontline/conf
-              name: frontline-conf
-            - mountPath: /opt/frontline/keys
-              name: ssh-keys
-      volumes:
-        - name: frontline-conf
-          configMap:
-            name: frontline-conf
-        - name: ssh-keys
-          # Prefer PersistentVolumeClaims for durability
-          hostPath:
-            path: <local storage path for SSH keys>
+include::includes/kubernetes-frontline.yml
 ----
 
 NOTE: Depending on your needs, you may need to configure additional volumes on the FrontLine container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)

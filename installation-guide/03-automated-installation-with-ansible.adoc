@@ -61,20 +61,7 @@ We suggest you download and check the integrity of the installer by doing the fo
 [source,bash]
 [subs="attributes"]
 ----
-#!/bin/bash
-
-# The two variables you must change
-version={revnumber}
-repo_url=REPLACE_WITH_YOUR_REPOSITORY_URL
-
-archive_name=frontline-installer-${version}.zip
-archive_url=${repo_url}/frontline-installer/${version}/${archive_name}
-
-curl -O ${archive_url}
-curl -O ${archive_url}.sha1
-
-echo "$(cat ${archive_name}.sha1)  ${archive_name}" | sha1sum     -c -
-# For MacOS users:                                    shasum -a 1 -c -
+include::includes/download.sh[]
 ----
 
 If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-slash to make sure you are using the original command instead, as such: `\echo`, `\cat`.
@@ -84,18 +71,9 @@ If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-sla
 After unzipping the installer, you'll need to fill in your instance's SSH connection info and provided UUID in `configuration.yml`.
 
 .configuration.yml:
-[source,diff]
+[source,yaml]
 ----
-all:
-  hosts:
-    frontline:
-      ansible_host: REPLACE_WITH_YOUR_FRONTLINE_HOST
-      ansible_ssh_private_key_file: REPLACE_WITH_YOUR_PATH_TO_PRIVATE_KEY_FILE
-      ansible_user: REPLACE_WITH_YOUR_FRONTLINE_HOST_USER
-
-  vars:
-    frontline:
-      uuid: REPLACE_WITH_YOUR_OWN_UUID
+include::includes/configuration.yml[]
 ----
 
 You can also modify in `configuration.yml` whether you want to install build tools (Maven, Gradle, sbt), Nginx or kubectl (required for Kubernetes pools).
