@@ -18,66 +18,7 @@ In your `pom.xml`, you have to add in:
 .pom.xml:
 [source,xml,subs=attributes+]
 ----
-<dependencies>
-  <dependency>
-    <groupId>io.gatling.highcharts</groupId>
-    <artifactId>gatling-charts-highcharts</artifactId>
-    <version>{gatlingVersion}</version>
-    <scope>test</scope>
-  </dependency>
-</dependencies>
-
-<build>
-  <!-- so maven compiles src/test/scala and not only src/test/java -->
-  <testSourceDirectory>src/test/scala</testSourceDirectory>
-  <plugins>
-    <plugin>
-      <artifactId>maven-jar-plugin</artifactId>
-      <version>{mavenJarPluginVersion}</version>
-    </plugin>
-    <!-- so maven can compile your scala code -->
-    <plugin>
-      <groupId>net.alchim31.maven</groupId>
-      <artifactId>scala-maven-plugin</artifactId>
-      <version>{scalaMavenPluginVesrion)</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>testCompile</goal>
-          </goals>
-          <configuration>
-            <recompileMode>all</recompileMode>
-            <jvmArgs>
-              <jvmArg>-Xss100M</jvmArg>
-            </jvmArgs>
-            <args>
-              <arg>-target:jvm-1.8</arg>
-              <arg>-deprecation</arg>
-              <arg>-feature</arg>
-              <arg>-unchecked</arg>
-              <arg>-language:implicitConversions</arg>
-              <arg>-language:postfixOps</arg>
-            </args>
-          </configuration>
-        </execution>
-      </executions>
-    </plugin>
-
-    <!-- so maven can build a package for FrontLine -->
-    <plugin>
-      <groupId>io.gatling.frontline</groupId>
-      <artifactId>frontline-maven-plugin</artifactId>
-      <version>{frontLineMavenPluginVersion}</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>package</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
-</build>
+include::includes/pom.xml[]
 ----
 
 You can run `mvn package -DskipTests` in your terminal and check you get a jar containing all the dependencies of the simulation.
@@ -87,26 +28,7 @@ You can also exclude dependencies you don't want to ship, eg:
 .pom.xml:
 [source,xml,subs=attributes+]
 ----
-<plugin>
-  <groupId>io.gatling.frontline</groupId>
-  <artifactId>frontline-maven-plugin</artifactId>
-  <version>{frontLineMavenPluginVersion}</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>package</goal>
-      </goals>
-      <configuration>
-        <excludes>
-          <exclude>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_{scalaMajorVersion}</artifactId>
-          </exclude>
-        </excludes>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
+include::includes/pom-excludes.xml[]
 ----
 
 ==== SBT
@@ -121,21 +43,7 @@ A `build.sbt` file should look like this:
 .build.sbt:
 [source,scala,subs=attributes+]
 ----
-enablePlugins(GatlingPlugin, FrontLinePlugin)
-
-// If you want to package simulations from the 'it' scope instead
-// inConfig(IntegrationTest)(_root_.io.gatling.frontline.sbt.FrontLinePlugin.frontlineSettings(IntegrationTest))
-
-scalaVersion := "{scalaVersion}"
-scalacOptions := Seq(
-  "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
-  "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
-
-val gatlingVersion = "{gatlingVersion}"
-
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test"
-// only required if you intend to use the gatling-sbt plugin
-libraryDependencies += "io.gatling"            % "gatling-test-framework"    % gatlingVersion % "test"
+include::includes/build.sbt[]
 ----
 
 WARNING: *Don’t forget to replace the UUID with the one you were given.*
@@ -182,20 +90,7 @@ A `build.gradle` file should look like this:
 .build.gradle:
 [source,groovy,subs="attributes+"]
 ----
-plugins {
-    // The following line allows to load io.gatling.gradle plugin and directly apply it
-    id 'io.gatling.frontline.gradle' version '{frontLineGradlePluginVersion}'
-}
-
-// This is needed to let io.gatling.gradle plugin to loads gatling as a dependency
-repositories {
-    jcenter()
-    mavenCentral()
-}
-
-gatling {
-    toolVersion = '{gatlingVersion}'
-}
+include::includes/build.gradle[]
 ----
 
 WARNING: *Don’t forget to replace the UUID with the one you were given.*

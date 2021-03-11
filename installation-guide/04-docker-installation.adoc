@@ -65,52 +65,8 @@ Set the version of FrontLine you want to deploy, bind a local directory for Fron
 Create a folder to store the files, add the given `docker-compose.yml`, then run `docker-compose up -d`.
 Once ready, visit FrontLine at link:http://localhost:10542[http://localhost:10542]!
 
-<<<
-===== docker-compose.yml
-
+.docker-compose.yml
 [source, yaml]
 ----
-version: '2.4'
-services:
-  cassandra:
-    container_name: cassandra
-    image: cassandra:3.11.6
-    environment:
-      - CASSANDRA_CLUSTER_NAME=FrontLine
-    volumes:
-      - cassandra:/var/lib/cassandra
-      # - <path to your cassandra directory (default empty)>:/var/lib/cassandra
-    networks:
-      - frontline-network
-    healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
-      interval: 30s
-      timeout: 10s
-      retries: 10
-  frontline:
-    container_name: frontline
-    image: gatlingcorp/frontline:{revnumber}
-    ports:
-      - 10542:10542
-    networks:
-      - frontline-network
-    environment:
-      # FRONTLINE_CASSANDRA_HOST and FRONTLINE_CASSANDRA_PORT are used to update frontline.conf
-      - FRONTLINE_CASSANDRA_HOST=cassandra
-    volumes:
-      - frontline-conf:/opt/frontline/conf
-      - frontline-keys:/opt/frontline/keys
-      # - <path to your frontline conf directory (default contains frontline.conf)>:/opt/frontline/conf
-      # - <path to your frontline keys directory (default empty)>:/opt/frontline/keys
-
-    depends_on:
-      cassandra:
-        condition: service_healthy
-volumes:
-  cassandra:
-  frontline-conf:
-  frontline-keys:
-networks:
-  frontline-network:
-    driver: bridge
+include::includes/docker-compose.yml[]
 ----
