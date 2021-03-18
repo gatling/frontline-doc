@@ -22,17 +22,15 @@ ansiColor('xterm') {
       }
       stage('Build & Publish') {
         container(template) {
-          dir('frontline-docs') {
-            // Build
-            def documents = sh(script: 'find . -name "FrontLine*.adoc"', returnStdout: true).trim().split('\r?\n')
-            documents.each { sh("asciidoctor-pdf --trace $it") }
-            // Publish
-            def pdfs = sh(script: 'find . -name "*.pdf"', returnStdout: true).trim().split('\n?\n')
-            pdfs.each { scp(it) }
-            // Synchronize production directories
-            sshCommand("sudo rsync -Pacvz --delete $source/ $destination")
-            sshCommand("sudo chown -R www-data: $destination")
-          }
+          // Build
+          def documents = sh(script: 'find . -name "FrontLine*.adoc"', returnStdout: true).trim().split('\r?\n')
+          documents.each { sh("asciidoctor-pdf --trace $it") }
+          // Publish
+          def pdfs = sh(script: 'find . -name "*.pdf"', returnStdout: true).trim().split('\n?\n')
+          pdfs.each { scp(it) }
+          // Synchronize production directories
+          sshCommand("sudo rsync -Pacvz --delete $source/ $destination")
+          sshCommand("sudo chown -R www-data: $destination")
         }
       }
     }
