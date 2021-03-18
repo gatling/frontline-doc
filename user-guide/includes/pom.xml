@@ -20,7 +20,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>{scalaMavenPluginVesrion)</version>
+                <version>{scalaMavenPluginVersion)</version>
                 <executions>
                     <execution>
                         <goals>
