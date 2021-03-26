@@ -1,0 +1,56 @@
+title: FrontLine Cloud
+titleSeparator: '-'
+
+description: FrontLine Cloud Documentation
+redirectTo: /docs/user/login/
+
+images:
+  - gatling-logo.png
+
+twitterSite: GatlingTool
+twitterCreator: GatlingTool
+facebookAuthor: GatlingTool
+facebookPublisher: GatlingTool
+
+ogLocale: en_US
+
+schemaType: Organization
+schemaName: Gatling Corp
+schemaLogo: gatling-logo.png
+
+schemaTwitter: 'https://twitter.com/GatlingTool'
+schemaLinkedIn: 'https://www.linkedin.com/company/gatling/'
+schemaGitHub: 'https://github.com/gatling'
+schemaSection: tutorials
+
+siteLinksSearchBox: false
+themeColor: '#fff'
+quality: 85
+bgColor: '#fff'
+landscapePhotoWidths:
+  - 900
+  - 800
+  - 700
+  - 600
+  - 500
+portraitPhotoWidths:
+  - 800
+  - 700
+  - 600
+  - 500
+lqipWidth: 20x
+footer: >-
+  Powered by <a href="https://gohugo.io/">Hugo</a>, and <a
+  href="https://getdoks.org/">Doks</a>
+alert: false
+alertText: ''
+docsRepo: 'https://github.com/gatling/frontline-cloud-doc'
+editPage: true
+options:
+  lazySizes: true
+  clipBoard: true
+  instantPage: true
+  flexSearch: true
+  darkMode: true
+  bootStrapJs: false
+  breadCrumb: false
