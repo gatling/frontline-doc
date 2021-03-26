@@ -1,6 +1,0 @@
-[[frontline-default-conf]]
-== Default FrontLine Configuration
-
-----
-include::../commons/frontline-defaults.conf[]
-----
