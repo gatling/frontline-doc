@@ -38,6 +38,7 @@ WARNING: gradle users are **strongly** recommended to upgrade to `frontline-grad
 * FL-481: frontline-gradle-plugin: random crashes
 * FL-492: GCE: updating an existing pool is broken
 * FL-500: GCE: trying to connect too fast over SSH can result in "access denied" failure
+* FL-501: Azure: force usage of Premium SSD with a minimum size of 256GB when running certified images
 * FL-505: Trends: no toastr error on run delete failure
 * FL-507: Azure: display correct exception on SDK crash
 * FL-508: frontline-gradle-plugin: transitive dependencies are not filtered out
