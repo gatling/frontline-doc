@@ -8,7 +8,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 010
+weight: 10020
 ---
 
 Logging in is necessary to use FrontLine. FrontLine is accessible by default on port 10542.
