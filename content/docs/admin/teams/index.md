@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "admin"
-weight: 020
+weight: 40020
 ---
 
 ## Managing Teams

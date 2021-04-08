@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 080
+weight: 10110
 ---
 
 You can click on the About icon in the navigation bar to display the informations about your FrontLine version and about your license.

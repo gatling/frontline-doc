@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "admin"
-weight: 040
+weight: 40030
 ---
 
 ## Managing API Tokens

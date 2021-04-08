@@ -8,7 +8,7 @@ images: []
 menu:
   docs:
     parent: "user"
-weight: 020
+weight: 10030
 ---
 
 Once you are logged in, you are now able to navigate using the FrontLine navigation bar on the left side.

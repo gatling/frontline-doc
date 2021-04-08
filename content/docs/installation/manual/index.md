@@ -5,10 +5,10 @@ date: 2021-03-26T16:08:33+01:00
 lastmod: 2021-03-26T16:08:33+01:00
 draft: false
 images: []
-menu: 
+menu:
   docs:
     parent: "installation"
-weight: 020
+weight: 20020
 toc: true
 ---
 
