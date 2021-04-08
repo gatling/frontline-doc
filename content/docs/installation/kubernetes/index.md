@@ -32,57 +32,7 @@ FrontLine's injector image is publicly accessible on [Docker Hub](https://hub.do
 This manifest setups a single-node Cassandra cluster, along with a service to expose it
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: cassandra
-  namespace: frontline
-spec:
-  ports:
-    - name: tcp
-      port: 9042
-  selector:
-    app: cassandra
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: cassandra
-  namespace: frontline
-spec:
-  replicas: 1
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: cassandra
-  template:
-    metadata:
-      labels:
-        app: cassandra
-    spec:
-      containers:
-        - name: cassandra
-          image: cassandra:3.11
-          imagePullPolicy: IfNotPresent
-          resources:
-            requests:
-              cpu: 2
-              memory: 3Gi
-          ports:
-            - containerPort: 9042
-          volumeMounts:
-            - mountPath: /var/lib/cassandra
-              name: cassandra-data
-          securityContext:
-            capabilities:
-              add:
-                - IPC_LOCK
-      volumes:
-        - name: cassandra-data
-          # Prefer PersistentVolumeClaims for durability
-          hostPath:
-            path: <local storage path for Cassandra data>
+{{< include-static "kubernetes-cassandra.yml" >}}
 ```
 
 ## Setup FrontLine
@@ -92,92 +42,7 @@ spec:
 If your cluster has RBAC enabled, this manifest configures the necessary permissions for FrontLine:
 
 ```yaml
-# Dedicated namespace for FrontLine
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: frontline
----
-# Service account named frontline
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: frontline-sa
-  namespace: frontline
----
-# Service account token
-apiVersion: v1
-kind: Secret
-metadata:
-  name: frontline-sa-token
-  namespace: frontline
-  annotations:
-    kubernetes.io/service-account.name: frontline-sa
-type: kubernetes.io/service-account-token
----
-# Role containing needed permissions
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: frontline-manage-injectors
-  namespace: frontline
-rules:
-    # Used to check the pool configuration
-  - apiGroups: [""]
-    resources: ["namespaces"]
-    verbs: ["get"]
-    # Needed for management of injectors instances
-  - apiGroups: [""]
-    resources: ["services", "pods", "pods/exec"]
-    verbs: ["create","delete","get","list","patch","update","watch"]
-    # Only for usage of Ingresses
-  - apiGroups: ["extensions"]
-    resources: ["ingresses"]
-    verbs: ["create", "delete", "get", "list", "watch"]
-    # Only for usage of OpenShift Routes
-  - apiGroups: ["route.openshift.io"]
-    resources: ["routes", "routes/custom-host"]
-    verbs: ["create", "delete", "get", "list", "watch"]
----
-# Bind role to the service account
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: frontline-role-binding
-  namespace: frontline
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: frontline-manage-injectors
-subjects:
-  - kind: ServiceAccount
-    name: frontline-sa
-    namespace: frontline
----
-# Only for usage of NodePort
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: frontline-manage-injectors
-rules:
-  - apiGroups: [""]
-    resources: ["nodes"]
-    verbs: ["list"]
----
-# Only for usage of NodePort
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: frontline-cluster-role-binding
-subjects:
-  - kind: ServiceAccount
-    name: frontline-sa
-    namespace: frontline
-    apiGroup: ""
-roleRef:
-  kind: ClusterRole
-  name: frontline-manage-injectors
-  apiGroup: ""
+{{< include-static "kubernetes-frontline.yml" >}}
 ```
 
 ### Setup Docker Hub credentials as a secret (Optional)

@@ -5,7 +5,7 @@ date: 2021-03-26T16:58:37+01:00
 lastmod: 2021-03-26T16:58:37+01:00
 draft: false
 images: []
-menu: 
+menu:
   docs:
     parent: "installation"
 weight: 030
@@ -29,7 +29,7 @@ Ansible will be used to perform the installation. You'll need:
 Supported Linux distributions are:
 
 * Amazon Linux 1/2
-* CentOS 7
+* CentOS7
 * Debian 8/9/10
 * RHEL (RedHat Enterprise Linux) 7
 
@@ -70,20 +70,7 @@ REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-installer/REPLACE_WITH_LATEST_FRONTLI
 We suggest you download and check the integrity of the installer by doing the following:
 
 ```bash
-#!/bin/bash
-
-# The two variables you must change
-version={{< var revnumber >}}
-repo_url=REPLACE_WITH_YOUR_REPOSITORY_URL
-
-archive_name=frontline-installer-${version}.zip
-archive_url=${repo_url}/frontline-installer/${version}/${archive_name}
-
-curl -O ${archive_url}
-curl -O ${archive_url}.sha1
-
-echo "$(cat ${archive_name}.sha1)  ${archive_name}" | sha1sum     -c -
-# For MacOS users:                                    shasum -a 1 -c -
+{{< include-static "download.sh" revnumber >}}
 ```
 
 If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-slash to make sure you are using the original command instead, as such: `\echo`, `\cat`.
@@ -93,16 +80,7 @@ If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-sla
 After unzipping the installer, you'll need to fill in your instance's SSH connection info and provided UUID in `configuration.yml`.
 
 ```yaml
-all:
-  hosts:
-    frontline:
-      ansible_host: REPLACE_WITH_YOUR_FRONTLINE_HOST
-      ansible_ssh_private_key_file: REPLACE_WITH_YOUR_PATH_TO_PRIVATE_KEY_FILE
-      ansible_user: REPLACE_WITH_YOUR_FRONTLINE_HOST_USER
-
-  vars:
-    frontline:
-      uuid: REPLACE_WITH_YOUR_OWN_UUID
+{{< include-static "configuration.yml" >}}
 ```
 
 You can also modify in `configuration.yml` whether you want to install build tools (Maven, Gradle, sbt), Nginx or kubectl (required for Kubernetes pools).
