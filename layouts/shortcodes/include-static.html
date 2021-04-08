@@ -1,0 +1,7 @@
+{{ $path := printf "**%s" (.Get 0) -}}
+{{ $param1 := index .Site.Data.variables (.Get 1) -}}
+{{ $param2 := index .Site.Data.variables (.Get 2) -}}
+{{ $param3 := index .Site.Data.variables (.Get 3) -}}
+{{ $param4 := index .Site.Data.variables (.Get 4) -}}
+{{ $page := .Page.Resources.GetMatch $path -}}
+{{ $page.Content | replaceRE "\\{param1\\}" $param1 | replaceRE "\\{param2\\}" $param2 | replaceRE "\\{param3\\}" $param3 | replaceRE "\\{param4\\}" $param4  -}}
