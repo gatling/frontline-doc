@@ -1,6 +1,7 @@
 ---
 title: "Automated installation with Ansible"
 description: "Learn how to install FrontLine with Ansible"
+lead: "Download our Ansible playbook and run it to install easily FrontLine and Cassandra"
 date: 2021-03-26T16:58:37+01:00
 lastmod: 2021-03-26T16:58:37+01:00
 draft: false

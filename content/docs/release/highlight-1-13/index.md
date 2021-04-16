@@ -1,5 +1,7 @@
 ---
 title: "FrontLine 1.13 Highlights"
+description: "Learn about the main new features of FrontLine 1.13"
+lead: "FrontLine 1.13 introduce support for multiple versions of Gatling and performance fixes"
 date: 2021-04-06T17:55:36+02:00
 lastmod: 2021-04-06T17:55:36+02:00
 draft: false

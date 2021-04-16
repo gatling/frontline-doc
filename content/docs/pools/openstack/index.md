@@ -1,6 +1,7 @@
 ---
 title: "Openstack"
 description: "Openstack pool are a configuration of Openstack injectors"
+lead: "Deploy FrontLine injectors on an OpenStack Cluster (ie OVH, City Cloud and Rackspace)"
 date: 2021-03-26T09:41:12+01:00
 lastmod: 2021-03-26T09:41:12+01:00
 draft: false

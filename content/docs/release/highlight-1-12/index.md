@@ -1,5 +1,7 @@
 ---
 title: "FrontLine 1.12 Highlights"
+description: "Learn about the main new features of FrontLine 1.12"
+lead: "FrontLine 1.12 introduce scoped private keys, OpenId Connect and a permissions rewamp"
 date: 2021-04-06T17:55:28+02:00
 lastmod: 2021-04-06T17:55:28+02:00
 draft: false

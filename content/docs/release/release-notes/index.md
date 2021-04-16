@@ -1,7 +1,6 @@
 ---
 title: "Release Notes"
 description: "Find the detailed release notes of FrontLine"
-lead: ""
 date: 2021-04-06T16:38:41+02:00
 lastmod: 2021-04-06T16:38:41+02:00
 draft: false
