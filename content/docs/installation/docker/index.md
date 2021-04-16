@@ -1,6 +1,7 @@
 ---
 title: "Automated installation with Docker"
 description: "Learn how to install FrontLine with Docker"
+lead: "Install FrontLine and Cassandra easily with Docker or Docker Compose"
 date: 2021-03-26T17:31:42+01:00
 lastmod: 2021-03-26T17:31:42+01:00
 draft: false

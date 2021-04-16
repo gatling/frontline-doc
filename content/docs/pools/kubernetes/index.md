@@ -1,6 +1,7 @@
 ---
 title: "Kubernetes"
 description: "Kubernetes pools are a configuration of Kubernetes injectors"
+lead: "Deploy FrontLine injectors on Kubernetes"
 date: 2021-03-26T09:41:20+01:00
 lastmod: 2021-03-26T09:41:20+01:00
 draft: false

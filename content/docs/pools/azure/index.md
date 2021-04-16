@@ -1,6 +1,7 @@
 ---
 title: "Azure"
 description: "Azure pools are a configuration of Azure injectors"
+lead: "Deploy FrontLine injectors on Azure"
 date: 2021-03-26T09:40:45+01:00
 lastmod: 2021-03-26T09:40:45+01:00
 draft: false

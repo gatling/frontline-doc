@@ -1,6 +1,7 @@
 ---
 title: "On Premises"
 description: "On premises pool represents existing machines"
+lead: "Deploy FrontLine injectors on dedicated on-premises computers"
 date: 2021-03-26T09:40:55+01:00
 lastmod: 2021-03-26T09:40:55+01:00
 draft: false

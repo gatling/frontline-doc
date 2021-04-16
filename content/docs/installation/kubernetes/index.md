@@ -1,6 +1,7 @@
 ---
 title: "Automated installation with Kubernetes"
 description: "Learn how to install FrontLine with Kubernetes"
+lead: "Install FrontLine and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
 lastmod: 2021-03-26T17:37:11+01:00
 draft: false
