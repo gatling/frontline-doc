@@ -1,8 +1,0 @@
-<div class="alert alert-{{ .Get 0 }} d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-    {{- if eq (.Get 0) "danger" }}&#x1f525;{{ end -}}
-    {{- if eq (.Get 0) "tip" }}&#x1f4a1;{{ end -}}
-    {{- if eq (.Get 0) "warning" }}&#x26a0;&#xfe0f;{{ end -}}
-  </div>
-  <div class="w-100">{{ .Inner | markdownify }}</div>
-</div>
