@@ -1,6 +1,0 @@
-{{ $headless := .Site.GetPage "/_includes" -}}
-
-{{ $path := printf "*%s" (.Get 0) -}}
-{{ $param := (.Get 1) -}}
-{{ $page := $headless.Resources.GetMatch $path -}}
-{{ $page.Content | replaceRE "\\{param\\}" $param | safeHTML -}}

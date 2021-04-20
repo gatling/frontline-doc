@@ -56,12 +56,20 @@ rel  = "sitemap"
   tutorials = "/tutorials/:slug/"
 
 [module]
-  [[module.mounts]]
+  [[module.imports]]
+    path = "github.com/gatling/hugo-module"
+  [[module.imports.mounts]]
     source = "assets"
     target = "assets"
-  [[module.mounts]]
+  [[module.imports.mounts]]
     source = "static"
     target = "static"
+  [[module.imports.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.imports.mounts]]
+    source = "archetypes"
+    target = "archetypes"
   [[module.mounts]]
     source = "node_modules/flexsearch"
     target = "assets/js/vendor/flexsearch"
