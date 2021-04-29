@@ -19,4 +19,8 @@ functions
 node_modules
 public
 resources
-_vendor
+
+# Hugo
+package.json
+package-lock.json
+go.sum
