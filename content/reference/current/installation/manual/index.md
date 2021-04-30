@@ -4,13 +4,7 @@ description: "Learn how to install manually FrontLine"
 lead: "Install or upgrade manually FrontLine, and learn how to configure it"
 date: 2021-03-26T16:08:33+01:00
 lastmod: 2021-03-26T16:08:33+01:00
-draft: false
-images: []
-menu:
-  docs:
-    parent: "installation"
 weight: 20020
-toc: true
 ---
 
 ## Upgrading From a Previous Version
