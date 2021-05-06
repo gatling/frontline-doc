@@ -65,7 +65,20 @@ REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-installer/REPLACE_WITH_LATEST_FRONTLI
 We suggest you download and check the integrity of the installer by doing the following:
 
 ```bash
-{{< include-static "download.sh" revnumber >}}
+#!/bin/bash
+
+# The two variables you must change
+version={{< var revnumber >}}
+repo_url=REPLACE_WITH_YOUR_REPOSITORY_URL
+
+archive_name=frontline-installer-${version}.zip
+archive_url=${repo_url}/frontline-installer/${version}/${archive_name}
+
+curl -O ${archive_url}
+curl -O ${archive_url}.sha1
+
+echo "$(cat ${archive_name}.sha1)  ${archive_name}" | sha1sum     -c -
+# For MacOS users:                                    shasum -a 1 -c -
 ```
 
 If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-slash to make sure you are using the original command instead, as such: `\echo`, `\cat`.
@@ -74,9 +87,7 @@ If you have aliases on `echo` and/or `cat`, you can prefix them with an anti-sla
 
 After unzipping the installer, you'll need to fill in your instance's SSH connection info and provided UUID in `configuration.yml`.
 
-```yaml
-{{< include-static "configuration.yml" >}}
-```
+{{< include-code "configuration.yml" yaml >}}
 
 You can also modify in `configuration.yml` whether you want to install build tools (Maven, Gradle, sbt), Nginx or kubectl (required for Kubernetes pools).
 
