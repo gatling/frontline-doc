@@ -165,8 +165,8 @@ The `gatling-test-framework`dependencies is only needed if you intend to run loc
 If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size:
 {{< /alert >}}
 
-```
-$ export SBT_OPTS="-Xss100M"
+```bash
+export SBT_OPTS="-Xss100M"
 ```
 
 You will also need the following lines in the `project/plugins.sbt` file:
@@ -309,7 +309,7 @@ You'll have to configure either `repository` or `snapshotRepository` block wheth
 You'll need `frontline-maven-plugin` version 1.0.3 at least.
 Fatjar artifact will be automatically attached to your project and deployed with the `shaded` classifier.
 
-```bash
+```console
 mvn deploy
 ```
 
@@ -340,7 +340,7 @@ publishing {
 
 You can deploy the test jar with the following command:
 
-```bash
+```console
 gradle publish
 ```
 
@@ -359,7 +359,7 @@ publishTo :=
 )
 ```
 
-```bash
+```console
 sbt test:publish
 ```
 

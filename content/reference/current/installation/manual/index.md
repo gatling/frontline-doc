@@ -196,7 +196,7 @@ On launch, FrontLine will create or update the FrontLine schema in the Cassandra
 
 You can launch FrontLine in the background using the following command:
 
-```bash
+```console
 [... frontline-bundle ]$ ./bin/frontline
 ```
 
@@ -205,7 +205,7 @@ The web interface will then be accessible by default on port `10542`. You need t
 FrontLine will log its PID and write it to a `pidfile` which names will also be echoed.
 You can provides you own path to a custom pidfile this way:
 
-```bash
+```console
 [... frontline-bundle ]$ ./bin/frontline -p pidfile
 ```
 
@@ -215,13 +215,13 @@ Using the foreground mode will cancel the handling of a pidfile.
 
 Check the `conf/frontline.conf` file for parameters you might want to edit.
 
-```
+```hocon
 licenseKey = REPLACE_WITH_YOUR_LICENSE_KEY <1>
 ```
 
 <1> Provided license key, you should not edit this configuration directly from this file, FrontLine will ask for it when you launch it or when your current license is expired
 
-```
+```hocon
 http {
   port = 10542 <1>
   cookieMaxAge = 604800 <2>
@@ -245,7 +245,7 @@ http {
 * <6> For testing purpose, you can make FrontLine produce a self signed certificate
 * <7> Optional HTTP proxy, enabled when both host and port are filled. This proxy will be used for every HTTP request to Cloud providers APIs and on-demand injectors.
 
-```
+```hocon
 injector {
   httpPort = 9999 <1>
   enableLocalPool = false <2>
@@ -259,7 +259,7 @@ injector {
 * <2> Enable local injector pool (not for production use)
 * <3> When connecting to your kubernetes API, determine if you want a true trust manager to be used to validate your certificate. Disabled by default.
 
-```
+```hocon
 security {
   superAdminPassword = gatling <1>
   secretKey = "MUST BE CHANGED!" <2>
@@ -269,7 +269,7 @@ security {
 * <1> password for the FrontLine superAdmin account. FrontLine will create a new password when you launch it for the first time.
 * <2> key for encrypting cookies. Must be 128, 192 or 256 bit (not bytes) long. FrontLine will create a new secretKey when you launch it for the first time.
 
-```
+```hocon
 cassandra { <1>
   localDataCenter = datacenter1 <2>
   contactPoints = [{
@@ -299,7 +299,7 @@ cassandra { <1>
 * <6> The maximum number of runs by simulation. Can be combined with <7>.
 * <7> The max age for the runs, in days. Can be combined with <6>.
 
-```
+```hocon
 ldap { <1>
   #host = localhost <2>
   #port = 389 <3>
@@ -327,7 +327,7 @@ ldap { <1>
 * <9> The response timeout when searching your LDAP
 * <10> The objectClass of your users if they have one. Used to filter out search results
 
-```
+```hocon
 ldap {
   ssl { <1>
     #format = "PEM | JKS" <2>
@@ -358,23 +358,23 @@ ldap {
 * <10> Path to the key store containing client certificate and private key if you need mutual authentication. Optional, will use JDK's default if undefined.
 * <11> Password for the key store
 
-```
+```hocon
 oidc {
-    # discoveryUrl = "https://provider/.well-known/openid-configuration" <1>
-    client {
-      # id = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx" <2>
-      # secret = "*******" <3>
-    }
-    # responseMode = "fragment" | "okta_post_message" <4>
-    # scopes = ["openid", "email", "profile"] <5>
-    # jwksRefreshFrequency = 1440 <6>
-    mapping {
-      # username: "unique_name" <7>
-      # firstname: "given_name" <8>
-      # lastname: "family_name" <9>
-      # email: "email" <10>
-    }
+  # discoveryUrl = "https://provider/.well-known/openid-configuration" <1>
+  client {
+    # id = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx" <2>
+    # secret = "*******" <3>
   }
+  # responseMode = "fragment" | "okta_post_message" <4>
+  # scopes = ["openid", "email", "profile"] <5>
+  # jwksRefreshFrequency = 1440 <6>
+  mapping {
+    # username: "unique_name" <7>
+    # firstname: "given_name" <8>
+    # lastname: "family_name" <9>
+    # email: "email" <10>
+  }
+}
 ```
 
 Fill the following fields if you want to enable OpenID authentication on FrontLine. All fields need to be uncommented and filled. For more information on our OpenID integration, please check [corresponding section]({{< relref "#openid" >}}).
@@ -392,7 +392,7 @@ Fill the following fields if you want to enable OpenID authentication on FrontLi
 
 There's no default value for those attributes, they must all be defined in the configuration file.
 
-```
+```hocon
 grafana {
   #url = "http://localhost:3008/dashboard/db/frontline-requests" <1>
 }
@@ -442,23 +442,23 @@ By default, all registered users can connect as a global viewer and need an admi
 - Add a client secret in "Certificates & secrets" (we don't support certificates yet)
 - Edit your frontline.conf file, configuration is described above, here is a sample configuration:
 
-```
-  oidc {
-      discoveryUrl = "https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration"
-      client {
-        id = "******-*******-********-******"
-        secret = "****************"
-      }
-      responseMode = "fragment"
-      scopes = ["email", "profile"]
-      jwksRefreshFrequency = 1440
-      mapping {
-        username: "email"
-        firstname: "given_name"
-        lastname: "family_name"
-        email: "email"
-      }
+```hocon
+oidc {
+  discoveryUrl = "https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration"
+  client {
+    id = "******-*******-********-******"
+    secret = "****************"
   }
+  responseMode = "fragment"
+  scopes = ["email", "profile"]
+  jwksRefreshFrequency = 1440
+  mapping {
+    username: "email"
+    firstname: "given_name"
+    lastname: "family_name"
+    email: "email"
+  }
+}
 ```
 
 ##### Sample OpenID configuration on Okta
@@ -471,23 +471,23 @@ By default, all registered users can connect as a global viewer and need an admi
 - Assign people / groups to the app
 - Edit your frontline.conf file, configuration is described above, here is a sample configuration:
 
-```
-  oidc {
-      discoveryUrl = "https://your-organisation.okta.com/oauth2/default/.well-known/openid-configuration"
-      client {
-        id = "******-*******-********-******"
-        secret = "****************"
-      }
-      responseMode = "okta_post_message"
-      scopes = ["email", "profile"]
-      jwksRefreshFrequency = 1440
-      mapping {
-        username: "email"
-        firstname: "given_name"
-        lastname: "family_name"
-        email: "email"
-      }
-  }
+```hocon
+oidc {
+    discoveryUrl = "https://your-organisation.okta.com/oauth2/default/.well-known/openid-configuration"
+    client {
+      id = "******-*******-********-******"
+      secret = "****************"
+    }
+    responseMode = "okta_post_message"
+    scopes = ["email", "profile"]
+    jwksRefreshFrequency = 1440
+    mapping {
+      username: "email"
+      firstname: "given_name"
+      lastname: "family_name"
+      email: "email"
+    }
+}
 ```
 
 If the connection fails and the page is blank, check in the browser console for more infos.

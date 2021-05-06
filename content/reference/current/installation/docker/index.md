@@ -20,7 +20,7 @@ Please contact our support and provide us with your Docker Hub username so we ca
 The following command will start a single-node Cassandra cluster, using the official Cassandra image.
 This will also mount a local directory on the host into the container, to persist its data across starts/stops of the Cassandra container.
 
-```bash
+```console
 docker run -d \
   --name cassandra \
   -v <local directory to store Cassandra data>:/var/lib/cassandra \
@@ -40,7 +40,7 @@ This will also mount two volumes:
 * A volume with FrontLine's configuration, prepared by the previous step.
 * A volume to store uploaded private keys (required by features like Git cloning and by some cloud providers)
 
-```bash
+```console
 docker run -d \
   --name frontline \
   -p 10542:10542 \
