@@ -75,7 +75,7 @@ If you can't use our certified images, we provide the templates from which our c
 It's possible to have FrontLine use a "Local" pool to deploy a single injector on the same host.
 This option is turned off by default and has to be enabled in the frontline.conf file:
 
-```
+```hocon
 frontline {
   injector {
     enableLocalPool = true
@@ -116,7 +116,7 @@ You'll also need to configure AWS API access keys on the FrontLine host using on
 FrontLine requires the following permissions (or grant `AmazonEC2FullAccess` if you don't care about fine-grained permissions):
 {{< /alert >}}
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -221,7 +221,7 @@ Additionally, if FrontLine is deployed outside Kubernetes/OpenShift:
 If your cluster uses RBAC, you'll need a role with the following permissions for FrontLine's service account:
 {{< /alert >}}
 
-```
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:

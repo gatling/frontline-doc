@@ -125,7 +125,7 @@ First, you need to copy the inventory `configuration.yml` file vars inside the p
 
 Then, you will be able to run Ansible directly on the host you intend to install Gatling FrontLine in:
 
-```shell
+```console
 ansible-playbook \
   -b --ask-become-pass \
   -c local \
