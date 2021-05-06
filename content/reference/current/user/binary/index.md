@@ -24,7 +24,68 @@ In your `pom.xml`, you have to add in:
 * add the maven plugin for FrontLine, so it can package your code into a deployable artifact
 
 ```xml
-{{< include-static "pom.xml" gatlingVersion mavenJarPluginVersion scalaMavenPluginVersion frontLineMavenPluginVersion >}}
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>io.gatling.highcharts</groupId>
+      <artifactId>gatling-charts-highcharts</artifactId>
+      <version>{{< var gatlingVersion >}}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- so maven compiles src/test/scala and not only src/test/java -->
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>{{< var mavenJarPluginVersion >}}</version>
+      </plugin>
+      <!-- so maven can compile your scala code -->
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>{{< var scalaMavenPluginVersion >}}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <recompileMode>all</recompileMode>
+              <jvmArgs>
+                <jvmArg>-Xss100M</jvmArg>
+              </jvmArgs>
+              <args>
+                <arg>-target:jvm-1.8</arg>
+                <arg>-deprecation</arg>
+                <arg>-feature</arg>
+                <arg>-unchecked</arg>
+                <arg>-language:implicitConversions</arg>
+                <arg>-language:postfixOps</arg>
+              </args>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- so maven can build a package for FrontLine -->
+      <plugin>
+        <groupId>io.gatling.frontline</groupId>
+        <artifactId>frontline-maven-plugin</artifactId>
+        <version>{{< var frontLineMavenPluginVersion >}}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 You can run `mvn package -DskipTests` in your terminal and check you get a jar containing all the dependencies of the simulation.
@@ -32,7 +93,26 @@ You can run `mvn package -DskipTests` in your terminal and check you get a jar c
 You can also exclude dependencies you don't want to ship, eg:
 
 ```xml
-{{< include-static "pom-excludes.xml" frontLineMavenPluginVersion scalaMajorVersion  >}}
+<plugin>
+  <groupId>io.gatling.frontline</groupId>
+  <artifactId>frontline-maven-plugin</artifactId>
+  <version>{{< var frontLineMavenPluginVersion >}}</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>package</goal>
+      </goals>
+      <configuration>
+        <excludes>
+          <exclude>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_{{< var scalaMajorVersion >}}</artifactId>
+          </exclude>
+        </excludes>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
 ```
 
 ### SBT
@@ -45,7 +125,19 @@ In a sbt project, you have to:
 A `build.sbt` file should look like this:
 
 ```sbt
-{{< include-static "build.sbt" scalaVersion gatlingVersion  >}}
+enablePlugins(GatlingPlugin, FrontLinePlugin)
+
+// If you want to package simulations from the 'it' scope instead
+// inConfig(IntegrationTest)(_root_.io.gatling.frontline.sbt.FrontLinePlugin.frontlineSettings(IntegrationTest))
+
+scalaVersion := "{{< var scalaVersion >}}"
+scalacOptions := Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation", "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
+
+val gatlingVersion = "{{< var gatlingVersion >}}"
+
+libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test"
+// only required if you intend to use the gatling-sbt plugin
+libraryDependencies += "io.gatling" % "gatling-test-framework" % gatlingVersion % "test"
 ```
 
 {{< alert warning >}}
@@ -101,8 +193,21 @@ In a Gradle project, you have to:
 
 A `build.gradle` file should look like this:
 
-```text
-{{< include-static "build.gradle" frontLineGradlePluginVersion gatlingVersion  >}}
+```groovy
+plugins {
+  // The following line allows to load io.gatling.gradle plugin and directly apply it
+  id 'io.gatling.frontline.gradle' version '{{< var frontLineGradlePluginVersion >}}'
+}
+
+// This is needed to let io.gatling.gradle plugin to loads gatling as a dependency
+repositories {
+  jcenter()
+  mavenCentral()
+}
+
+gatling {
+  toolVersion = '{{< var gatlingVersion >}}'
+}
 ```
 
 {{< alert warning >}}

@@ -26,9 +26,7 @@ FrontLine's injector image is publicly accessible on [Docker Hub](https://hub.do
 
 This manifest setups a single-node Cassandra cluster, along with a service to expose it
 
-```yaml
-{{< include-static "kubernetes-cassandra.yml" >}}
-```
+{{< include-code "kubernetes-cassandra.yml" yaml >}}
 
 ## Setup FrontLine
 
@@ -36,9 +34,7 @@ This manifest setups a single-node Cassandra cluster, along with a service to ex
 
 If your cluster has RBAC enabled, this manifest configures the necessary permissions for FrontLine:
 
-```yaml
-{{< include-static "kubernetes-frontline.yml" >}}
-```
+{{< include-code "kubernetes-frontline.yml" yaml >}}
 
 ### Setup Docker Hub credentials as a secret (Optional)
 

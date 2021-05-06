@@ -1,6 +1,6 @@
 ---
 cascade:
   docsRepo:
-    url: https://github.com/gatling/frontline-doc/blob/hugo-main/content
+    url: https://github.com/gatling/frontline-doc/blob/development/content
     rel: ""
 ---

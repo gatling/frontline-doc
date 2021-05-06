@@ -9,6 +9,4 @@ weight: 20070
 
 Find below the default frontline.conf file:
 
-```hocon
-{{< include-static "frontline.conf" >}}
-```
+{{< include-code "frontline.conf" hocon >}}
