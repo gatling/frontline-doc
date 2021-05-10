@@ -1,5 +1,6 @@
 ---
-title: Reference
+title: References
+description: "FrontLine documentation."
 cascade:
   variables:
     revnumber: "1.14.1"

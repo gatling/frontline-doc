@@ -1,6 +1,6 @@
 ---
 title: "Repositories"
-description: "Learn how to administrate repositories"
+description: "Repositories indicates how FrontLine needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
 lastmod: 2021-03-25T18:25:43+01:00
 weight: 10060

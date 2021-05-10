@@ -1,6 +1,7 @@
 ---
 title: "Help"
 description: "Learn how to access documentations from the application."
+lead: "Access the documentations from FrontLine"
 date: 2021-03-10T09:29:53-05:00
 lastmod: 2021-03-10T09:29:53-05:00
 weight: 10120

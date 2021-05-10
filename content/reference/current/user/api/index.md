@@ -1,6 +1,7 @@
 ---
 title: "Public APIs"
-description: "Swagger documentation."
+description: "Swagger documentation of the FrontLine public API."
+lead: "Usage of the FrontLine public API"
 date: 2021-03-08T13:50:24+01:00
 lastmod: 2021-03-08T13:50:24+01:00
 weight: 10100

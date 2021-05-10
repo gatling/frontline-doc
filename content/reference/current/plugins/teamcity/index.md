@@ -1,7 +1,7 @@
 ---
 title: "Teamcity Plugin"
-description: "Learn how to configure TeamCity plugin and integrate your simulations."
-lead: "Integrate your simulations to your TeamCity CI."
+description: "Learn how to configure the FrontLine TeamCity plugin and run your simulations."
+lead: "Run your FrontLine simulations from your TeamCity CI."
 date: 2021-03-08T13:50:20+01:00
 lastmod: 2021-03-08T13:50:20+01:00
 weight: 50020

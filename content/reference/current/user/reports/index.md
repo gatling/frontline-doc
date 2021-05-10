@@ -1,7 +1,7 @@
 ---
 title: "Reports"
-description: "Learn how to analyze test reports."
-lead: "Analyze reports."
+description: "Learn how to analyze test reports and discover the slow parts of your application."
+lead: "Analyze the reports and discover the slow parts of your application."
 date: 2021-03-10T09:29:43-05:00
 lastmod: 2021-03-10T09:29:43-05:00
 weight: 10090
