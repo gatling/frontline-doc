@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Architecture overview and conventions"
+description: "FrontLine architecture overview and conventions"
 date: 2021-03-26T16:01:21+01:00
 lastmod: 2021-03-26T16:01:21+01:00
 weight: 20010

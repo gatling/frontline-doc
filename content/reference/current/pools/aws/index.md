@@ -1,6 +1,6 @@
 ---
 title: "Aws"
-description: "AWS pool are a configuration of AWS injectors"
+description: "AWS pools are a configuration of AWS injectors"
 lead: "Deploy FrontLine injectors on AWS"
 date: 2021-03-26T09:40:35+01:00
 lastmod: 2021-03-26T09:40:35+01:00

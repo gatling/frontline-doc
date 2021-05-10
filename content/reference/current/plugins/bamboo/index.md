@@ -1,7 +1,7 @@
 ---
 title: "Bamboo Plugin"
-description: "Learn how to configure Bamboo plugin and integrate your simulations."
-lead: "Integrate your simulations to your Bamboo CI."
+description: "Learn how to configure the FrontLine Bamboo plugin and run your simulations."
+lead: "Run your FrontLine simulations from your Bamboo CI."
 date: 2021-03-08T13:49:49+01:00
 lastmod: 2021-03-08T13:49:49+01:00
 weight: 50030
