@@ -130,7 +130,6 @@ The FrontLine host needs network access to:
 - your source repository (if you want to build from sources)
 - your binary repositories (if you want to download pre-packaged simulations), typically:
   * Maven central repository: https://repo1.maven.org/maven2
-  * JCenter repository (sbt and gradle users only): https://jcenter.bintray.com/
   * Gradle plugins portal: https://plugins.gradle.org
   * or instead, the internal mirrors your organization might be enforcing
 - the hosts where it will try to deploy Gatling injectors
