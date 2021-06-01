@@ -1,5 +1,5 @@
 ---
-title: References
+title: Reference
 cascade:
   variables:
     revnumber: "1.13.4"
