@@ -1,54 +1,53 @@
-title: FrontLine Cloud
-titleSeparator: '-'
+# Meta Data for SEO
 
-description: FrontLine Cloud Documentation
-redirectTo: /docs/user/login/
+title: "Gatling"
+titleSeparator: "-"
+description: "Documentation"
 
-images:
-  - gatling-logo.png
+## Open Graph + Twitter Cards
+images: ["gatling-logo.png"]
+twitterSite: "GatlingTool"
+twitterCreator: "GatlingTool"
+facebookAuthor: "GatlingTool"
+facebookPublisher: "GatlingTool"
+ogLocale: "en_US"
 
-twitterSite: GatlingTool
-twitterCreator: GatlingTool
-facebookAuthor: GatlingTool
-facebookPublisher: GatlingTool
+# Header
 
-ogLocale: en_US
+logos:
+  white: "/images/logo-gatling.svg"
+  black: "/images/logo-gatling-noir.svg"
 
-schemaType: Organization
-schemaName: Gatling Corp
-schemaLogo: gatling-logo.png
-
-schemaTwitter: 'https://twitter.com/GatlingTool'
-schemaLinkedIn: 'https://www.linkedin.com/company/gatling/'
-schemaGitHub: 'https://github.com/gatling'
+## JSON-LD
+schemaName: "Gatling Corp"
+schemaLogo: "gatling-logo.png"
+schemaTwitter: "https://twitter.com/GatlingTool"
+schemaLinkedIn: "https://www.linkedin.com/company/gatling/"
+schemaGitHub: https://github.com/gatling
 schemaSection: tutorials
 
+## Sitelinks Search Box
 siteLinksSearchBox: false
-themeColor: '#fff'
+
+## Chrome Browser
+themeColor: "#fff"
+
+# Images
 quality: 85
-bgColor: '#fff'
-landscapePhotoWidths:
-  - 900
-  - 800
-  - 700
-  - 600
-  - 500
-portraitPhotoWidths:
-  - 800
-  - 700
-  - 600
-  - 500
-lqipWidth: 20x
-footer: >-
-  Powered by <a href="https://gohugo.io/">Hugo</a>, and <a
-  href="https://getdoks.org/">Doks</a>
+bgColor: "#fff"
+landscapePhotoWidths: [900, 800, 700, 600, 500]
+portraitPhotoWidths: [800, 700, 600, 500]
+lqipWidth: "20x"
+
+# Alert
 alert: false
-alertText: ''
-docsRepo: 'https://github.com/gatling/frontline-cloud-doc'
+alertText: ""
+
+# Edit Page
 editPage: true
+
 options:
   lazySizes: true
-  clipBoard: true
   instantPage: true
   flexSearch: true
   darkMode: true
