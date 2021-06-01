@@ -6,6 +6,68 @@ lastmod: 2021-04-06T16:38:41+02:00
 weight: 60010
 ---
 
+
+### 1.14.0 (2021-05-20)
+
+#### Gatling 3.6.0
+
+{{< alert info >}}
+ FrontLine 1.14.0 is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
+Still, you're recommended to upgrade to 3.6.0, older versions are no longer maintained.
+ {{< /alert >}}
+
+This release ships lots of bug fixes, in particular on HTTP/2 support and async DNS resolution.
+Most noticeable new feature is [https://en.wikipedia.org/wiki/Brotli](Brotli) support.
+
+See full release note: https://github.com/gatling/gatling/milestone/98?closed=1
+
+#### FrontLine
+
+{{< alert info >}}
+This release doesn't perform any new database automatic migration if you're upgrading from 1.13.1 or above.
+{{< /alert >}}
+
+##### Features
+
+* FL-20: Pipeline: Immediately fail test when a simulation crashes on instantiation instead of retrying HTTP connection
+* FL-396: Repository: Gatling zip bundle now ships a script to generate uploadable artifacts (eg in an S3 bucket repository)
+* FL-474: Pools: Add nonProxyHosts option for HTTP proxy configuration
+* FL-534: AWS: subnets are no multivalued and retried randomly if deploying the pool fails for insufficient capacity
+* FL-589: Cassandra: Expose full Cassandra Java Driver configuration with Typesafe config (eg configuring TSL)
+
+##### Fixes
+
+* FL-19: Public API: Fix `abortAll` API permissions
+* FL-192: Reports: Tooltip should pass over navbar
+* FL-287: AWS: Only display enabled regions
+* FL-346: Simulation: Fix decoding failure when passing undefined rampUp and rampDown
+* FL-449: Lougout: CORS error on second logout
+* FL-457: Logging: Clean up scheduler debug logs
+* FL-476: Private Keys: Error when trying to delete a private key
+* FL-486: Reports: Multiple highlights don't clear when leaving graph
+* FL-536: Azure: Filter out non suited instance types
+* FL-541: Migrations: M00045_GitAndLocalSimulations doesn't support old BitBucket SSH urls
+* FL-552: Simulation: Double quotes are not escaped in System Props
+* FL-558: Reports: Abscissa is broken on distribution charts
+* FL-564: Pools: Select all shortcut (ctrl+a) on a multiple select input select add null to value
+* FL-572: Reports: Last n minutes button doesn't work if you're zoomed in from the start of the run
+* FL-573: Reports: Multiple highlights don't clear when leaving graph
+* FL-583: Reports: Tooltip vertical position is off when scrolling down
+* FL-592: Reports: Changing Group in dropdown doesn't update
+* FL-595: Reports: Changing scenario unselect group* and selects the first real group instead
+* FL-608: Reports: Navigator header is broken on small screen
+* FL-609: Trends: Run comparison shouldn't try to display runs that are currently injecting.
+* FL-613: Reports: Can't go to groups tab with group * if group none exists
+* FL-616: Reports: JavaScript error when changing the OK/KO/All selection ona chart whithout data
+* FL-619: Pipeline: Retry uploads on scp connection loss
+* FL-627: Public API: Fix `abortAll` API
+* FL-630: Reports: Disable highlights refresh when test is running
+* FL-631: Reports: Request menu gets emptied with only * when changing scenario with only group none
+* FL-635: Boot: On First time configuration, FrontLine shows Cassandra error page instead of "Waiting for FrontLine to restart"
+* FL-645: Reports:  TCP Connection states stats are missing when network is IPv6 while target is IPv4
+* FL-647: Private Keys: Invalid error message mentioning "Certificate" instead of "Private Key"
+* FL-651: Private Keys: File system private keys path does not update
+
 ### 1.13.4 (2021-03-18)
 
 #### FrontLine
