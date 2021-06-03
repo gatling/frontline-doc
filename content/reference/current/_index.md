@@ -3,7 +3,7 @@ title: References
 description: "Gatling Enterprise documentation."
 cascade:
   variables:
-    revnumber: "1.14.1"
+    revnumber: "1.14.2"
     gatlingVersion: "3.6.0"
     scalaMajorVersion: "2.13"
     scalaVersion: "2.13.6"
