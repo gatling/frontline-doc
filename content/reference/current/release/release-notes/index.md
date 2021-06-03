@@ -2,10 +2,22 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2021-04-06T16:38:41+02:00
+lastmod: 2021-06-03T16:38:41+02:00
 weight: 60010
 ---
 
+### 1.14.2 (2021-06-03)
+
+#### FrontLine
+
+* FL-678: Compare runs button should be disabled when there is only 1 run
+* FL-681: Fix Cassandra configuration backward compatibility
+
+### 1.14.1 (2021-05-28)
+
+#### FrontLine
+
+* FL-668: Crash on boot when using OIDC or LDAP
 
 ### 1.14.0 (2021-05-20)
 
