@@ -1,14 +1,14 @@
 ---
 title: "Automated installation with Ansible"
-description: "Learn how to install FrontLine with Ansible"
-lead: "Download our Ansible playbook and run it to install easily FrontLine and Cassandra"
+description: "Learn how to install Gatling Enterprise with Ansible"
+lead: "Download our Ansible playbook and run it to install easily Gatling Enterprise and Cassandra"
 date: 2021-03-26T16:58:37+01:00
 lastmod: 2021-03-26T16:58:37+01:00
 weight: 20030
 ---
 
 {{< alert tip >}}
-Images of Gatling FrontLine published to the AWS Marketplace are made using this installer. The directory layout will be the same.
+Images of Gatling Enterprise published to the AWS Marketplace are made using this installer. The directory layout will be the same.
 {{< /alert >}}
 
 ## Requirements
@@ -36,7 +36,7 @@ If you do want to know more about Ansible, you can check its [user guide](https:
 
 Ansible will use the shell's proxy when running the script in your computer.
 
-If you need to specify a proxy for the remote machine on which Gatling FrontLine will be installed, you can add environment variables at the installer level:
+If you need to specify a proxy for the remote machine on which Gatling Enterprise will be installed, you can add environment variables at the installer level:
 
 ```yaml
  - hosts: all
@@ -109,7 +109,7 @@ The installer cannot be used to upgrade to a new version yet.
 This is only meant for scenarios in which you can't run Ansible remotely. Running Ansible locally isn't the common use case.
 {{< /alert >}}
 
-In case you don't have the necessary tools to run Ansible remotely, i.e. running Ansible on your machine in order to install Gatling FrontLine on another machine, you can launch Ansible directly on the machine that will host Gatling FrontLine.
+In case you don't have the necessary tools to run Ansible remotely, i.e. running Ansible on your machine in order to install Gatling Enterprise on another machine, you can launch Ansible directly on the machine that will host Gatling Enterprise.
 
 First, you need to copy the inventory `configuration.yml` file vars inside the playbook `frontline.yml` file, as such:
 
@@ -123,7 +123,7 @@ First, you need to copy the inventory `configuration.yml` file vars inside the p
     ...
 ```
 
-Then, you will be able to run Ansible directly on the host you intend to install Gatling FrontLine in:
+Then, you will be able to run Ansible directly on the host you intend to install Gatling Enterprise in:
 
 ```console
 ansible-playbook \
@@ -133,9 +133,9 @@ ansible-playbook \
   frontline.yml
 ```
 
-### Running FrontLine
+### Running Gatling Enterprise
 
-Services will be configured for each installed components of Gatling FrontLine. They will automatically start on boot.
+Services will be configured for each installed components of Gatling Enterprise. They will automatically start on boot.
 
 You can control them with the `service`/`systemctl` command:
 
@@ -147,19 +147,19 @@ sudo systemctl {start|stop} {cassandra|frontline|nginx}
 ```
 
 {{< alert tip >}}
-Gatling FrontLine depends on Cassandra, it will wait on its availability when starting.
+Gatling Enterprise depends on Cassandra, it will wait on its availability when starting.
 {{< /alert >}}
 
 {{< alert tip >}}
-Nginx reverse proxy to Gatling FrontLine, but will still start if it is not available.
+Nginx reverse proxy to Gatling Enterprise, but will still start if it is not available.
 {{< /alert >}}
 
 ## Installation Layout
 
-Two users will be created, `cassandra` and `frontline`, that will be used by, respectively, Cassandra and Gatling FrontLine.
+Two users will be created, `cassandra` and `frontline`, that will be used by, respectively, Cassandra and Gatling Enterprise.
 
 {{< alert tip >}}
-If you want a file to be access by Gatling FrontLine (E.g.: private keys), make sure to properly modify its `group:user` to `frontline:frontline`.
+If you want a file to be access by Gatling Enterprise (E.g.: private keys), make sure to properly modify its `group:user` to `frontline:frontline`.
 {{< /alert >}}
 
 **Installation and configuration directories:**

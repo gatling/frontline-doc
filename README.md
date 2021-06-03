@@ -1,4 +1,4 @@
-# FrontLine Self-Hosted Documentation
+# Gatling Enterprise Self-Hosted Documentation
 
 Node.js dependencies:
 

@@ -1,4 +1,4 @@
 ---
 title: Admin
-description: "Learn every aspect of FrontLine's administration"
+description: "Learn every aspect of Gatling Enterprise's administration"
 ---

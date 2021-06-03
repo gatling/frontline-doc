@@ -1,22 +1,22 @@
 ---
-title: "FrontLine 1.13 Highlights"
-description: "Learn about the main new features of FrontLine 1.13"
-lead: "FrontLine 1.13 introduce support for multiple versions of Gatling and performance fixes"
+title: "Gatling Enterprise 1.13 Highlights"
+description: "Learn about the main new features of Gatling Enterprise 1.13"
+lead: "Gatling Enterprise 1.13 introduce support for multiple versions of Gatling and performance fixes"
 date: 2021-04-06T17:55:36+02:00
 lastmod: 2021-04-06T17:55:36+02:00
 weight: 60020
 ---
 
-### FrontLine 1.13
+### Gatling Enterprise 1.13
 
 #### Gatling 3.3, 3.4 and 3.5 generations support
 
-FrontLine 1.13 is compatible with the 3 latest Gatling generations.
+Gatling Enterprise 1.13 is compatible with the 3 latest Gatling generations.
 
 {{< alert tip >}}
 Only Gatling 3.5 will be actively maintained.
 
-Multiple versions support is for convenience so that customers don't have to upgrade all their tests when upgrading their FrontLine platform.
+Multiple versions support is for convenience so that customers don't have to upgrade all their tests when upgrading their Gatling Enterprise platform.
 
 Customers are recommended to upgrade to Gatling 3.5 as soon as they can.
 {{< /alert >}}
@@ -25,16 +25,16 @@ Customers are recommended to upgrade to Gatling 3.5 as soon as they can.
 
 We've changed the way duration events are aggregated.
 
-Prior to FrontLine 1.13, those stats were aggregated by start timestamp, which could cause a lot of memory and CPU usage without any proven benefit.
+Prior to Gatling Enterprise 1.13, those stats were aggregated by start timestamp, which could cause a lot of memory and CPU usage without any proven benefit.
 
 Those stats are now aggregated by end timestamp, which results in a way more sound memory and CPU usage and paves the way for more long duration metrics that could be implemented in a future release, such as scenario duration.
 
 We've also introduced hard limits on the number of metrics that a given test run can generate.
-In some situations, a test could generate way too many metrics and cause the whole FrontLine instance to crash.
+In some situations, a test could generate way too many metrics and cause the whole Gatling Enterprise instance to crash.
 
 #### Key Bug Fixes
 
-We've fixed some important bugs that could cause injectors and FrontLine server to not be in sync, causing long tests to abnormally crash.
+We've fixed some important bugs that could cause injectors and Gatling Enterprise server to not be in sync, causing long tests to abnormally crash.
 
 Please check the Release Note for the full list of bug fixes.
 
@@ -69,7 +69,7 @@ Please also check [the full release note](https://github.com/gatling/gatling/mil
 ### Operations
 
 {{< alert tip >}}
-Images of Gatling FrontLine published to the AWS Marketplace are made using this installer. The directory layout will be the same.
+Images of Gatling Gatling Enterprise published to the AWS Marketplace are made using this installer. The directory layout will be the same.
 {{< /alert >}}
 
 
@@ -80,9 +80,9 @@ Prior to upgrading, make sure to perform the required backups as described at th
 #### Old Binaries Distribution Platform Upcoming Shutdown
 
 {{< alert tip >}}
-Images of Gatling FrontLine published to the AWS Marketplace are made using this installer. The directory layout will be the same.
+Images of Gatling Enterprise published to the AWS Marketplace are made using this installer. The directory layout will be the same.
 {{< /alert >}}
 
-IMPORTANT: As announced when we released FrontLine 1.12.0, the `http://repository.gatling.io/` server was supposed to get decommissioned end of November 2020.
+IMPORTANT: As announced when we released Gatling Enterprise 1.12.0, the `http://repository.gatling.io/` server was supposed to get decommissioned end of November 2020.
 We extended the deadline to the end of December for give our customers more time to adapt, but the server will definitely be gone in January 2021.
 From now on, please use `https://downloads.gatling.io/releases/YOUR_CUSTOMER_ID/`.

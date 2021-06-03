@@ -26,4 +26,4 @@ You can't update your username here. You need to ask a System Admin to change yo
 
 It should be noted that the superAdmin account doesn't have a profile.
 
-If you are using FrontLine with LDAP, profiles will be read-only since users information are retrieved from the LDAP and not managed by FrontLine itself.
+If you are using Gatling Enterprise with LDAP, profiles will be read-only since users information are retrieved from the LDAP and not managed by Gatling Enterprise itself.

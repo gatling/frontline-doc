@@ -1,7 +1,7 @@
 ---
 title: "Teamcity Plugin"
-description: "Learn how to configure the FrontLine TeamCity plugin and run your simulations."
-lead: "Run your FrontLine simulations from your TeamCity CI."
+description: "Learn how to configure the Gatling Enterprise TeamCity plugin and run your simulations."
+lead: "Run your Gatling Enterprise simulations from your TeamCity CI."
 date: 2021-03-08T13:50:20+01:00
 lastmod: 2021-03-08T13:50:20+01:00
 weight: 50020
@@ -9,9 +9,9 @@ weight: 50020
 
 ## Purpose of this plugin
 
-This plugin allows you to start a Gatling FrontLine simulation directly from your TeamCity platform. This plugin links a TeamCity plan with one and only one Gatling FrontLine simulation.
+This plugin allows you to start a Gatling Enterprise simulation directly from your TeamCity platform. This plugin links a TeamCity plan with one and only one Gatling FrontLine simulation.
 
-This plugin doesn't create a new Gatling FrontLine simulation, you have to create it manually before.
+This plugin doesn't create a new Gatling Enterprise simulation, you have to create it manually before.
 
 ## Installation
 
@@ -27,11 +27,11 @@ You need to be connected as an administrator of your TeamCity application to ins
 
 ## Configuration
 
-The plugin needs some global configuration. Go **Administration**, then **FrontLine**.
+The plugin needs some global configuration. Go **Administration**, then **Gatling Enterprise**.
 
-The **Address** is the address of your FrontLine, for example: https://demo-beta.gatling.io.
+The **Address** is the address of your Gatling Enterprise, for example: https://demo-beta.gatling.io.
 
-The **API Token** will allow TeamCity to authenticate to Gatling FrontLine, without the need of a username or password. To fetch it, refer to the section *Managing API Tokens* in the FrontLine User Guide.
+The **API Token** will allow TeamCity to authenticate to Gatling Enterprise, without the need of a username or password. To fetch it, refer to the section *Managing API Tokens* in the Gatling Enterprise User Guide.
 
 {{< img src="administration.png" alt="" >}}
 
@@ -43,7 +43,7 @@ Add a new build step called **FrontLine Launcher**. Choose in the Simulation lis
 
 ### JUnit reporting
 
-You can display the results of the Gatling FrontLine assertions as a JUnit Test.
+You can display the results of the Gatling Enterprise assertions as a JUnit Test.
 
 Add a new build feature called **XML report processing**. Choose **Ant JUnit** as report type, and enter in the **Monitoring rules** input the following line:
 
@@ -53,11 +53,11 @@ Add a new build feature called **XML report processing**. Choose **Ant JUnit** a
 
 ## Usage
 
-A new Gatling FrontLine simulation will be started every time the job is run. Check the Console Log to check the advancement of the simulation. If the simulation ran successfully, it will looks like the following:
+A new Gatling Enterprise simulation will be started every time the job is run. Check the Console Log to check the advancement of the simulation. If the simulation ran successfully, it will look like the following:
 
 {{< img src="log.png" alt="Console Log" >}}
 
-If the Gatling FrontLine deployment fails (ie because of a shortage of available hosts), the plugin will retry 3 times to redeploy the simulation.
+If the Gatling Enterprise deployment fails (ie because of a shortage of available hosts), the plugin will retry 3 times to redeploy the simulation.
 
 When the job run is finished, you will be able to see on the **FrontLine Results** tab, the summary of the FrontLine simulation.
 

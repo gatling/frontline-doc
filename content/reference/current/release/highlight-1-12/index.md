@@ -1,13 +1,13 @@
 ---
-title: "FrontLine 1.12 Highlights"
-description: "Learn about the main new features of FrontLine 1.12"
-lead: "FrontLine 1.12 introduce scoped private keys, OpenId Connect and a permissions rewamp"
+title: "Gatling Enterprise 1.12 Highlights"
+description: "Learn about the main new features of Gatling Enterprise 1.12"
+lead: "Gatling Enterprise 1.12 introduce scoped private keys, OpenId Connect and a permissions rewamp"
 date: 2021-04-06T17:55:28+02:00
 lastmod: 2021-04-06T17:55:28+02:00
 weight: 60030
 ---
 
-### FrontLine 1.12
+### Gatling Enterprise 1.12
 
 #### Scoped Private Keys
 
@@ -19,7 +19,7 @@ Upgrading automatically updates existing private keys depending on their usage.
 
 {{< alert tip >}}
 Upgrade automatic migration won't upgrade private keys that are unused or used for both repositories and pools.
-Such unscoped private keys will keep on working with FrontLine 1.12 but will stop being supported in FrontLine 1.13.
+Such unscoped private keys will keep on working with Gatling Enterprise 1.12 but will stop being supported in Gatling Enterprise 1.13.
 We recommend you delete the unused ones and duplicate the ones used for both repositories and pools (unlikely use case).
 {{< /alert >}}
 
@@ -42,10 +42,10 @@ System admins can now define `quotas` on how many simulations a given team can u
 
 #### New OpenID Connect Integration
 
-FrontLine can now integrate with your favorite OIDC provider such as Azure Active Directory or Okta.
+Gatling Enterprise can now integrate with your favorite OIDC provider such as Azure Active Directory or Okta.
 
 {{< alert tip >}}
-If you want to migrate from FrontLine's embedded auth or LDAP to OIDC, you might have to fix the usernames to match the new system.
+If you want to migrate from Gatling Enterprise's embedded auth or LDAP to OIDC, you might have to fix the usernames to match the new system.
 Beware that in OAuth2, usernames are case-sensitive!
 Please check [the tool we provide for helping to migrate those users](https://github.com/gatling/frontline-users-migration-tool).
 {{< /alert >}}
@@ -87,12 +87,12 @@ Gatling 3.4 is mostly source compatible with Gatling 3.3 but there are still *a 
 please check the [Gatling 3.4 Migration Guide](https://gatling.io/docs/current/migration_guides/3.3-to-3.4/).
 
 {{< alert tip >}}
-FrontLine 1.12 supports deploying projects using Gatling 3.3 and 3.4.
+Gatling Enterprise 1.12 supports deploying projects using Gatling 3.3 and 3.4.
 {{< /alert >}}
 
-The benefit is that *you don't have to upgrade all your projects at the same time you upgrade FrontLine* when a new Gatling minor version breaks binary compatibility.
+The benefit is that *you don't have to upgrade all your projects at the same time you upgrade Gatling Enterprise* when a new Gatling minor version breaks binary compatibility.
 
-You can upgrade FrontLine first, your existing projects will keep on working, and upgrade them to newest Gatling progressively.
+You can upgrade Gatling Enterprise first, your existing projects will keep on working, and upgrade them to newest Gatling progressively.
 
 {{< alert tip >}}
 You are still required to upgrade to Gatling 3.4 at some point.
@@ -104,7 +104,7 @@ You are still required to upgrade to Gatling 3.4 at some point.
 #### Upgrading maven/gradle/sbt plugin version in your Projects
 
 {{< alert tip >}}
-We recommend that you upgrade to the latest versions of the build plugins so that FrontLine can detect which version of Gatling was used to compile:
+We recommend that you upgrade to the latest versions of the build plugins so that Gatling Enterprise can detect which version of Gatling was used to compile:
 {{< /alert >}}
 
 * for maven: `frontline-maven-plugin` *1.2.0*.
@@ -113,7 +113,7 @@ We recommend that you upgrade to the latest versions of the build plugins so tha
 
 {{< alert warning >}}
 Breaking change: when upgrading `frontline-gradle-plugin`, you are now required to use a specific layout and store your Gatling code under `src/gatling/scala`.
-Please check the sample you can download from FrontLine's web UI.
+Please check the sample you can download from Gatling Enterprise's web UI.
 {{< /alert >}}
 
 #### Upgrading your injectors JVM settings
@@ -142,7 +142,7 @@ If you've overridden the default global properties with your own parameters, you
 Prior to upgrading, make sure to perform the required backups as described at the beginning of the Installation Guide.
 {{< /alert >}}
 
-#### FrontLine Binaries Distribution Platform Change
+#### Gatling Enterprise Binaries Distribution Platform Change
 
 {{< alert tip >}}
 The http://repository.gatling.io/ server will be shut down end of November 2020.
@@ -153,9 +153,9 @@ Download urls on the new server use the same pattern as the old one, eg:
 
 https://downloads.gatling.io/releases/YOUR_CUSTOMER_ID/`
 
-#### Minimal Original FrontLine Version
+#### Minimal Original Gatling Enterprise Version
 
-If you are currently using a version of FrontLine older than 1.6.2, you can't directly upgrade to FrontLine 1.12.0.
-You have to first upgrade to FrontLine 1.11.1.
+If you are currently using a version of Gatling Enterprise older than 1.6.2, you can't directly upgrade to Gatling Enterprise 1.12.0.
+You have to first upgrade to Gatling Enterprise 1.11.1.
 
-Otherwise, if you are running FrontLine 1.6.2 or newer, you can directly upgrade.
+Otherwise, if you are running Gatling Enterprise 1.6.2 or newer, you can directly upgrade.

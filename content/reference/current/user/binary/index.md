@@ -7,11 +7,11 @@ weight: 10050
 toc: true
 ---
 
-## FrontLine Gatling Versions
+## Gatling Enterprise Gatling Versions
 
-FrontLine actually uses custom versions of the Gatling components. Those binaries are not open sources and their usage is restricted to FrontLine.
+Gatling Enterprise actually uses custom versions of the Gatling components. Those binaries are not open source and their usage is restricted to Gatling Enterprise.
 
-When you'll be deploying tests with FrontLine, it will replace your Gatling OSS dependencies with their custom counterparts.
+When you'll be deploying tests with Gatling Enterprise, it will replace your Gatling OSS dependencies with their custom counterparts.
 
 ## Configuring Gatling Projects
 
@@ -21,7 +21,7 @@ In your `pom.xml`, you have to add in:
 
 * pull Gatling dependencies
 * add the maven plugin for Scala, so your code gets compiled
-* add the maven plugin for FrontLine, so it can package your code into a deployable artifact
+* add the maven plugin for Gatling Enterprise, so it can package your code into a deployable artifact
 
 ```xml
 <project>
@@ -70,7 +70,7 @@ In your `pom.xml`, you have to add in:
         </executions>
       </plugin>
 
-      <!-- so maven can build a package for FrontLine -->
+      <!-- so maven can build a package for Gatling Enterprise -->
       <plugin>
         <groupId>io.gatling.frontline</groupId>
         <artifactId>frontline-maven-plugin</artifactId>
@@ -120,7 +120,7 @@ You can also exclude dependencies you don't want to ship, eg:
 In a sbt project, you have to:
 
 * pull Gatling dependencies
-* add the sbt plugin for FrontLine, so it can package your code into a deployable artifact
+* add the sbt plugin for Gatling Enterprise, so it can package your code into a deployable artifact
 
 A `build.sbt` file should look like this:
 
@@ -174,7 +174,7 @@ You will also need the following lines in the `project/plugins.sbt` file:
 ```sbt
 // only if you intend to use the gatling-sbt plugin for running Gatling locally
 addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}")
-// so sbt can build a package for FrontLine
+// so sbt can build a package for Gatling Enterprise
 addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
 ```
 
@@ -189,7 +189,7 @@ The `gatling-sbt` is optional.
 In a Gradle project, you have to:
 
 * pull Gatling dependencies
-* add the gradle plugin for FrontLine, so it can package your code into a deployable artifact
+* add the gradle plugin for Gatling Enterprise, so it can package your code into a deployable artifact
 
 A `build.gradle` file should look like this:
 
@@ -220,16 +220,16 @@ You can run `gradle frontLineJar` in your terminal and check you get a jar conta
 
 If your project is a multi-module one, make sure that only the one containing the Gatling Simulations gets configured with the Gatling related plugins describes above.
 
-FrontLine will take care of deploying all available jars so you can have Gatling module depend on the other ones.
+Gatling Enterprise will take care of deploying all available jars so you can have Gatling module depend on the other ones.
 
 ## Note on Feeders
 
-A typical mistake with Gatling and FrontLine is to rely on having an exploded maven/gradle/sbt project structure and try loading files from the project filesystem.
+A typical mistake with Gatling and Gatling Enterprise is to rely on having an exploded maven/gradle/sbt project structure and try loading files from the project filesystem.
 
-This filesystem structure will be gone once FrontLine will have compiled your project and uploaded your binaries on the injectors.
+This filesystem structure will be gone once Gatling Enterprise will have compiled your project and uploaded your binaries on the injectors.
 
 If your feeder files are packaged with your test sources, you must resolve them from the classpath.
-This way will always work, both locally and with FrontLine.
+This way will always work, both locally and with Gatling Enterprise.
 
 ```scala
 // incorrect
@@ -260,7 +260,7 @@ Assuming a CSV file contains 1000 entries, and 3 Gatling nodes, the entries will
 - Third node will access the last 334 entries
 
 {{< alert tip >}}
-`shard` is available in Gatling OSS DSL but is a noop there. It's only effective when running tests with FrontLine.
+`shard` is available in Gatling OSS DSL but is a noop there. It's only effective when running tests with Gatling Enterprise.
 {{< /alert >}}
 
 ## Resolving Injector Location in Simulation
@@ -277,13 +277,13 @@ val baseUrl = if (poolName == "London") "https://domain.co.uk" else "https://dom
 ```
 
 {{< alert tip >}}
-This System property is only defined when deploying with FrontLine.
+This System property is only defined when deploying with Gatling Enterprise.
 It's not defined when running locally with any Gatling OSS launcher.
 {{< /alert >}}
 
 ## Publishing Fatjars into Binary Repositories
 
-Instead of building tests from sources, you have the option of building binaries upstream and publishing them into a binary repository (JFrog Artifactory, Sonatype Nexus or AWS S3) so FrontLine just has to download them.
+Instead of building tests from sources, you have the option of building binaries upstream and publishing them into a binary repository (JFrog Artifactory, Sonatype Nexus or AWS S3) so Gatling Enterprise just has to download them.
 
 {{< alert tip >}}
 Please check your build tool documentation and the standards in your organization about the way to set credentials.

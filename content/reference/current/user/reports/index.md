@@ -70,7 +70,7 @@ This bar is a combination of buttons:
 
 ### Generate Public Links
 
-A public link is a link of the current reports which will be accessible to anyone, without having to log-in to FrontLine. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
+A public link is a link of the current reports which will be accessible to anyone, without having to log-in to Gatling Enterprise. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
 
 {{< img src="generate-public-link.png" alt="Generate public links" >}}
 
@@ -80,11 +80,11 @@ Once you have chosen an expiration date, you can proceed by clicking on the gene
 
 {{< img src="successful-generation-public-link.png" alt="Successful public link generation" >}}
 
-You can copy the public link to share your reports to non-FrontLine users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
+You can copy the public link to share your reports to non-Gatling Enterprise users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
 
 ### Charts
 
-Each charts in FrontLine are connected to each other, so if you select a time window on a chart it will automatically change it
+Each charts in Gatling Enterprise are connected to each other, so if you select a time window on a chart it will automatically change it
 for all other charts. Metrics are drawn in multiple charts.
 
 {{< img src="charts.png" alt="Charts" >}}

@@ -1,6 +1,6 @@
 ---
 title: "Repositories"
-description: "Repositories indicates how FrontLine needs to fetch your Gatling simulations"
+description: "Repositories indicates how Gatling Enterprise needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
 lastmod: 2021-03-25T18:25:43+01:00
 weight: 10060
@@ -8,7 +8,7 @@ toc: true
 ---
 
 {{< alert tip >}}
-Before creating a repository, you need to make sure your Gatling simulations are adjusted to FrontLine, check [the corresponding section]({{< ref "../binary" >}})
+Before creating a repository, you need to make sure your Gatling simulations are adjusted to Gatling Enterprise, check [the corresponding section]({{< ref "../binary" >}})
 {{< /alert >}}
 
 
@@ -31,14 +31,14 @@ You can edit the repository by clicking on the {{< icon pencil-alt >}} icon and 
 
 ## Sources Repository
 
-Choose *Build from sources* as repository type if you wish that FrontLine fetch and compile the sources of your Gatling simulation. In this page, you'll configure how to fetch the sources.
+Choose *Build from sources* as repository type if you wish that Gatling Enterprise fetch and compile the sources of your Gatling simulation. In this page, you'll configure how to fetch the sources.
 
 {{< img src="create-repository-sources.png" alt="Sources Repository creation" >}}
 
 There are 3 different ways to retrieve your sources:
 
 - **Clone a Git repository**: If you want to clone a git repository. You'll need to fill in the URL of the targeted repository, and the targeted git branch or tag (which can be overridden in the simulation configuration). If you're using ssh authentication, you can also fill in a previously added <<privateKey, private key>> scoped on repository with **Git SSH key**. If you're using HTTPS authentication, you can setup an username and password.
-- **Use a project on FrontLine's filesystem**: Use a project located on FrontLine's filesystem, fill in the path to project repository.
+- **Use a project on Gatling Enterprise's filesystem**: Use a project located on Gatling Enterprise's filesystem, fill in the path to project repository.
 - **Check out from Source Code Control System**: Useful if you're using a code control system other than Git, or if you need a really specific Git command.
 
 ## Binary Repository
@@ -79,7 +79,7 @@ If you're using an AWS S3 bucket, you'll need to fill in the following fields:
 
 {{< img src="create-repository-s3.png" alt="AWS S3" >}}
 
-- **Profile name**: choose a profile described in `~/.aws/credentials`, or select `Use environment or system variables` to use the permissions granted to the EC2 FrontLine instance
+- **Profile name**: choose a profile described in `~/.aws/credentials`, or select `Use environment or system variables` to use the permissions granted to the EC2 Gatling Enterprise instance
 - **Region**: the region where you created your bucket
 - **Bucket name**: the bucket name
 

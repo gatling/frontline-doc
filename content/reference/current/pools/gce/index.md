@@ -1,7 +1,7 @@
 ---
 title: "Gce"
 description: "GCE pools are a configuration of GCE injectors"
-lead: "Deploy FrontLine injectors on GCE"
+lead: "Deploy Gatling Enterprise injectors on GCE"
 date: 2021-03-26T09:40:40+01:00
 lastmod: 2021-03-26T09:40:40+01:00
 weight: 30040

@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes"
 description: "Kubernetes pools are a configuration of Kubernetes injectors"
-lead: "Deploy FrontLine injectors on Kubernetes"
+lead: "Deploy Gatling Enterprise injectors on Kubernetes"
 date: 2021-03-26T09:41:20+01:00
 lastmod: 2021-03-26T09:41:20+01:00
 weight: 30070
@@ -36,19 +36,19 @@ To configure the type of instances you want to spawn, you need to fill the form 
 
 Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point integer using one of these suffixes: E, P, T, G, M, K. You can also use the power-of-two equivalents: Ei, Pi, Ti, Gi, Mi, Ki.
 
-NOTE: If your FrontLine instance belongs to a Kubernetes cluster, you don't have to provide a **Kubernetes Url** and a **Service Account Token**.
+NOTE: If your Gatling Enterprise instance belongs to a Kubernetes cluster, you don't have to provide a **Kubernetes Url** and a **Service Account Token**.
 You can still choose to configure it, for example to create a pool in another cluster, by unticking `Use local cluster`.
 Also, you can specify preferring **Internal IP** over the **External IP** for connecting to Kubernetes nodes, by ticking `Prefer internal IP`.
 
 {{< img src="kubernetes-local.png" alt="Kubernetes local" >}}
 
-## Minimal permissions for FrontLine service account
+## Minimal permissions for Gatling Enterprise service account
 
 Service account associated to the service-account-token must be binded with permissions to manage services, nodes, routes, ingresses and pods (depending on your needs).
 Below, you can find a commented configuration file containing all needed permissions.
 
 ```yaml
-# Dedicated namespace for FrontLine
+# Dedicated namespace for Gatling Enterprise
 apiVersion: v1
 kind: Namespace
 metadata:

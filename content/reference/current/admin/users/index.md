@@ -15,7 +15,7 @@ To access the Users administration, click on **Admin** in the navigation bar, an
 
 ### Permissions
 
-There are 4 different user roles in FrontLine:
+There are 4 different user roles in Gatling Enterprise:
 
 - System Admin
 - Team Admin
@@ -39,14 +39,14 @@ Each role can be global or team-specific.
 ### Users administration
 
 {{< alert warning >}}
-If you switch between FrontLine embedded user management system and LDAP/OpenID mode, or if there is a problem fetching your user data in LDAP/OpenID, some users may be flagged as invalid. For example, if a user created in FrontLine doesn't exist in your LDAP/OpenID server, you won't be able to connect with this user anymore.
+If you switch between Gatling Enterprise embedded user management system and LDAP/OpenID mode, or if there is a problem fetching your user data in LDAP/OpenID, some users may be flagged as invalid. For example, if a user created in Gatling Enterprise doesn't exist in your LDAP/OpenID server, you won't be able to connect with this user anymore.
 {{< /alert >}}
 
 To create a user, click on the **Create** button. Once the user is created, copy his password, as you won't be able to retrieve it again. OpenID authentication disable user creation, and only allow to edit users permissions (users who have already connected one time).
 
 {{< img src="users-create.png" alt="User creation" >}}
 
-If you are using FrontLine with LDAP or OpenID, you will only have to fill the username and permissions to create a user, the other pieces of information come directly from the LDAP/OpenID. The username should be the same username as in the LDAP/OpenID.
+If you are using Gatling Enterprise with LDAP or OpenID, you will only have to fill the username and permissions to create a user, the other pieces of information come directly from the LDAP/OpenID. The username should be the same username as in the LDAP/OpenID.
 
 You can edit the user by clicking on the {{< icon pencil-alt >}} icon and delete them using the checkboxes on the table's right part.
 To reset a user password, click on the {{< icon undo >}} icon (only available in non-LDAP mode).

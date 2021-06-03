@@ -1,21 +1,21 @@
 ---
-title: "FrontLine 1.14 Highlights"
-description: "Learn about the main new features of FrontLine 1.14"
-lead: "FrontLine 1.14 introduce support for multiple versions of Gatling and performance fixes"
+title: "Gatling Enterprise 1.14 Highlights"
+description: "Learn about the main new features of Gatling Enterprise 1.14"
+lead: "Gatling Enterprise 1.14 introduce support for multiple versions of Gatling and performance fixes"
 date: 2021-05-25T17:55:36+02:00
 lastmod: 2021-05-25T17:55:36+02:00
 weight: 60019
 ---
 
-### FrontLine 1.14
+### Gatling Enterprise 1.14
 
 #### Gatling 3.6, 3.5, 3.4 and 3.3 generations support
 
-FrontLine 1.14 is compatible with the 4 latest Gatling generations.
+Gatling Enterprise 1.14 is compatible with the 4 latest Gatling generations.
 
 {{< alert tip >}}
 Only Gatling 3.6 will be actively maintained.
-Multiple versions support is for convenience so that customers don't have to upgrade all their tests when upgrading their FrontLine platform.
+Multiple versions support is for convenience so that customers don't have to upgrade all their tests when upgrading their Gatling Enterprise platform.
 Customers are recommended to upgrade to Gatling 3.6 as soon as they can.
 {{< /alert >}}
 

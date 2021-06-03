@@ -1,7 +1,7 @@
 ---
 title: "Pools"
 description: "Pools are the configuration of your injectors"
-lead: "Deploy multiple FrontLine injectors"
+lead: "Deploy multiple Gatling Enterprise injectors"
 date: 2021-03-26T09:28:01+01:00
 lastmod: 2021-03-26T09:28:01+01:00
 weight: 30010

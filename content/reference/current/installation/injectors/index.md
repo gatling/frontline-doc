@@ -1,14 +1,14 @@
 ---
 title: "Injectors deployment"
-description: "Preliminary Configuration of FrontLine's injectors"
-lead: "Find generic information about FrontLine injectors, and specific information about each supported cloud provider"
+description: "Preliminary Configuration of Gatling Enterprise's injectors"
+lead: "Find generic information about Gatling Enterprise injectors, and specific information about each supported cloud provider"
 date: 2021-03-26T17:41:00+01:00
 lastmod: 2021-03-26T17:41:00+01:00
 weight: 20060
 ---
 
-FrontLine enable users to configure either on demand or on-premises pools.
-In FrontLine, pools are instances cluster where you deploy Gatling instances and your simulations.
+Gatling Enterprise enable users to configure either on demand or on-premises pools.
+In Gatling Enterprise, pools are instances cluster where you deploy Gatling instances and your simulations.
 
 Valid characters for a pool name are letters, digits, spaces, dashes and underscores.
 
@@ -16,7 +16,7 @@ Valid characters for a pool name are letters, digits, spaces, dashes and undersc
 
 ### Architecture
 
-We currently only support AMD64 for both FrontLine and Gatling injectors.
+We currently only support AMD64 for both the Gatling Enterprise server and the Gatling injectors.
 
 We don't support ARM at the moment.
 
@@ -37,7 +37,7 @@ This could eventually lead to upgrading the JDK while running, which could break
 
 ### Network
 
-The hosts running Gatling injectors must be reachable from FrontLine:
+The hosts running Gatling injectors must be reachable from Gatling Enterprise:
 
 * over SSH (port 22)
 * over HTTP, on port 9999 (by default, configurable in frontline.conf)
@@ -72,7 +72,7 @@ If you can't use our certified images, we provide the templates from which our c
 * For Docker: [frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
 ## Local
 
-It's possible to have FrontLine use a "Local" pool to deploy a single injector on the same host.
+It's possible to have Gatling Enterprise use a "Local" pool to deploy a single injector on the same host.
 This option is turned off by default and has to be enabled in the frontline.conf file:
 
 ```hocon
@@ -83,15 +83,15 @@ frontline {
 }
 ```
 
-This option is only intended to be used for demos and as a quick start when evaluating FrontLine.
+This option is only intended to be used for demos and as a quick start when evaluating Gatling Enterprise.
 
 {{< alert warning >}}
-It should definitively be disabled once your FrontLine installation will go live, or you'd risk ending up with FrontLine lacking resources (CPU, network) because a load test is eating all of them.
+It should definitively be disabled once your Gatling Enterprise installation will go live, or you'd risk ending up with Gatling Enterprise lacking resources (CPU, network) because a load test is eating all of them.
 {{< /alert >}}
 
 ## On-premises
 
-It's very easy to configure on-premises pools from FrontLine:
+It's very easy to configure on-premises pools from Gatling Enterprise:
 
 * Create a pool
 * Create a host by providing hostname, username, credentials and optional custom working directory (default is `/tmp`). The working directory should be executable.
@@ -99,21 +99,21 @@ It's very easy to configure on-premises pools from FrontLine:
 
 ## On Demand
 
-FrontLine is currently managing five different cloud providers: AWS, GCE, OpenStack and Microsoft Azure.
+Gatling Enterprise is currently managing five different cloud providers: AWS, GCE, OpenStack and Microsoft Azure.
 
 ### AWS (On-premises license & AWS marketplace)
 
-Gatling Corp provides certified AMIs that you choose in the FrontLine AWS configuration. This AMI will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
+Gatling Corp provides certified AMIs that you choose in the Gatling Enterprise AWS configuration. This AMI will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
 
-You'll also need to configure AWS API access keys on the FrontLine host using one of these methods:
+You'll also need to configure AWS API access keys on the Gatling Enterprise host using one of these methods:
 
-1. If you've installed FrontLine on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
+1. If you've installed Gatling Enterprise on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
 2. Environment Variables – AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 3. Java System Properties – aws.accessKeyId and aws.secretKey
 4. The default credential and config files. See [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
 
 {{< alert tip >}}
-FrontLine requires the following permissions (or grant `AmazonEC2FullAccess` if you don't care about fine-grained permissions):
+Gatling Enterprise requires the following permissions (or grant `AmazonEC2FullAccess` if you don't care about fine-grained permissions):
 {{< /alert >}}
 
 ```json
@@ -168,7 +168,7 @@ The OpenStack User might need some special permissions to launch instances.
 
 ### Microsoft Azure (On-premises license & Azure marketplace)
 
-Gatling Corp provides certified images that you choose in the FrontLine Microsoft Azure configuration. This image will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
+Gatling Corp provides certified images that you choose in the Gatling Enterprise Microsoft Azure configuration. This image will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
 
 There are requirements before creating an Azure pool:
 
@@ -176,7 +176,7 @@ There are requirements before creating an Azure pool:
 * Create an image by following the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-capture-image) if not using certified images.
 * Create and save a SSH key pair without password.
 
-There are two ways to provide Azure credentials to your FrontLine instance:
+There are two ways to provide Azure credentials to your Gatling Enterprise instance:
 
 * Get the credentials from Microsoft Azure: follow [this link](https://www.inkoop.io/blog/how-to-get-azure-api-credentials/) and save the subscription ID, tenant ID, client ID and client secret.
 * Use [User Assigned Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#user-assigned-managed-identity).
@@ -190,7 +190,7 @@ In both cases, the Azure User used must have the `Contributor` permission.
 Identities can be created using either the Azure Portal or the Azure CLI.
 
 {{< alert warning >}}
-Role should be set under the subscription scope, otherwise Contributor will not suffice. It can’t be set under the resource group scope as FrontLine will start Azure virtual machines in a new resource group each time it launches a simulation.
+Role should be set under the subscription scope, otherwise Contributor will not suffice. It can’t be set under the resource group scope as Gatling Enterprise will start Azure virtual machines in a new resource group each time it launches a simulation.
 {{< /alert >}}
 
 Here are the creation steps:
@@ -202,7 +202,7 @@ Here are the creation steps:
 * Go to the Virtual machine configuration, then go to the Identity tab of the Virtual Machine, assign the previous identity to your virtual machine.
 
 {{< alert warning >}}
-Make sure to assign the User Assigned Managed Identity from the **Identity tab of the Virtual Machine** hosting Gatling FrontLine. Using the Access Control (IAM) will result in an error when trying to use the identity at a later stage.
+Make sure to assign the User Assigned Managed Identity from the **Identity tab of the Virtual Machine** hosting Gatling Enterprise. Using the Access Control (IAM) will result in an error when trying to use the identity at a later stage.
 {{< /alert >}}
 
 ### Kubernetes / OpenShift
@@ -210,15 +210,15 @@ Make sure to assign the User Assigned Managed Identity from the **Identity tab o
 There are requirements before creating a Kubernetes/OpenShift pool:
 
 * Docker Hub should be reachable from your infrastructure, otherwise you'll need to [build the injector image](https://github.com/gatling/frontline-injector-docker-image) and push it to your private registry.
-* A service account able to manage pods and services (either attached to FrontLine or for its token).
+* A service account able to manage pods and services (either attached to Gatling Enterprise or for its token).
 
-Additionally, if FrontLine is deployed outside Kubernetes/OpenShift:
+Additionally, if Gatling Enterprise is deployed outside Kubernetes/OpenShift:
 
-* The Kubernetes API should be reachable by FrontLine.
-* If using the NodePort mode, firewall rules must be added so that FrontLine can reach Kubernetes nodes on the configured Kubernetes NodePort range (by default, 30000-32767).
+* The Kubernetes API should be reachable by Gatling Enterprise.
+* If using the NodePort mode, firewall rules must be added so that Gatling Enterprise can reach Kubernetes nodes on the configured Kubernetes NodePort range (by default, 30000-32767).
 
 {{< alert tip >}}
-If your cluster uses RBAC, you'll need a role with the following permissions for FrontLine's service account:
+If your cluster uses RBAC, you'll need a role with the following permissions for Gatling Enterprise's service account:
 {{< /alert >}}
 
 ```yaml
@@ -228,7 +228,7 @@ metadata:
   name: frontline-manage-injectors
 rules:
   - apiGroups: [""]
-    # "services" can be skipped if FrontLine is deployed inside Kubernetes
+    # "services" can be skipped if Gatling Enterprise is deployed inside Kubernetes
     resources: ["pods", "pods/exec", "services"]
     verbs: ["create","delete","get","list","patch","update","watch"]
 ```

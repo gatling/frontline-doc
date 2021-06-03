@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "FrontLine architecture overview and conventions"
+description: "Gatling Enterprise architecture overview and conventions"
 date: 2021-03-26T16:01:21+01:00
 lastmod: 2021-03-26T16:01:21+01:00
 weight: 20010
@@ -8,24 +8,24 @@ weight: 20010
 
 ## Audience and Goals
 
-This section is intended for operations people in charge of deploying the FrontLine components.
+This section is intended for operations people in charge of deploying the Gatling Enterprise components.
 
-It describes FrontLine's architecture, components, how to install them and what the prerequisites are.
+It describes Gatling Enterprise's architecture, components, how to install them and what the prerequisites are.
 
 ## Architecture Overview
 
-{{< img src="frontline-architecture.png" alt="FrontLine Architecture - Step 3" >}}
+{{< img src="frontline-architecture.png" alt="Gatling Enterprise Architecture - Step 3" >}}
 
-FrontLine consists of:
+Gatling Enterprise consists of:
 
 - A Cassandra database
-- The FrontLine WebApp:
+- The Gatling Enterprise WebApp:
   * A rich web UI
   * A public REST API
-- The FrontLine Extensions:
-  * A Grafana Datasource for querying FrontLine metrics
+- The Gatling Enterprise Extensions:
+  * A Grafana Datasource for querying Gatling Enterprise metrics
   * Continuous Integration plugins for Jenkins, Bamboo and TeamCity or any solution that can trigger a bash script
-- Gatling injectors to be used like standard Gatling OSS, with extra features so FrontLine can collect data from them
+- Gatling injectors to be used like standard Gatling OSS, with extra features so Gatling Enterprise can collect data from them
 
 ## Document Conventions
 

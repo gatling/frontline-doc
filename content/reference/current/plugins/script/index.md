@@ -1,7 +1,7 @@
 ---
 title: "Manual scripting"
 description: "Learn how to configure a script to run your simulations."
-lead: "Run your FrontLine simulations from your CI."
+lead: "Run your Gatling Enterprise simulations from your CI."
 date: 2021-03-08T13:50:17+01:00
 lastmod: 2021-03-08T13:50:17+01:00
 weight: 50040
@@ -9,9 +9,9 @@ weight: 50040
 
 ## Purpose of this script
 
-This script has the same purpose as the Jenkins, Bamboo or Teamcity plugin. It enables you to launch a FrontLine simulation and display live metrics.
+This script has the same purpose as the Jenkins, Bamboo or Teamcity plugin. It enables you to launch a Gatling Enterprise simulation and display live metrics.
 
-This script doesn’t create a new Gatling FrontLine simulation, you have to create it using the FrontLine Dashboard before.
+This script doesn’t create a new Gatling Enterprise simulation, you have to create it using the FrontLine Dashboard before.
 
 ## Requirement
 
@@ -21,8 +21,8 @@ jq is needed to run this script. It is a JSON processor available for download [
 
 You need to give 3 parameters to the script:
 
-- frontLine url: address of your FrontLine, for example: https://demo-beta.gatling.io
-- api token: FrontLine API token created with permission **All**. To fetch the API Token, refer to the section Managing API Tokens in the FrontLine User Guide.
+- frontLine url: address of your Gatling Enterprise, for example: https://demo-beta.gatling.io
+- api token: Gatling Enterprise API token created with permission **All**. To fetch the API Token, refer to the section Managing API Tokens in the Gatling Enterprise User Guide.
 - simulation id: id of the simulation you want to start. You can get this id on the simulation table, with the {{< icon clipboard >}} icon.
 
 ## Script

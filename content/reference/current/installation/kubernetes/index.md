@@ -1,26 +1,26 @@
 ---
 title: "Automated installation with Kubernetes"
-description: "Learn how to install FrontLine with Kubernetes"
-lead: "Install FrontLine and Cassandra easily with Kubernetes"
+description: "Learn how to install Gatling Enterprise with Kubernetes"
+lead: "Install Gatling Enterprise and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
 lastmod: 2021-03-26T17:37:11+01:00
 weight: 20050
 ---
 
-If you're using Kubernetes-based injector pools, it is recommended to run FrontLine itself inside Kubernetes too:
+If you're using Kubernetes-based injector pools, it is recommended to run Gatling Enterprise itself inside Kubernetes too:
 
 * Less configuration is required than when connecting to a cluster from the outside
-* It is not necessary to open firewall rules so that FrontLine can contact injectors
+* It is not necessary to open firewall rules so that Gatling Enterprise can contact injectors
 
-## Getting FrontLine's Docker image
+## Getting Gatling Enterprise's Docker image
 
-FrontLine's image is hosted as a private image on [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline).
+Gatling Enterprise's image is hosted as a private image on [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline).
 
 Please contact our support and provide us with your Docker Hub username so we can grant you access.
 
-## Getting FrontLine's injectors Docker image
+## Getting Gatling Enterprise's injectors Docker image
 
-FrontLine's injector image is publicly accessible on [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline-injector).
+Gatling Enterprise's injector image is publicly accessible on [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline-injector).
 
 ## Setup Cassandra
 
@@ -28,17 +28,17 @@ This manifest setups a single-node Cassandra cluster, along with a service to ex
 
 {{< include-code "kubernetes-cassandra.yml" yaml >}}
 
-## Setup FrontLine
+## Setup Gatling Enterprise
 
 ### Setup RBAC (optional)
 
-If your cluster has RBAC enabled, this manifest configures the necessary permissions for FrontLine:
+If your cluster has RBAC enabled, this manifest configures the necessary permissions for Gatling Enterprise:
 
 {{< include-code "kubernetes-frontline.yml" yaml >}}
 
 ### Setup Docker Hub credentials as a secret (Optional)
 
-If you're not mirroring FrontLine's image in your private registry, you'll need to setup your Docker credentials as a secret to pull FrontLine's image:
+If you're not mirroring Gatling Enterprise's image in your private registry, you'll need to setup your Docker credentials as a secret to pull Gatling Enterprise's image:
 
 ```console
 kubectl create secret docker-registry docker-hub-credentials \
@@ -48,10 +48,10 @@ kubectl create secret docker-registry docker-hub-credentials \
   --docker-email=<your-email>
 ```
 
-### Setup FrontLine
+### Setup Gatling Enterprise
 
-This manifest sets up FrontLine, pre configured with your license key and admin credentials.
-You can then expose FrontLine using LoadBalancer/NodePort services, Ingress, etc...
+This manifest sets up Gatling Enterprise, pre configured with your license key and admin credentials.
+You can then expose Gatling Enterprise using LoadBalancer/NodePort services, Ingress, etc...
 
 ```yaml
 apiVersion: v1
@@ -114,7 +114,7 @@ spec:
       labels:
         app: frontline
     spec:
-      # Required unless you mirror FrontLine in your private registry
+      # Required unless you mirror Gatling Enterprise in your private registry
       imagePullSecrets:
         - name: docker-hub-credentials
       serviceAccountName: frontline-sa
@@ -144,5 +144,5 @@ spec:
 ```
 
 {{< alert tip >}}
-Depending on your needs, you may need to configure additional volumes on the FrontLine container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)
+Depending on your needs, you may need to configure additional volumes on the Gatling Enterprise container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)
 {{< /alert >}}

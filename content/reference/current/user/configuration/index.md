@@ -1,13 +1,13 @@
 ---
 title: "Configuration"
-description: "First time configuration of FrontLine"
+description: "First time configuration of Gatling Enterprise"
 date: 2021-03-25T17:39:36+01:00
 lastmod: 2021-03-25T17:39:36+01:00
 weight: 10010
 toc: true
 ---
 
-The first step before using FrontLine is to configure your license key.
+The first step before using Gatling Enterprise is to configure your license key.
 
 {{< img src="configuration.png" alt="License key configuration" >}}
 
@@ -15,4 +15,4 @@ Once you've filled your license and clicked on the "Next" button you will get th
 
 {{< img src="adminCredentials.png" alt="Admin credentials" >}}
 
-Click on the "Next" button to finish the configuration step and restart FrontLine.
+Click on the "Next" button to finish the configuration step and restart Gatling Enterprise.

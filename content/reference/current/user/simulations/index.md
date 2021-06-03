@@ -15,11 +15,11 @@ The Simulations view contains all the simulations you have configured and the re
 
 {{< img src="simulations-table.png" alt="Simulation table" >}}
 
-If you don't have any simulations configured yet and don't know how to start, you can download some FrontLine pre-configured projects by clicking on the "Download sample simulations" green button.
+If you don't have any simulations configured yet and don't know how to start, you can download some Gatling Enterprise pre-configured projects by clicking on the "Download sample simulations" green button.
 
 {{< img src="samples.png" alt="Samples" >}}
 
-Those samples are ready to use maven, sbt and gradle projects with proper configuration for FrontLine. You can also download those samples with the download link in the Documentation section.
+Those samples are ready to use maven, sbt and gradle projects with proper configuration for Gatling Enterprise. You can also download those samples with the download link in the Documentation section.
 
 Back to the Simulations section, at the top, there is an action bar which allow several actions:
 
@@ -46,7 +46,7 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 ## Creating a simulation
 
 {{< alert warning >}}
-FrontLine has a hard run duration limit of 7 days and will abort any test running for longer than that.
+Gatling Enterprise has a hard run duration limit of 7 days and will abort any test running for longer than that.
 This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.
 {{< /alert >}}
 
@@ -62,7 +62,7 @@ In order to create a simulation click on the "Create" button in the simulations 
 
 ### Step 2: Build configuration
 
-In this step, you'll describe which [repository]({{< ref "../repositories" >}})FrontLine will use, and how to use it.
+In this step, you'll describe which [repository]({{< ref "../repositories" >}}) Gatling Enterprise will use, and how to use it.
 
 {{< img src="create-simulation2a.png" alt="Create simulation - Step 2" >}}
 
@@ -71,7 +71,7 @@ In this step, you'll describe which [repository]({{< ref "../repositories" >}})F
 
 #### Option 1: Build from sources
 
-In this step, FrontLine will download the sources from your repository, and compile them.
+In this step, Gatling Enterprise will download the sources from your repository, and compile them.
 
 - **Build command**: the command to build your project. Three common commands are built-in for projects whose build tools configuration follow our installation guide:
   * `mvn clean package -DskipTests --quiet` for maven project
@@ -79,7 +79,7 @@ In this step, FrontLine will download the sources from your repository, and comp
   * `gradle clean frontLineJar -quiet` for gradle project
 
 {{< alert warning >}}
-Please make sure that the tools you are using are installed and available on the FrontLine machine, for example: `mvn`,  `sbt`, `git`, and `ssh`.
+Please make sure that the tools you are using are installed and available on the Gatling Enterprise machine, for example: `mvn`,  `sbt`, `git`, and `ssh`.
 {{< /alert >}}
 
 You can provide optional settings if you toggle **Advanced build configuration**.
@@ -90,7 +90,7 @@ You can provide optional settings if you toggle **Advanced build configuration**
 
 #### Option 2: Download binary from repository
 
-In this step, you'll describe how FrontLine will download a jar deployed in a previously added repository.
+In this step, you'll describe how Gatling Enterprise will download a jar deployed in a previously added repository.
 This jar must have been built with the same maven/sbt/gradle configuration as described in the Developer section in this guide.
 
 {{< img src="create-simulation2c.png" alt="Create simulation - Step 2 - Binary" >}}
@@ -99,7 +99,7 @@ This jar must have been built with the same maven/sbt/gradle configuration as de
 
 #### Option 3: Download binary from AWS S3
 
-In this step, you'll describe how FrontLine will download a jar deployed in an AWS S3 bucket.
+In this step, you'll describe how Gatling Enterprise will download a jar deployed in an AWS S3 bucket.
 This jar must have been built with the same maven/sbt/gradle configuration as described in the Developer section in this guide.
 
 {{< img src="create-simulation2b.png" alt="Create simulation - Step 2 - S3" >}}
@@ -108,12 +108,12 @@ This jar must have been built with the same maven/sbt/gradle configuration as de
 
 ### Step 3: Pools configuration
 
-In this step, you'll configure the pools used for the FrontLine injectors.
+In this step, you'll configure the pools used for the Gatling Enterprise injectors.
 
 {{< img src="create-simulation3.png" alt="Create simulation - Step 3" >}}
 
 - **Weight distribution**: on even, every injector will produce the same load. On custom, you have to set the weight in % of each pool (eg the first pool does 20% of the requests, and the second does 80%). The sum of the weight should be 100%.
-- **Pools**: defines the pools to be used when initiating the FrontLine injectors, see the section about [pools]({{< ref "../../pools/pools" >}}).
+- **Pools**: defines the pools to be used when initiating the Gatling Enterprise injectors, see the section about [pools]({{< ref "../../pools/pools" >}}).
 You can add many pools with a different number of hosts to run your simulation.
 If you have more hosts than needed on your Pool, the hosts will be chosen randomly between all hosts available in this Pool.
 

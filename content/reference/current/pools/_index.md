@@ -1,4 +1,4 @@
 ---
 title: Pools
-description: "Configure FrontLine injectors deployment"
+description: "Gatling Enterprise injectors deployment"
 ---

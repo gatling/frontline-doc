@@ -1,7 +1,7 @@
 ---
 title: "Manual Installation"
-description: "Learn how to install manually FrontLine"
-lead: "Install or upgrade manually FrontLine, and learn how to configure it"
+description: "Learn how to install manually Gatling Enterprise"
+lead: "Install or upgrade manually Gatling Enterprise, and learn how to configure it"
 date: 2021-03-26T16:08:33+01:00
 lastmod: 2021-03-26T16:08:33+01:00
 weight: 20020
@@ -9,23 +9,23 @@ weight: 20020
 
 ## Upgrading From a Previous Version
 
-* Your current FrontLine version must be at least 1.6.2. Otherwise, you must first upgrade to FrontLine 1.11.1.
-* Shut FrontLine process down
+* Your current Gatling Enterprise version must be at least 1.6.2. Otherwise, you must first upgrade to Gatling Enterprise 1.11.1.
+* Shut Gatling Enterprise process down
 * Perform a backup of your Cassandra data (eg `/var/lib/cassandra` directory, but might vary depending on how you've installed Cassandra)
-* Download and unzip updated FrontLine bundle
+* Download and unzip updated Gatling Enterprise bundle
 * Copy `conf` directory content from previous installation to the new one
 * Copy `keys` directory from previous installation (if it exists) to the new one (`cp -r previous_frontline_folder/keys new_frontline_folder`)
-* Start new FrontLine process
+* Start the new Gatling Enterprise process
 
 ## Processor Architecture
 
-We currently only support AMD64 for both FrontLine and Gatling injectors.
+We currently only support AMD64 for both Gatling Enterprise and Gatling injectors.
 
 We don't support ARM at the moment.
 
 ## JDK
 
-FrontLine components runs on a JVM and requires a modern Hotspot-based JDK 8 or 11.
+Gatling Enterprise components runs on a JVM and requires a modern Hotspot-based JDK 8 or 11.
 
 We recommend you use JDK builds from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
@@ -34,19 +34,19 @@ Other JVMs such as OpenJ9 are not supported.
 {{< alert warning >}}
 - As of Cassandra 3, JDK 11 support is flagged as experimental.
 - As a consequence, we only support running Cassandra with JDK 8.
-- JDK 11 support is limited to FrontLine server and Gatling injectors only.
+- JDK 11 support is limited to Gatling Enterprise server and Gatling injectors only.
 {{< /alert >}}
 
 ## Linux
 
 {{< alert warning >}}
-- FrontLine and injectors are intended to be running on Linux 64 bits.
+- the Gatling Enterprise server and the Gatling injectors are intended to be running on Linux 64 bits.
 - Injectors are intended to run on Kernel >= 3.10.
 - It's possible to use OSX as a development environment.
 - Windows and Unix platforms such Solaris or AIX are not supported.
 {{< /alert >}}
 
-As FrontLine is about duration measurement and logging events in time, we advice that:
+As Gatling Enterprise is about duration measurement and logging events in time, we advice that:
 
 * your system clock is properly synchronized from an NTP server
 * you disable power saving Linux features, so clock source doesn't actually shift and stays monotonic
@@ -58,7 +58,7 @@ Make sure that the JVM processes run with a user with sound permissions.
 ### Important: Backups
 
 {{< alert warning >}}
-We recommend you to perform regular backups of your data, all the more prior to upgrading FrontLine to a new version.
+We recommend you to perform regular backups of your data, all the more prior to upgrading Gatling Enterprise to a new version.
 {{< /alert >}}
 
 For a simple single node setup (which we recommend if you're not experienced with operating Cassandra clusters),
@@ -73,20 +73,20 @@ your `cassandra.yaml` file as the following entries:
 
 Download and install [Cassandra](http://cassandra.apache.org/download/).
 
-As of FrontLine {{< var revnumber >}}, we require at least Cassandra 3.10.
-FrontLine has been tested against Cassandra 3.10 to 3.11.7.
+As of Gatling Enterprise {{< var revnumber >}}, we require at least Cassandra 3.10.
+Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.7.
 If possible, we advise you go with the latest stable version.
 
 ### Deployment
 
 Running a single node (without clustering) is a good start.
 
-For an initial evaluation, you can host FrontLine and Cassandra on the same host.
+For an initial evaluation, you can host Gatling Enterprise and Cassandra on the same host.
 
-If hosting FrontLine and Cassandra on the same instance, consider a 8 cores (4 cores with hyper-threading) host with 16Gb of RAM and 20Go of disk space.
+If hosting Gatling Enterprise and Cassandra on the same instance, consider a 8 cores (4 cores with hyper-threading) host with 16Gb of RAM and 20Go of disk space.
 Otherwise, considering a 4 cores (2 cores with hyper-threading) host with 8 Gb of RAM for each instance, and 20 Gb of disk space for Cassandra.
 
-FrontLine itself requires little disk space, as only uploaded private keys are stored on FrontLine's host.
+Gatling Enterprise itself requires little disk space, as only uploaded private keys are stored on Gatling Enterprise's host.
 
 ### Storage options
 
@@ -101,20 +101,20 @@ For any cloud provider, make sure you use a storage system that support at least
 
 For AWS, avoid burstable instance types on AWS EC2 (T2), they don't offer good performance for Cassandra deployments:
 
-- C5d are equipped with NVMe SSD, which are great for installation running Cassandra and FrontLine on the same virtual machine
+- C5d are equipped with NVMe SSD, which are great for installation running Cassandra and Gatling Enterprise on the same virtual machine
 - I3 are better for virtual machines reserved for Cassandra
 
 In Azure, use instances with the `s` prefix:
 
-- FsV2 are great for installations running Cassandra and FrontLine on the same virtual machine
+- FsV2 are great for installations running Cassandra and Gatling Enterprise on the same virtual machine
 - LsV2 are better for virtual machines reserved for Cassandra
 
 ### Configuration
 
 The default configuration is a good start.
 
-Finally, remember the host you configured, as you will need it later to configure the contact points of FrontLine.
-Keyspace creation will be handled by FrontLine.
+Finally, remember the host you configured, as you will need it later to configure the contact points of Gatling Enterprise.
+Keyspace creation will be handled by Gatling Enterprise.
 
 {{< alert tip >}}
 - For most use cases, one single Cassandra node suffice!
@@ -124,7 +124,7 @@ Keyspace creation will be handled by FrontLine.
 
 ### Network Access
 
-The FrontLine host needs network access to:
+The Gatling Enterprise host needs network access to:
 
 - your Cassandra cluster
 - your source repository (if you want to build from sources)
@@ -179,21 +179,21 @@ update system.local set rack = 'rc1' where key = 'local';
 
 Second method implies (as stated in Cassandra documentation) to add instances with proper configuration and removing the old ones as you go in order to avoid data loss.
 
-## FrontLine Server
+## Gatling Enterprise Server
 
 ### Download
 
-FrontLine is packaged as a zip bundle that can be downloaded from our maven repository (only for on-premise customers):
+Gatling Enterprise is packaged as a zip bundle that can be downloaded from our maven repository (only for on-premise customers):
 
 ```
 REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-bundle/REPLACE_WITH_LATEST_FRONTLINE_VERSION/frontline-bundle-REPLACE_WITH_LATEST_FRONTLINE_VERSION-bundle.zip
 ```
 
-On launch, FrontLine will create or update the FrontLine schema in the Cassandra database.
+On launch, Gatling Enterprise will create or update the Gatling Enterprise schema in the Cassandra database.
 
 ### Launch
 
-You can launch FrontLine in the background using the following command:
+You can launch Gatling Enterprise in the background using the following command:
 
 ```console
 [... frontline-bundle ]$ ./bin/frontline
@@ -201,8 +201,8 @@ You can launch FrontLine in the background using the following command:
 
 The web interface will then be accessible by default on port `10542`. You need to connect in order to fill in your license key.
 
-FrontLine will log its PID and write it to a `pidfile` which names will also be echoed.
-You can provides you own path to a custom pidfile this way:
+Gatling Enterprise will log its PID and write it to a `pidfile` which names will also be echoed.
+You can provide your own path to a custom pidfile this way:
 
 ```console
 [... frontline-bundle ]$ ./bin/frontline -p pidfile
@@ -218,7 +218,7 @@ Check the `conf/frontline.conf` file for parameters you might want to edit.
 licenseKey = REPLACE_WITH_YOUR_LICENSE_KEY <1>
 ```
 
-<1> Provided license key, you should not edit this configuration directly from this file, FrontLine will ask for it when you launch it or when your current license is expired
+<1> Provided license key, you should not edit this configuration directly from this file, Gatling Enterprise will ask for it when you launch it or when your current license is expired
 
 ```hocon
 http {
@@ -236,12 +236,12 @@ http {
 }
 ```
 
-* <1> FrontLine HTTP bind port
+* <1> Gatling Enterprise HTTP bind port
 * <2> Cookies max-age in seconds (default: 7 days)
 * <3> SSL configuration, activated if both `certificate` and `privatekey` are uncommented and points to valid files, or if `generateSelfSignedCertificate` is true.
 * <4> Path to the certificate (or full chain) file. Must be an X.509 certificate chain file in PEM format.
 * <5> Path to the private key file. Must be a PKCS#1 or PKCS#8 private key file in PEM format.
-* <6> For testing purpose, you can make FrontLine produce a self signed certificate
+* <6> For testing purpose, you can make Gatling Enterprise produce a self-signed certificate
 * <7> Optional HTTP proxy, enabled when both host and port are filled. This proxy will be used for every HTTP request to Cloud providers APIs and on-demand injectors.
 
 ```hocon
@@ -254,7 +254,7 @@ injector {
 }
 ```
 
-* <1> Injectors HTTP listening port, so FrontLine can connect and collect the stats
+* <1> Injectors HTTP listening port, so Gatling Enterprise can connect and collect the stats
 * <2> Enable local injector pool (not for production use)
 * <3> When connecting to your kubernetes API, determine if you want a true trust manager to be used to validate your certificate. Disabled by default.
 
@@ -265,8 +265,8 @@ security {
 }
 ```
 
-* <1> password for the FrontLine superAdmin account. FrontLine will create a new password when you launch it for the first time.
-* <2> key for encrypting cookies. Must be 128, 192 or 256 bit (not bytes) long. FrontLine will create a new secretKey when you launch it for the first time.
+* <1> password for the Gatling Enterprise superAdmin account. Gatling Enterprise will create a new password when you launch it for the first time.
+* <2> key for encrypting cookies. Must be 128, 192 or 256 bit (not bytes) long. Gatling Enterprise will create a new secretKey when you launch it for the first time.
 
 ```hocon
 cassandra { <1>
@@ -376,11 +376,11 @@ oidc {
 }
 ```
 
-Fill the following fields if you want to enable OpenID authentication on FrontLine. All fields need to be uncommented and filled. For more information on our OpenID integration, please check [corresponding section]({{< relref "#openid" >}}).
+Fill the following fields if you want to enable OpenID authentication on Gatling Enterprise. All fields need to be uncommented and filled. For more information on our OpenID integration, please check [corresponding section]({{< relref "#openid" >}}).
 
 * <1> URL for discovery of OpenID endpoints
-* <2> Application id received when registering FrontLine
-* <3> Client secret used to authenticate FrontLine (we don't support secret certificates yet)
+* <2> Application id received when registering Gatling Enterprise
+* <3> Client secret used to authenticate Gatling Enterprise (we don't support secret certificates yet)
 * <4> Response mode preferred for the identity provider, please leave only "fragment" or "okta_post_message".
 * <5> Scopes required for mapping
 * <6> Frequency for JSON Web Key Store refresh
@@ -397,9 +397,9 @@ grafana {
 }
 ```
 
-<1> Url to your Grafana dashboard using the FrontLine datasource (create a link in FrontLine dashboard to the Grafana dashboard)
+<1> Url to your Grafana dashboard using the Gatling Enterprise datasource (create a link in the Gatling Enterprise dashboard to the Grafana dashboard)
 
-If you want to modify a value, don't forget to uncomment the line, by deleting the # sign. Any changes to the frontline.conf file needs a FrontLine restart to take effect.
+If you want to modify a value, don't forget to uncomment the line, by deleting the # sign. Any changes to the frontline.conf file needs a Gatling Enterprise restart to take effect.
 
 See [HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md) documentation for more information on this format.
 
@@ -408,27 +408,27 @@ See [HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md) document
 - Execute permission to JDK path
 - Execute permission to source control system client
 - Execute permission to build tool client
-- Read permission to unzipped FrontLine bundle
+- Read permission to unzipped Gatling Enterprise bundle
 - Read/write permission to the logs directory
 - Read/write/exec permission on tmp directory
 If exec permission is not possible because `/tmp` is mounted with `noexec`,
-you'll have to configure a different directory without `noexec`. Edit the FrontLine launch script and pass an additional System properties `-Djna.tmpdir=PATH_TO_DIR_WITHOUT_NOEXEC`.
+you'll have to configure a different directory without `noexec`. Edit the Gatling Enterprise launch script and pass an additional System properties `-Djna.tmpdir=PATH_TO_DIR_WITHOUT_NOEXEC`.
 If you don't you'll run into an issue such as `java.lang.UnsatisfiedLinkError: /tmp/jna-3506402/jna4812891826558064540.tmp: /tmp/jna-3506402/jna4812891826558064540.tmp: failed to map segment from shared object: Operation not permitted`.
 
 #### Logging
 
-FrontLine uses the Logback library for logging.
+Gatling Enterprise uses the Logback library for logging.
 By default, it will log on the filesystem, check logback.xml file.
 Feel free to tune the default behavior if needed.
 
 #### LDAP
 
-FrontLine is able to use LDAP to manage its users. The LDAP mode has been tested with OpenLDAP, and Active Directory servers, but it should work with all regular LDAP implementations.
+Gatling Enterprise is able to use LDAP to manage its users. The LDAP mode has been tested with OpenLDAP, and Active Directory servers, but it should work with all regular LDAP implementations.
 
 {{< anchor openid >}}
 #### OpenID Authentication
 
-FrontLine is able to use OpenID connect to manage its users. The OpenID Connect mode has been tested with One Login and Microsoft identity platform.
+Gatling Enterprise is able to use OpenID connect to manage its users. The OpenID Connect mode has been tested with One Login and Microsoft identity platform.
 Configuration is described above under _oidc_.
 
 By default, all registered users can connect as a global viewer and need an administrator to configure their permissions.
@@ -493,15 +493,15 @@ If the connection fails and the page is blank, check in the browser console for 
 
 #### Run Cleanup
 
-FrontLine can be configured to automatically delete runs based on max-age and/or max number of runs by simulation.
+Gatling Enterprise can be configured to automatically delete runs based on max-age and/or max number of runs by simulation.
 
 #### Source Control System Client (typically git)
 
-If you intend to have FrontLine build tests from sources,
+If you intend to have Gatling Enterprise build tests from sources,
 it needs to be able to fetch the test sources from your remote source repository, ie:
 
-- a client for your Source Control System (ex: git, svn, perforce, etc) to be installed on the FrontLine host
-- this client to be in the PATH and executable for the user running the FrontLine JVM process
+- a client for your Source Control System (ex: git, svn, perforce, etc) to be installed on the Gatling Enterprise host
+- this client to be in the PATH and executable for the user running the Gatling Enterprise JVM process
 
 {{< alert tip >}}
 If using Git to clone repositories using SSH protocol, Git 2.3 is the minimal version supported.
@@ -509,11 +509,11 @@ If using Git to clone repositories using SSH protocol, Git 2.3 is the minimal ve
 
 #### Build Tool Client (typically maven, gradle or sbt)
 
-If you intend to have FrontLine build tests from sources,
-then FrontLine needs to be able to build the fetched resources, ie:
+If you intend to have Gatling Enterprise build tests from sources,
+then Gatling Enterprise needs to be able to build the fetched resources, ie:
 
-- a client for your build tool (ex: sbt, maven, gradle, etc) to be installed on the FrontLine host
-- this client to be in the PATH and executable for the user running the FrontLine JVM process
+- a client for your build tool (ex: sbt, maven, gradle, etc) to be installed on the Gatling Enterprise host
+- this client to be in the PATH and executable for the user running the Gatling Enterprise JVM process
 
 Make sure that the build tool will be configured so that it will be able to download artifacts, typically if your organization enforces repository mirrors.
 

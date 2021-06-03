@@ -1,4 +1,4 @@
 ---
 title: Installation
-description: "Documentation on how to install FrontLine"
+description: "Documentation on how to install Gatling Enterprise"
 ---

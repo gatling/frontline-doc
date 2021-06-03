@@ -1,4 +1,4 @@
 ---
 title: Plugins
-description: "FrontLine plugins documentation"
+description: "Gatling Enterprise plugins documentation"
 ---

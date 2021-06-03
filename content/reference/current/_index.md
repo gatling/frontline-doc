@@ -1,6 +1,6 @@
 ---
 title: References
-description: "FrontLine documentation."
+description: "Gatling Enterprise documentation."
 cascade:
   variables:
     revnumber: "1.14.1"
