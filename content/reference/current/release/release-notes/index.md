@@ -29,7 +29,7 @@ Still, you're recommended to upgrade to 3.6.0, older versions are no longer main
 {{< /alert >}}
 
 This release ships lots of bug fixes, in particular on HTTP/2 support and async DNS resolution.
-Most noticeable new feature is [https://en.wikipedia.org/wiki/Brotli](Brotli) support.
+Most noticeable new feature is [Brotli](https://en.wikipedia.org/wiki/Brotli) support.
 
 See full release note: https://github.com/gatling/gatling/milestone/98?closed=1
 
@@ -87,12 +87,12 @@ This release doesn't perform any new database automatic migration if you're upgr
 {{< alert warning >}}
 [JFrog is terminating jCenter and Bintray services.](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/)
 As a consequence, sbt users have to upgrade to dependencies and plugins versions hosted on maven central.
-sbt users are **strongly** recommended to upgrade to `sbt 1.4.9`, `gatling-sbt 3.2.2` and `sbt-frontline 1.3.2`.
+sbt users are **strongly** advised to upgrade to `sbt 1.4.9`, `gatling-sbt 3.2.2` and `sbt-frontline 1.3.2`.
 
 {{< /alert >}}
 
 {{< alert warning >}}
-gradle users are **strongly** recommended to upgrade to `frontline-gradle-plugin 1.3.4`.
+gradle users are **strongly** advised to upgrade to `frontline-gradle-plugin 1.3.4`.
 {{< /alert >}}
 
 ##### Fixes
@@ -128,7 +128,7 @@ gradle users are **strongly** recommended to upgrade to `frontline-gradle-plugin
 * FL-393: Runs: Delete option doesn't disappear after deleting a run so no run is selected
 * FL-394: Runs: Trends are not refreshed after deleting a run
 * FL-395: Runs: Page number go over the Navbar
-* FL-397: Runs: Redux store misusage after deleting simulations
+* FL-397: Runs: Redux store misuse after deleting simulations
 * FL-399: Security: Tampered payload can be used to take control of an entity of another team
 * FL-427: API Token: Name is not modified on update
 * FL-430: Pipeline doesn't delay deployment retries, causing deploying issues in particular on AWS Virginia
@@ -223,7 +223,7 @@ See full release note: https://github.com/gatling/gatling/milestone/95?closed=1
 * FL-199: Boot: License prompt shows up again on reboot
 * FL-214: Reports: Fix crash when run is ongoing and run is longer than 5 minutes (no problem once run is done)
 * FL-233: sbt: remove `io.gatling.frontline` organization from sbt sample config as it removes user provided extra libraries
-* FL-242: Pipeline: Fix logs when killing remote process on on-prems injectors
+* FL-242: Pipeline: Fix logs when killing remote process on on-premises injectors
 * FL-248: Pipeline: Fix stdout and logback conflict in injector logs retrieved on test crash
 * FL-255: Reports: Received resets series missing from TCP connections chart
 * FL-260: Reports: Fix stats not displayed when request names contains heading or trailing white spaces
@@ -305,7 +305,7 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-948: Core: Prevent from resetting frontline.conf if Cassandra schema already exists
 * DEV-955: AWS: Display a message instead of disabling checkbox when there's no Elastic IP
 * DEV-1055: GCE: Support preemptible instances
-* DEV-1079: Pipeline: Detect incompatible Gatling version before deploying (requires latest build plugins)
+* DEV-1079: Pipeline: Detect incompatible Gatling version before deploying (requires the latest build plugins)
 * DEV-1138: Swagger: Public API series content is not documented
 * DEV-1173: Simulation: Update default global JVM options for better performance
 * DEV-1184: Pools: Update all certified images to JRE 8u265 and 11.0.8
@@ -351,7 +351,7 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1158: Series API: Can't query data for single root group with child
 * DEV-1171: Pipeline: Infrequent UnsatisfiedLinkError on sigar loading
 * DEV-1192: Users: Crash when username contains spaces
-* DEV-1193: Users: Don't persists username in lower case
+* DEV-1193: Users: Don't persist username in lower case
 * DEV-1202: Dashboard: Tooltip on bar charts is inconsistent with the one on pie charts
 * DEV-1206: Dashboard: Summary stats miss right bound second stats when changing time window
 * DEV-1212: Dashboard: Requests and responses counts should not be stacked
@@ -384,7 +384,7 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1019: Simulation: enlarge pool name dropdown to 50 chars
 * DEV-1022: Pipeline: ssh connect timeout's default value should be 10 seconds, not 5
 * DEV-1023: WebSocket: dashboard crashes when displaying check stats
-* DEV-1031: Pipeline: crash and can't be aborted when the local repository points to a non existing directory
+* DEV-1031: Pipeline: crash and can't be aborted when the local repository points to a non-existing directory
 * DEV-1056: Upgrade jQuery from 3.4.1 to 3.5.1, fix security vulnerability
 * DEV-1061: Repositories & Kubernetes: fix invalid URL validation and allow valid chars such as `-`
 
@@ -465,11 +465,11 @@ Runs and simulations API payloads have been modified: The field previously named
 
 * DEV-759: Don't redirect to login page when Cassandra is shut down
 * DEV-774: Kubernetes NodePort Prefer Internal IP checkbox is broken
-* DEV-785: Migration 45 was pretty ineffective with non obvious git command
+* DEV-785: Migration 45 was pretty ineffective with non-obvious git command
 * DEV-786: Let users use environment defined SSH keys for cloning git repositories
 * DEV-787: Check for associated private keys when deleting a team
 * DEV-789: GCE user is always empty
-* DEV-796: Don't close AWS pool modal when private key doesn't match keypair fingerprint
+* DEV-796: Don't close AWS pool modal when the private key doesn't match the keypair fingerprint
 * DEV-805: Response time percentiles tooltip in trends only contains 0
 * DEV-807: Can't switch from P12 to JSON conf in GCE pool
 * DEV-810: Kubernetes Local cluster checkbox state is reversed
@@ -490,7 +490,7 @@ Runs and simulations API payloads have been modified: The field previously named
 
 {{< alert warning >}}
 This release fixes several security issues (see DEV-726, DEV-747 and DEV-748).
-Users who uploaded private keys with the Gatling Enterprise UI are highly recommended to upgrade.
+Users who uploaded private keys with the Gatling Enterprise UI are highly advised to upgrade.
 {{< /alert >}}
 
 ##### Features
@@ -514,7 +514,7 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly recomm
 * DEV-734: Don't let users to delete themselves
 * DEV-735: Gatling Enterprise is slow to redirect to login screen when unauthenticated
 * DEV-736: LDAP users shouldn't be able to update their profile
-* DEV-743: Opening Simulation model, Build tab, shouldn't triggers a request for the list of AWS regions
+* DEV-743: Opening Simulation model, Build tab, shouldn't trigger a request for the list of AWS regions
 * DEV-747: Uploaded private keys shouldn't be stored in Cassandra, only on filesystem
 * DEV-748: Uploaded private keys are visible in the JSON payload
 * DEV-749: Sort System properties by name
@@ -551,7 +551,7 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly recomm
 
 #### Gatling 3.3.1
 
-Gatling 3.3.1 is binary compatible with 3.3.0 so you are not required to upgrade if you're already compiling against 3.3.0.
+Gatling 3.3.1 is binary compatible with 3.3.0, so you are not required to upgrade if you're already compiling against 3.3.0.
 
 See full release note: https://github.com/gatling/gatling/milestone/91?closed=1
 
@@ -605,12 +605,12 @@ Please remember to make a Cassandra database backup before upgrading.
 * DEV-520: Provide public certified plug-and-play Docker images for the injectors with JDK8 and JDK11
 * DEV-544: Revamp response by status chart colors
 * DEV-551: Injector Kubernetes pods are now tagged with recommended labels (https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)
-* DEV-558: Search in lists is now case insensitive
+* DEV-558: Search in lists is now case-insensitive
 * DEV-561: Support Routes for routing traffic to injectors when deploying on OpenShift pools
 * DEV-564: Correlate groups by end date instead of start date to avoid OutOfMemoryErrors
 * DEV-584: Introduce option for preferring private IP over public one when deploying on Azure, DigitalOcean and GCE pools
 * DEV-588: Replace text field with a dropdown for instance profile when configuring AWS pool
-* DEV-594: Don't loads file in memory when downloading from S3 bucket
+* DEV-594: Don't load file in memory when downloading from S3 bucket
 * DEV-597: Js error during on a live reports on Chrome
 * DEV-601: Prevent a repository to be deleted if it's being used in a simulation
 * DEV-602: Improve injectors' JVM JIT inlining settings for better performance
@@ -736,7 +736,7 @@ Make sure to upgrade Gatling to 3.2.0, as version is not binary compatible with 
 {{< /alert >}}
 
 {{< alert warning >}}
-This release ships important security improvements, so users are highly recommended to upgrade. In particular, Jenkins users are recommended to switch to Credentials for storing API tokens.
+This release ships important security improvements, so users are highly advised to upgrade. In particular, Jenkins users are recommended to switch to Credentials for storing API tokens.
 {{< /alert >}}
 
 {{< alert warning >}}
@@ -777,7 +777,7 @@ This release ships important security improvements, so users are highly recommen
 * DEV-402: Protect against cookie brute force attacks: delay response on failure.
 * DEV-404: Protect against API token brute force attacks: use Argon2 hashing.
 * DEV-405: Kubernetes pool resources configuration is not persisted
-* DEV-407: Don't Crash when building a local project and Gatling Enterprise user doesn't have permissions on this folder
+* DEV-407: Don't Crash when building a local project and the Gatling Enterprise user doesn't have permissions on this folder
 * DEV-421: PDF Export summary display should display "-" instead of "-1" for undefined metrics
 * DEV-423: PDF Export should honor percentiles and date/time user preferences
 * DEV-424: Changing request in request summary shouldn't drop selected time window
