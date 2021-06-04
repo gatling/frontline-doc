@@ -53,7 +53,7 @@ This release doesn't perform any new database automatic migration if you're upgr
 * FL-192: Reports: Tooltip should pass over navbar
 * FL-287: AWS: Only display enabled regions
 * FL-346: Simulation: Fix decoding failure when passing undefined rampUp and rampDown
-* FL-449: Lougout: CORS error on second logout
+* FL-449: Logout: CORS error on second logout
 * FL-457: Logging: Clean up scheduler debug logs
 * FL-476: Private Keys: Error when trying to delete a private key
 * FL-486: Reports: Multiple highlights don't clear when leaving graph
@@ -70,7 +70,7 @@ This release doesn't perform any new database automatic migration if you're upgr
 * FL-608: Reports: Navigator header is broken on small screen
 * FL-609: Trends: Run comparison shouldn't try to display runs that are currently injecting.
 * FL-613: Reports: Can't go to groups tab with group * if group none exists
-* FL-616: Reports: JavaScript error when changing the OK/KO/All selection ona chart whithout data
+* FL-616: Reports: JavaScript error when changing the OK/KO/All selection ona chart without data
 * FL-619: Pipeline: Retry uploads on scp connection loss
 * FL-627: Public API: Fix `abortAll` API
 * FL-630: Reports: Disable highlights refresh when test is running
