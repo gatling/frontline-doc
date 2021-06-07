@@ -1,6 +1,6 @@
 ---
-title: References
-description: "Gatling Enterprise documentation."
+title: Reference
+description: "Gatling Enterprise Self-Hosted documentation"
 cascade:
   variables:
     revnumber: "1.14.2"
