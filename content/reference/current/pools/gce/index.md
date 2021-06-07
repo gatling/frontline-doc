@@ -1,7 +1,7 @@
 ---
-title: "Gce"
+title: "Google Compute Engine"
 description: "GCE pools are a configuration of GCE injectors"
-lead: "Deploy Gatling Enterprise injectors on GCE"
+lead: "Deploy Gatling Enterprise injectors on GCP"
 date: 2021-03-26T09:40:40+01:00
 lastmod: 2021-03-26T09:40:40+01:00
 weight: 30040

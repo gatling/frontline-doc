@@ -1,6 +1,6 @@
 ---
-title: Release
-description: "Release notes and highlights"
+title: Release Notes and Highlights
+description: Release Notes and Highlights
 cascade:
   search: false
 ---

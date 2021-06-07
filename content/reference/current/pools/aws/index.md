@@ -1,5 +1,5 @@
 ---
-title: "Aws"
+title: "Amazon Web Services"
 description: "AWS pools are a configuration of AWS injectors"
 lead: "Deploy Gatling Enterprise injectors on AWS"
 date: 2021-03-26T09:40:35+01:00
