@@ -1,4 +1,5 @@
 ---
 title: Configuring Injectors
-description: "Gatling Enterprise injectors deployment"
+description: "Gatling Enterprise Injectors Deployment"
+weight: 40
 ---
