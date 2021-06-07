@@ -1,6 +1,7 @@
-baseurl: http://localhost:1313/docs/self-hosted/
+baseurl: http://localhost:1313/docs/enterprise/self-hosted
 
-disableAliases: true
+theme: "github.com/gatling/gatling.io-doc-theme"
+
 disableHugoGeneratorInject: true
 enableEmoji: true
 enableGitInfo: false
@@ -40,15 +41,19 @@ markup:
     renderer:
       unsafe: true
   highlight:
+    anchorLineNos: false
     codeFences: true
     guessSyntax: false
-    hl_Lines: ''
+    hl_Lines: ""
+    lineAnchors: ""
     lineNoStart: 1
+    lineNumbersInTable: false
     lineNos: false
-    lineNumbersInTable: true
-    noClasses: false
-    style: dracula
-    tabWidth: 4
+    noClasses: true
+    style: monokailight
+    tabWidth: 2
+
+pygmentsUseClasses: true
 
 minify:
   tdewolff:
@@ -59,12 +64,6 @@ sitemap:
   changefreq: weekly
   filename: sitemap.xml
   priority: 0.5
-
-taxonomies:
-  contributor: contributors
-
-permalinks:
-  tutorials: '/tutorials/:slug/'
 
 module:
   noProxy: none

@@ -13,5 +13,5 @@ npm install
 Development server:
 
 ```console
-hugo server -D --debug --baseURL="http://localhost:1313/docs/self-hosted/"
+hugo server -D --debug --baseURL="http://localhost:1313/docs/enterprise/self-hosted/"
 ```
