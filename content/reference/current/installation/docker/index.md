@@ -3,7 +3,7 @@ title: "Automated installation with Docker"
 description: "Learn how to install Gatling Enterprise with Docker"
 lead: "Install Gatling Enterprise and Cassandra easily with Docker or Docker Compose"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2021-03-26T17:31:42+01:00
+lastmod: 2021-06-11T13:04:45+01:00
 weight: 20040
 ---
 
@@ -15,22 +15,36 @@ Gatling Enterprise's image is hosted as a private image on [Docker Hub](https://
 
 Please contact our support and provide us with your Docker Hub username so we can grant you access.
 
+{{< alert tip >}}
+Ensure that you can pull our image:
+
+```console
+docker pull gatlingcorp/frontline:{{< var revnumber >}}
+```
+{{< /alert >}}
+
 ## Setup Cassandra
 
 The following command will start a single-node Cassandra cluster, using the official Cassandra image.
 This will also mount a local directory on the host into the container, to persist its data across starts/stops of the Cassandra container.
 
 ```console
-docker run -d \
+docker run --detach \
   --name cassandra \
-  -v <local directory to store Cassandra data>:/var/lib/cassandra \
-  -p 9042:9042 \
+  --volume <local directory to store Cassandra data>:/var/lib/cassandra \
+  --publish 9042:9042 \
   cassandra:3.11.6
 ```
 
 ## Copy Gatling Enterprise default configuration
 
 To be able to persist Gatling Enterprise (required, as it stores the license information and key used for data encryption), create a directory and copy [Gatling Enterprise's default configuration]({{< ref "../configuration" >}}) to a file named `frontline.conf`.
+
+## Copy logback configuration
+
+The default log behavior is too verbose from a performance point of view. You will have to put this `logback.xml` file in the same directory as `frontline.conf`:
+
+{{< include-code "logback.xml" xml >}}
 
 ## Setup Gatling Enterprise
 
@@ -41,11 +55,11 @@ This will also mount two volumes:
 * A volume to store uploaded private keys (required by features like Git cloning and by some cloud providers)
 
 ```console
-docker run -d \
+docker run --detach \
   --name frontline \
-  -p 10542:10542 \
-  -v <configuration directory from the previous step>:/opt/frontline/conf \
-  -v <local directory to store private keys>:/opt/frontline/keys \
+  --publish 10542:10542 \
+  --volume <configuration directory from the previous step>:/opt/frontline/conf \
+  --volume <local directory to store private keys>:/opt/frontline/keys \
   gatlingcorp/frontline:{{< var revnumber >}}
 ```
 
