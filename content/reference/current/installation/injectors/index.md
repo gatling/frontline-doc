@@ -1,10 +1,10 @@
 ---
-title: "Injectors deployment"
+title: "Deploying Injectors"
 description: "Preliminary Configuration of Gatling Enterprise's injectors"
 lead: "Find generic information about Gatling Enterprise injectors, and specific information about each supported cloud provider"
 date: 2021-03-26T17:41:00+01:00
 lastmod: 2021-03-26T17:41:00+01:00
-weight: 20060
+weight: 20070
 ---
 
 Gatling Enterprise enable users to configure either on demand or on-premises pools.
