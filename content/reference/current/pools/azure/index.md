@@ -32,7 +32,13 @@ You can use our certified images or the url of your custom VHD: the image should
 - **Username**: the username used by your ssh command to connect to the instances
 
 {{< alert warning >}}
-Azure has some requirements about the username: it must be less than 20 characters, cannot end with a period and many usernames are forbidden, such as `admin` or `root`. Check the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm-) for all the details.
+Azure has some requirements about the username:
+
+- It must be less than 20 characters
+- It cannot end with a period (`.`)
+- Many usernames are forbidden, such as `admin` and `root`
+
+Check the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm-) for all the details.
 {{< /alert >}}
 
 - **Private Key**: the previously added [private key]({{< ref "../../admin/private-keys" >}}) associated with the public ssh key
