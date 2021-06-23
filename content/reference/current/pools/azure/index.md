@@ -22,9 +22,19 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Size**: the size of the instances
 - **Network**: the network configured on your Microsoft Azure account you want to use
 - **Subnet**: the subnet you want to use
-- **Image** or **Image URL**: the certified image or the url of the image you want to use for your instances. You can use our certified images or the url of your custom VHD: the image should at least have JDK8 installed, a configured key pair without password and the port 22 & 9999 should be open, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-capture-image) if you want to make your own image
+- **Image** or **Image URL**: the certified image or the url of the image you want to use for your instances.
+
+{{< alert tip >}}
+You can use our certified images or the url of your custom VHD: the image should at least have JDK8 installed, a configured key pair without password and the port 22 & 9999 should be open, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-capture-image) if you want to learn how to make your own image.
+{{< /alert >}}
+
 - **Public Key**: the public ssh key to connect to your instances
 - **Username**: the username used by your ssh command to connect to the instances
+
+{{< alert warning >}}
+Azure has some requirements about the username: it must be less than 20 characters, cannot end with a period and many usernames are forbidden, such as `admin` or `root`. Check the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm-) for all the details.
+{{< /alert >}}
+
 - **Private Key**: the previously added [private key]({{< ref "../../admin/private-keys" >}}) associated with the public ssh key
 
 It's also possible to use User Assigned Managed Identities, refer to the installation guide if you want to create a Managed Identity:
