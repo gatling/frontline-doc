@@ -100,7 +100,7 @@ Gatling Enterprise offers a large amount of metrics:
     - `groupCountsKo`: Group count KO per second.
 - **Users metrics:**
     - `usr+`: Users arrival count per second.
-    - `usr-`: Users temination count per second.
+    - `usr-`: Users termination count per second.
     - `usrActive`: Concurrent users count per second.
 - **Injectors metrics:**
     - `gcCount`: GC count per second.
@@ -125,7 +125,7 @@ Gatling Enterprise offers a large amount of metrics:
     - `dns.<Percentiles>`: DNS resolution duration percentiles metric.
 
 {{< alert tip >}}
-<Percentiles> are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999, max, mean and pAll. (pAll is useful if you want to display in the same graph).
+The returned percentiles are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999, max, mean and pAll. (pAll is useful if you want to display in the same graph).
 {{< /alert >}}
 
 ## Metric Requirements
