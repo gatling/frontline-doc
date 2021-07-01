@@ -20,14 +20,14 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Connection**:
     - **NodePort**: exposes the Service on each injector Node's IP at a static port
     - **Ingress**: exposes HTTP and HTTPS routes from outside the cluster to injectors within the cluster
-    - **TLS secret name**: the optional secret containing a certificate used by the ingress (link:https://kubernetes.github.io/ingress-nginx/user-guide/tls/#tls-secrets[TLS secrets documentation])
+    - **TLS secret name**: the optional secret containing a certificate used by the ingress [TLS secrets documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#tls-secrets)
     - **Route**: (OpenShift extension) exposes HTTP routes (HTTPS not supported) from outside the cluster to injectors within the cluster.
-        - **Secured**: allow you to add the desired certificate on the route (link:https://docs.openshift.com/container-platform/4.5/networking/routes/secured-routes.html[OpenShift secured routes documentation])
+        - **Secured**: allow you to add the desired certificate on the route [OpenShift secured routes documentation](https://docs.openshift.com/container-platform/4.5/networking/routes/secured-routes.html)
         - **Certificate**: Certificate associated with the route
         - **Certificate key**: Certificate key associated to certificate
         - **CA Certificate**: Certificate authority signing the certificate
 
-- **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with https://github.com/gatling/frontline-injector-docker-image
+- **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with [gatling/frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
 - **Image pull secret**: Recommended approach to run containers based on images in private registries and / or to not be limited by rate limits
 - **CPU request**: The minimum number of cores that you need for each one of your injector, express as cpus
 - **CPU limit**: The limit of cores that you don't want your injector pod to exceed, express as cpus
