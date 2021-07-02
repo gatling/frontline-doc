@@ -23,6 +23,13 @@ You can install it using the grafana-cli:
 
 `grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install frontline`
 
+Please note that the plugin is unsigned, and may recent versions of Grafana may reject it. In this case, [you need to add the plugin to the list of allowed unsigned plugin](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
+
+Grafana configuration sample:
+```
+allow_loading_unsigned_plugins = frontline
+```
+
 ## Adding the datasource
 
 - In the Grafana side menu you will find the `Data Sources` link under `Configuration` (link name may depend on the grafana version).
