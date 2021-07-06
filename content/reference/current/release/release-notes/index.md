@@ -2,20 +2,47 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2021-06-03T16:38:41+02:00
+lastmod: 2021-07-06T16:38:41+02:00
 weight: 60010
 ---
 
+### 1.14.3 (2021-07-06)
+
+#### Gatling 3.6.1
+
+Please check the full release note: https://github.com/gatling/gatling/milestone/97?closed=1
+
+#### Gatling Enterprise
+
+##### Fixes
+
+* FL-693: Dashboard: Fix chart label with same color 
+* FL-695: Dashboard: Fix modal percentile overflow 
+* FL-696: API Tokens: Reload API Token table when an API Token is created 
+* FL-698: Dashboard: Fix highlight in tooltip 
+* FL-700: Simulation: Don't truncate response payloads with non US-ASCII chars
+* FL-706: Dashboard: Fix crash on pie and bar chart 
+* FL-708: Dashboard: Labelled component crash while updating the labels props 
+* FL-710: Dashboard: Trim errors messages so tooltips don't grow too large
+* FL-716: Dashboard: Fix DNS charts' colors
+* FL-719: Pipeline: Compute `startTimeout`'s default value based on configured `waitHttpTries` 
+* FL-753: Kubernetes/OpenShift: Retry on HTTP connect when failure is actually that the service behind the ingress/route is not ready yet
+* MISC-89: CI: Make script display a specific error if the Gatling Enterprise url is malformed and ends with a `/`
+
 ### 1.14.2 (2021-06-03)
 
-#### FrontLine
+#### Gatling Enterprise
+
+##### Fixes
 
 * FL-678: Compare runs button should be disabled when there is only 1 run
 * FL-681: Fix Cassandra configuration backward compatibility
 
 ### 1.14.1 (2021-05-28)
 
-#### FrontLine
+#### Gatling Enterprise
+
+##### Fixes
 
 * FL-668: Crash on boot when using OIDC or LDAP
 
