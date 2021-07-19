@@ -11,7 +11,7 @@ weight: 10070
 
 To access the Simulations section, click on **Simulations** in the navbar.
 
-The Simulations view contains all the simulations you have configured and the result of their last run.
+The Simulations view contains all the simulations you have configured, and the result of their last run.
 
 {{< img src="simulations-table.png" alt="Simulation table" >}}
 

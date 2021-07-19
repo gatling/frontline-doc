@@ -149,16 +149,12 @@ We only support sbt 1+, not sbt 0.13.
 {{< /alert >}}
 
 {{< alert warning >}}
-If you use the 'it' config, you have to use a custom build command as the defauit one is for the 'test' config:
+If you use the 'it' config, you have to use a custom build command as the default one is for the 'test' config:
 ``sbt -J-Xss100M ;clean;it:assembly -batch --error``
 {{< /alert >}}
 
-{{< alert warning >}}
-We recommend disabling Coursier for now. There are several bugs in the sbt/Coursier integration that makes our plugin work in a suboptimal fashion.
-{{< /alert >}}
-
 {{< alert tip >}}
-The `gatling-test-framework`dependencies is only needed if you intend to run locally and use the gatling-sbt plugin.
+You only need the `gatling-test-framework`dependency if you intend to run locally and use the gatling-sbt plugin.
 {{< /alert >}}
 
 {{< alert tip >}}
