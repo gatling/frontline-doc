@@ -33,7 +33,7 @@ docker run --detach \
   --name cassandra \
   --volume <local directory to store Cassandra data>:/var/lib/cassandra \
   --publish 9042:9042 \
-  cassandra:3.11.6
+  cassandra:3
 ```
 
 ## Copy Gatling Enterprise default configuration
