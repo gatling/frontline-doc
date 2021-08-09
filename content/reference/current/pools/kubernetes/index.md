@@ -15,7 +15,7 @@ To configure the type of instances you want to spawn, you need to fill the form 
 
 - **Team**: Set if the pool is global or owned by a team
 - **Kubernetes Url**: The url of your Kubernetes API with the protocol
-- **Service Account Token**: The token of your service account which has edit permissions on the namespace below (see <<needed-permissions, needed permissions>>)
+- **Service Account Token**: The token of your service account which has edit permissions on the namespace below (see [the minimal permissions](#minimal-permissions-for-gatling-enterprise-service-account))
 - **Namespace**: The namespace/project name in which injectors will be spawned
 - **Connection**:
     - **NodePort**: exposes the Service on each injector Node's IP at a static port
