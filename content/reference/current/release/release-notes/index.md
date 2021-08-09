@@ -767,7 +767,7 @@ This release ships important security improvements, so users are highly advised 
 {{< /alert >}}
 
 {{< alert warning >}}
-<<deprecated, Some deprecated features>> have been removed.
+[Some deprecated features](#deprecated-features-removed)  have been removed.
 {{< /alert >}}
 
 ##### Features
@@ -813,7 +813,6 @@ This release ships important security improvements, so users are highly advised 
 * DEV-429: Adding a pin shouldn't be possible in anonymous mode
 * DEV-430: Gatling Enterprise logo is not visible on the 404 page
 
-[[deprecated]]
 ##### Deprecated features removed
 
 * DEV-188: Removed Public API metrics deprecated in 1.7.0 (responses Ok, responses Ko, responses by status, groupCounts Ok, groupCounts Ko), please use their alias without spaces

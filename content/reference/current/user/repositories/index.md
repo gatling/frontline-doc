@@ -37,7 +37,7 @@ Choose *Build from sources* as repository type if you wish that Gatling Enterpri
 
 There are 3 different ways to retrieve your sources:
 
-- **Clone a Git repository**: If you want to clone a git repository. You'll need to fill in the URL of the targeted repository, and the targeted git branch or tag (which can be overridden in the simulation configuration). If you're using ssh authentication, you can also fill in a previously added <<privateKey, private key>> scoped on repository with **Git SSH key**. If you're using HTTPS authentication, you can setup an username and password.
+- **Clone a Git repository**: If you want to clone a git repository. You'll need to fill in the URL of the targeted repository, and the targeted git branch or tag (which can be overridden in the simulation configuration). If you're using ssh authentication, you can also fill in a previously added [private key]({{< ref "../../admin/private-keys" >}}) scoped on repository with **Git SSH key**. If you're using HTTPS authentication, you can setup an username and password.
 - **Use a project on Gatling Enterprise's filesystem**: Use a project located on Gatling Enterprise's filesystem, fill in the path to project repository.
 - **Check out from Source Code Control System**: Useful if you're using a code control system other than Git, or if you need a really specific Git command.
 
