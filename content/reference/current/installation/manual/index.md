@@ -74,8 +74,12 @@ your `cassandra.yaml` file as the following entries:
 Download and install [Cassandra](http://cassandra.apache.org/download/).
 
 As of Gatling Enterprise {{< var revnumber >}}, we require at least Cassandra 3.10.
-Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.7.
-If possible, we advise you go with the latest stable version.
+Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.11.
+If possible, we advise you go with the latest stable Cassandra 3.11 version.
+
+{{< alert warning >}}
+We do not support Cassandra 4 yet.
+{{< /alert >}}
 
 ### Deployment
 
