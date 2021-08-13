@@ -18,4 +18,4 @@ If it is the first time you use Gatling Enterprise, you can use the super admin 
 If you have configured the OpenID authentication, all of your user base can connect as a viewer. Make sure that Gatling Enterprise is allowed to open pop-ups on your browser, or you won't be able to login.
 To connect as a superAdmin, click on *Connect with basic credentials* and fill as previously explained. To modify your users permissions, you'll need to go the [users admin page]({{< ref "../../admin/users" >}}), and modify the users.
 
-{{< img src="login.png" alt="OpenId login" >}}
+{{< img src="oidc.png" alt="OpenId login" >}}
