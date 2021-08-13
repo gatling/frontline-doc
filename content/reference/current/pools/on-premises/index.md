@@ -11,7 +11,7 @@ Here you can create an On premises pool which represents existing machines.
 
 The pool is defined by a name and a team:
 
-{{< img src="on-premises-pool.png" alt="On premises pool table" >}}
+{{< img src="create-pool.png" alt="On premises pool table" >}}
 
 You can edit the name and set if the pool is global or owned by a team by clicking on the {{< icon pencil-alt >}} icon of that pool in the table.
 If you click on the name, it will highlight all the hosts which are in this pool in the host table.

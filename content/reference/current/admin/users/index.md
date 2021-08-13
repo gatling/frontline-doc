@@ -11,7 +11,7 @@ weight: 40010
 
 To access the Users administration, click on **Admin** in the navigation bar, and choose **Users**.
 
-{{< img src="users-table.png" alt="Users table" >}}
+{{< img src="users.png" alt="Users table" >}}
 
 ### Permissions
 
