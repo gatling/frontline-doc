@@ -6,6 +6,35 @@ lastmod: 2021-07-06T16:38:41+02:00
 weight: 60010
 ---
 
+### 1.15.0 (2021-08-19)
+
+{{< alert info >}}
+FrontLine has been renamed to Gatling Enterprise.
+{{< /alert >}}
+
+{{< alert info >}}
+The official documentation is now hosted [here](https://gatling.io/docs/enterprise/self-hosted/reference/current/user/login/).
+{{< /alert >}}
+
+#### Features
+
+* FL-740: The tables have been reshaped
+* FL-774: Gradle: Added a gradlew built-in
+* FL-806: The Reports page has been reshaped
+* FL-814: Added a public API which retrieves the license details and limits: /license
+* FL-819: The default git branch is now called main instead of master
+
+#### Fixes
+
+* FL-660: Reports: Improved label color generation
+* FL-730: Api now responds a correct 401 status when the cookie has expired
+* FL-775: Azure Support: Renamed Client ID into Application ID, as this is the new correct term
+* FL-790: Elastic IPs: Private IPs are listed in the injectors tab instead of the used Elastic IPs
+* FL-795: Public API swagger: Fix typo in the /runs endpoint
+* FL-809: Git Repository: Fix impossibility to switch from http repository with credentials to ssh
+* FL-818: GCE Support: Fix some issue with deprecated Google libs
+* FL-820: Azure Pool: Improve error signaling
+
 ### 1.14.3 (2021-07-06)
 
 #### Gatling 3.6.1

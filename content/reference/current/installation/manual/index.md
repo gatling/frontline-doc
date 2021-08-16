@@ -78,7 +78,8 @@ Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.11.
 If possible, we advise you go with the latest stable Cassandra 3.11 version.
 
 {{< alert warning >}}
-We do not support Cassandra 4 yet.
+- We do not support Cassandra 4 yet.
+- We do not support AWS Keyspaces as an alternative of Cassandra.
 {{< /alert >}}
 
 ### Deployment
@@ -516,10 +517,10 @@ If using Git to clone repositories using SSH protocol, Git 2.3 is the minimal ve
 If you intend to have Gatling Enterprise build tests from sources,
 then Gatling Enterprise needs to be able to build the fetched resources, ie:
 
-- a client for your build tool (ex: sbt, maven, gradle, etc) to be installed on the Gatling Enterprise host
-- this client to be in the PATH and executable for the user running the Gatling Enterprise JVM process
+- a client for your build tool (ex: sbt, maven, gradle, etc) needs to be installed on the Gatling Enterprise host
+- this client needs to be in the PATH and executable for the user running the Gatling Enterprise JVM process
 
-Make sure that the build tool will be configured so that it will be able to download artifacts, typically if your organization enforces repository mirrors.
+Make sure that the build tool is configured so that it is able to download artifacts, typically if your organization enforces repository mirrors.
 
 {{< alert tip >}}
 Maven 3.3.9 is the minimal version supported. This is the version shipped in Debian 9 (Stretch).

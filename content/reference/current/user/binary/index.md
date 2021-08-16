@@ -17,7 +17,7 @@ When you'll be deploying tests with Gatling Enterprise, it will replace your Gat
 
 ### Maven
 
-In your `pom.xml`, you have to add in:
+In your `pom.xml`, you have to:
 
 * pull Gatling dependencies
 * add the maven plugin for Scala, so your code gets compiled

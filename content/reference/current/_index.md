@@ -3,7 +3,7 @@ title: Reference
 description: "Gatling Enterprise Self-Hosted documentation"
 cascade:
   variables:
-    revnumber: "1.14.3"
+    revnumber: "1.15.0"
     gatlingVersion: "3.6.1"
     scalaMajorVersion: "2.13"
     scalaVersion: "2.13.6"
@@ -13,5 +13,5 @@ cascade:
     frontLineMavenPluginVersion: "1.2.3"
     frontLineSbtPluginVersion: "1.3.4"
     frontLineGradlePluginVersion: "1.4.3"
-    externalPluginsVersion: "1.14.2"
+    externalPluginsVersion: "1.14.3"
 ---
