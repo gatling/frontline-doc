@@ -178,7 +178,7 @@ There are requirements before creating an Azure pool:
 
 There are two ways to provide Azure credentials to your Gatling Enterprise instance:
 
-* Get the credentials from Microsoft Azure: follow [this link](https://www.inkoop.io/blog/how-to-get-azure-api-credentials/) and save the subscription ID, tenant ID, client ID and client secret.
+* Get the credentials from Microsoft Azure: follow [this link](https://www.inkoop.io/blog/how-to-get-azure-api-credentials/) and save the subscription ID, tenant ID, application ID and client secret.
 * Use [User Assigned Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#user-assigned-managed-identity).
 
 {{< alert warning >}}
