@@ -3,7 +3,7 @@ title: "Private Keys"
 description: "Learn how to administrate private keys"
 lead: "Private keys are necessary to configure pools and injectors"
 date: 2021-03-25T18:09:45+01:00
-lastmod: 2021-03-25T18:09:45+01:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 40040
 ---
 

@@ -2,7 +2,7 @@
 title: "Login"
 description: "Learn how to connect to Gatling Enterprise."
 date: 2021-03-10T09:29:04-05:00
-lastmod: 2021-03-10T09:29:04-05:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 10020
 ---
 

@@ -3,7 +3,7 @@ title: "API Tokens"
 description: "Learn how to administrate API tokens to authenticate your requests to the public API."
 lead: "API Tokens allow you to authenticate your requests to the public API."
 date: 2021-03-10T08:47:16-05:00
-lastmod: 2021-03-10T08:47:16-05:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 40030
 ---
 

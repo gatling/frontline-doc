@@ -3,7 +3,7 @@ title: "Jenkins Plugin"
 description: "Learn how to configure the Gatling Enterprise Jenkins plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your Jenkins CI."
 date: 2021-03-08T13:50:14+01:00
-lastmod: 2021-03-08T13:50:14+01:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 50010
 ---
 
