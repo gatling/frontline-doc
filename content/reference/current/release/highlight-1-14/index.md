@@ -3,7 +3,7 @@ title: "Gatling Enterprise 1.14 Highlights"
 description: "Learn about the main new features of Gatling Enterprise 1.14"
 lead: "Gatling Enterprise 1.14 introduce support for multiple versions of Gatling and performance fixes"
 date: 2021-05-25T17:55:36+02:00
-lastmod: 2021-05-25T17:55:36+02:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 60019
 ---
 

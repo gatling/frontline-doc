@@ -3,7 +3,7 @@ title: "Automated installation with Ansible"
 description: "Learn how to install Gatling Enterprise with Ansible"
 lead: "Download our Ansible playbook and run it to install easily Gatling Enterprise and Cassandra"
 date: 2021-03-26T16:58:37+01:00
-lastmod: 2021-03-26T16:58:37+01:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 20030
 ---
 

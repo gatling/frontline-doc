@@ -3,7 +3,7 @@ title: "Automated installation with Docker"
 description: "Learn how to install Gatling Enterprise with Docker"
 lead: "Install Gatling Enterprise and Cassandra easily with Docker or Docker Compose"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2021-06-11T13:04:45+01:00
+lastmod: 2021-08-16T17:55:36+02:00
 weight: 20040
 ---
 
