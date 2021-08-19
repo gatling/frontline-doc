@@ -46,7 +46,7 @@ If you want specific properties for a simulation, you will be allowed to ignore 
 ## Creating a simulation
 
 {{< alert warning >}}
-Gatling Enterprise has a hard run duration limit of 7 days and will abort any test running for longer than that.
+Gatling Enterprise has a hard run duration limit of 7 days and will stop any test running for longer than that.
 This limit exists for both performance (data who grow too humongous to be presented in the dashboard) and security (forgotten test running forever) reasons.
 {{< /alert >}}
 
@@ -180,7 +180,7 @@ Assertions are the assumptions made at the beginning of the simulation to be ver
 - You can search a simulation by his name, or its team name
 - You can sort the simulations by any column except the **Start** one
 - A **Delete** button will appear on the action bar when you select a simulation, you will be able to delete all the selected simulations
-- When a simulation is running, you can abort the run by clicking on the Abort button
+- When a simulation is running, you can stop the run by clicking on the Abort button
 - You can copy a simulation ID by clicking on the {{< icon clipboard >}} icon next to his name
 
 Be aware that deleting a simulation will delete all the associated runs.

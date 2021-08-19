@@ -34,6 +34,8 @@ The official documentation is now hosted [here](https://gatling.io/docs/enterpri
 * FL-809: Git Repository: Fix impossibility to switch from http repository with credentials to ssh
 * FL-818: GCE Support: Fix some issue with deprecated Google libs
 * FL-820: Azure Pool: Improve error signaling
+* FL-823: AWS Pool: No error message when the profile is incorrect
+* FL-824: Global Properties: Can't set the JVM Options to nothing
 
 ### 1.14.3 (2021-07-06)
 
@@ -440,7 +442,7 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1019: Simulation: enlarge pool name dropdown to 50 chars
 * DEV-1022: Pipeline: ssh connect timeout's default value should be 10 seconds, not 5
 * DEV-1023: WebSocket: dashboard crashes when displaying check stats
-* DEV-1031: Pipeline: crash and can't be aborted when the local repository points to a non-existing directory
+* DEV-1031: Pipeline: crash and can't be stopped when the local repository points to a non-existing directory
 * DEV-1056: Upgrade jQuery from 3.4.1 to 3.5.1, fix security vulnerability
 * DEV-1061: Repositories & Kubernetes: fix invalid URL validation and allow valid chars such as `-`
 
@@ -534,7 +536,7 @@ Runs and simulations API payloads have been modified: The field previously named
 * DEV-813: Certified AMI are not deployed on Hong Kong and Bahrain
 * DEV-814: Hong Kong and Bahrain are missing from AWS regions list
 * DEV-825: Modals lose state on props change
-* DEV-827: Can't abort run while waiting for HTTP (deployed state)
+* DEV-827: Can't stop run while waiting for HTTP (deployed state)
 * DEV-832: In Export, different runs summaries share the same data
 * DEV-833: Missing documentation that we support cloning a git tag
 * DEV-834: Don't let save an Uploaded private key with selecting a file to upload
