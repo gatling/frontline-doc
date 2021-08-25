@@ -6,6 +6,13 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60010
 ---
 
+### 1.15.1 (2021-08-26)
+
+#### Fixes
+
+* FL-831: Grafana: Improve documentation wrt unsigned plugins
+* FL-833: Kubernetes/OpenShift: pod creation crash due to invalid character because of the "Gatling Enterprise" renaming
+
 ### 1.15.0 (2021-08-19)
 
 {{< alert info >}}
