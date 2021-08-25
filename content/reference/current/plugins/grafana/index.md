@@ -23,9 +23,9 @@ You can install it using the grafana-cli:
 
 `grafana-cli --pluginUrl GRAFANA_DATASOURCE_BUNDLE_URL plugins install frontline`
 
-Please note that the plugin is unsigned, and may recent versions of Grafana may reject it. In this case, [you need to add the plugin to the list of allowed unsigned plugin](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
+Please note that the plugin is unsigned so recent versions of Grafana may reject it by default. In this case, [you have to add the plugin to the list of allowed unsigned plugin](https://grafana.com/docs/grafana/latest/administration/configuration/#allow_loading_unsigned_plugins).
 
-Grafana configuration sample:
+Please edit the existing line with `allow_loading_unsigned_plugins` in `defaults.ini` and add `frontline` to the comma-separated list, eg:
 ```
 allow_loading_unsigned_plugins = frontline
 ```
