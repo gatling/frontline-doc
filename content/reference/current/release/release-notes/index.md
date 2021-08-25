@@ -19,22 +19,28 @@ The official documentation is now hosted [here](https://gatling.io/docs/enterpri
 #### Features
 
 * FL-740: The tables have been reshaped
-* FL-774: Gradle: Added a gradlew built-in
-* FL-806: The Reports page has been reshaped
-* FL-814: Added a public API which retrieves the license details and limits: /license
-* FL-819: The default git branch is now called main instead of master
+* FL-774: Gradle: new gradlew built-in
+* FL-788: All Pools: Harden resources destruction
+* FL-806: Reports: page has been reshaped
+* FL-814: New public API to retrieve the license details and limits: /license
 
 #### Fixes
 
 * FL-660: Reports: Improved label color generation
-* FL-730: Api now responds a correct 401 status when the cookie has expired
-* FL-775: Azure Support: Renamed Client ID into Application ID, as this is the new correct term
+* FL-730: API now responds a correct 401 status when the cookie has expired
+* FL-743: Simulation: harden FQCN validation
+* FL-745: API should handle JSON serialization gracefully without spamming error logs
+* FL-754: Kubernetes/Openshift: fix runs crashing when pods don't start fast enough
+* FL-756: Fix wrong deprecation warning when using Gatling 3.6
+* FL-775: Azure: Renamed Client ID into Application ID, as this is the new correct term
+* FL-784: AWS: wrong IP listed in Elastic IP list
+* FL-785: Azure: Create instances with one single batch per pool
 * FL-790: Elastic IPs: Private IPs are listed in the injectors tab instead of the used Elastic IPs
-* FL-795: Public API swagger: Fix typo in the /runs endpoint
+* FL-795: Public API Swagger: Fix typo in the /runs endpoint
 * FL-809: Git Repository: Fix impossibility to switch from http repository with credentials to ssh
-* FL-818: GCE Support: Fix some issue with deprecated Google libs
-* FL-820: Azure Pool: Improve error signaling
-* FL-823: AWS Pool: No error message when the profile is incorrect
+* FL-818: GCE: Fix some issue with deprecated Google libs
+* FL-820: Azure: Improve error reporting
+* FL-823: AWS: No error message when the profile is incorrect
 * FL-824: Global Properties: Can't set the JVM Options to nothing
 
 ### 1.14.3 (2021-07-06)
