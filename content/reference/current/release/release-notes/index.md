@@ -6,6 +6,13 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60010
 ---
 
+### 1.15.2 (2021-08-31)
+
+#### Fixes
+
+* FL-825: Dashboard: "Abort run" is now labelled "Stop run"
+* FL-836: Boot: flush all responses before rebooting the API after first configuration
+
 ### 1.15.1 (2021-08-26)
 
 #### Fixes
