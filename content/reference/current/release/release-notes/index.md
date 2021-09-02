@@ -6,6 +6,13 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60010
 ---
 
+### 1.15.3 (2021-09-02)
+
+#### Fixes
+
+* FL-841: Run: Can't delete a run
+* FL-844: Simulation: Can't duplicate a simulation
+
 ### 1.15.2 (2021-08-31)
 
 #### Fixes
