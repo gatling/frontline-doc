@@ -49,9 +49,22 @@ You can use the Pipeline Snippet Generator to help you use the Jenkins Plugin. C
 
 You can specify the id of an API Token stored in a secret text credential if you don't want to use the one configured globally. Choose one of the simulation in the drop-down, then click Generate Groovy. Copy and paste the result in your Pipeline script, eg:
 ```groovy
+// Declarative Pipeline Syntax
+pipeline {
+    agent any
+    stages {
+        stage("Gatling Enterprise simulation") {
+            steps {
+                gatlingFrontLineLauncherStep credentialId: '6737158c-0ff6-4033-91ad-6f3a811aab52', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+            }
+        }
+    }
+}
+
+// Scripted Pipeline Syntax
 node {
     stage("Gatling Enterprise simulation") {
-        gatlingFrontLineLauncherStep credentialId: '6737158c-0ff6-4033-91ad-6f3a811aab52', '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+        gatlingFrontLineLauncherStep credentialId: '6737158c-0ff6-4033-91ad-6f3a811aab52', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
     }
 }
 ```
