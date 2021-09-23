@@ -9,6 +9,10 @@ weight: 30020
 
 Here you can create an On premises pool which represents existing machines.
 
+{{< alert warning >}}
+Make sure your network configuration will let Gatling Enterprise connect to your injectors on port 22 (SSH) and 9999 (HTTP).
+{{< /alert >}}
+
 The pool is defined by a name and a team:
 
 {{< img src="create-pool.png" alt="On premises pool table" >}}

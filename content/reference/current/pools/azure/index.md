@@ -9,6 +9,10 @@ weight: 30060
 
 A Microsoft Azure Pool is a reference to the Azure account you can use to spawn injectors to run the simulation. Only Linux virtual machines are supported.
 
+{{< alert warning >}}
+Make sure your network configuration will let Gatling Enterprise connect to your injectors on port 22 (SSH) and 9999 (HTTP).
+{{< /alert >}}
+
 To configure the type of instances you want to spawn, you need to fill the form below:
 
 {{< img src="azure.png" alt="Azure Pool" >}}

@@ -8,6 +8,11 @@ weight: 30040
 ---
 
 Like the AWS Pool, a GCE Pool is a reference to the GCE account you want to use to spawn injectors to run the simulation.
+
+{{< alert warning >}}
+Make sure your network configuration will let Gatling Enterprise connect to your injectors on port 22 (SSH) and 9999 (HTTP).
+{{< /alert >}}
+
 To configure the type of instances you want to spawn, you need to fill the form below:
 
 {{< img src="gce.png" alt="GCE Pool" >}}
