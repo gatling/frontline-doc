@@ -19,8 +19,8 @@ To configure the type of instances you want to spawn, you need to fill the form 
 
 - **Team**: Set if the pool is global or owned by a team
 - **Subscription ID**: the Azure subscription you want to use, check [this article](https://www.inkoop.io/blog/how-to-get-azure-api-credentials/) to learn how to retrieve it
-- **Tenant ID**: the Azure tenant you want to use
 - **Application ID**: the id of the Azure application you want to authenticate with
+- **Directory ID**: the Azure directory you want to use
 - **Client Secret**: the key used to authenticate
 - **Region**: the region where you want to spawn your instances
 - **Size**: the size of the instances
