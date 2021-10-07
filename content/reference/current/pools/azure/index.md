@@ -26,6 +26,7 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Size**: the size of the instances
 - **Network**: the network configured on your Microsoft Azure account you want to use
 - **Subnet**: the subnet you want to use
+- **Connect to private IP**: Gatling Enterprise will connect to the injectors' private IP instead of the public one. If unchecked, the private IP remains a fallback if a public IP is missing. This option should be used only when the Gatling Enterprise host and the injector are both in the same Azure network.
 - **Image** or **Image URL**: the certified image or the url of the image you want to use for your instances.
 
 {{< alert tip >}}
