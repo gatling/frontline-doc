@@ -27,14 +27,16 @@ Gatling Enterprise consists of:
   * Continuous Integration plugins for Jenkins, Bamboo and TeamCity or any solution that can trigger a bash script
 - Gatling injectors to be used like standard Gatling OSS, with extra features so Gatling Enterprise can collect data from them
 
-## Document Conventions
+## Documentation Conventions
 
-In this document, you'll find several mentions to some placeholders in capital letters.
+In this documentation, you'll find several mentions to some placeholders in capital letters.
 
-- REPLACE_WITH_YOUR_REPOSITORY_URL: the URL of the private repository that you were given alongside with your license key
+### Repository URL
+
+Any references to private urls were removed from this documentation and replaced with the placeholder `REPLACE_WITH_YOUR_REPOSITORY_URL`. It represents the URL of the private repository you were given along with your license key.
+
+This repository URL was shared by our sales persons with the manager in charge of the contract and the administrators registered for support.
 
 {{< alert warning >}}
-This placeholder only makes sense for on premise customers. AWS Marketplace customers spawn a pre-installed AMI and already have all the dependencies they need.
+This placeholder only makes sense for self-hosted customers. AWS and Azure Marketplace customers spawn a pre-installed virtual machine and already have all the dependencies they need.
 {{< /alert >}}
-
-- REPLACE_WITH_LATEST_FRONTLINE_VERSION: {{< var revnumber >}} at the time this document was edited
