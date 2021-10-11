@@ -191,8 +191,12 @@ Second method implies (as stated in Cassandra documentation) to add instances wi
 Gatling Enterprise is packaged as a zip bundle that can be downloaded from our maven repository (only for on-premise customers):
 
 ```
-REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-bundle/REPLACE_WITH_LATEST_FRONTLINE_VERSION/frontline-bundle-REPLACE_WITH_LATEST_FRONTLINE_VERSION-bundle.zip
+REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-bundle/{{< var revnumber >}}/frontline-bundle-{{< var revnumber >}}-bundle.zip
 ```
+
+{{< alert tip >}}
+Check the [documentation conventions]({{< ref "../introduction#repository-url" >}}) for ways to find your repository URL.
+{{< /alert >}}
 
 On launch, Gatling Enterprise will create or update the Gatling Enterprise schema in the Cassandra database.
 
