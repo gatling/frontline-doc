@@ -38,7 +38,7 @@ Ansible will use the shell's proxy when running the script in your computer.
 
 If you need to specify a proxy for the remote machine on which Gatling Enterprise will be installed, you can add environment variables at the installer level:
 
-```yaml
+```diff
  - hosts: all
 
    vars:
