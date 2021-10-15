@@ -31,7 +31,7 @@ The plugin needs some global configuration. Go to __Administration__, then __Glo
 
 Add two new variables:
 
-* The first one is named __frontline.address__, and corresponds to the address of your Gatling Enterprise, for example: https://demo-beta.gatling.io
+* The first one is named __frontline.address__, and corresponds to the address of your Gatling Enterprise, for example: https://cloud.gatling.io
 * The second one is named __frontline.apiTokenPassword__, and corresponds to the token needed to authenticate to Gatling Enterprise. To fetch it, refer to the section *Managing API Tokens* in the Gatling Enterprise User Guide.
 
 {{< img src="global-variable.png" alt="Global variable" >}}
@@ -40,7 +40,7 @@ Add two new variables:
 
 ### Job configuration
 
-Add a new build task called __Gatling FrontLine__. Choose in the Gatling Enterprise Simulation list the simulation you want to use.
+Add a new build task called __Gatling Enterprise__. Choose in the Gatling Enterprise Simulation list the simulation you want to use.
 
 {{< img src="configuration-task.png" alt="Task configuration" >}}
 
@@ -53,7 +53,7 @@ Add a new build task called __JUnit Parser__ and fill the __Specify custom resul
 `**/gatlingFrontLineJunitResults/*.xml`
 
 {{< alert danger >}}
-Be sure to place this task always after the `GatlingFrontLine` task, or it won't read the results of the new run.
+Be sure to place this task always after the __Gatling Enterprise__ task, or it won't read the results of the new run.
 {{< /alert >}}
 
 {{< alert danger >}}
