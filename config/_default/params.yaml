@@ -53,3 +53,10 @@ options:
   darkMode: true
   bootStrapJs: false
   breadCrumb: false
+
+includeCode:
+  default: scala
+  labels:
+    java: Java
+    kt: Kotlin
+    scala: Scala
