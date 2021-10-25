@@ -31,11 +31,15 @@ Gatling Enterprise consists of:
 
 In this documentation, you'll find several mentions to some placeholders in capital letters.
 
-### Repository URL
+### Custom Gatling Enterprise Bundle download link {#custom-bundle-download-link}
 
-Any references to private urls were removed from this documentation and replaced with the placeholder `REPLACE_WITH_YOUR_REPOSITORY_URL`. It represents the URL of the private repository you were given along with your license key.
+Any references to private links that allows downloading the Gatling Enterprise bundle were removed from this documentation and replaced with the following placeholder:
 
-This repository URL was shared by our sales persons with the manager in charge of the contract and the administrators registered for support.
+```
+REPLACE_WITH_YOUR_CUSTOM_GATLING_ENTERPRISE_BUNDLE_DOWNLOAD_LINK
+```
+
+This custom link was shared with your license key by our sales persons with the manager in charge of the contract and the administrators registered for support.
 
 {{< alert warning >}}
 This placeholder only makes sense for self-hosted customers. AWS and Azure Marketplace customers spawn a pre-installed virtual machine and already have all the dependencies they need.

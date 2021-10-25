@@ -59,11 +59,11 @@ If you need to specify a proxy for the remote machine on which Gatling Enterpris
 You can download the installer here:
 
 ```
-REPLACE_WITH_YOUR_REPOSITORY_URL/frontline-installer/{{< var revnumber >}}/frontline-installer-{{< var revnumber >}}.zip
+REPLACE_WITH_YOUR_CUSTOM_GATLING_ENTERPRISE_BUNDLE_DOWNLOAD_LINK/frontline-installer/{{< var revnumber >}}/frontline-installer-{{< var revnumber >}}.zip
 ```
 
 {{< alert tip >}}
-Check the [documentation conventions]({{< ref "../introduction#repository-url" >}}) for ways to find your repository URL.
+Check the [documentation conventions]({{< ref "../introduction#custom-bundle-download-link" >}}) for ways to find your custom Gatling Enterprise bundle download link.
 {{< /alert >}}
 
 We suggest you download and check the integrity of the installer by doing the following:
@@ -73,7 +73,7 @@ We suggest you download and check the integrity of the installer by doing the fo
 
 # The two variables you must change
 version={{< var revnumber >}}
-repo_url=REPLACE_WITH_YOUR_REPOSITORY_URL
+custom_url=REPLACE_WITH_YOUR_CUSTOM_GATLING_ENTERPRISE_BUNDLE_DOWNLOAD_LINK
 
 archive_name=frontline-installer-${version}.zip
 archive_url=${repo_url}/frontline-installer/${version}/${archive_name}
