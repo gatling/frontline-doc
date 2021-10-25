@@ -481,20 +481,20 @@ oidc {
 
 ```hocon
 oidc {
-    discoveryUrl = "https://your-organisation.okta.com/oauth2/default/.well-known/openid-configuration"
-    client {
-      id = "******-*******-********-******"
-      secret = "****************"
-    }
-    responseMode = "okta_post_message"
-    scopes = ["email", "profile"]
-    jwksRefreshFrequency = 1440
-    mapping {
-      username: "email"
-      firstname: "given_name"
-      lastname: "family_name"
-      email: "email"
-    }
+  discoveryUrl = "https://your-organisation.okta.com/oauth2/default/.well-known/openid-configuration"
+  client {
+    id = "******-*******-********-******"
+    secret = "****************"
+  }
+  responseMode = "okta_post_message"
+  scopes = ["email", "profile"]
+  jwksRefreshFrequency = 1440
+  mapping {
+    username: "email"
+    firstname: "given_name"
+    lastname: "family_name"
+    email: "email"
+  }
 }
 ```
 
