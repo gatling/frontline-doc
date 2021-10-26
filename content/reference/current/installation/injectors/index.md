@@ -207,8 +207,9 @@ Make sure to assign the User Assigned Managed Identity from the **Identity tab o
 
 ### Kubernetes / OpenShift
 
-There are requirements before creating a Kubernetes/OpenShift pool:
+There are some requirements before creating a Kubernetes/OpenShift pool:
 
+* `kubectl` must be available in the `PATH` of the Linux user running Gatling Enterprise. This is taken care of in our installer or in our AWS and Azure MarketPlace offers, but this might not be the case if you manually handpicked and installed each component.
 * Docker Hub should be reachable from your infrastructure, otherwise you'll need to [build the injector image](https://github.com/gatling/frontline-injector-docker-image) and push it to your private registry.
 * A service account able to manage pods and services (either attached to Gatling Enterprise or for its token).
 
@@ -216,6 +217,7 @@ Additionally, if Gatling Enterprise is deployed outside Kubernetes/OpenShift:
 
 * The Kubernetes API should be reachable by Gatling Enterprise.
 * If using the NodePort mode, firewall rules must be added so that Gatling Enterprise can reach Kubernetes nodes on the configured Kubernetes NodePort range (by default, 30000-32767).
+* If using the Ingress or Route modes, the Gatling Enterprise server will create ingress rules and connect to the injectors on port 9999 (HTTP).
 
 {{< alert tip >}}
 If your cluster uses RBAC, you'll need a role with the following permissions for Gatling Enterprise's service account:
