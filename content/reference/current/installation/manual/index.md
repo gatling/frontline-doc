@@ -134,8 +134,8 @@ The Gatling Enterprise host needs network access to:
 - your Cassandra cluster
 - your source repository (if you want to build from sources)
 - your binary repositories (if you want to download pre-packaged simulations), typically:
-  * Maven central repository: https://repo1.maven.org/maven2
-  * Gradle plugins portal: https://plugins.gradle.org
+  * Maven central repository: [https://repo1.maven.org/maven2](https://repo1.maven.org/maven2)
+  * Gradle plugins portal: [https://plugins.gradle.org](https://plugins.gradle.org)
   * or instead, the internal mirrors your organization might be enforcing
 - the hosts where it will try to deploy Gatling injectors
 - your cloud provider API (if deploying on-demand instances on public cloud providers)
