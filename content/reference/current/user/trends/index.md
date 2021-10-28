@@ -9,7 +9,7 @@ weight: 10080
 
 ## Run / Trends
 
-Runs list and trends can be accessed by clicking on the {{< icon history >}} icon in the [simulations table]({{< relref "#simulations-table" >}}).
+Runs list and trends can be accessed by clicking on the {{< icon history >}} icon in the [simulations table]({{< ref "#simulations-table" >}}).
 
 This view contains the list of your simulation's runs which can be filtered by name and/or status and the Trends which are displaying information between those runs.
 {{< img src="run-trends.png" alt="Run trends" >}}
@@ -18,9 +18,9 @@ This view contains the list of your simulation's runs which can be filtered by n
 
 {{< img src="run-table.png" alt="Run table" >}}
 
-Like the result of the latest run in the [simulations table]({{< relref "#simulations-table" >}}) you have access to the [logs]({{< relref "#logs" >}}) of the run by clicking on the {{< icon file-alt >}} icon and you can sort the table by each columns. The logs are only available for run which are not flagged as "Successful".
+Like the result of the latest run in the [simulations table]({{< ref "#simulations-table" >}}) you have access to the [logs]({{< ref "#logs" >}}) of the run by clicking on the {{< icon file-alt >}} icon and you can sort the table by each columns. The logs are only available for run which are not flagged as "Successful".
 
-If there is one, You can click on the {{< icon search >}} icon next to the status to display the [assertions]({{< relref "#assertions" >}}) of the run.
+If there is one, You can click on the {{< icon search >}} icon next to the status to display the [assertions]({{< ref "#assertions" >}}) of the run.
 You can delete runs by selecting them and click on the **Delete** button in the action bar above the table.
 
 You can comment a run by clicking on the {{< icon comment-alt >}} icon on the right side of the table.

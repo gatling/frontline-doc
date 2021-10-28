@@ -385,7 +385,7 @@ oidc {
 }
 ```
 
-Fill the following fields if you want to enable OpenID authentication on Gatling Enterprise. All fields need to be uncommented and filled. For more information on our OpenID integration, please check [corresponding section]({{< relref "#openid" >}}).
+Fill the following fields if you want to enable OpenID authentication on Gatling Enterprise. All fields need to be uncommented and filled. For more information on our OpenID integration, please check [corresponding section]({{< ref "#openid-authentication" >}}).
 
 * <1> URL for discovery of OpenID endpoints
 * <2> Application id received when registering Gatling Enterprise
@@ -434,7 +434,6 @@ Feel free to tune the default behavior if needed.
 
 Gatling Enterprise is able to use LDAP to manage its users. The LDAP mode has been tested with OpenLDAP, and Active Directory servers, but it should work with all regular LDAP implementations.
 
-{{< anchor openid >}}
 #### OpenID Authentication
 
 Gatling Enterprise is able to use OpenID connect to manage its users. The OpenID Connect mode has been tested with One Login and Microsoft identity platform.
