@@ -204,7 +204,7 @@ On launch, Gatling Enterprise will create or update the Gatling Enterprise schem
 
 You can launch Gatling Enterprise in the background using the following command:
 
-```console
+```
 [... frontline-bundle ]$ ./bin/frontline
 ```
 
@@ -213,7 +213,7 @@ The web interface will then be accessible by default on port `10542`. You need t
 Gatling Enterprise will log its PID and write it to a `pidfile` which names will also be echoed.
 You can provide your own path to a custom pidfile this way:
 
-```console
+```
 [... frontline-bundle ]$ ./bin/frontline -p pidfile
 ```
 

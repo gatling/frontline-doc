@@ -305,7 +305,7 @@ You'll have to configure either `repository` or `snapshotRepository` block wheth
 You'll need `frontline-maven-plugin` version 1.0.3 at least.
 Fatjar artifact will be automatically attached to your project and deployed with the `shaded` classifier.
 
-```console
+```shell
 mvn deploy
 ```
 
@@ -336,7 +336,7 @@ publishing {
 
 You can deploy the test jar with the following command:
 
-```console
+```shell
 gradle publish
 ```
 
@@ -355,7 +355,7 @@ publishTo :=
 )
 ```
 
-```console
+```shell
 sbt test:publish
 ```
 

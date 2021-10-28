@@ -40,7 +40,7 @@ If your cluster has RBAC enabled, this manifest configures the necessary permiss
 
 If you're not mirroring Gatling Enterprise's image in your private registry, you'll need to setup your Docker credentials as a secret to pull Gatling Enterprise's image:
 
-```console
+```shell
 kubectl create secret docker-registry docker-hub-credentials \
   --docker-server=<your-registry-server> \
   --docker-username=<your-name> \
