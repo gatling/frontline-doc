@@ -17,206 +17,36 @@ When you'll be deploying tests with Gatling Enterprise, it will replace your Gat
 
 ### Maven
 
-In your `pom.xml`, you have to:
+Please check the Gatling documentation about [how to configure a maven project](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/). 
 
-* pull Gatling dependencies
-* add the maven plugin for Scala, so your code gets compiled
-* add the maven plugin for Gatling Enterprise, so it can package your code into a deployable artifact
-
-```xml
-<project>
-  <dependencies>
-    <dependency>
-      <groupId>io.gatling.highcharts</groupId>
-      <artifactId>gatling-charts-highcharts</artifactId>
-      <version>{{< var gatlingVersion >}}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <!-- so maven compiles src/test/scala and not only src/test/java -->
-    <testSourceDirectory>src/test/scala</testSourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>{{< var mavenJarPluginVersion >}}</version>
-      </plugin>
-      <!-- so maven can compile your scala code -->
-      <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <version>{{< var scalaMavenPluginVersion >}}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <recompileMode>all</recompileMode>
-              <jvmArgs>
-                <jvmArg>-Xss100M</jvmArg>
-              </jvmArgs>
-              <args>
-                <arg>-target:jvm-1.8</arg>
-                <arg>-deprecation</arg>
-                <arg>-feature</arg>
-                <arg>-unchecked</arg>
-                <arg>-language:implicitConversions</arg>
-                <arg>-language:postfixOps</arg>
-              </args>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- so maven can build a package for Gatling Enterprise -->
-      <plugin>
-        <groupId>io.gatling.frontline</groupId>
-        <artifactId>frontline-maven-plugin</artifactId>
-        <version>{{< var frontLineMavenPluginVersion >}}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>package</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-You can run `mvn package -DskipTests` in your terminal and check you get a jar containing all the dependencies of the simulation.
-
-You can also exclude dependencies you don't want to ship, eg:
-
-```xml
-<plugin>
-  <groupId>io.gatling.frontline</groupId>
-  <artifactId>frontline-maven-plugin</artifactId>
-  <version>{{< var frontLineMavenPluginVersion >}}</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>package</goal>
-      </goals>
-      <configuration>
-        <excludes>
-          <exclude>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_{{< var scalaMajorVersion >}}</artifactId>
-          </exclude>
-        </excludes>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
-```
-
-### SBT
-
-In a sbt project, you have to:
-
-* pull Gatling dependencies
-* add the sbt plugin for Gatling Enterprise, so it can package your code into a deployable artifact
-
-A `build.sbt` file should look like this:
-
-```sbt
-enablePlugins(GatlingPlugin, FrontLinePlugin)
-
-// If you want to package simulations from the 'it' scope instead
-// inConfig(IntegrationTest)(_root_.io.gatling.frontline.sbt.FrontLinePlugin.frontlineSettings(IntegrationTest))
-
-scalaVersion := "{{< var scalaVersion >}}"
-scalacOptions := Seq("-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation", "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
-
-val gatlingVersion = "{{< var gatlingVersion >}}"
-
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % "test"
-// only required if you intend to use the gatling-sbt plugin
-libraryDependencies += "io.gatling" % "gatling-test-framework" % gatlingVersion % "test"
-```
-
-{{< alert warning >}}
-Don’t forget to replace the UUID with the one you were given.
-{{< /alert >}}
-
-{{< alert warning >}}
-We only support sbt 1+, not sbt 0.13.
-{{< /alert >}}
-
-{{< alert warning >}}
-If you use the 'it' config, you have to use a custom build command as the default one is for the 'test' config:
-``sbt -J-Xss100M ;clean;it:assembly -batch --error``
-{{< /alert >}}
-
-{{< alert tip >}}
-You only need the `gatling-test-framework`dependency if you intend to run locally and use the gatling-sbt plugin.
-{{< /alert >}}
-
-{{< alert tip >}}
-If you use very long method calls chains in your Gatling code, you might have to increase sbt's thread stack size:
-{{< /alert >}}
-
-```bash
-export SBT_OPTS="-Xss100M"
-```
-
-You will also need the following lines in the `project/plugins.sbt` file:
-
-```sbt
-// only if you intend to use the gatling-sbt plugin for running Gatling locally
-addSbtPlugin("io.gatling" % "gatling-sbt" % "{{< var gatlingSbtPluginVersion >}}")
-// so sbt can build a package for Gatling Enterprise
-addSbtPlugin("io.gatling.frontline" % "sbt-frontline" % "{{< var frontLineSbtPluginVersion >}}")
-```
-
-You can run `sbt test:assembly` (or `sbt it:assembly` if you've configured the plugin for integration tests) in your terminal and check you get a jar containing all the dependencies of the simulation.
-
-{{< alert tip >}}
-The `gatling-sbt` is optional.
-{{< /alert >}}
+You can run `mvn gatling:enterprisePackage -DskipTests` in your terminal and check you get a jar containing all the classes and extra of your project.
 
 ### Gradle
 
-In a Gradle project, you have to:
+Please check the Gatling documentation about [how to configure a gradle project](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/).
 
-* pull Gatling dependencies
-* add the gradle plugin for Gatling Enterprise, so it can package your code into a deployable artifact
+You can run `gradle gatlingEnterprisePackage` in your terminal and check you get a jar containing all the classes and extra dependencies of your project.
 
-A `build.gradle` file should look like this:
+### SBT
 
-```groovy
-plugins {
-  // The following line allows to load io.gatling.gradle plugin and directly apply it
-  id 'io.gatling.frontline.gradle' version '{{< var frontLineGradlePluginVersion >}}'
-}
+Please check the Gatling documentation about [how to configure a sbt project](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/).
 
-// This is needed to let io.gatling.gradle plugin to loads gatling as a dependency
-repositories {
-  jcenter()
-  mavenCentral()
-}
-
-gatling {
-  toolVersion = '{{< var gatlingVersion >}}'
-}
-```
+You can run `sbt -J-Xss100M Gatling/enterprisePackage` in your terminal and check you get a jar containing all the classes and extra dependencies of your project.
 
 {{< alert warning >}}
-Don’t forget to replace the UUID with the one you were given.
+We require sbt 1.1+.
 {{< /alert >}}
 
-You can run `gradle frontLineJar` in your terminal and check you get a jar containing all the dependencies of the simulation.
+{{< alert warning >}}
+If you use the 'GatlingIt' config, you have to use a custom build command as the default one is for the 'test' config:
+``sbt -J-Xss100M ;clean;GatlingIt/enterprisePackage -batch --error``
+{{< /alert >}}
 
 ### Multi-Module Support
 
 If your project is a multi-module one, make sure that only the one containing the Gatling Simulations gets configured with the Gatling related plugins describes above.
 
-Gatling Enterprise will take care of deploying all available jars so you can have Gatling module depend on the other ones.
+Gatling Enterprise will take care of deploying all available jars, so you can have Gatling module depend on the other ones.
 
 ## Note on Feeders
 
@@ -277,7 +107,7 @@ This System property is only defined when deploying with Gatling Enterprise.
 It's not defined when running locally with any Gatling OSS launcher.
 {{< /alert >}}
 
-## Publishing Fatjars into Binary Repositories
+## Publishing Gatling Enterprise Packages into Binary Repositories
 
 Instead of building tests from sources, you have the option of building binaries upstream and publishing them into a binary repository (JFrog Artifactory, Sonatype Nexus or AWS S3) so Gatling Enterprise just has to download them.
 
@@ -302,8 +132,7 @@ You'll have to configure either `repository` or `snapshotRepository` block wheth
 </distributionManagement>
 ```
 
-You'll need `frontline-maven-plugin` version 1.0.3 at least.
-Fatjar artifact will be automatically attached to your project and deployed with the `shaded` classifier.
+The package artifact will be automatically attached to your project and deployed with the `shaded` classifier.
 
 ```shell
 mvn deploy
@@ -311,7 +140,7 @@ mvn deploy
 
 ### Gradle
 
-The main idea is to use the official maven publish plugin and ask it to use the task named `frontLineJar`, then define a repository:
+The main idea is to use the official maven publish plugin and ask it to use the task named `gatlingEnterprisePackage`, then define a repository:
 
 ```groovy
 apply plugin: "maven-publish"
@@ -319,7 +148,7 @@ apply plugin: "maven-publish"
 publishing {
   publications {
     mavenJava(MavenPublication) {
-      artifact frontLineJar
+      artifact gatlingEnterprisePackage
     }
   }
   repositories {
@@ -342,11 +171,11 @@ gradle publish
 
 An artifact will be published will the `tests` classifier.
 
-### Sbt
+### SBT
 
 ```scala
 packageBin in Test := (assembly in Test).value
-publishArtifact in Test := true
+publishArtifact in Gatling := true
 publishTo :=
 	(if (isSnapshot.value)
 		Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")

@@ -25,12 +25,12 @@ We don't support ARM at the moment.
 The hosts running the Gatling injectors must:
 
 * run on Linux 64 bits, with Kernel >= 3.10
-* have a JDK 8 or 11 installed [AdoptOpenJDK](https://adoptopenjdk.net/) is recommended)
+* have a JDK 8, 11 or 17 installed. We recommend using the  [OpenJDK Zulu builds from Azul System](https://www.azul.com/downloads/?package=jdk#download-openjdk).
 * have a passphrase-less SSH key
 * `/tmp` not mounted with `noexec`
 
 We recommend that you tune your OS for maximum performance.
-Please check the [Gatling documentation](https://gatling.io/docs/current/general/operations/#os-tuning).
+Please check the [Gatling documentation](https://gatling.io/docs/current/core/operations/#os-tuning).
 
 We also recommend that you disable automatic updates and automatic package repositories listing updates.
 This could eventually lead to upgrading the JDK while running, which could break your simulation run.
@@ -40,7 +40,7 @@ This could eventually lead to upgrading the JDK while running, which could break
 The hosts running Gatling injectors must be reachable from Gatling Enterprise:
 
 * over SSH (port 22)
-* over HTTP, on port 9999 (by default, configurable in frontline.conf)
+* over HTTP, on port 9999 (by default, configurable in `frontline.conf`)
 
 ### CPU/Memory
 
@@ -48,7 +48,7 @@ Unless your simulation keeps huge amounts of data in memory (eg. for feeders wit
 
 Therefore, we recommend the following instances:
 
-* AWS: `c5.xlarge` (4 cores) or `c5.2xlarge` (8 cores)
+* AWS: `c5.xlarge` or `c6g.xlarge` (4 cores), or `c5.2xlarge` or `c6g.2xlarge` (8 cores)
 * GCE: `n1-highcpu-4` (4 cores) or `n1-highcpu-8` (8 cores)
 * Azure: `F4` (4 cores) or `F8` (8 cores)
 
@@ -65,7 +65,7 @@ Gatling is more likely to use 100% of the CPU cores and will not benefit from CP
 ## Certified images
 
 We provide certified, pre-built images for AWS, Azure, GCE & Docker.
-Those images are available for both JDK 8 & 11 and includes all recommended optimisations.
+Those images are available for OpenJDK 8, 11 and 17, and include all recommended optimisations.
 If you can't use our certified images, we provide the templates from which our certified images are built:
 
 * For AWS & GCE: [frontline-injector-playbook](https://github.com/gatling/frontline-injector-playbook/) (requires Ansible & Packer)
@@ -73,7 +73,7 @@ If you can't use our certified images, we provide the templates from which our c
 ## Local
 
 It's possible to have Gatling Enterprise use a "Local" pool to deploy a single injector on the same host.
-This option is turned off by default and has to be enabled in the frontline.conf file:
+This option is turned off by default and has to be enabled in the `frontline.conf` file:
 
 ```hocon
 frontline {
@@ -107,7 +107,7 @@ Gatling Corp provides certified AMIs that you choose in the Gatling Enterprise A
 
 You'll also need to configure AWS API access keys on the Gatling Enterprise host using one of these methods:
 
-1. If you've installed Gatling Enterprise on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
+1. If you've installed Gatling Enterprise on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/core/latest/gr/aws-access-keys-best-practices.html).
 2. Environment Variables – AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 3. Java System Properties – aws.accessKeyId and aws.secretKey
 4. The default credential and config files. See [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
