@@ -34,10 +34,6 @@ Please check the Gatling documentation about [how to configure a sbt project](ht
 You can run `sbt -J-Xss100M Gatling/enterprisePackage` in your terminal and check you get a jar containing all the classes and extra dependencies of your project.
 
 {{< alert warning >}}
-We require sbt 1.1+.
-{{< /alert >}}
-
-{{< alert warning >}}
 If you use the 'GatlingIt' config, you have to use a custom build command as the default one is for the 'test' config:
 ``sbt -J-Xss100M ;clean;GatlingIt/enterprisePackage -batch --error``
 {{< /alert >}}
