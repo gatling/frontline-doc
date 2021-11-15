@@ -18,11 +18,11 @@ To access the Users administration, click on **Admin** in the navigation bar, an
 There are 4 different user roles in Gatling Enterprise:
 
 - System Admin
-- Team Admin
+- Test Admin
 - Tester
 - Viewer
 
-|                                            | Viewer             | Tester             | Team Admin         | System Admin       |
+|                                            | Viewer             | Tester             | Test Admin         | System Admin       |
 |--------------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|
 | Access own profile                         | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} | {{< icon check >}} |
 | Access Reports and Trends                  | Own team           | Own team           | Own team           | Own team           |
