@@ -113,7 +113,10 @@ Please check your build tool documentation and the standards in your organizatio
 
 ### Maven
 
-You'll have to configure either `repository` or `snapshotRepository` block whether you want to deploy releases or snapshots.
+We use the standard Maven Deploy plugin; please refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/)
+for generic configuration options.
+
+Configure either the `repository` or `snapshotRepository` block (or both), depending on whether you want to deploy releases or snapshots.
 
 ```xml
 <distributionManagement>
@@ -128,7 +131,24 @@ You'll have to configure either `repository` or `snapshotRepository` block wheth
 </distributionManagement>
 ```
 
-The package artifact will be automatically attached to your project and deployed with the `shaded` classifier.
+In the `gatling-maven-plugin` plugin configuration, make sure to bind the `gatling:enterprisePackage` goal to the Maven lifecycle:
+
+```xml
+<plugin>
+  <groupId>io.gatling</groupId>
+  <artifactId>gatling-maven-plugin</artifactId>
+  <version>${gatling-maven-plugin.version}</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>enterprisePackage</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+The packaged artifact will be automatically attached to your project and deployed with the `shaded` classifier when you publish it:
 
 ```shell
 mvn deploy
@@ -136,10 +156,15 @@ mvn deploy
 
 ### Gradle
 
-The main idea is to use the official maven publish plugin and ask it to use the task named `gatlingEnterprisePackage`, then define a repository:
+We use the official Maven Publish plugin for Gradle; please refer to the [official documentation](https://docs.gradle.org/current/userguide/publishing_maven.html)
+for generic configuration options.
+
+Configure the plugin to use the task named `gatlingEnterprisePackage`, then define the repository:
 
 ```groovy
-apply plugin: "maven-publish"
+plugins {
+  id "maven-publish"
+}
 
 publishing {
   publications {
@@ -169,19 +194,46 @@ An artifact will be published will the `tests` classifier.
 
 ### SBT
 
+Please refer to the [official documentation](https://www.scala-sbt.org/1.x/docs/Publishing.html) for generic configuration options.
+
+#### With the `Gatling` (tests) configuration
+
+Enable publishing the Gatling test artifact, then define the repository:
+
 ```scala
-packageBin in Test := (assembly in Test).value
-publishArtifact in Gatling := true
-publishTo :=
-	(if (isSnapshot.value)
-		Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")
-	else
-		Some("private repo" at "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL")
+Gatling / publishArtifact := true
+Compile / publishArtifact := false // If you only want to publish Gatling tests from this project (nothing from src/main)
+publishTo := (
+  if (isSnapshot.value)
+    Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")
+  else
+    Some("private repo" at "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL")
 )
 ```
 
+The packaged artifact will be automatically attached to your project and deployed with the `tests` classifier when you publish it:
+
 ```shell
-sbt test:publish
+sbt publish
 ```
 
-An artifact will be published will the `tests` classifier.
+#### With the `GatlingIt` (integration tests) configuration
+
+Enable publishing the Gatling integration test artifact, then define the repository:
+
+```scala
+GatlingIt / publishArtifact := true
+Compile / publishArtifact := false // If you only want to publish Gatling tests from this project (nothing from src/main)
+publishTo := (
+  if (isSnapshot.value)
+    Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")
+  else
+    Some("private repo" at "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL")
+)
+```
+
+The packaged artifact will be automatically attached to your project and deployed with the `it` classifier when you publish it:
+
+```shell
+sbt publish
+```
