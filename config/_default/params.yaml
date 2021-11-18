@@ -44,16 +44,8 @@ alertText: ""
 # Edit Page
 editPage: true
 
-options:
-  lazySizes: true
-  instantPage: true
-  flexSearch: true
-  darkMode: true
-  bootStrapJs: false
-  breadCrumb: false
-
 includeCode:
-  default: scala
+  default: java
   labels:
     java: Java
     kt: Kotlin
