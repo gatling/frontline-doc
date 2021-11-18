@@ -21,6 +21,7 @@ public
 resources
 
 # Hugo
+.hugo_build.lock
 package.json
 package-lock.json
 go.sum
