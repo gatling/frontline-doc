@@ -6,28 +6,28 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60010
 ---
 
-### 1.15.3 (2021-09-02)
+## 1.15.3 (2021-09-02)
 
-#### Fixes
+### Fixes
 
 * FL-841: Run: Can't delete a run
 * FL-844: Simulation: Can't duplicate a simulation
 
-### 1.15.2 (2021-08-31)
+## 1.15.2 (2021-08-31)
 
-#### Fixes
+### Fixes
 
 * FL-825: Dashboard: "Abort run" is now labelled "Stop run"
 * FL-836: Boot: flush all responses before rebooting the API after first configuration
 
-### 1.15.1 (2021-08-26)
+## 1.15.1 (2021-08-26)
 
-#### Fixes
+### Fixes
 
 * FL-831: Grafana: Improve documentation wrt unsigned plugins
 * FL-833: Kubernetes/OpenShift: pod creation crash due to invalid character because of the "Gatling Enterprise" renaming
 
-### 1.15.0 (2021-08-19)
+## 1.15.0 (2021-08-19)
 
 {{< alert info >}}
 FrontLine has been renamed to Gatling Enterprise.
@@ -37,7 +37,7 @@ FrontLine has been renamed to Gatling Enterprise.
 The official documentation is now hosted [here](https://gatling.io/docs/enterprise/self-hosted/reference/current/user/login/).
 {{< /alert >}}
 
-#### Features
+### Features
 
 * FL-740: The tables have been reshaped
 * FL-774: Gradle: new gradlew built-in
@@ -45,7 +45,7 @@ The official documentation is now hosted [here](https://gatling.io/docs/enterpri
 * FL-806: Reports: page has been reshaped
 * FL-814: New public API to retrieve the license details and limits: /license
 
-#### Fixes
+### Fixes
 
 * FL-660: Reports: Improved label color generation
 * FL-730: API now responds a correct 401 status when the cookie has expired
@@ -64,15 +64,15 @@ The official documentation is now hosted [here](https://gatling.io/docs/enterpri
 * FL-823: AWS: No error message when the profile is incorrect
 * FL-824: Global Properties: Can't set the JVM Options to nothing
 
-### 1.14.3 (2021-07-06)
+## 1.14.3 (2021-07-06)
 
-#### Gatling 3.6.1
+### Gatling 3.6.1
 
 Please check the full release note: https://github.com/gatling/gatling/milestone/97?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-693: Dashboard: Fix chart label with same color 
 * FL-695: Dashboard: Fix modal percentile overflow 
@@ -87,26 +87,26 @@ Please check the full release note: https://github.com/gatling/gatling/milestone
 * FL-753: Kubernetes/OpenShift: Retry on HTTP connect when failure is actually that the service behind the ingress/route is not ready yet
 * MISC-89: CI: Make script display a specific error if the Gatling Enterprise url is malformed and ends with a `/`
 
-### 1.14.2 (2021-06-03)
+## 1.14.2 (2021-06-03)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-678: Compare runs button should be disabled when there is only 1 run
 * FL-681: Fix Cassandra configuration backward compatibility
 
-### 1.14.1 (2021-05-28)
+## 1.14.1 (2021-05-28)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-668: Crash on boot when using OIDC or LDAP
 
-### 1.14.0 (2021-05-20)
+## 1.14.0 (2021-05-20)
 
-#### Gatling 3.6.0
+### Gatling 3.6.0
 
 {{< alert info >}}
 Gatling Enterprise 1.14.0 is compatible with Gatling 3.3, 3.4, 3.5 and 3.6.
@@ -118,13 +118,13 @@ Most noticeable new feature is [Brotli](https://en.wikipedia.org/wiki/Brotli) su
 
 See full release note: https://github.com/gatling/gatling/milestone/98?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert info >}}
 This release doesn't perform any new database automatic migration if you're upgrading from 1.13.1 or above.
 {{< /alert >}}
 
-##### Features
+#### Features
 
 * FL-20: Pipeline: Immediately fail test when a simulation crashes on instantiation instead of retrying HTTP connection
 * FL-396: Repository: Gatling zip bundle now ships a script to generate uploadable artifacts (eg in an S3 bucket repository)
@@ -132,7 +132,7 @@ This release doesn't perform any new database automatic migration if you're upgr
 * FL-534: AWS: subnets are no multivalued and retried randomly if deploying the pool fails for insufficient capacity
 * FL-589: Cassandra: Expose full Cassandra Java Driver configuration with Typesafe config (eg configuring TSL)
 
-##### Fixes
+#### Fixes
 
 * FL-19: Public API: Fix `abortAll` API permissions
 * FL-192: Reports: Tooltip should pass over navbar
@@ -165,9 +165,9 @@ This release doesn't perform any new database automatic migration if you're upgr
 * FL-647: Private Keys: Invalid error message mentioning "Certificate" instead of "Private Key"
 * FL-651: Private Keys: File system private keys path does not update
 
-### 1.13.4 (2021-03-18)
+## 1.13.4 (2021-03-18)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert warning >}}
 [JFrog is terminating jCenter and Bintray services.](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/)
@@ -180,7 +180,7 @@ sbt users are **strongly** advised to upgrade to `sbt 1.4.9`, `gatling-sbt 3.2.2
 gradle users are **strongly** advised to upgrade to `frontline-gradle-plugin 1.3.4`.
 {{< /alert >}}
 
-##### Fixes
+#### Fixes
 
 * FL-404: UI: link in the Error page to the Service Desk is sometimes wrong
 * FL-406: Repositories: Test admin cannot create a S3 repository
@@ -203,11 +203,11 @@ gradle users are **strongly** advised to upgrade to `frontline-gradle-plugin 1.3
 * FL-523: sbt: Upgrade sbt sample and plugins to cope with jCenter and Bintray incoming termination
 * FL-526: Private Keys: superAdmin doesn't have access to private keys page
 
-### 1.13.3 (2021-02-24)
+## 1.13.3 (2021-02-24)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-390: Runs: No data displayed + broken css after deleting runs and current page no longer exists
 * FL-393: Runs: Delete option doesn't disappear after deleting a run so no run is selected
@@ -219,20 +219,20 @@ gradle users are **strongly** advised to upgrade to `frontline-gradle-plugin 1.3
 * FL-430: Pipeline doesn't delay deployment retries, causing deploying issues in particular on AWS Virginia
 * FL-434: Simulations: Sort by team does not work
 
-### 1.13.2 (2021-02-01)
+## 1.13.2 (2021-02-01)
 
 {{< alert warning >}}
 As announced for several months, we've finally turned down the `http://repository.gatling.io` maven repository.
 Users have to download Gatling Enterprise components from `https://downloads.gatling.io`.
 {{< /alert >}}
 
-#### Gatling 3.5.1
+### Gatling 3.5.1
 
 See full release note: https://github.com/gatling/gatling/milestone/96?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-348: Dashboard: Hovering on requests and responses counts induces redux state mutation
 * FL-349: Public link permissions flawed
@@ -246,30 +246,30 @@ See full release note: https://github.com/gatling/gatling/milestone/96?closed=1
 * FL-387: Runs History: pagination breaks when going to last page
 * FL-391: Installer: should download Gatling Enterprise bundle from downloads.repository.io instead of repository.gatling.io
 
-### 1.13.1 (2020-12-24)
+## 1.13.1 (2020-12-24)
 
-##### Fixes
+#### Fixes
 
 * FL-344: Summary: Request summary page blinks every 5 seconds
 * FL-345: Team Test admins can no longer use global resources (pools, repositories), only resources belonging to their own team
 * FL-347: Assertions stopped working
 
-### 1.13.0 (2020-12-16)
+## 1.13.0 (2020-12-16)
 
-#### Gatling 3.5.0
+### Gatling 3.5.0
 
 See full release note: https://github.com/gatling/gatling/milestone/94?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Features
+#### Features
 
 * FL-13: Reports: Limit the number of errors message to avoid flooding
 * FL-22: Reports: Limit the number of (scenario, group, request) to avoid flooding
 * FL-36: Reports: Duration stats are now aggregated by end timestamp
 * FL-86: Reports: Limit the number of remote addresses to avoid flooding
 
-##### Fixes
+#### Fixes
 
 * FL-12: Runs: Introduce paging on run history to avoid flooding when history is huge
 * FL-14: Simulation: delete System prop button should be visible when there is only one defined
@@ -280,29 +280,29 @@ See full release note: https://github.com/gatling/gatling/milestone/94?closed=1
 * FL-323: Repositories: Can't use a https repo without credentials
 * FL-332: Runs: Fix possible desynchronization between injectors and Gatling Enterprise
 
-### 1.12.5 (2020-12-04)
+## 1.12.5 (2020-12-04)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-289: Misc: Run clean up crashes on date formatting
 * FL-298: Pipeline: Kill signal_name should not be SIG prefixed
 * FL-296: Azure: Update Azure certificates verification on Marketplace init
 
-### 1.12.4 (2020-11-24)
+## 1.12.4 (2020-11-24)
 
-#### Gatling 3.4.2
+### Gatling 3.4.2
 
 See full release note: https://github.com/gatling/gatling/milestone/95?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Features
+#### Features
 
 * FL-231: App: Revisited logging. Existing users are advised to add `<logger name="io.gatling.frontline" level="INFO"/>` in their `logback.xml` file.
 
-##### Fixes
+#### Fixes
 
 * FL-176: Repositories: Document permissions required to use S3 buckets as repositories
 * FL-199: Boot: License prompt shows up again on reboot
@@ -315,11 +315,11 @@ See full release note: https://github.com/gatling/gatling/milestone/95?closed=1
 * FL-268: Boot: Don't overwrite super admin password and security key when updating expired license key
 * FL-274: Security: It shouldn't be possible a save a simulation after hitting number of simulations limit
 
-### 1.12.3 (2020-10-28)
+## 1.12.3 (2020-10-28)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * FL-164: AWS, S3: form is not properly saved when using environment variables
 * FL-175: Private Key: form can't be saved after uploading file without editing other fields
@@ -327,19 +327,19 @@ See full release note: https://github.com/gatling/gatling/milestone/95?closed=1
 * FL-186: Cassandra: Migration 77 still crashes on humongous databases
 * FL-188: Git: url validation rejects valid AWS CodeCommit urls
 
-### 1.12.2 (2020-10-13)
+## 1.12.2 (2020-10-13)
 
-#### Gatling 3.4.1
+### Gatling 3.4.1
 
 See full release note: https://github.com/gatling/gatling/milestone/93?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Features
+#### Features
 
 * FL-115: AWS: Support AMD based instance types
 
-##### Fixes
+#### Fixes
 
 * FL-1: Repositories: Fix sort by name
 * FL-56: Private Keys: Reset file name field when closing the modal
@@ -352,25 +352,25 @@ See full release note: https://github.com/gatling/gatling/milestone/93?closed=1
 * FL-132: Pipeline: Retries process retry once too much
 * FL-133: Pipeline: Retries process shouldn't delay first tentative
 
-### 1.12.1 (2020-09-29)
+## 1.12.1 (2020-09-29)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * DEV-1418: AWS: Saving a new pool with Elastic IPs fails
 * DEV-1419: HTTP: Missing request path when using Gatling 3.3
 * DEV-1421: HTTP: Injector crash when traffic goes through a proxy
 
-### 1.12.0 (2020-09-24)
+## 1.12.0 (2020-09-24)
 
-#### Gatling 3.4.0
+### Gatling 3.4.0
 
 See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Features
+#### Features
 
 * DEV-359: GCE: Provide certified images
 * DEV-553: Core: Gatling Enterprise should log on console when running inside a container or under systemd
@@ -401,7 +401,7 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1337: Pipeline: Support deploying projects compiled against Gatling 3.3 as well as Gatling 3.4
 * DEV-1346: Pipeline: Increase run duration hard limit to 1 week
 
-##### Fixes
+#### Fixes
 
 * DEV-208: PDF Export: legend should not be displaying disabled percentiles
 * DEV-209: PDF Export: Component title should be more visible
@@ -457,11 +457,11 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1363: HTTP Server: Protect against channel actually closed when trying to close idle channel
 * DEV-1365: HTTP Server: Close socket on response body allocation failure
 
-### 1.11.1 (2020-05-26)
+## 1.11.1 (2020-05-26)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * DEV-997: WebSocket: unmatched inbound messages are not visible in dropdown menu and summary
 * DEV-998: Repositories: don't require Git repository url to end with ".git" (eg: Azure Repos)
@@ -473,16 +473,16 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-1056: Upgrade jQuery from 3.4.1 to 3.5.1, fix security vulnerability
 * DEV-1061: Repositories & Kubernetes: fix invalid URL validation and allow valid chars such as `-`
 
-### 1.11.0 (2020-04-20)
+## 1.11.0 (2020-04-20)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert warning >}}
 Runs and simulations API payloads have been modified: The field previously named `jvmProperties` has been renamed to `jvmOptions`.
 *Gatling Enterprise CI plugins* have been impacted, make sure to upgrade them as well.
 {{< /alert >}}
 
-##### Features
+#### Features
 
 * DEV-485: Ansible Playbook: add parameters for Cassandra and Gatling Enterprise home directories
 * DEV-684: CI plugins: rename `jvmProperties` to `jvmOptions`
@@ -501,7 +501,7 @@ Runs and simulations API payloads have been modified: The field previously named
 * DEV-949: Conf: advertise secretKey criticality
 * DEV-950: MarketPlaces: display support address on boot screen
 
-##### Fixes
+#### Fixes
 
 * DEV-468: Web: protect against 502 errors when Gatling Enterprise is behind a reverse proxy
 * DEV-549: Teams: verify team permission on private key by id endpoint
@@ -537,16 +537,16 @@ Runs and simulations API payloads have been modified: The field previously named
 * DEV-941: Conf: unhelpful message when you enter a new license key when relaunching Gatling Enterprise
 * DEV-944: sbt: upgrade sbt-frontline 1.1.2 with sbt coursier backend bug workaround
 
-### 1.10.1 (2020-01-31)
+## 1.10.1 (2020-01-31)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Features
+#### Features
 
 * DEV-794: Update certified AWS AMI and docker images with JRE 11.0.6 and 8u242
 * DEV-840: Display default git branch next to the override box
 
-##### Fixes
+#### Fixes
 
 * DEV-759: Don't redirect to login page when Cassandra is shut down
 * DEV-774: Kubernetes NodePort Prefer Internal IP checkbox is broken
@@ -569,16 +569,16 @@ Runs and simulations API payloads have been modified: The field previously named
 * DEV-834: Don't let save an Uploaded private key with selecting a file to upload
 * DEV-836: Can't edit graph param in Grafana
 
-### 1.10.0 (2019-12-18)
+## 1.10.0 (2019-12-18)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert warning >}}
 This release fixes several security issues (see DEV-726, DEV-747 and DEV-748).
 Users who uploaded private keys with the Gatling Enterprise UI are highly advised to upgrade.
 {{< /alert >}}
 
-##### Features
+#### Features
 
 * DEV-261: Provide links for downloading Gatling Enterprise extensions (CI plugins and Grafana datasource) from Web UI
 * DEV-484: Document how to use Ansible playbook locally
@@ -587,7 +587,7 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly advise
 * DEV-707: Introduce per team admin permission
 * DEV-725: Log PATH env var when launching native process fails with "program not found"
 
-##### Fixes
+#### Fixes
 
 * DEV-719: Git repository username cannot contain '@' and ':' characters
 * DEV-722: Reduce memory usage of pipeline actor's mailbox
@@ -606,11 +606,11 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly advise
 * DEV-750: Multiple highlights abscissas are off when hovering timeline after zooming in
 * DEV-765: Delete obsolete file when updating an uploaded private key
 
-### 1.9.2 (2019-11-20)
+## 1.9.2 (2019-11-20)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * DEV-640: Groups counts are no longer recorded and break group assertions
 * DEV-668: Azure networks should be filtered by region
@@ -632,17 +632,17 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly advise
 * DEV-710: Can't change private key team to Global
 * DEV-768: Creating a new on-prem host edits last open one instead
 
-### 1.9.1 (2019-11-07)
+## 1.9.1 (2019-11-07)
 
-#### Gatling 3.3.1
+### Gatling 3.3.1
 
 Gatling 3.3.1 is binary compatible with 3.3.0, so you are not required to upgrade if you're already compiling against 3.3.0.
 
 See full release note: https://github.com/gatling/gatling/milestone/91?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
-##### Fixes
+#### Fixes
 
 * DEV-634: Some behavior change on the GCP API server causes a [Google Cloud Java SDK known bug](https://github.com/googleapis/google-api-java-client/issues/1060) to happen way more frequently. We're implementing a workaround.
 * DEV-635: Digital Ocean modal: remove misleading mention of username being admin by default
@@ -658,9 +658,9 @@ See full release note: https://github.com/gatling/gatling/milestone/91?closed=1
 * DEV-663: Fix AWS S3 bucket env variables profile name
 * DEV-670: S3 is regionless, remove region field
 
-### 1.9.0 (2019-10-23)
+## 1.9.0 (2019-10-23)
 
-#### Gatling 3.3.0
+### Gatling 3.3.0
 
 {{< alert warning >}}
 Gatling 3.3.0 is source compatible but not fully binary compatible with the 3.2 series.
@@ -671,7 +671,7 @@ recompile your pre-packaged binaries. Otherwise, tests might fail with `NoSuchMe
 
 See full release note: https://github.com/gatling/gatling/milestone/90?closed=1
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert warning >}}
 This release introduce a major change in the way sources and binaries repositories and configured so such configuration is no longer duplicated in all your simulations.
@@ -679,7 +679,7 @@ Existing simulations will be automatically migrated when updating Gatling Enterp
 Please remember to make a Cassandra database backup before upgrading.
 {{< /alert >}}
 
-##### Features
+#### Features
 
 * DEV-24: Simulation search now takes for team name into account
 * DEV-285: AWS pool configuration now filters configuration by VPC
@@ -707,7 +707,7 @@ Please remember to make a Cassandra database backup before upgrading.
 * DEV-560: Introduce `gatling.frontline.groupedDomains` System property to group network stats and prevent OutOfMemoryErrors when testing against large fleet of subdomains
 * DEV-624: Initialize new database with a `Default` team
 
-##### Fixes
+#### Fixes
 
 * DEV-508: Incorrect redirect from link in CI plugins when not authenticated
 * DEV-554: Change stacked charts colors when the legend is hovered
@@ -723,9 +723,9 @@ Please remember to make a Cassandra database backup before upgrading.
 * DEV-596: Make use of all cores when processing stats from large injectors clusters
 * DEV-599: Don't record a DNS resolution event when url domain is not a hostname but an IP
 
-### 1.8.2 (2019-09-10)
+## 1.8.2 (2019-09-10)
 
-#### Gatling Enterprise
+### Gatling Enterprise
 
 {{< alert warning >}}
 Make sure to check your Kubernetes pools setup as memory and cpu requests and limits are now mandatory.
@@ -737,7 +737,7 @@ Please upgrade ASAP if you're using binary repositories, see DEV-543
 
 NOTE: Kubernetes users are advised to upgrade to injectors' Docker image to `gatlingcorp/frontline-injector:8u222`
 
-##### Fixes
+#### Fixes
 
 * DEV-455: API for checking if Gatling Enterprise is deployed on Kubernetes shouldn't require authentication
 * DEV-507: Make sure time window doesn't grow when moving it
@@ -754,7 +754,7 @@ NOTE: Kubernetes users are advised to upgrade to injectors' Docker image to `gat
 * DEV-542: Binary repository credentials can't be removed
 * DEV-543: Pools and Repositories listing APIs used in Simulation configuration shouldn't return secrets
 
-##### Features
+#### Features
 
 * DEV-501: Allow preferring Kubernetes internal IP instead of external one, see DEV-534
 * DEV-510: Trim Simulation System properties to remove unexpected white spaces
@@ -763,15 +763,19 @@ NOTE: Kubernetes users are advised to upgrade to injectors' Docker image to `gat
 * DEV-528: Force a minimal number of Netty threads when running Gatling Enterprise in a container
 * DEV-534: Prefer Kubernetes cluster external IP over internal one, support having Gatling Enterprise and k8s injectors in different networks
 
-### 1.8.1 (2019-08-26)
+## 1.8.1 (2019-08-26)
 
-#### Gatling Enterprise
+### Gatling 3.2.1
+
+See release note: https://github.com/gatling/gatling/milestone/89?closed=1
+
+### Gatling Enterprise
 
 {{< alert warning >}}
 If you plan on deploying maven projects as fatjars in a maven repository, please upgrade `frontline-maven-plugin` to 1.0.3.
 {{< /alert >}}
 
-##### Fixes
+#### Fixes
 
 * DEV-441: Editing a private key and changing its name warn about overwriting
 * DEV-453: Time window in Live reports is not updated
@@ -799,22 +803,22 @@ If you plan on deploying maven projects as fatjars in a maven repository, please
 * DEV-502: Fix public link generation error when you choose now as the expiration date
 * DEV-505: Tooltip not displayed when some series are disabled
 
-#### Gatling 3.2.1
+## 1.8.0.1 (2019-07-30)
 
-See release note: https://github.com/gatling/gatling/milestone/89?closed=1
+### Gatling Enterprise
 
-### 1.8.0.1 (2019-07-30)
-
-#### Gatling Enterprise
-
-##### Fixes
+#### Fixes
 
 * DEV-446: Migrate correctly simulations if they use a Git command, correct the simulations which were migrated incorrectly in 1.8.0
 * DEV-447: Fix saving a simulation with a custom build command
 
-### 1.8.0 (2019-07-23)
+## 1.8.0 (2019-07-23)
 
-#### Gatling Enterprise
+### Gatling 3.2.0
+
+See release note: https://github.com/gatling/gatling/milestone/88?closed=1
+
+### Gatling Enterprise
 
 {{< alert warning >}}
 Make sure to upgrade Gatling to 3.2.0, as version is not binary compatible with 3.1.3.
@@ -828,7 +832,7 @@ This release ships important security improvements, so users are highly advised 
 [Some deprecated features](#deprecated-features-removed)  have been removed.
 {{< /alert >}}
 
-##### Features
+#### Features
 
 * DEV-27: Support downloading fatjar from JFrog Artifactory
 * DEV-64: Support uploading private keys directly from the web interface
@@ -848,7 +852,7 @@ This release ships important security improvements, so users are highly advised 
 * DEV-408: Remove SSH server from injectors Docker image, switch to native kubectl
 * DEV-410: Introduce retry on initial Cassandra connection to handle slow Cassandra boots
 
-##### Fixes
+#### Fixes
 
 * DEV-33: Don't lose user preferences on logout
 * DEV-86: Protect against brute force attacks when auth is in "Gatling Enterprise" mode: use Argon2 hashing
@@ -871,11 +875,7 @@ This release ships important security improvements, so users are highly advised 
 * DEV-429: Adding a pin shouldn't be possible in anonymous mode
 * DEV-430: Gatling Enterprise logo is not visible on the 404 page
 
-##### Deprecated features removed
+#### Deprecated features removed
 
 * DEV-188: Removed Public API metrics deprecated in 1.7.0 (responses Ok, responses Ko, responses by status, groupCounts Ok, groupCounts Ko), please use their alias without spaces
 * DEV-188: Removed use of file frontline-api.conf, please use frontline.conf
-
-#### Gatling 3.2.0
-
-See release note: https://github.com/gatling/gatling/milestone/88?closed=1

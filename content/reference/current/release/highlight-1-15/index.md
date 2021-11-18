@@ -7,9 +7,9 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60018
 ---
 
-### Gatling Enterprise 1.15
+## Gatling Enterprise 1.15
 
-#### Renaming to Gatling Enterprise
+### Renaming to Gatling Enterprise
 
 FrontLine was renamed to Gatling Enterprise.
 
@@ -17,18 +17,18 @@ FrontLine was renamed to Gatling Enterprise.
 In order to not break anything, there is still some mentions of FrontLine, in the downloads links for example.
 {{< /alert >}}
 
-#### Key New Features
+### Key New Features
 
 * Redesign of the application with improved Reports and tables
 * New Public API /license which returns the license information and limits
 * New gradlew built-in for easier Gradle configuration
 
-#### Key Bug Fixes
+### Key Bug Fixes
 
 * The used Elastic IPs were not shown in the injectors tab
 * Improved the chart label color generation
 
-### Operations
+## Operations
 
 {{< alert tip >}}
 Prior to upgrading, make sure to perform the required backups as described [here](https://gatling.io/docs/enterprise/self-hosted/reference/current/installation/manual/#upgrading-from-a-previous-version).

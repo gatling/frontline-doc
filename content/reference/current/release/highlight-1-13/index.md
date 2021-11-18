@@ -7,9 +7,9 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60020
 ---
 
-### Gatling Enterprise 1.13
+## Gatling Enterprise 1.13
 
-#### Gatling 3.3, 3.4 and 3.5 generations support
+### Gatling 3.3, 3.4 and 3.5 generations support
 
 Gatling Enterprise 1.13 is compatible with the 3 latest Gatling generations.
 
@@ -21,7 +21,7 @@ Multiple versions support is for convenience so that customers don't have to upg
 Customers are recommended to upgrade to Gatling 3.5 as soon as they can.
 {{< /alert >}}
 
-#### Key New Features
+### Key New Features
 
 We've changed the way duration events are aggregated.
 
@@ -32,19 +32,19 @@ Those stats are now aggregated by end timestamp, which results in a way more sou
 We've also introduced hard limits on the number of metrics that a given test run can generate.
 In some situations, a test could generate way too many metrics and cause the whole Gatling Enterprise instance to crash.
 
-#### Key Bug Fixes
+### Key Bug Fixes
 
 We've fixed some important bugs that could cause injectors and Gatling Enterprise server to not be in sync, causing long tests to abnormally crash.
 
 Please check the Release Note for the full list of bug fixes.
 
-### Gatling 3.5.0
+## Gatling 3.5.0
 
 {{< alert tip >}}
 Gatling 3.5 becomes the production version, meaning that no further improvements and bug fixes will happen on Gatling 3.4.
 {{< /alert >}}
 
-#### Scala 2.13
+### Scala 2.13
 
 Scala 2.13.0 was released in June 2019 and Scala 3 is expected soon, so it was critical that Gatling stopped lagging behind.
 
@@ -55,18 +55,18 @@ The most noticeable impact is probably refreshing projects imported in your IDE.
 
 Please also check [the full release note](https://github.com/gatling/gatling/milestone/94?closed=1) for more details about the content of this release.
 
-#### Key New Features
+### Key New Features
 
 * support for Scala case classes in Gatling Expression Language and `jsonStringify`
 * ability to use [Pebble templates](https://pebbletemplates.io/) for multipart parts
 * ability to provide regex patterns to `useAllLocalAddresses` to only use desired local addresses
 
-#### Key Bug Fixes
+### Key Bug Fixes
 
 * children scenarios not being triggered when parent doesn't generate any load. This can typically happen when using a parent scenario to initialize something with one single virtual user while running a cluster of injector so only one node get the single user.
 * feeders configured with `batch` still loading the first batch, making them unsuitable for lazy loading while the file is actually populated at runtime from a parent scenario.
 
-### Operations
+## Operations
 
 {{< alert tip >}}
 Images of Gatling Gatling Enterprise published to the AWS Marketplace are made using this installer. The directory layout will be the same.
@@ -77,12 +77,14 @@ Images of Gatling Gatling Enterprise published to the AWS Marketplace are made u
 Prior to upgrading, make sure to perform the required backups as described at the beginning of the Installation Guide.
 {{< /alert >}}
 
-#### Old Binaries Distribution Platform Upcoming Shutdown
+### Old Binaries Distribution Platform Upcoming Shutdown
 
 {{< alert tip >}}
 Images of Gatling Enterprise published to the AWS Marketplace are made using this installer. The directory layout will be the same.
 {{< /alert >}}
 
-IMPORTANT: As announced when we released Gatling Enterprise 1.12.0, the `http://repository.gatling.io/` server was supposed to get decommissioned end of November 2020.
+{{< alert warning >}}
+As announced when we released Gatling Enterprise 1.12.0, the `http://repository.gatling.io/` server was supposed to get decommissioned end of November 2020.
 We extended the deadline to the end of December for give our customers more time to adapt, but the server will definitely be gone in January 2021.
 From now on, please use `https://downloads.gatling.io/releases/YOUR_CUSTOMER_ID/`.
+{{< /alert >}}

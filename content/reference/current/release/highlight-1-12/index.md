@@ -7,9 +7,9 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 60030
 ---
 
-### Gatling Enterprise 1.12
+## Gatling Enterprise 1.12
 
-#### Scoped Private Keys
+### Scoped Private Keys
 
 Private Keys now target either `repositories` or `pools`.
 
@@ -23,7 +23,7 @@ Such unscoped private keys will keep on working with Gatling Enterprise 1.12 but
 We recommend you delete the unused ones and duplicate the ones used for both repositories and pools (unlikely use case).
 {{< /alert >}}
 
-#### Revamped Roles with new Test Admin Role
+### Revamped Roles with new Test Admin Role
 
 We now have the following roles:
 
@@ -34,13 +34,13 @@ We now have the following roles:
 
 `superAdmin` is a special system admin. You should only use it to create system admins.
 
-#### Team Simulation Quotas
+### Team Simulation Quotas
 
 Managing a global licenced pool of simulations amongst multiple project teams can be cumbersome.
 
 System admins can now define `quotas` on how many simulations a given team can use.
 
-#### New OpenID Connect Integration
+### New OpenID Connect Integration
 
 Gatling Enterprise can now integrate with your favorite OIDC provider such as Azure Active Directory or Okta.
 
@@ -50,17 +50,17 @@ Beware that in OAuth2, usernames are case-sensitive!
 Please check [the tool we provide for helping to migrate those users](https://github.com/gatling/frontline-users-migration-tool).
 {{< /alert >}}
 
-#### New Pools Features
+### New Pools Features
 
-##### Generic
+#### Generic
 
 Pools can now be duplicated.
 
-##### AWS
+#### AWS
 
 * Spot instances support
 
-##### GCE
+#### GCE
 
 * Built-in certified images
 * Preemptible instances support
@@ -68,9 +68,9 @@ Pools can now be duplicated.
 * Injector static IP support
 * Service accounts support
 
-### Gatling 3.4.0
+## Gatling 3.4.0
 
-#### What's New
+### What's New
 
 The key new features are:
 
@@ -81,7 +81,7 @@ The key new features are:
 This release also includes lots of performance and bug fixes.
 Please check the https://github.com/gatling/gatling/milestone/92?closed=1[full release note].
 
-#### Upgrading Gatling version in your Projects
+### Upgrading Gatling version in your Projects
 
 Gatling 3.4 is mostly source compatible with Gatling 3.3 but there are still *a few minor breaking changes*,
 please check the [Gatling 3.4 Migration Guide](https://gatling.io/docs/current/migration_guides/3.3-to-3.4/).
@@ -101,7 +101,7 @@ You are still required to upgrade to Gatling 3.4 at some point.
 * supporting deploying Gatling 3.3 projects will be dropped at some point, possibly when we will release Gatling 3.5.0
 * the Gatling 3.3 branch is frozen, meaning no bug fixes will be backported
 
-#### Upgrading maven/gradle/sbt plugin version in your Projects
+### Upgrading maven/gradle/sbt plugin version in your Projects
 
 {{< alert tip >}}
 We recommend that you upgrade to the latest versions of the build plugins so that Gatling Enterprise can detect which version of Gatling was used to compile:
@@ -116,7 +116,7 @@ Breaking change: when upgrading `frontline-gradle-plugin`, you are now required 
 Please check the sample you can download from Gatling Enterprise's web UI.
 {{< /alert >}}
 
-#### Upgrading your injectors JVM settings
+### Upgrading your injectors JVM settings
 
 We've updated the default JVM options to:
 
@@ -136,13 +136,13 @@ Those new settings produced way better performance in our internal benchmarks.
 
 If you've overridden the default global properties with your own parameters, you might probably want to revisit them.
 
-### Operations
+## Operations
 
 {{< alert tip >}}
 Prior to upgrading, make sure to perform the required backups as described at the beginning of the Installation Guide.
 {{< /alert >}}
 
-#### Gatling Enterprise Binaries Distribution Platform Change
+### Gatling Enterprise Binaries Distribution Platform Change
 
 {{< alert tip >}}
 The http://repository.gatling.io/ server will be shut down end of November 2020.
@@ -153,7 +153,7 @@ Download urls on the new server use the same pattern as the old one, eg:
 
 https://downloads.gatling.io/releases/YOUR_CUSTOMER_ID/`
 
-#### Minimal Original Gatling Enterprise Version
+### Minimal Original Gatling Enterprise Version
 
 If you are currently using a version of Gatling Enterprise older than 1.6.2, you can't directly upgrade to Gatling Enterprise 1.12.0.
 You have to first upgrade to Gatling Enterprise 1.11.1.

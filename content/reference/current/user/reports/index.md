@@ -26,7 +26,7 @@ This page consists of:
 
 {{< img src="reports.png" alt="Reports" >}}
 
-### Run Bar
+## Run Bar
 
 This bar is a combination of buttons:
 
@@ -36,13 +36,13 @@ This bar is a combination of buttons:
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
-### Top Navigator Menu {#top-navigator-menu}
+## Top Navigator Menu
 
 The navigation menu allows you to choose the simulation time range.
 
 {{< img src="timewindow.png" alt="Timewindow" >}}
 
-### Assertions {#assertions}
+## Assertions
 
 The label below shows the status of the simulation (Ongoing, successful, timeout...).
 If your simulation has assertions, you can click this label.
@@ -50,7 +50,7 @@ You can comment the run by clicking on the {{< icon comment-alt >}} icon.
 
 {{< img src="timeline-assertions.png" alt="Timeline assertions" >}}
 
-### Timeline
+## Timeline
 
 The timeline contains metrics of the full run providing an overview of the run.
 Global information are available such as the resolution and the simulation name.
@@ -61,14 +61,14 @@ You can change the time range with control buttons or by selecting a region on t
 
 {{< img src="timeline.png" alt="Timeline" >}}
 
-### Tabs
+## Tabs
 
 Below the navigator chart, there are tabs to switch charts.
 Each tab has the same structure except the summary that is available only for requests and groups tabs.
 
 {{< img src="tabs.png" alt="Tabs" >}}
 
-### Filter Bar {#filter-bar}
+## Filter Bar
 
 This filter bar is a combination of buttons:
 
@@ -77,7 +77,7 @@ This filter bar is a combination of buttons:
 
 {{< img src="filter-bar.png" alt="Filter bar" >}}
 
-### Charts
+## Charts
 
 All charts in Gatling Enterprise are connected to each other, so if you select a time window on a chart it will automatically change it
 for all other charts. Metrics are drawn in multiple charts.
@@ -96,7 +96,7 @@ Moreover, histograms and pies are hidden behind each count chart, accessible by 
 If your kernel version is too low (around below 3.10) you might not be able to get data from the TCP connection by state graph on the Connections tab. If you want to be able to get these data, you should upgrade your kernel.
 {{< /alert >}}
 
-### Summary (Requests and Groups only) {#summary}
+## Summary (Requests and Groups only) {#summary}
 
 This view is available only from requests and groups tabs.
 It is a summary of metrics drawn in the charts, and has two modes: flat, by default, and hierarchy.
@@ -107,7 +107,7 @@ On Flat mode you can filter the data by clicking any column name of the table.
 
 {{< img src="summary.png" alt="Summary" >}}
 
-### Generate Public Links {#public-links}
+## Generate Public Links {#public-links}
 
 A public link is a link of the current reports which will be accessible to anyone, without having to log-in to Gatling Enterprise. To generate a public link, click on the *Generate public link* button and choose the expiration date of your link.
 
@@ -121,7 +121,7 @@ Choose an expiration date, then click the generate button.
 
 You can copy the public link to share your report to non-Gatling Enterprise users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
 
-### Export PDF {#export-pdf}
+## Export PDF
 
 When clicking on the blue export button in the navigator menu, you will have access to a page where you can configure and then export a PDF report of a specific simulation run.
 
@@ -175,9 +175,9 @@ There are two more actions you can do:
   - **as a save**: this option will save everything, including the content of the Text Area and the configuration of the graphs
 - **Load**: load a previously saved template or save.
 
-### Useful Tips {#tips}
+## Useful Tips {#tips}
 
-#### Zoom
+### Zoom
 
 You can reset zoom by a double click on a chart.
 It is possible to change the time range window by the following actions:
@@ -186,34 +186,34 @@ It is possible to change the time range window by the following actions:
 - Select a zone in any charts and timeline
 - Select a range time from the top navigation bar
 
-#### Markers
+### Markers
 
 To ease your analysis, you can create markers on all the charts by right clicking on them. And click on the top of the marker to delete it.
 
 {{< img src="marker.png" alt="Marker" >}}
 
-#### Multiple Highlights
+### Multiple Highlights
 
 In the top right menu, you can activate the *Multiple Highlights* setting which allows the tooltip to be displayed on every chart at the same time.
 
 {{< img src="multiplecheck.png" alt="Multiple check" >}}
 {{< img src="multiple.png" alt="Multiple" >}}
 
-#### Percentiles Mask
+### Percentiles Mask
 
 In the top right menu, you can click on the **Percentiles** setting to be able to chose what percentiles to display in the chart.
 
 {{< img src="percentilesmask.png" alt="Percentiles mask" >}}
 {{< img src="percentileschart.png" alt="Percentiles chart" >}}
 
-#### Date Time / Elapsed Time
+### Date Time / Elapsed Time
 
 In the top right menu, you can activate the **Date Time** setting to be able to switch from elapsed time to date time.
 
 {{< img src="multiplecheck-date.png" alt="Multiple check" >}}
 {{< img src="multiple-date.png" alt="Multiple" >}}
 
-#### Highlight Legend
+### Highlight Legend
 
 If you hover your mouse over a label on the percentiles chart legend, you will be able to highlight the curve on the chart, leading to a better view of that curve.
 The highlight legend option is enabled for every "non stacked" graph.
