@@ -11,7 +11,7 @@ weight: 5040
 
 This script has the same purpose as the Jenkins, Bamboo or Teamcity plugin. It enables you to launch a Gatling Enterprise simulation and display live metrics.
 
-This script doesn’t create a new Gatling Enterprise simulation, you have to create it using the FrontLine Dashboard before.
+This script doesn’t create a new Gatling Enterprise simulation, you have to create it using the Gatling Enterprise Dashboard before.
 
 ## Requirement
 
@@ -21,10 +21,10 @@ jq is needed to run this script. It is a JSON processor available for download [
 
 You need to give 3 parameters to the script:
 
-- frontLine url: address of your Gatling Enterprise, for example: https://demo-beta.gatling.io
-- api token: Gatling Enterprise API token created with permission **All**. To fetch the API Token, refer to the section Managing API Tokens in the Gatling Enterprise User Guide.
+- Gatling Enterprise url: address of your Gatling Enterprise, for example: https://cloud.gatling.io
+- api token: The [API token]({{< ref "../../admin/api-tokens" >}}) will allow the script to authenticate to Gatling Enterprise. The API token needs the *All* role.
 - simulation id: id of the simulation you want to start. You can get this id on the simulation table, with the {{< icon clipboard >}} icon.
 
 ## Script
 
-It can be found [here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var revnumber >}}/frontline-ci-script-{{< var revnumber >}}.zip)
+It can be found [here](https://downloads.gatling.io/releases/frontline-ci-script/{{< var externalPluginsVersion >}}/frontline-ci-script-{{< var externalPluginsVersion >}}.zip)
