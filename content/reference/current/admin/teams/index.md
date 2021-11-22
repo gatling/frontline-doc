@@ -4,7 +4,7 @@ description: "Learn how to administrate teams."
 lead: "Teams allow you to group your users and scope their permissions accordingly."
 date: 2021-03-10T08:47:03-05:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 40020
+weight: 302
 ---
 
 ## Managing Teams

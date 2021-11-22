@@ -1,5 +1,11 @@
 ---
 title: Plugins
 description: "Gatling Enterprise plugins documentation"
-weight: 50
+weight: 500
+ordering:
+  - jenkins
+  - teamcity
+  - bamboo
+  - script
+  - grafana
 ---

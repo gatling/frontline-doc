@@ -4,7 +4,7 @@ description: "Learn how to access your profile."
 lead: "View and update your profile"
 date: 2021-03-10T09:29:23-05:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 10040
+weight: 203
 ---
 
 ## Accessing your profile

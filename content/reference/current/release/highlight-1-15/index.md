@@ -4,7 +4,7 @@ description: "Learn about the main new features of Gatling Enterprise 1.15"
 lead: "Gatling Enterprise 1.15 introduces a redesign of the application and a new public API"
 date: 2021-08-16T17:55:36+02:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 60018
+weight: 602
 ---
 
 ## Gatling Enterprise 1.15

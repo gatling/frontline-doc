@@ -4,7 +4,7 @@ description: "Configuration of Gatling Enterprise"
 lead: "First time configuration of Gatling Enterprise and content of the default configuration file"
 date: 2021-03-26T17:57:29+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 20060
+weight: 106
 ---
 
 ## Configuring Gatling Enterprise

@@ -4,7 +4,7 @@ description: "Learn how to administrate users and their permissions."
 lead: "Users that can authenticate and their permissions."
 date: 2021-03-10T08:47:07-05:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 40010
+weight: 301
 ---
 
 ## Managing Users

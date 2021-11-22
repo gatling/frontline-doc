@@ -5,4 +5,11 @@ cascade:
   variables:
     revnumber: "1.15.3"
     externalPluginsVersion: "1.15.3"
+ordering:
+  - installation
+  - user
+  - admin
+  - pools
+  - plugins
+  - release
 ---

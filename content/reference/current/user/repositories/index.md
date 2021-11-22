@@ -3,8 +3,7 @@ title: "Repositories"
 description: "Repositories indicates how Gatling Enterprise needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 10060
-toc: true
+weight: 205
 ---
 
 {{< alert tip >}}
