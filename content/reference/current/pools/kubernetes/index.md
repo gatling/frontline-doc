@@ -4,7 +4,7 @@ description: "Kubernetes pools are a configuration of Kubernetes injectors"
 lead: "Deploy Gatling Enterprise injectors on Kubernetes"
 date: 2021-03-26T09:41:20+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 407
+weight: 4070
 ---
 
 A Kubernetes/OpenShift Pool is a reference to your Kubernetes infrastructure.

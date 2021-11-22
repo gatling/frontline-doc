@@ -1,7 +1,7 @@
 ---
 title: Plugins
 description: "Gatling Enterprise plugins documentation"
-weight: 500
+weight: 5000
 ordering:
   - jenkins
   - teamcity

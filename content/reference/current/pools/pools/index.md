@@ -4,7 +4,7 @@ description: "Pools are the configuration of your injectors"
 lead: "Deploy multiple Gatling Enterprise injectors"
 date: 2021-03-26T09:28:01+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 401
+weight: 4010
 ---
 
 Pools are the configuration of your injectors.

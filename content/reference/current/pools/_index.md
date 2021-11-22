@@ -1,7 +1,7 @@
 ---
 title: Configuring Injectors
 description: "Gatling Enterprise Injectors Deployment"
-weight: 400
+weight: 4000
 ordering:
   - pools
   - on-premises

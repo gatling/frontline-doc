@@ -4,7 +4,7 @@ description: "Learn how to install manually Gatling Enterprise"
 lead: "Install or upgrade manually Gatling Enterprise, and learn how to configure it"
 date: 2021-03-26T16:08:33+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 102
+weight: 1020
 ---
 
 ## Upgrading From a Previous Version

@@ -4,7 +4,7 @@ description: "Learn how to install Gatling Enterprise with Docker"
 lead: "Install Gatling Enterprise and Cassandra easily with Docker or Docker Compose"
 date: 2021-03-26T17:31:42+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 104
+weight: 1040
 ---
 
 Running Gatling Enterprise with Docker is the recommended solution, as it requires the minimal amount of setup and is the easiest way to upgrade to newer versions.

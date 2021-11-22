@@ -3,7 +3,7 @@ title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 601
+weight: 6010
 ---
 
 ## 1.15.3 (2021-09-02)

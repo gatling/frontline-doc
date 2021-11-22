@@ -3,7 +3,7 @@ title: Release Notes and Highlights
 description: Release Notes and Highlights
 cascade:
   search: false
-weight: 600
+weight: 6000
 ordering:
   - release-notes
   - highlight-1-15

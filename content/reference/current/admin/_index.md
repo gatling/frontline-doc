@@ -1,7 +1,7 @@
 ---
 title: Administration
 description: "Learn every aspect of Gatling Enterprise's administration"
-weight: 300
+weight: 3000
 ordering:
   - users
   - teams

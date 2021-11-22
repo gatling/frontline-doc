@@ -4,7 +4,7 @@ description: "Learn how to configure a script to run your simulations."
 lead: "Run your Gatling Enterprise simulations from your CI."
 date: 2021-03-08T13:50:17+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 504
+weight: 5040
 ---
 
 ## Purpose of this script

@@ -4,7 +4,7 @@ description: "Learn about the main new features of Gatling Enterprise 1.13"
 lead: "Gatling Enterprise 1.13 introduce support for multiple versions of Gatling and performance fixes"
 date: 2021-04-06T17:55:36+02:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 604
+weight: 6040
 ---
 
 ## Gatling Enterprise 1.13

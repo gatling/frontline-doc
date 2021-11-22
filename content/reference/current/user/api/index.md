@@ -4,7 +4,7 @@ description: "Swagger documentation of the Gatling Enterprise public API."
 lead: "Usage of the Gatling Enterprise public API"
 date: 2021-03-08T13:50:24+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 209
+weight: 2090
 ---
 
 The Gatling Enterprise API server also exposes a public API that you can use to trigger runs or fetch run results and metrics.

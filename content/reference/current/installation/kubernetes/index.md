@@ -4,7 +4,7 @@ description: "Learn how to install Gatling Enterprise with Kubernetes"
 lead: "Install Gatling Enterprise and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 105
+weight: 1050
 ---
 
 If you're using Kubernetes-based injector pools, it is recommended to run Gatling Enterprise itself inside Kubernetes too:

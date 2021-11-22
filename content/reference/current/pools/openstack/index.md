@@ -4,7 +4,7 @@ description: "Openstack pools are a configuration of Openstack injectors"
 lead: "Deploy Gatling Enterprise injectors on an OpenStack Cluster (ie OVH, City Cloud and Rackspace)"
 date: 2021-03-26T09:41:12+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 406
+weight: 4060
 ---
 
 Like the others pools, an OpenStack Pool is a reference to the OpenStack account you want to use to spawn injectors to run the simulation. We only support Keystone version 3.

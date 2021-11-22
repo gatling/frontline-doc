@@ -1,7 +1,7 @@
 ---
 title: Installation
 description: "Documentation on how to install Gatling Enterprise"
-weight: 100
+weight: 1000
 ordering:
   - introduction
   - manual

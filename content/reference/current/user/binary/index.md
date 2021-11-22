@@ -3,7 +3,7 @@ title: "Gatling Binary generation"
 description: "Learn how to package Gatling simulations"
 date: 2021-03-26T18:06:39+01:00
 lastmod: 2021-08-16T17:55:36+02:00
-weight: 204
+weight: 2040
 ---
 
 ## Gatling Enterprise Gatling Versions
