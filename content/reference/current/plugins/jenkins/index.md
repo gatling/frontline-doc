@@ -29,11 +29,11 @@ You need to be connected as an administrator of your Jenkins application to inst
 
 The plugin needs some global configuration. Go **Manage Jenkins**, **Configure System**, then **Global Gatling Enterprise Plugin Configuration**.
 
-The **API Token** will allow Jenkins to authenticate to Gatling Enterprise. To fetch the API Token, refer to the section *Managing API Tokens* in the Gatling Enterprise User Guide.
+The [API token]({{< ref "../../admin/api-tokens" >}}) will allow Jenkins to authenticate to Gatling Enterprise. The API token needs the *All* role.
 
-You can configure the API Token globally in this page, or per CI project if each project has a API Token scoped on a specific team. We recommend storing the API Token in a secret text credential, but you can also copy the content of the API Token in the second field.
+You can configure the API Token globally in this page, or per CI project if each project has an API Token scoped on a specific team. We recommend storing the API Token in a secret text credential, but you can also copy the content of the API Token in the second field.
 
-The **Address** is the address of your Gatling Enterprise API, for example: https://demo-beta.gatling.io.
+The **Address** is the address of your Gatling Enterprise API, for example: https://cloud.gatling.io.
 
 {{< img src="global-configuration.png" alt="Global Configuration" >}}
 
@@ -90,7 +90,7 @@ If you don't have any assertions in your Gatling simulation, the JUnit step will
 
 ### Set-up for an old style job
 
-Add a new build step called **FrontLine Plugin**. Choose in the Simulation list the simulation you want to use. You can specify the id of an API Token stored in a credential if you don't want to use the one configured globally.
+Add a new build step called **Gatling Enterprise Plugin**. Choose in the Simulation list the simulation you want to use. You can specify the id of an API Token stored in a credential if you don't want to use the one configured globally.
 
 {{< img src="build-configuration.png" alt="Build configuration" >}}
 
@@ -114,6 +114,6 @@ A new Gatling Enterprise simulation will be started every time the job is run. C
 
 If the Gatling Enterprise deployment fails (i.e. because of a shortage of available hosts), the plugin will retry 3 times to redeploy the simulation.
 
-Live metrics will be displayed in the console, and in the Status page. The link **View Run in FrontLine** in the build page menu links to Gatling Enterprise.
+Live metrics will be displayed in the console, and in the Status page. The link **View Run in Gatling Enterprise** in the build page menu links to Gatling Enterprise.
 
 {{< img src="run-view.png" alt="Results" >}}
