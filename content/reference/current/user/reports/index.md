@@ -32,7 +32,7 @@ This bar is a combination of buttons:
 
 - **Start / Stop**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
 - **Generate public link**: To create a [public link]({{< ref "../reports#public-links" >}})
-- **Export**: To [export]({{< ref "../reports#export" >}}) reports
+- **Export**: To [export]({{< ref "#export-pdf" >}}) reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
@@ -203,6 +203,7 @@ In the top right menu, you can activate the *Multiple Highlights* setting which 
 
 In the top right menu, you can click on the **Percentiles** setting to be able to chose what percentiles to display in the chart.
 
+{{< img src="percentilescheck.png" alt="Percentiles check" >}}
 {{< img src="percentilesmask.png" alt="Percentiles mask" >}}
 {{< img src="percentileschart.png" alt="Percentiles chart" >}}
 
