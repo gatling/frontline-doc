@@ -34,8 +34,11 @@ You can use our certified images or the url of your custom VHD: the image should
 {{< /alert >}}
 
 - **Public Key**: the public ssh key to connect to your instances
-- **Username**: the username used by your ssh command to connect to the instances
+{{< alert warning >}}
+[Ed25519 keys are not supported](https://docs.microsoft.com/en-us/troubleshoot/azure/virtual-machines/ed25519-ssh-keys) in Azure.
+{{< /alert >}}
 
+- **Username**: the username used by your ssh command to connect to the instances
 {{< alert warning >}}
 Azure has some requirements about the username:
 
