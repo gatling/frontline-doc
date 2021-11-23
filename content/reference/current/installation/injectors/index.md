@@ -16,9 +16,7 @@ Valid characters for a pool name are letters, digits, spaces, dashes and undersc
 
 ### Architecture
 
-We currently only support AMD64 for both the Gatling Enterprise server and the Gatling injectors.
-
-We don't support ARM at the moment.
+We support AMD64 and ARM for both the Gatling Enterprise server and the Gatling injectors.
 
 ### Image
 
