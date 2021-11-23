@@ -19,22 +19,20 @@ weight: 1020
 
 ## Processor Architecture
 
-We currently only support AMD64 for both Gatling Enterprise and Gatling injectors.
-
-We don't support ARM at the moment.
+We support both AMD64 and ARM for both Gatling Enterprise and Gatling injectors.
 
 ## JDK
 
-Gatling Enterprise components runs on a JVM and requires a modern Hotspot-based JDK 8 or 11.
+Gatling Enterprise components run on a JVM and require a modern Hotspot-based JDK 8, 11 or 17.
 
-We recommend you use JDK builds from [AdoptOpenJDK](https://adoptopenjdk.net/).
+We recommend you use JDK builds from [Azul System's Zulu](https://www.azul.com/downloads/?version=java-11-lts&package=jdk).
 
 Other JVMs such as OpenJ9 are not supported.
 
 {{< alert warning >}}
 - As of Cassandra 3, JDK 11 support is flagged as experimental.
 - As a consequence, we only support running Cassandra with JDK 8.
-- JDK 11 support is limited to Gatling Enterprise server and Gatling injectors only.
+- JDK 11 and 17 support is limited to Gatling Enterprise server and Gatling injectors only.
 {{< /alert >}}
 
 ## Linux
@@ -445,7 +443,7 @@ By default, all registered users can connect as a global viewer and need an admi
 
 - Go to "App registrations"
 - Click on "New registration"
-- Set the redirect URI to http://your-frontline-url:your-frontline-port/redirected
+- Set the redirect URI to https://your-gatling-enterprise-url:your-gatling-enterprise-port/redirected
 - Add a client secret in "Certificates & secrets" (we don't support certificates yet)
 - Edit your frontline.conf file, configuration is described above, here is a sample configuration:
 
@@ -473,7 +471,7 @@ oidc {
 - Navigate to admin => security => api => authorization server
 - Make sure the openid, profile and email scopes are present
 - Create an OpenId app
-- Set the login redirect URI to http://your-frontline-url:your-frontline-port/redirected
+- Set the login redirect URI to https://your-gatling-enterprise-url:your-gatling-enterprise-port/redirected
 - Copy client ID & client secret
 - Assign people / groups to the app
 - Edit your frontline.conf file, configuration is described above, here is a sample configuration:

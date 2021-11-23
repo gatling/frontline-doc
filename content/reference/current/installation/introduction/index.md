@@ -23,8 +23,8 @@ Gatling Enterprise consists of:
   * A rich web UI
   * A public REST API
 - The Gatling Enterprise Extensions:
-  * A Grafana Datasource for querying Gatling Enterprise metrics
   * Continuous Integration plugins for Jenkins, Bamboo and TeamCity or any solution that can trigger a bash script
+  * A Grafana Datasource for querying Gatling Enterprise metrics
 - Gatling injectors to be used like standard Gatling OSS, with extra features so Gatling Enterprise can collect data from them
 
 ## Documentation Conventions
@@ -42,5 +42,5 @@ REPLACE_WITH_YOUR_CUSTOM_GATLING_ENTERPRISE_BUNDLE_DOWNLOAD_LINK
 This custom link was shared with your license key by our sales persons with the manager in charge of the contract and the administrators registered for support.
 
 {{< alert warning >}}
-This placeholder only makes sense for self-hosted customers. AWS and Azure Marketplace customers spawn a pre-installed virtual machine and already have all the dependencies they need.
+This placeholder only makes sense for self-hosted customers. AWS and Azure Marketplace customers spawn a pre-installed virtual machine and already have all the dependencies needed.
 {{< /alert >}}
