@@ -2,7 +2,7 @@
 title: "Gatling Binary generation"
 description: "Learn how to package Gatling simulations"
 date: 2021-03-26T18:06:39+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2021-11-23T09:00:00+02:00
 weight: 2040
 ---
 
@@ -10,38 +10,22 @@ weight: 2040
 
 Gatling Enterprise actually uses custom versions of the Gatling components. Those binaries are not open source and their usage is restricted to Gatling Enterprise.
 
-When you'll be deploying tests with Gatling Enterprise, it will replace your Gatling OSS dependencies with their custom counterparts.
+When you deploy simulations with Gatling Enterprise, it replaces your Gatling OSS dependencies with their custom counterparts.
 
 ## Configuring Gatling Projects
 
-### Maven
+You can configure your project to allow Gatling Enterprise to build it from the source code, or you can decide to publish
+a binary package yourself and let Gatling Enterprise retrieve it.
 
-Please check the Gatling documentation about [how to configure a maven project](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/). 
+Either way, you will need to configure a project using one of the supported build tools, with the corresponding Gatling
+plugin. To set up you project, please refer to the documentation pages of the respective plugins:
 
-You can run `mvn gatling:enterprisePackage -DskipTests` in your terminal and check you get a jar containing all the classes and extra of your project.
+- [Gatling plugin for Maven](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/) (for Java, Kotlin and Scala)
+- [Gatling plugin for Gradle](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/) (for Java, Kotlin and Scala)
+- [Gatling plugin for SBT](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/) (for Scala)
 
-### Gradle
-
-Please check the Gatling documentation about [how to configure a gradle project](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/).
-
-You can run `gradle gatlingEnterprisePackage` in your terminal and check you get a jar containing all the classes and extra dependencies of your project.
-
-### SBT
-
-Please check the Gatling documentation about [how to configure a sbt project](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/).
-
-You can run `sbt -J-Xss100M Gatling/enterprisePackage` in your terminal and check you get a jar containing all the classes and extra dependencies of your project.
-
-{{< alert warning >}}
-If you use the 'GatlingIt' config, you have to use a custom build command as the default one is for the 'test' config:
-``sbt -J-Xss100M ;clean;GatlingIt/enterprisePackage -batch --error``
-{{< /alert >}}
-
-### Multi-Module Support
-
-If your project is a multi-module one, make sure that only the one containing the Gatling Simulations gets configured with the Gatling related plugins describes above.
-
-Gatling Enterprise will take care of deploying all available jars, so you can have Gatling module depend on the other ones.
+Once your project is ready, you can then [configure a repository]({{< ref "../repositories" >}}) and
+[a simulation]({{< ref "../simulations" >}}).
 
 ## Note on Feeders
 
@@ -101,138 +85,3 @@ val baseUrl = if (poolName == "London") "https://domain.co.uk" else "https://dom
 This System property is only defined when deploying with Gatling Enterprise.
 It's not defined when running locally with any Gatling OSS launcher.
 {{< /alert >}}
-
-## Publishing Gatling Enterprise Packages into Binary Repositories
-
-Instead of building tests from sources, you have the option of building binaries upstream and publishing them into a binary repository (JFrog Artifactory, Sonatype Nexus or AWS S3) so Gatling Enterprise just has to download them.
-
-{{< alert tip >}}
-Please check your build tool documentation and the standards in your organization about the way to set credentials.
-{{< /alert >}}
-
-### Maven
-
-We use the standard Maven Deploy plugin; please refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/)
-for generic configuration options.
-
-Configure either the `repository` or `snapshotRepository` block (or both), depending on whether you want to deploy releases or snapshots.
-
-```xml
-<distributionManagement>
-  <repository>
-    <id>your.releases.repository.id</id>
-    <url>REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL</url>
-  </repository>
-  <snapshotRepository>
-    <id>your.snapshots.repository.id</id>
-    <url>REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL</url>
-  </snapshotRepository>
-</distributionManagement>
-```
-
-In the `gatling-maven-plugin` plugin configuration, make sure to bind the `gatling:enterprisePackage` goal to the Maven lifecycle:
-
-```xml
-<plugin>
-  <groupId>io.gatling</groupId>
-  <artifactId>gatling-maven-plugin</artifactId>
-  <version>${gatling-maven-plugin.version}</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>enterprisePackage</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
-```
-
-The packaged artifact will be automatically attached to your project and deployed with the `shaded` classifier when you publish it:
-
-```shell
-mvn deploy
-```
-
-### Gradle
-
-We use the official Maven Publish plugin for Gradle; please refer to the [official documentation](https://docs.gradle.org/current/userguide/publishing_maven.html)
-for generic configuration options.
-
-Configure the plugin to use the task named `gatlingEnterprisePackage`, then define the repository:
-
-```groovy
-plugins {
-  id "maven-publish"
-}
-
-publishing {
-  publications {
-    mavenJava(MavenPublication) {
-      artifact gatlingEnterprisePackage
-    }
-  }
-  repositories {
-    maven {
-      if (project.version.endsWith("-SNAPSHOT")) {
-        url "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL"
-      } else {
-        url "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL"
-      }
-    }
-  }
-}
-```
-
-You can deploy the test jar with the following command:
-
-```shell
-gradle publish
-```
-
-An artifact will be published will the `tests` classifier.
-
-### SBT
-
-Please refer to the [official documentation](https://www.scala-sbt.org/1.x/docs/Publishing.html) for generic configuration options.
-
-#### With the `Gatling` (tests) configuration
-
-Enable publishing the Gatling test artifact, then define the repository:
-
-```scala
-Gatling / publishArtifact := true
-Compile / publishArtifact := false // If you only want to publish Gatling tests from this project (nothing from src/main)
-publishTo := (
-  if (isSnapshot.value)
-    Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")
-  else
-    Some("private repo" at "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL")
-)
-```
-
-The packaged artifact will be automatically attached to your project and deployed with the `tests` classifier when you publish it:
-
-```shell
-sbt publish
-```
-
-#### With the `GatlingIt` (integration tests) configuration
-
-Enable publishing the Gatling integration test artifact, then define the repository:
-
-```scala
-GatlingIt / publishArtifact := true
-Compile / publishArtifact := false // If you only want to publish Gatling tests from this project (nothing from src/main)
-publishTo := (
-  if (isSnapshot.value)
-    Some("private repo" at "REPLACE_WITH_YOUR_SNAPSHOTS_REPOSITORY_URL")
-  else
-    Some("private repo" at "REPLACE_WITH_YOUR_RELEASES_REPOSITORY_URL")
-)
-```
-
-The packaged artifact will be automatically attached to your project and deployed with the `it` classifier when you publish it:
-
-```shell
-sbt publish
-```
