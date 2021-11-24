@@ -2,9 +2,9 @@
 title: "Gatling Enterprise 1.16 Highlights"
 description: "Learn about the main new features of Gatling Enterprise 1.16"
 lead: "Gatling Enterprise 1.16 introduces a redesign of the application and a new public API"
-date: 2021-08-16T17:55:36+02:00
-lastmod: 2021-08-16T17:55:36+02:00
-weight: 6020
+date: 2021-11-24T14:00:00+02:00
+lastmod: 2021-11-24T14:00:00+02:00
+weight: 6015
 ---
 
 ## Gatling Enterprise 1.16
