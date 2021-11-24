@@ -6,6 +6,42 @@ lastmod: 2021-08-16T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.16.0 (2021-11-24)
+
+### Gatling 3.7.1
+
+{{< alert info >}}
+Gatling Enterprise 1.16.0 is compatible with Gatling 3.3, 3.4, 3.5, 3.6 and 3.7.
+Still, you're recommended to upgrade to 3.7.1, older versions are no longer maintained.
+{{< /alert >}}
+
+{{< alert warning >}}
+Beware that the "frontline" maven, gradle and sbt plugins are [now deprecated]({{< ref "../highlight-1-16.md#switch-to-oss-build-plugins" >}}).
+{{< /alert >}}
+
+This release is mostly about new features, in particular the new Java DSL.
+Please check the [full release note](https://github.com/gatling/gatling/milestone/100?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* FL-91: Injectors: Support running injectors on ARM + support ARM based instance types on AWS
+* FL-861: AWS/GCE/Azure/Kubernetes: Add certified images for Java 17
+* FL-837: Deprecate "frontline" maven/gradle/sbt plugins as all the features are moved to the standard OSS plugins, drop Enterprise-specific samples and add pointers to the standard ones
+
+### Fixes
+
+* FL-826: Login: Fix login button that stayed disabled when auto-filled on Firefox
+* FL-839: OpenAPI: Make run status a documented enum
+* FL-851: Migrations: increase timeout on schema updates to 1 minute
+* FL-869: Reports: Fix established stats in TCP Connections Events per Second chart
+* FL-866: Reports: Fix Response Time Percentiles chart y-axis legend
+* FL-876: Azure: Rename some form fields to match the updated Azure wording
+* FL-874: AWS/GCE/Azure: Improve wording on Private IP preference field
+* FL-875: Azure: new pool option to not allocate a public IP address
+* FL-863: Injectors: report an error when the user configures an invalid JVM option that causes the JVM to crash on boot
+
 ## 1.15.3 (2021-09-02)
 
 ### Fixes
