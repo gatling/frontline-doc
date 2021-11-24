@@ -17,7 +17,7 @@ It introduces many features, including a Java DSL that can also be used with oth
 
 ### Java 17 Certified Images
 
-Java 17 is the latest Java LST (Long Term Support) version.
+Java 17 is the latest Java LTS (Long Term Support) version.
 
 We now provide Java 17 based certified images for AMI, Azure, GCE and Docker.
 
