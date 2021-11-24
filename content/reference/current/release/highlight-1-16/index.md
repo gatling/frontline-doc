@@ -38,6 +38,10 @@ As a result:
     * [maven](https://gatling.io/docs/gatling/reference/current/extensions/maven_plugin/): `io.gatling:gatling-maven-plugin:4.0.1`. Beware that this new version of the maven plugin no longer compiles Scala code itself, so you must configure the standard `scala-maven-plugin`.
     * [gradle](https://gatling.io/docs/gatling/reference/current/extensions/gradle_plugin/): `io.gatling.gradle:3.7.1`
     * [sbt](https://gatling.io/docs/gatling/reference/current/extensions/sbt_plugin/): `io.gatling:gatling-sbt:4.0.0`
+* after upgrading your Gatling projects, you will need to change the
+[build configuration]({{< ref "../../user/simulations/#step-2-build-configuration" >}})
+for your existing simulations, to use the non-deprecated plugins. For example, replace "Maven project (deprecated plugin)"
+with "Maven project".
 * the Enterprise-specific plugins are deprecated and will no longer be maintained
 
 {{< /alert >}}
