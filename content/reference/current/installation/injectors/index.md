@@ -105,7 +105,7 @@ Gatling Corp provides certified AMIs that you choose in the Gatling Enterprise A
 
 You'll also need to configure AWS API access keys on the Gatling Enterprise host using one of these methods:
 
-1. If you've installed Gatling Enterprise on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/core/latest/gr/aws-access-keys-best-practices.html).
+1. If you've installed Gatling Enterprise on AWS EC2, you can directly [set a IAM Role to the instance](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
 2. Environment Variables – AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 3. Java System Properties – aws.accessKeyId and aws.secretKey
 4. The default credential and config files. See [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
