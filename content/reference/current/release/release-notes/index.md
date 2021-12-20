@@ -2,9 +2,21 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2021-12-20T17:55:36+02:00
 weight: 6010
 ---
+## 1.16.1 (2021-12-20)
+
+### Gatling 3.7.3
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/102?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-907: Injectors: Cope with MemoryUsage JDK bug, see https://bugs.openjdk.java.net/browse/JDK-8207200
+* FL-910: Public API: request and groups values are swapped in /run
 
 ## 1.16.0 (2021-11-24)
 
