@@ -2,9 +2,26 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2021-12-20T17:55:36+02:00
+lastmod: 2022-01-17T17:55:36+02:00
 weight: 6010
 ---
+## 1.16.2 (2022-01-18)
+
+### Gatling 3.7.4
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/103?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* FL-913: Reports: Lock summaries column headers when scrolling down
+* FL-915: Pipeline: split waiting for injectors to listen over HTTP and to instantiate the Simulation in 2 disctinct steps with distinct timeouts
+
+### Fixes
+
+* FL-918: Pipeline: Stop waiting for missing node stats when node has actually finished earlier than the other nodes
+
 ## 1.16.1 (2021-12-20)
 
 ### Gatling 3.7.3
