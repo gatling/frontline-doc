@@ -16,7 +16,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 ### Features
 
 * FL-913: Reports: Lock summaries column headers when scrolling down
-* FL-915: Pipeline: split waiting for injectors to listen over HTTP and to instantiate the Simulation in 2 disctinct steps with distinct timeouts
+* FL-915: Pipeline: split waiting for injectors to listen over HTTP and to instantiate the Simulation in 2 distinct steps with distinct timeouts
 
 ### Fixes
 
