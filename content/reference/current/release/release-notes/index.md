@@ -2,9 +2,26 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2022-01-17T17:55:36+02:00
+lastmod: 2022-02-15T17:55:36+02:00
 weight: 6010
 ---
+
+## 1.16.3 (2022-02-15)
+
+### Gatling 3.7.5
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/105?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-783: Repositories: Downloading an artifact from a Binary Repository actually downloads all the dependencies
+* FL-921: Trends: Wrong values for the means of response time percentiles
+* FL-937: Simulations: Fix StringIndexOutOfBoundsException when Simulation name ends with a dot
+* FL-941: Repositories: Team names are cropped very small in select input
+* FL-944: Teams & API Tokens: names in table are cropped too small
+
 ## 1.16.2 (2022-01-18)
 
 ### Gatling 3.7.4
