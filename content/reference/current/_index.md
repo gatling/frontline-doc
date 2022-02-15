@@ -4,7 +4,7 @@ description: "Gatling Enterprise Self-Hosted documentation"
 cascade:
   variables:
     revnumber: "1.16.3"
-    externalPluginsVersion: "1.16.2"
+    externalPluginsVersion: "1.16.3"
 ordering:
   - installation
   - user
