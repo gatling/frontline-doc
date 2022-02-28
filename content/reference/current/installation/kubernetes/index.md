@@ -1,9 +1,9 @@
 ---
-title: "Automated installation with Kubernetes"
+title: "Installation with Kubernetes"
 description: "Learn how to install Gatling Enterprise with Kubernetes"
 lead: "Install Gatling Enterprise and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-02-28T16:44:21+00:00
 weight: 1050
 ---
 

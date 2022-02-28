@@ -1,66 +1,106 @@
 ---
-title: "Automated installation with Docker"
-description: "Learn how to install Gatling Enterprise with Docker"
-lead: "Install Gatling Enterprise and Cassandra easily with Docker or Docker Compose"
+title: "Installation with Docker Compose"
+description: "Learn how to install Gatling Enterprise with Docker Compose"
+lead: "Learn how to install Gatling Enterprise with Docker Compose"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-03-07T11:36:22+00:00
 weight: 1040
 ---
 
-Running Gatling Enterprise with Docker is the recommended solution, as it requires the minimal amount of setup and is the easiest way to upgrade to newer versions.
+Running Gatling Enterprise with [Docker Compose](https://docs.docker.com/compose/) is the recommended solution to get started quickly, as it requires the minimal amount of setup and is the easiest way to upgrade to newer versions.
+While it is a good start, it is not recommended for production workload.
+You can reuse every configuration shown here to spawn your own Docker based environment, could it be volumes that needs to be backed up, properties, ports mapping, and so on.
 
-## Getting Gatling Enterprise's Docker image
+## Quick Checklist
 
-Gatling Enterprise's image is hosted as a private image on [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline).
+1. Contact support with your Docker Hub username to get access to the Gatling Enterprise Docker image
+2. Prepare a folder to hold the Docker Compose configuration, and inside this folder, make three subfolders:
 
+    - `cassandra-data`, kept empty
+    - `frontline-conf` prepared with the default [`frontline.conf`]({{< ref "../configuration#default-configuration-file" >}}) and [`logback.xml`]({{< ref "#logging" >}})
+    - `frontline-keys`, kept empty
+
+You can skip to the [Docker Compose configuration section]({{< ref "#configuration" >}}) if you already know the details.
+
+## Detailed Checklist
+
+Create a folder that will hold the Docker Compose configuration.
+We will make multiple subfolders inside to hold the required volumes.
+These volumes are meant to be backed up and reused when upgrading to one version to the next:
+
+* `cassandra-data` holds all the data of Gatling Enterprise
+* `frontline-conf` contains the core configuration of Gatling Enterprise
+* `frontline-keys` contains secrets that are used to either spawn injectors or get access to private sources used to run tests
+
+You can create all three folders inside the folder of your choice.
+Later on, we will add the main Docker Compose configuration into this main folder.
+
+### Getting Gatling Enterprise's Docker image
+
+Gatling Enterprise image is hosted as a private image on our organization's [Docker Hub](https://hub.docker.com/r/gatlingcorp/frontline).
 Please contact our support and provide us with your Docker Hub username so we can grant you access.
 
-{{< alert tip >}}
-Ensure that you can pull our image:
+{{< alert warning >}}
+This access is only given to Gatling Enterprise Self-Hosted customers.
+{{< /alert >}}
+
+Gatling Enterprise will be available under the tag name `gatlingcorp/frontline:{{< var revnumber >}}`.
+
+You can pull it directly to validate your access:
 
 ```console
 docker pull gatlingcorp/frontline:{{< var revnumber >}}
 ```
+
+{{< alert tip >}}
+Make sure you are logged in using `docker login` with the username you provided to our support.
 {{< /alert >}}
 
-## Setup Cassandra
+### Preparing the Cassandra database
 
-The following command will start a single-node Cassandra cluster, using the official Cassandra image.
-This will also mount a local directory on the host into the container, to persist its data across starts/stops of the Cassandra container.
+We will be using the official Cassandra image under the tag name `cassandra:3`.
 
-```console
-docker run --detach \
-  --name cassandra \
-  --volume <local directory to store Cassandra data>:/var/lib/cassandra \
-  --publish 9042:9042 \
-  cassandra:3
-```
+This image will push data into a folder named `cassandra-data`, that is mapped to the container's inner folder `/var/lib/cassandra`.
 
-## Copy Gatling Enterprise default configuration
+Cassandra is available on port `9042`. It won't be visible in the configuration as we will put all services in the same network.
 
-To be able to persist Gatling Enterprise (required, as it stores the license information and key used for data encryption), create a directory and copy [Gatling Enterprise's default configuration]({{< ref "../configuration" >}}) to a file named `frontline.conf`.
+### Copy Gatling Enterprise default configuration
 
-## Copy logback configuration
+If not already done, add a folder called `frontline-conf` into the main Docker Compose folder.
+It will store the license information and the key used for data encryption.
 
-The default log behavior is too verbose from a performance point of view. You will have to put this `logback.xml` file in the same directory as `frontline.conf`:
+In this folder, copy the [Gatling Enterprise default configuration]({{< ref "../configuration#default-configuration-file" >}}) and name it `frontline.conf`.
+
+{{< alert tip >}}
+It is possible to override some configuration using environment variables for convenience, such as `FRONTLINE_CASSANDRA_HOST` and `FRONTLINE_CASSANDRA_PORT`.
+
+See [full configuration below]({{< ref "#configuration" >}}).
+{{< /alert >}}
+
+### Copy logging configuration {#logging}
+
+The default log behavior is too verbose from a performance point of view.
+You will have to put this `logback.xml` file in the same directory as the previous `frontline.conf` file.
+
+Inside `frontline-conf`, add `logback.xml`:
 
 {{< include-code "logback.xml" xml >}}
 
-## Setup Gatling Enterprise
+Notice the `<logger>` line which put the log level of Gatling Enterprise to `INFO`.
+When contacting support about anything, it is useful to put this specific log level `DEBUG` in order to provide us with as much debugging information as possible.
 
-The following command will start Gatling Enterprise, mapping to its default port on the host.
-This will also mount two volumes:
+### Prepare private keys folder
 
-* A volume with Gatling Enterprise's configuration, prepared by the previous step.
-* A volume to store uploaded private keys (required by features like Git cloning and by some cloud providers)
+Finally, we need to prepare a folder called `frontline-keys` that will hold uploaded private keys. It is required by features like Git cloning and by most cloud providers.
+
+You can leave it empty.
+
+## Assembling and using Docker Compose {#configuration}
+
+Put this configuration into a file called `docker-compose.yml` and after customizing the host folders you configured previously, then run:
 
 ```console
-docker run --detach \
-  --name frontline \
-  --publish 10542:10542 \
-  --volume <configuration directory from the previous step>:/opt/frontline/conf \
-  --volume <local directory to store private keys>:/opt/frontline/keys \
-  gatlingcorp/frontline:{{< var revnumber >}}
+docker-compose up -d
 ```
 
 {{< alert tip >}}
@@ -97,7 +137,7 @@ services:
     environment:
       - CASSANDRA_CLUSTER_NAME=FrontLine
     volumes:
-      - cassandra:/var/lib/cassandra
+      - ./cassandra-data:/var/lib/cassandra
       # - <path to your cassandra directory (default empty)>:/var/lib/cassandra
     networks:
       - frontline-network
@@ -116,20 +156,21 @@ services:
     environment:
       # FRONTLINE_CASSANDRA_HOST and FRONTLINE_CASSANDRA_PORT are used to update frontline.conf
       - FRONTLINE_CASSANDRA_HOST=cassandra
+      # Provides a default pool that can be used for testing. Not recommended for production.
+      - FRONTLINE_ENABLE_LOCAL_POOL=true
     volumes:
-      - frontline-conf:/opt/frontline/conf
-      - frontline-keys:/opt/frontline/keys
+      - ./frontline-conf:/opt/frontline/conf
       # - <path to your frontline conf directory (default contains frontline.conf)>:/opt/frontline/conf
+      - ./frontline-keys:/opt/frontline/keys
       # - <path to your frontline keys directory (default empty)>:/opt/frontline/keys
-
     depends_on:
       cassandra:
         condition: service_healthy
-volumes:
-  cassandra:
-  frontline-conf:
-  frontline-keys:
 networks:
   frontline-network:
     driver: bridge
 ```
+
+{{< alert tip >}}
+Depending on your needs, you may need to configure additional volumes on the Gatling Enterprise container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)
+{{< /alert >}}
