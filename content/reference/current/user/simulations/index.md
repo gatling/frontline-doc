@@ -165,7 +165,7 @@ A run have the following life cycle:
 
 {{< anchor logs >}}
 
-By clicking on the {{< icon file-alt >}} icon in the **Build Start** column, Frontline will display the build logs of the simulation. There is a limit of 1000 logs for a run.
+By clicking on the {{< icon file-alt >}} icon in the **Build Start** column, Gatling Enterprise will display the build logs of the simulation. There is a limit of 1000 logs for a run.
 
 {{< img src="logs.png" alt="Logs" >}}
 

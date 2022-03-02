@@ -64,7 +64,7 @@ docker run --detach \
 ```
 
 {{< alert tip >}}
-You should change your `frontline.conf` to let frontline know where to find cassandra. Because of the docker context, they are two different containers and cannot, by default, reach each other as localhost. If really they are on the same host, you can add `--network host` argument to docker run.
+You should change your `frontline.conf` to let Gatling Enterprise know where to find cassandra. Because of the docker context, they are two different containers and cannot, by default, reach each other as localhost. If really they are on the same host, you can add `--network host` argument to docker run.
 {{< /alert >}}
 {{< alert tip >}}
 Depending on your needs, you may need to configure additional volumes on the Gatling Enterprise container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)

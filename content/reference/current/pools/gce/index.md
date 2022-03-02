@@ -18,7 +18,7 @@ To configure the type of instances you want to spawn, you need to fill the form 
 {{< img src="gce.png" alt="GCE Pool" >}}
 
 - **Team**: Set if the pool is global or owned by a team
-- **Credentials**: If you're running Frontline on GCE or using `GOOGLE_APPLICATION_CREDENTIALS` to configure access, use 'Application Default'. Otherwise, use JSON credentials.
+- **Credentials**: If you're running Gatling Enterprise on GCE or using `GOOGLE_APPLICATION_CREDENTIALS` to configure access, use 'Application Default'. Otherwise, use JSON credentials.
 - **Zone**: the zone where you want to spawn your injectors
 - **Private Key**: the previously added [private key]({{< ref "../../admin/private-keys" >}}) used by your Template
 - **Connect to private IP**: Gatling Enterprise will connect to the injectors' private IP instead of the public one. If unchecked, the private IP remains a fallback if a public IP is missing. This option should be used only when the Gatling Enterprise host and the injector are both in the same GCE network.
