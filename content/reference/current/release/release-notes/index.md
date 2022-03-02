@@ -2,15 +2,15 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2022-02-15T17:55:36+02:00
+lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
-## 1.16.3 (2022-02-15)
+## 1.16.4 (2022-03-03)
 
-### Gatling 3.7.5
+### Gatling 3.7.6
 
-Please check the [full release note](https://github.com/gatling/gatling/milestone/105?closed=1) for more details.
+Please check the [full release note](https://github.com/gatling/gatling/milestone/104?closed=1) for more details.
 
 ### Gatling Enterprise
 
@@ -21,6 +21,23 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 * FL-937: Simulations: Fix StringIndexOutOfBoundsException when Simulation name ends with a dot
 * FL-941: Repositories: Team names are cropped very small in select input
 * FL-944: Teams & API Tokens: names in table are cropped too small
+
+
+## 1.16.3 (2022-02-15)
+
+### Gatling 3.7.5
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/105?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* FL-949: Cassandra: modify some queries to set ALLOW FILTERING and hopefully work on ScyllaDB (not officially suppported though)
+
+### Fixes
+
+* FL-951: GCE Pool: Fix NPE when using the host's service account instead of a JSON file
 
 ## 1.16.2 (2022-01-18)
 
