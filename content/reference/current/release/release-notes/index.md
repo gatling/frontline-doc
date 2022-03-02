@@ -405,7 +405,7 @@ See full release note: https://github.com/gatling/gatling/milestone/95?closed=1
 
 * FL-164: AWS, S3: form is not properly saved when using environment variables
 * FL-175: Private Key: form can't be saved after uploading file without editing other fields
-* FL-185: Boot: confusing error message when booting with an empty frontline.conf but schema already exists
+* FL-185: Boot: confusing error message when booting with an empty `frontline.conf` but schema already exists
 * FL-186: Cassandra: Migration 77 still crashes on humongous databases
 * FL-188: Git: url validation rejects valid AWS CodeCommit urls
 
@@ -463,13 +463,13 @@ See full release note: https://github.com/gatling/gatling/milestone/92?closed=1
 * DEV-782: Security: Support OpenID Connect authentication
 * DEV-806: GCE: Introduce image and instance type support and deprecate instance templates usage
 * DEV-844: GCE: Support service accounts
-* DEV-948: Core: Prevent updating frontline.conf and reset some fields automatically when Cassandra schema already exists
+* DEV-948: Core: Prevent updating `frontline.conf` and reset some fields automatically when Cassandra schema already exists
 * DEV-870: Misc: Add mouse hovers and titles on SideNav modal
 * DEV-872: Security: Revamp Gatling Enterprise roles: viewer, tester, test admin, system admin, superAdmin
 * DEV-877: Security: Scope Private keys on repository or pool
 * DEV-883: Security: Revoke all cookies on Gatling Enterprise reboot
 * DEV-888: Core: Introduce simulation quotas on teams
-* DEV-948: Core: Prevent from resetting frontline.conf if Cassandra schema already exists
+* DEV-948: Core: Prevent from resetting `frontline.conf` if Cassandra schema already exists
 * DEV-955: AWS: Display a message instead of disabling checkbox when there's no Elastic IP
 * DEV-1055: GCE: Support preemptible instances
 * DEV-1079: Pipeline: Detect incompatible Gatling version before deploying (requires the latest build plugins)

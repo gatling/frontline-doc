@@ -406,7 +406,7 @@ grafana {
 
 <1> Url to your Grafana dashboard using the Gatling Enterprise datasource (create a link in the Gatling Enterprise dashboard to the Grafana dashboard)
 
-If you want to modify a value, don't forget to uncomment the line, by deleting the # sign. Any changes to the frontline.conf file needs a Gatling Enterprise restart to take effect.
+If you want to modify a value, don't forget to uncomment the line, by deleting the # sign. Any changes to the `frontline.conf` file needs a Gatling Enterprise restart to take effect.
 
 See [HOCON](https://github.com/typesafehub/config/blob/master/HOCON.md) documentation for more information on this format.
 
@@ -445,7 +445,7 @@ By default, all registered users can connect as a global viewer and need an admi
 - Click on "New registration"
 - Set the redirect URI to https://your-gatling-enterprise-url:your-gatling-enterprise-port/redirected
 - Add a client secret in "Certificates & secrets" (we don't support certificates yet)
-- Edit your frontline.conf file, configuration is described above, here is a sample configuration:
+- Edit your `frontline.conf` file, configuration is described above, here is a sample configuration:
 
 ```hocon
 oidc {
@@ -474,7 +474,7 @@ oidc {
 - Set the login redirect URI to https://your-gatling-enterprise-url:your-gatling-enterprise-port/redirected
 - Copy client ID & client secret
 - Assign people / groups to the app
-- Edit your frontline.conf file, configuration is described above, here is a sample configuration:
+- Edit your `frontline.conf` file, configuration is described above, here is a sample configuration:
 
 ```hocon
 oidc {

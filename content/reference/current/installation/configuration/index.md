@@ -13,7 +13,7 @@ The first step before using Gatling Enterprise is to configure your license key.
 
 {{< img src="configuration.png" alt="License key configuration" >}}
 
-Once you've filled your license and clicked on the "Next" button you will get the credentials to connect to the superAdmin account. You can change this password in the frontline.conf file.
+Once you've filled your license and clicked on the "Next" button you will get the credentials to connect to the superAdmin account. You can change this password in the `frontline.conf` file.
 
 {{< img src="adminCredentials.png" alt="Admin credentials" >}}
 
