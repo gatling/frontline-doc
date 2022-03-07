@@ -229,7 +229,7 @@ This release doesn't perform any new database automatic migration if you're upgr
 * FL-396: Repository: Gatling zip bundle now ships a script to generate uploadable artifacts (eg in an S3 bucket repository)
 * FL-474: Pools: Add nonProxyHosts option for HTTP proxy configuration
 * FL-534: AWS: subnets are no multivalued and retried randomly if deploying the pool fails for insufficient capacity
-* FL-589: Cassandra: Expose full Cassandra Java Driver configuration with Typesafe config (eg configuring TSL)
+* FL-589: Cassandra: Expose full Cassandra Java Driver configuration with Typesafe config (eg configuring TLS)
 
 #### Fixes
 
