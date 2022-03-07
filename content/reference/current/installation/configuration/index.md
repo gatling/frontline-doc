@@ -24,3 +24,10 @@ Click on the "Next" button to finish the configuration step and restart Gatling 
 Find below the default `frontline.conf` file:
 
 {{< include-code "frontline.conf" hocon >}}
+
+{{< alert warning >}}
+Since 1.14.0, the `frontline.cassandra` configuration object uses the standard configuration keys from the Cassandra
+Java driver (except for `gatling-keyspace`, `replication` and `runsCleanup`). The previous configuration keys (now
+deprecated) are still supported for backward compatibility, but the two configuration styles are not compatible with
+each other. We recommend fully migrating to the new style.
+{{< /alert >}}
