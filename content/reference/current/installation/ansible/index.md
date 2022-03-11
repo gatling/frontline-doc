@@ -3,7 +3,7 @@ title: "Installation with Ansible"
 description: "Learn how to install Gatling Enterprise with Ansible"
 lead: "Download our Ansible playbook and run it to install easily Gatling Enterprise and Cassandra"
 date: 2021-03-26T16:58:37+01:00
-lastmod: 2022-02-28T17:28:27+00:00
+lastmod: 2022-03-11T16:07:55+00:00
 weight: 1030
 ---
 
@@ -36,20 +36,28 @@ If you do want to know more about Ansible, you can check its [user guide](https:
 
 Ansible will use the shell's proxy when running the script in your computer.
 
-If you need to specify a proxy for the remote machine on which Gatling Enterprise will be installed, you can add environment variables at the installer level:
+If you need to specify a proxy for the remote machine on which Gatling Enterprise will be installed, you can add environment variables at the installer level, in `frontline.yml`:
 
 ```diff
  - hosts: all
-
-   vars:
-     # ...
-
-   roles:
-     # ...
-
 +  environment:
 +    http_proxy: http://proxy.bos.example.com:8080
 +    https_proxy: http://proxy.bos.example.com:8080
+   roles:
+     # ...
+```
+
+Don't put these in `configuration.yml`, you should see a warning like this one if you do:
+
+```
+[WARNING]: Skipping unexpected key (environment) in group (all), only "vars", "children" and "hosts" are valid
+```
+
+In case you decide to [run ansible locally]({{< ref "#running-the-installer-locally" >}}), it is better to use global environment variables instead, before running the installer:
+
+```bash
+export HTTP_PROXY=http://proxy.bos.example.com:8080
+export HTTPS_PROXY=http://proxy.bos.example.com:8080
 ```
 
 ## Using the installer
@@ -99,7 +107,7 @@ You can also modify in `configuration.yml` whether you want to install build too
 
 Type in `./installer.sh` and wait for the installation to end.
 
-The script will ask for a sudo password. On Amazon Linux 1/2, the default user (`ec2-user`) is able to sudo without any password, so you can just type in `<Enter>` twice.
+The script will ask for a sudo password. On Amazon Linux 1 and 2, the default user `ec2-user` is able to sudo without any password, so you can just type in `<Enter>` twice.
 
 The script is idempotent. It means you can run it multiple times without compromising your previous installation. It also means you can start over a previous failed run and continue on.
 
@@ -107,7 +115,7 @@ The script is idempotent. It means you can run it multiple times without comprom
 The installer cannot be used to upgrade to a new version yet.
 {{< /alert >}}
 
-### Running the installer locally
+#### Running the installer locally
 
 {{< alert warning >}}
 This is only meant for scenarios in which you can't run Ansible remotely. Running Ansible locally isn't the common use case.
