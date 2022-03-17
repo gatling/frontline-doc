@@ -2,7 +2,7 @@
 title: "Introduction"
 description: "Gatling Enterprise architecture overview and conventions"
 date: 2021-03-26T16:01:21+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-03-17T16:37:43+00:00
 weight: 1010
 ---
 
@@ -14,7 +14,7 @@ It describes Gatling Enterprise's architecture, components, how to install them 
 
 ## Architecture Overview
 
-{{< img src="frontline-architecture.png" alt="Gatling Enterprise Architecture - Step 3" >}}
+{{< img src="gatling-enterprise-architecture.png" alt="Gatling Enterprise Architecture Diagram" >}}
 
 Gatling Enterprise consists of:
 
