@@ -22,4 +22,4 @@ Some information before using the public API:
 - You can retrieve a team ID by clicking on the ID column inside the teams table.
 - You have to provide the run ID as a query parameter to fetch other run metadata (injectors, remotes, hostnames, scenarios, groups, requests)
 - The `from` and `to` query parameters from the `/series` endpoint are the lower and upper timestamp bounds of the time window you want to query. You can fetch the total run time window from the `/runs` endpoint (injectStart, injectEnd).
-- The returned percentiles by the API are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999, max, mean and pAll.
+- The returned percentiles by the API are: min, p25, p50, p75, p80, p85, p90, p95, p99, p999, p9999 and max.
