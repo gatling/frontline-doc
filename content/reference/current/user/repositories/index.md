@@ -2,14 +2,13 @@
 title: "Repositories"
 description: "Repositories indicates how Gatling Enterprise needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-03-23T14:45:48+00:00
 weight: 2050
 ---
 
 {{< alert tip >}}
 Before creating a repository, you need to make sure your Gatling simulations are adjusted to Gatling Enterprise, check [the corresponding section]({{< ref "../binary" >}})
 {{< /alert >}}
-
 
 To access the repositories administration, click on **Admin** in the navigation bar, and choose **Repositories**.
 
@@ -56,21 +55,20 @@ If you're using an Artifactory or Nexus repository, you'll need to fill in the f
 - **API Key**: [API key for the current user](https://www.jfrog.com/confluence/display/RTF/Updating+Your+Profile#UpdatingYourProfile-APIKey)
 
 {{< alert warning >}}
-make sure to follow the Repository URL pattern as follow:
+Make sure to follow the Repository URL pattern as follow:
 
-- JFrog Artifactory : http[s]://<host>/<repository>
-- Sonatype Nexus 2  : http[s]://<host>/nexus/content/repositories/<repository>
-- Sonatype Nexus 3  : http[s]://<host>/repository/<repository>
+- JFrog Artifactory: `http[s]://<host>/<repository>`
+- Sonatype Nexus 2: `http[s]://<host>/nexus/content/repositories/<repository>`
+- Sonatype Nexus 3: `http[s]://<host>/repository/<repository>`
 {{< /alert >}}
-
 
 How to find the repository URL?
 
-- Artifactory :
+- Artifactory:
 
 {{< img src="artifactory-repository-url.png" alt="Artifactory" >}}
 
-- Nexus :
+- Nexus:
 
 {{< img src="nexus-repository-url.png" alt="Nexus" >}}
 
@@ -84,22 +82,21 @@ If you're using an AWS S3 bucket, you'll need to fill in the following fields:
 
 Before saving, we advise you to check the connection to the repository by clicking on the *Check Connection* button.
 
-{{< alert note >}}
+{{< alert tip >}}
 Profile name requires the following permissions to be able to download from the AWS S3 repository:
-{{< /alert >}}
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Effect": "Allow",
-            "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
+    }
+  ]
 }
 ```
-
+{{< /alert >}}
