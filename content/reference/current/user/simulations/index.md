@@ -3,7 +3,7 @@ title: "Simulations"
 description: "Learn how to configure and navigate through simulations."
 lead: "Navigate through simulations."
 date: 2021-03-10T09:29:43-05:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-03-23T14:25:23+00:00
 weight: 2060
 ---
 
@@ -95,7 +95,12 @@ This jar must have been built with the same maven/sbt/gradle configuration as de
 
 {{< img src="create-simulation2c.png" alt="Create simulation - Step 2 - Binary" >}}
 
-- **Artifact Maven coordinates**: the maven coordinates of the desired artifact. _version markers are not supported_
+- **Artifact Maven coordinates**: the maven coordinates of the desired artifact.
+
+The following version markers can be used:
+
+* `latest.integration`: latest version with snapshots included
+* `latest.release`: same with snapshots excluded
 
 #### Option 3: Download binary from AWS S3
 
