@@ -2,7 +2,7 @@
 title: "Repositories"
 description: "Repositories indicates how Gatling Enterprise needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
-lastmod: 2022-03-23T14:45:48+00:00
+lastmod: 2022-03-23T15:50:09+00:00
 weight: 2050
 ---
 
@@ -62,15 +62,27 @@ Make sure to follow the Repository URL pattern as follow:
 - Sonatype Nexus 3: `http[s]://<host>/repository/<repository>`
 {{< /alert >}}
 
-How to find the repository URL?
+### Finding your repository URL
 
-- Artifactory:
+#### Artifactory
 
-{{< img src="artifactory-repository-url.png" alt="Artifactory" >}}
+Navigate to *Application*, then *Artifactory* and sublevel *Artifact*:
 
-- Nexus:
+{{< img src="artifactory-repository-url.png" alt="Finding the URL of your Artifactory repository" >}}
 
-{{< img src="nexus-repository-url.png" alt="Nexus" >}}
+#### Nexus
+
+On Nexus 2, it's available directly on the main page. Here with the `Releases` repository:
+
+{{< img src="nexus2-repository-url.png" alt="Finding the URL of your Nexus 2 repository" >}}
+
+Same for Nexus 3:
+
+{{< img src="nexus3-repository-url.png" alt="Finding the URL of your Nexus 3 repository" >}}
+
+By default, it will be the `maven-releases` repository you are looking for.
+
+#### AWS S3
 
 If you're using an AWS S3 bucket, you'll need to fill in the following fields:
 
