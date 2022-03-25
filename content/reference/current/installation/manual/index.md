@@ -523,6 +523,8 @@ then Gatling Enterprise needs to be able to build the fetched resources, ie:
 
 Make sure that the build tool is configured so that it is able to download artifacts, typically if your organization enforces repository mirrors.
 
+Alternatively, if your projects include a build tool wrapper such as [Maven wrapper](https://maven.apache.org/wrapper/) (`mvnw`) or [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) (`gradlew`), then you don't need to install a build tool client. However, you must make sure the build tool wrapper script is able to download all its dependencies when running on the Gatling Enterprise host. 
+
 {{< alert tip >}}
 Maven 3.3.9 is the minimal version supported. This is the version shipped in Debian 9 (Stretch).
 {{< /alert >}}

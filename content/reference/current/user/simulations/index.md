@@ -78,9 +78,14 @@ In this step, Gatling Enterprise will download the sources from your repository,
   * `sbt -J-Xss100M ;clean;test:assembly -batch --error` for sbt project
   * `gradle clean frontLineJar -quiet` for gradle project
 
-{{< alert warning >}}
-Please make sure that the tools you are using are installed and available on the Gatling Enterprise machine, for example: `mvn`,  `sbt`, `git`, and `ssh`.
-{{< /alert >}}
+  {{< alert warning >}}
+  Please make sure that the tools you are using are installed and available on the Gatling Enterprise machine, for example: `mvn`,  `sbt`, `git`, and `ssh`.
+  {{< /alert >}}
+
+  In addition, two wrapper commands are built-in, if you prefer to use a build tool wrapper script included in your project rather than a version of the build tool installed on the Gatling Enterprise machine. The commands are otherwise the same as the regular commands for the same build tools.
+  * Use the Maven Wrapper command if your project includes an `mvnw` script (see [the official Maven documentation](https://maven.apache.org/wrapper/) to configure your project)
+  * Use the Gradle Wrapper command if your project includes a `gradlew` script (see [the official Gradle documentation](https://docs.gradle.org/current/userguide/gradle_wrapper.html) to configure your project)
+
 
 You can provide optional settings if you toggle **Advanced build configuration**.
 
