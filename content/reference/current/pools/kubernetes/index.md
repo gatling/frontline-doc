@@ -33,10 +33,12 @@ To configure the type of instances you want to spawn, you need to fill the form 
 
 - **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with [gatling/frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
 - **Image pull secret**: Recommended approach to run containers based on images in private registries and / or to not be limited by rate limits
-- **CPU request**: The minimum number of cores that you need for each one of your injector, express as cpus
-- **CPU limit**: The limit of cores that you don't want your injector pod to exceed, express as cpus
-- **Memory request**: The minimum memory that you need for each one of your injector
-- **Memory limit**: The maximum memory that you need for each one of your injector
+- **CPU request**: The minimum number of cores that you need for each injector, express as cpus
+- **CPU limit**: The limit of cores that you don't want each injector pod to exceed, express as cpus
+- **Memory request**: The minimum memory that you need for each injector
+- **Memory limit**: The maximum memory that you need for each injector
+- **Custom labels**: Optional labels to add to all injector pods, services, ingresses and routes
+- **Node selector**: An optional [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) to add to each injector pod (they will only run on nodes with matching labels) 
 
 Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point integer using one of these suffixes: E, P, T, G, M, K. You can also use the power-of-two equivalents: Ei, Pi, Ti, Gi, Mi, Ki.
 
