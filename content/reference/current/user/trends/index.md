@@ -27,7 +27,7 @@ You can comment a run by clicking on the {{< icon comment-alt >}} icon on the ri
 
 {{< img src="comment.png" alt="Comment" >}}
 
-You can also click on the {{< icon info-circle >}} icon to see a snapshot of the run configuration. The system properties beginning with `sensitive.` are not displayed.
+You can also click on the {{< icon info-circle >}} icon to see a snapshot of the run configuration. The Java System Properties beginning with `sensitive.` and environment variables beginning with `SENSITIVE_` are not displayed.
 
 {{< img src="snapshot.png" alt="Snapshot" >}}
 

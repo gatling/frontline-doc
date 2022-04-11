@@ -32,7 +32,7 @@ Back to the Simulations section, at the top, there is an action bar which allow 
 
 ## Global Properties
 
-Global properties contains every JVM options and system properties used by all of your simulations by default.
+Global properties contains every JVM options, Java System Properties and environment variables used by all of your simulations by default.
 Editing those properties will be propagated to all the simulations.
 
 If you don't want to use the default properties, check `Use custom global properties` and enter your own.
@@ -131,19 +131,25 @@ After this step, you can save the simulation, or click on **More options** to ac
 
 ### Step 4 & 5: JVM options & Java System Properties
 
-These steps allows you to defines JVM arguments and system properties used when running this particular simulation. You can choose to override the global properties.
+These steps allows you to defines JVM arguments, Java System Properties and environment variables used when running this particular simulation. You can choose to override the global properties.
 
 {{< img src="create-simulation4.png" alt="Create simulation - Step 4" >}}
 {{< img src="create-simulation5.png" alt="Create simulation - Step 5" >}}
 
 {{< alert tip >}}
-JVM options and Java System Properties will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
-You can exclude some properties from being copied if you prefix them with `sensitive.`.
+The JVM options, Java System Properties and environment variables will be saved in a snapshot that will be available in the run. This information will be visible by anyone who has read access.
+You can exclude some properties from being copied if you prefix them with `sensitive.`, and environment variables if you prefix them with `SENSITIVE_`.
 {{< /alert >}}
 
 {{< alert tip >}}
 You can configure the `gatling.frontline.groupedDomains` System property to group connection stats from multiple subdomains and avoid memory issues when hitting a very large number of subdomains.
 For example, setting this property as `.foo.com, .bar.com` will consolidate stats for `sub1.foo.com`, `sub2.foo.com`, `sub1.bar.com`, `sub2.bar.com` into `*****.foo.com` and `*****.bar.com`.
+{{< /alert >}}
+
+{{< alert tip >}}
+Java System properties can be retrieved in your Gatling simulation with `System.getProperty("YOUR_PROPERTY_KEY")`.
+
+Environment variables can be retrieved in your Gatling simulation with `System.getEnv("YOUR_ENV_VAR_KEY")`.
 {{< /alert >}}
 
 ### Step 6: Time window

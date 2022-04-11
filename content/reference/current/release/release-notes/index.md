@@ -701,7 +701,7 @@ Users who uploaded private keys with the Gatling Enterprise UI are highly advise
 * DEV-743: Opening Simulation model, Build tab, shouldn't trigger a request for the list of AWS regions
 * DEV-747: Uploaded private keys shouldn't be stored in Cassandra, only on filesystem
 * DEV-748: Uploaded private keys are visible in the JSON payload
-* DEV-749: Sort System properties by name
+* DEV-749: Sort Java System properties by name
 * DEV-750: Multiple highlights abscissas are off when hovering timeline after zooming in
 * DEV-765: Delete obsolete file when updating an uploaded private key
 
@@ -856,7 +856,7 @@ NOTE: Kubernetes users are advised to upgrade to injectors' Docker image to `gat
 #### Features
 
 * DEV-501: Allow preferring Kubernetes internal IP instead of external one, see DEV-534
-* DEV-510: Trim Simulation System properties to remove unexpected white spaces
+* DEV-510: Trim Simulation Java System properties to remove unexpected white spaces
 * DEV-511: Support OpenStack availability zone
 * DEV-512: Make Kubernetes pool resources configuration mandatory
 * DEV-528: Force a minimal number of Netty threads when running Gatling Enterprise in a container
