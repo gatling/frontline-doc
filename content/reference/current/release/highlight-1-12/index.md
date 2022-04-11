@@ -130,7 +130,7 @@ We've updated the default JVM options to:
 -XX:-UseBiasedLocking
 ```
 
-and the default System properties are now empty.
+and the default Java System properties are now empty.
 
 Those new settings produced way better performance in our internal benchmarks.
 

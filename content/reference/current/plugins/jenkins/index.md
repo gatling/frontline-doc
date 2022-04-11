@@ -72,7 +72,7 @@ node {
 
 #### Passing parameters
 
-You can also specify a custom Map of system properties which will be used in the Gatling Enterprise run. The syntax is the following:
+You can also specify a custom Map of Java System Properties which will be used in the Gatling Enterprise run. The syntax is the following:
 ```groovy
 gatlingFrontLineLauncherStep(simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e', systemProps: ["var": "$var1", "sensitive.var2": "this prop won't be displayed in the run snapshot"])
 ```
