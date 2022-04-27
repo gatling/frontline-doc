@@ -16,7 +16,7 @@ Download and install [Grafana](http://grafana.org/download/).
 The Gatling Enterprise datasource for Grafana is packaged as a zip bundle that you can found at this URL:
 
 ```
-https://downloads.gatling.io/releases/frontline-grafana-bundle/{{< var externalPluginsVersion >}}/frontline-grafana-bundle-{{< var externalPluginsVersion >}}-bundle.zip
+https://downloads.gatling.io/releases/frontline-grafana-bundle/{{< var grafanaPluginVersion >}}/frontline-grafana-bundle-{{< var grafanaPluginVersion >}}-bundle.zip
 ```
 
 You can install it using the grafana-cli:
