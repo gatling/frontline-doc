@@ -18,7 +18,7 @@ This plugin doesn't create a new Gatling Enterprise simulation, you have to crea
 To download the plugin, you need to get the hpi file located at:
 
 ```
-https://downloads.gatling.io/releases/frontline-jenkins-plugin/{{< var externalPluginsVersion >}}/frontline-jenkins-plugin-{{< var externalPluginsVersion >}}.hpi
+https://downloads.gatling.io/releases/frontline-jenkins-plugin/{{< var ciPluginsVersion >}}/frontline-jenkins-plugin-{{< var ciPluginsVersion >}}.hpi
 ```
 
 You need to be connected as an administrator of your Jenkins application to install it. Go **Manage Jenkins**, **Manage Plugins**, **Advanced**, **Upload Plugin**, and choose the hpi file.
