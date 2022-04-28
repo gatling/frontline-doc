@@ -6,6 +6,40 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.16.5 (2022-04-28)
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-922: PDF Export: Fix scn, group, request dropdown appearing on graph without those metrics
+* FL-950: Reports: Log scale skips steps and doesn't show graduation
+* FL-956: GCE Pool: Fix NPE when injectors don't have AccessConfigs (no public IPs)
+* FL-959: GCE Pool: Fix exception when instance group is not created yet when trying to list
+* FL-963: Teams: Crop names when they're too long
+* FL-965: Public API: Fix parameter 'request' in the 'series' API not working as intended
+* FL-971: Pipeline: Fix memory leak, when stats are being re-sent because of a lag
+* FL-976: Pipeline: Fix SSH creation folder step failed if folder already exist on retry
+* FL-977: SBT Build: Use -batch command instead of --batch in simulation SBT command
+* FL-984: Run snapshot: Fix simulation classname overflow
+* FL-985: Scroll at top when changing page
+* FL-999: Reports: Fix NoSuchElementException when group doesn't exist on a given time window
+* FL-996: Handle silently ChannelClosedException on API
+
+### Features
+
+* FL-948: Save repository and build information in run snapshot
+* FL-955: Remove public key field in GCP pool form (derived from private key)
+* FL-962: Add run ID in simulations as system prop (`gatling.enterprise.runId`)
+* FL-980: Add run trigger in simulations as system props (`gatling.enterprise.trigger.type` being either user or token, and `gatling.enterprise.trigger.name`)
+* FL-987: Support passing env vars to injectors
+* FL-989: Add support for maven wrapper in simulation build step
+* FL-897: Add control on custom AMI ids: must start with "ami-"
+* FL-1003: Add a way to disabled superAdmin in configuration
+* FL-1004: Kubernetes Pool: Allow configuring node selector
+* FL-1007: Kubernetes Pool: Allow configuring custom labels
+* FL-1008: Rename System Properties into Java system properties
+
 ## 1.16.4 (2022-03-03)
 
 ### Gatling 3.7.6
