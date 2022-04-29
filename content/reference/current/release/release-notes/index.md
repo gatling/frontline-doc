@@ -6,6 +6,14 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.16.6 (2022-04-29)
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-1012: Kubernetes Pool: Fix custom image validation
+
 ## 1.16.5 (2022-04-28)
 
 ### Gatling Enterprise
