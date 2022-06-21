@@ -11,11 +11,12 @@ weight: 1020
 
 * Your current Gatling Enterprise version must be at least 1.6.2. Otherwise, you must first upgrade to Gatling Enterprise 1.11.1.
 * Shut Gatling Enterprise process down
-* Perform a backup of your Cassandra data (eg `/var/lib/cassandra` directory, but might vary depending on how you've installed Cassandra)
+* Shut Cassandra down to perform a backup of your Cassandra data
+  _(eg `/var/lib/cassandra` directory, but might vary depending on how you've installed Cassandra)_
 * Download and unzip updated Gatling Enterprise bundle
 * Copy `conf` directory content from previous installation to the new one
 * Copy `keys` directory from previous installation (if it exists) to the new one (`cp -r previous_frontline_folder/keys new_frontline_folder`)
-* Start the new Gatling Enterprise process
+* Start Cassandra back, then the new Gatling Enterprise process
 
 ## Processor Architecture
 
