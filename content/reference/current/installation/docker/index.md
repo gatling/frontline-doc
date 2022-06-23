@@ -3,7 +3,7 @@ title: "Installation with Docker Compose"
 description: "Learn how to install Gatling Enterprise with Docker Compose"
 lead: "Learn how to install Gatling Enterprise with Docker Compose"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2022-03-07T11:36:22+00:00
+lastmod: 2022-06-23T12:16:40+00:00
 weight: 1040
 ---
 
@@ -106,6 +106,7 @@ docker-compose up -d
 {{< alert tip >}}
 You should change your `frontline.conf` to let Gatling Enterprise know where to find cassandra. Because of the docker context, they are two different containers and cannot, by default, reach each other as localhost. If really they are on the same host, you can add `--network host` argument to docker run.
 {{< /alert >}}
+
 {{< alert tip >}}
 Depending on your needs, you may need to configure additional volumes on the Gatling Enterprise container (SSL certificate if HTTPS is configured, or keystore/truststore for LDAP support)
 {{< /alert >}}
