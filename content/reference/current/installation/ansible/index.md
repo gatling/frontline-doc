@@ -19,7 +19,7 @@ Ansible will be used to perform the installation. You'll need:
 
 * Python 2.7.7+ or 3.5+
 * Ansible 2.7.6+
-* An instance/VM (at least `c4.large` or equivalent) running on supported Linux distributions
+* An instance/VM (at least `c5.large` or equivalent) running on supported Linux distributions
 
 Supported Linux distributions are:
 

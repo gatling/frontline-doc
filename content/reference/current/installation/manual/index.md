@@ -102,7 +102,7 @@ There are simple rules to follow when choosing the right type of instance to use
 For any cloud provider, make sure you use a storage system that support at least 3000 IOPS as we encountered slow downs with 1500 IOPS.
 {{< /alert >}}
 
-For AWS, avoid burstable instance types on AWS EC2 (T2), they don't offer good performance for Cassandra deployments:
+For AWS, avoid burstable instance types on AWS EC2 (T2/T3), they don't offer good performance for Cassandra deployments:
 
 - C5d are equipped with NVMe SSD, which are great for installation running Cassandra and Gatling Enterprise on the same virtual machine
 - I3 are better for virtual machines reserved for Cassandra
