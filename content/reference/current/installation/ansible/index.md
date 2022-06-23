@@ -3,7 +3,7 @@ title: "Installation with Ansible"
 description: "Learn how to install Gatling Enterprise with Ansible"
 lead: "Download our Ansible playbook and run it to install easily Gatling Enterprise and Cassandra"
 date: 2021-03-26T16:58:37+01:00
-lastmod: 2022-03-11T16:07:55+00:00
+lastmod: 2022-06-23T12:16:30+00:00
 weight: 1030
 ---
 
@@ -53,7 +53,7 @@ Don't put these in `configuration.yml`, you should see a warning like this one i
 [WARNING]: Skipping unexpected key (environment) in group (all), only "vars", "children" and "hosts" are valid
 ```
 
-In case you decide to [run ansible locally]({{< ref "#running-the-installer-locally" >}}), it is better to use global environment variables instead, before running the installer:
+In case you decide to [run ansible locally]({{< ref "#running-the-installer-locally" >}}), it is necessary to use global environment variables before running the installer:
 
 ```bash
 export HTTP_PROXY=http://proxy.bos.example.com:8080
