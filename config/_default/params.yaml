@@ -5,7 +5,7 @@ titleSeparator: "-"
 description: "Documentation"
 
 ## Open Graph + Twitter Cards
-images: ["gatling-logo.png"]
+images: ["images/og-gatling.png"]
 twitterSite: "GatlingTool"
 twitterCreator: "GatlingTool"
 facebookAuthor: "GatlingTool"
@@ -15,12 +15,12 @@ ogLocale: "en_US"
 # Header
 
 logos:
-  white: "/images/logo-gatling.svg"
-  black: "/images/logo-gatling-noir.svg"
+  white: "images/logo-gatling.svg"
+  black: "images/logo-gatling-noir.svg"
 
 ## JSON-LD
 schemaName: "Gatling Corp"
-schemaLogo: "gatling-logo.png"
+schemaLogo: "images/og-gatling.png"
 schemaTwitter: "https://twitter.com/GatlingTool"
 schemaLinkedIn: "https://www.linkedin.com/company/gatling/"
 schemaGitHub: https://github.com/gatling
