@@ -5,6 +5,7 @@ weight: 1000
 ordering:
   - introduction
   - manual
+  - marketplaces
   - ansible
   - docker
   - kubernetes

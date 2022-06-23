@@ -3,19 +3,54 @@ title: "Manual Installation"
 description: "Learn how to install manually Gatling Enterprise"
 lead: "Install or upgrade manually Gatling Enterprise, and learn how to configure it"
 date: 2021-03-26T16:08:33+01:00
-lastmod: 2021-08-16T17:55:36+02:00
+lastmod: 2022-06-23T16:26:03+00:00
 weight: 1020
 ---
 
 ## Upgrading From a Previous Version
 
-* Your current Gatling Enterprise version must be at least 1.6.2. Otherwise, you must first upgrade to Gatling Enterprise 1.11.1.
-* Shut Gatling Enterprise process down
-* Perform a backup of your Cassandra data (eg `/var/lib/cassandra` directory, but might vary depending on how you've installed Cassandra)
-* Download and unzip updated Gatling Enterprise bundle
+{{< alert warning >}}
+Your current Gatling Enterprise version must be at least 1.6.2. Otherwise, you must first upgrade to Gatling Enterprise 1.11.1.
+{{< /alert >}}
+
+Inside the Gatling Enterprise installation folder, there are two directories to backup:
+
+* The `conf` directory with all its content
+* The `keys` directory with all its content
+
+They can be carried from one version to the other without any modification.
+However, it is recommended to check the newer `conf/frontline.conf` configuration file for any new added parameters that could be useful before replacing it with your backup.
+
+The data is stored using the Cassandra database and will most likely be found in the `/var/lib/cassandra` directory, but might vary depending on how you've installed Cassandra.
+
+### Upgrading process
+
+* Stop Gatling Enterprise
+
+It can be done by removing a file named `FRONTLINE_RUNNING` in the Gatling Enterprise installation folder and waiting 10 seconds.
+
+You can also find the process and kill it directly.
+
+* Stop the Cassandra database
+
+If using systemd, perform the command `systemctl stop cassandra`. Otherwise, you'll have to find the process and kill it manually.
+
+* Make a backup of your Cassandra data, most likely in `/var/lib/cassandra`
+* [Download and unzip updated Gatling Enterprise bundle]({{< ref "#download-gatling-enterprise" >}})
 * Copy `conf` directory content from previous installation to the new one
-* Copy `keys` directory from previous installation (if it exists) to the new one (`cp -r previous_frontline_folder/keys new_frontline_folder`)
+* Copy `keys` directory from previous installation (if it exists) to the new one:
+
+```console
+cp -r previous_frontline_folder/keys new_frontline_folder
+```
+
+* Start the Cassandra database
+
+If using systemd, do a `systemctl start cassandra`. It is also possible to start cassandra using it's binary directly in its installation folder: `./bin/cassandra`
+
 * Start the new Gatling Enterprise process
+
+Go to the installation folder, and perform the following command: `./bin/frontline`. More details in the [launch section]({{< ref "#launch-gatling-enterprise" >}}).
 
 ## Processor Architecture
 
@@ -63,11 +98,11 @@ For a simple single node setup (which we recommend if you're not experienced wit
 performing a Cassandra backup simply consists of make a copy (eg, tar.gz) of the directories that are configured in
 your `cassandra.yaml` file as the following entries:
 
-* data_file_directories
-* commitlog_directory
-* saved_caches_directory
+* `data_file_directories`
+* `commitlog_directory`
+* `saved_caches_directory`
 
-### Download
+### Download {#download-cassandra}
 
 Download and install [Cassandra](http://cassandra.apache.org/download/).
 
@@ -184,7 +219,7 @@ Second method implies (as stated in Cassandra documentation) to add instances wi
 
 ## Gatling Enterprise Server
 
-### Download
+### Download {#download-gatling-enterprise}
 
 Gatling Enterprise is packaged as a zip bundle that can be downloaded from our maven repository (only for on-premise customers):
 
@@ -198,7 +233,7 @@ Check the [documentation conventions]({{< ref "../introduction#custom-bundle-dow
 
 On launch, Gatling Enterprise will create or update the Gatling Enterprise schema in the Cassandra database.
 
-### Launch
+### Launch {#launch-gatling-enterprise}
 
 You can launch Gatling Enterprise in the background using the following command:
 
