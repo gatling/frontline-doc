@@ -2,12 +2,12 @@
 title: "Repositories"
 description: "Repositories indicates how Gatling Enterprise needs to fetch your Gatling simulations"
 date: 2021-03-25T18:25:43+01:00
-lastmod: 2022-03-23T15:50:09+00:00
+lastmod: 2022-06-23T16:23:51+00:00
 weight: 2050
 ---
 
 {{< alert tip >}}
-Before creating a repository, you need to make sure your Gatling simulations are adjusted to Gatling Enterprise, check [the corresponding section]({{< ref "../binary" >}})
+Before creating a repository, you need to make sure your Gatling simulations are adjusted to Gatling Enterprise. Check the [corresponding section]({{< ref "../binary" >}}).
 {{< /alert >}}
 
 To access the repositories administration, click on **Admin** in the navigation bar, and choose **Repositories**.
@@ -27,7 +27,7 @@ You can edit the repository by clicking on the {{< icon pencil-alt >}} icon and 
 - **Team**: set if the repository is global or owned by a team
 - **Repository Type**: the desired type of your repository
 
-## Sources Repository
+## Downloading from sources
 
 Choose *Build from sources* as repository type if you wish that Gatling Enterprise fetch and compile the sources of your Gatling simulation. In this page, you'll configure how to fetch the sources.
 
@@ -39,7 +39,7 @@ There are 3 different ways to retrieve your sources:
 - **Use a project on Gatling Enterprise's filesystem**: Use a project located on Gatling Enterprise's filesystem, fill in the path to project repository.
 - **Check out from Source Code Control System**: Useful if you're using a code control system other than Git, or if you need a really specific Git command.
 
-## Binary Repository
+## Downloading from a binary repository
 
 Choose **Download from a binary repository** if you already compiled your project and pushed to a binary repository.
 
@@ -66,21 +66,21 @@ Make sure to follow the Repository URL pattern as follow:
 
 #### Artifactory
 
-Navigate to *Application*, then *Artifactory* and sublevel *Artifact*:
+Navigate to **Application**, then **Artifactory** and sublevel **Artifact**:
 
 {{< img src="artifactory-repository-url.png" alt="Finding the URL of your Artifactory repository" >}}
 
-#### Nexus
+#### Sonatype Nexus
 
-On Nexus 2, it's available directly on the main page. Here with the `Releases` repository:
+On Sonatype Nexus 2, it's available directly on the main page. Here with the **Releases** repository:
 
 {{< img src="nexus2-repository-url.png" alt="Finding the URL of your Nexus 2 repository" >}}
 
-Same for Nexus 3:
+Same for Sonatype Nexus 3:
 
 {{< img src="nexus3-repository-url.png" alt="Finding the URL of your Nexus 3 repository" >}}
 
-By default, it will be the `maven-releases` repository you are looking for.
+By default, it will be the **maven-releases** repository you are looking for.
 
 #### AWS S3
 
@@ -88,11 +88,11 @@ If you're using an AWS S3 bucket, you'll need to fill in the following fields:
 
 {{< img src="create-repository-s3.png" alt="AWS S3" >}}
 
-- **Profile name**: choose a profile described in `~/.aws/credentials`, or select `Use environment or system variables` to use the permissions granted to the EC2 Gatling Enterprise instance
+- **Profile name**: choose a profile described in `~/.aws/credentials`, or select **Use environment or system variables** to use the permissions granted to the EC2 Gatling Enterprise instance
 - **Region**: the region where you created your bucket
 - **Bucket name**: the bucket name
 
-Before saving, we advise you to check the connection to the repository by clicking on the *Check Connection* button.
+Before saving, we advise you to check the connection to the repository by clicking on the **Check Connection** button.
 
 {{< alert tip >}}
 Profile name requires the following permissions to be able to download from the AWS S3 repository:
