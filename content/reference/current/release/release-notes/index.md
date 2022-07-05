@@ -36,6 +36,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 * FL-1020: Reports: Group selection switches back when page is refreshing while the run is ongoing
 * FL-1029: Users: Global System Admins couldn't reset the password of users who didn't have a global role
 * FL-1036: Reports: Memory unit should be MB, not Mb
+* FL-1039: Openshift: Fix `edge` termination when connecting to injectors through a secured route
 
 ## 1.16.6 (2022-04-29)
 
