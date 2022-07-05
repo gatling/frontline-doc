@@ -3,7 +3,7 @@ title: "Installation with Ansible"
 description: "Learn how to install Gatling Enterprise with Ansible"
 lead: "Download our Ansible playbook and run it to install easily Gatling Enterprise and Cassandra"
 date: 2021-03-26T16:58:37+01:00
-lastmod: 2022-06-23T12:16:30+00:00
+lastmod: 2022-07-05T14:35:37+00:00
 weight: 1030
 ---
 
@@ -24,7 +24,7 @@ Ansible will be used to perform the installation. You'll need:
 Supported Linux distributions are:
 
 * Amazon Linux 1/2
-* CentOS7
+* CentOS 7
 * Debian 8/9/10
 * RHEL (RedHat Enterprise Linux) 7
 
