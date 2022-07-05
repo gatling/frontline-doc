@@ -6,6 +6,37 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.17.0 (2022-07-06)
+
+### Gatling 3.8.0
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/106?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* FL-1015: Team: in the list of users belonging to a team, mention the role they have (team-specific role only, not global one)
+* FL-1016: Openshift: Make custom cert not mandatory when configuring a route, fallback to the default JVM cert
+* FL-1021: Ops: Add `frontline.http.maxRequestSize` option in `frontline.conf` to allow configuring the max request size
+* FL-1022: PDF Export: Preferences are available in the NavBar
+
+### Fixes
+
+* FL-80: PDF Export: Non US-ASCII chars get mangled
+* FL-152: PDF Export: Variable legend unreadable in PDF if too many values / too long values
+* FL-924: PDF Export: Summary doesn't work correctly with selected percentiles
+* FL-992: PDF Export: New page blocks saving a template
+* FL-993: Reports: Unable to change remote metric back to `*`
+* FL-1009: GCE: IndexOutOfBoundsException when configure GCE pools to use static IPs while none is available
+* FL-1011: Repositories & Pools: Team admins can't select global private keys
+* FL-1017: Run comparison: Column sort doesn't work
+* FL-1018: Runs: Run logs so autoscroll to the bottom when the run is terminated
+* FL-1019: Cassandra: Add some retry in case of request failures to cope with temporary Cassandra freezes
+* FL-1020: Reports: Group selection switches back when page is refreshing while the run is ongoing
+* FL-1029: Users: Global System Admins couldn't reset the password of users who didn't have a global role
+* FL-1036: Reports: Memory unit should be MB, not Mb
+
 ## 1.16.6 (2022-04-29)
 
 ### Gatling Enterprise
