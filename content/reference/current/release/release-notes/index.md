@@ -75,7 +75,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 * FL-987: Support passing env vars to injectors
 * FL-989: Add support for maven wrapper in simulation build step
 * FL-897: Add control on custom AMI ids: must start with "ami-"
-* FL-1003: Add a way to disabled superAdmin in configuration
+* FL-1003: Add a way to disable superAdmin in configuration
 * FL-1004: Kubernetes Pool: Allow configuring node selector
 * FL-1007: Kubernetes Pool: Allow configuring custom labels
 * FL-1008: Rename System Properties into Java system properties
