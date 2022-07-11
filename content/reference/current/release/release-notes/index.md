@@ -6,6 +6,12 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.17.1 (2022-07-11)
+
+### Gatling 3.8.2
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/108?closed=1) for more details.
+
 ## 1.17.0 (2022-07-06)
 
 ### Gatling 3.8.0
