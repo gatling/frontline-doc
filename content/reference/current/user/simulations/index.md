@@ -129,9 +129,9 @@ If you have more hosts than needed on your Pool, the hosts will be chosen random
 
 After this step, you can save the simulation, or click on **More options** to access optional configuration.
 
-### Step 4 & 5: JVM options & Java System Properties
+### Step 4 & 5: JVM options & Injector parameters
 
-These steps allows you to defines JVM arguments, Java System Properties and environment variables used when running this particular simulation. You can choose to override the global properties.
+These steps allow you to define JVM arguments, Java System Properties and environment variables used when running this particular simulation. You can choose to override the global properties.
 
 {{< img src="create-simulation4.png" alt="Create simulation - Step 4" >}}
 {{< img src="create-simulation5.png" alt="Create simulation - Step 5" >}}

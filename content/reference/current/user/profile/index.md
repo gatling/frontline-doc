@@ -17,7 +17,7 @@ The information displayed are the following:
 
 - Username
 - First and Last name
-- Mail address
+- Email
 - Different roles
 
 To update your profile, modify the fields you want to change, then click on the button **Update your information**.

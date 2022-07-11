@@ -12,7 +12,7 @@ Before creating a repository, you need to make sure your Gatling simulations are
 
 To access the repositories administration, click on **Admin** in the navigation bar, and choose **Repositories**.
 
-There are 2 types of repository: the ones where you download and compile the sources, and the others where you download an already-compiled project
+There are 2 types of repository: the ones where you download and compile the sources, and the others where you download an already-compiled project.
 
 {{< img src="repositories.png" alt="Repositories table" >}}
 

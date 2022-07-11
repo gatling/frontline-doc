@@ -21,7 +21,7 @@ This page consists of:
 - [Charts area]({{< ref "#charts" >}})
 - [The summary]({{< ref "#summary" >}}) (only for requests and groups tabs)
 - [Public links]({{< ref "#public-links" >}})
-- [Export PDF]({{< ref "#export-pdf" >}})
+- [Print to PDF]({{< ref "#pdf-print" >}})
 - [Tips]({{< ref "#tips" >}})
 
 {{< img src="reports.png" alt="Reports" >}}
@@ -32,7 +32,7 @@ This bar is a combination of buttons:
 
 - **Start / Stop**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
 - **Generate public link**: To create a [public link]({{< ref "../reports#public-links" >}})
-- **Export**: To [export]({{< ref "#export-pdf" >}}) reports
+- **Print to PDF**: To [print]({{< ref "#pdf-print" >}}) reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
@@ -121,9 +121,9 @@ Choose an expiration date, then click the generate button.
 
 You can copy the public link to share your report to non-Gatling Enterprise users, or click on the "Go" Button to access it yourself. You can click on the "OK" button to close this modal.
 
-## Export PDF
+## Print to PDF
 
-When clicking on the blue export button in the navigator menu, you will have access to a page where you can configure and then export a PDF report of a specific simulation run.
+When clicking on the blue **Print to PDF** button in the navigator menu, you will have access to a page where you can configure and then print a PDF report of a specific simulation run.
 
 {{< img src="export-button.png" alt="Export button" >}}
 
@@ -159,8 +159,8 @@ Those elements are composed of:
 - **Chart**: adds a chart element that you can interact with before exporting it to PDF.
 - **Counts**: adds a count chart element that you can interact with before exporting it to PDF.
 
-As you can see below, every charts (or other elements) can be interact with individually. You can zoom on it, or select the run, the scenario,
-the group, etc.. whose you want your data to be fetch. You do not need to have the same settings for each element.
+As you can see below, every chart (or other element) can be interacted with individually. You can zoom on it, or select the run, the scenario,
+the group, etc.. whose you want your data to be fetched. You do not need to have the same settings for each element.
 
 {{< img src="export-charts.png" alt="Export charts" >}}
 
