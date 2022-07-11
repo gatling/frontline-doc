@@ -58,7 +58,7 @@ Make sure you are logged in using `docker login` with the username you provided 
 
 ### Preparing the Cassandra database
 
-We will be using the official Cassandra image under the tag name `cassandra:3`.
+We will be using the official Cassandra image under the tag name `cassandra:4`.
 
 This image will push data into a folder named `cassandra-data`, that is mapped to the container's inner folder `/var/lib/cassandra`.
 
@@ -117,7 +117,7 @@ For your convenience, here are some docker compose instructions to set up a quic
 
 **Cassandra container:**
 
-Based on cassandra image `cassandra:3.11`, you'll have to bind a local directory on the volume to store and keep your data. A healthcheck will be started on the container.
+Based on cassandra image `cassandra:4.0`, you'll have to bind a local directory on the volume to store and keep your data. A healthcheck will be started on the container.
 
 **Gatling Enterprise container:**
 
@@ -134,7 +134,7 @@ version: '2.4'
 services:
   cassandra:
     container_name: cassandra
-    image: cassandra:3.11
+    image: cassandra:4.0
     environment:
       - CASSANDRA_CLUSTER_NAME=FrontLine
     volumes:

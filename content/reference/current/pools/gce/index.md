@@ -89,7 +89,6 @@ Specific configuration if you chose Image:
 - **Machine type**: this machine type will be used by the injectors. We recommend using n1-highcpu-4 or n1-highcpu-8 machines.
 - **Subnetwork**: the subnetwork the instances will use
 - **Preemptible**: check this if you want to use preemptible instances (cheaper, but can be reclaimed by GCE)
-- **Public SSH key**: content of the public SSH key used to connect to the instances
 - **Network tags**: networks tags you may want to apply to the instances
 - **Use Static IPs**: check this if you want your injectors to use predefined static IPs
 

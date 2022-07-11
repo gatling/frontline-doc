@@ -52,6 +52,15 @@ If using systemd, do a `systemctl start cassandra`. It is also possible to start
 
 Go to the installation folder, and perform the following command: `./bin/frontline`. More details in the [launch section]({{< ref "#launch-gatling-enterprise" >}}).
 
+### Upgrading from Cassandra 3 to Cassandra 4
+
+If you are currently using Cassandra 3 with Gatling Enterprise, you may want to upgrade to the latest version of Cassandra 4.
+The upgrade is pretty simple, keep the same `cassandra.yaml` and modify the following configuration:
+
+```yaml
+num_tokens: 16
+```
+
 ## Processor Architecture
 
 We support both AMD64 and ARM for both Gatling Enterprise and Gatling injectors.
@@ -65,8 +74,7 @@ We recommend you use JDK builds from [Azul System's Zulu](https://www.azul.com/d
 Other JVMs such as OpenJ9 are not supported.
 
 {{< alert warning >}}
-- As of Cassandra 3, JDK 11 support is flagged as experimental.
-- As a consequence, we only support running Cassandra with JDK 8.
+- Cassandra 3 supports only JDK 8, while Cassandra 4 supports JDK 8 & 11.
 - JDK 11 and 17 support is limited to Gatling Enterprise server and Gatling injectors only.
 {{< /alert >}}
 
@@ -107,11 +115,10 @@ your `cassandra.yaml` file as the following entries:
 Download and install [Cassandra](http://cassandra.apache.org/download/).
 
 As of Gatling Enterprise {{< var revnumber >}}, we require at least Cassandra 3.10.
-Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.11.
+Gatling Enterprise has been tested against Cassandra 3.10 to 3.11.11, and against Cassandra 4.0.4.
 If possible, we advise you go with the latest stable Cassandra 3.11 version.
 
 {{< alert warning >}}
-- We do not support Cassandra 4 yet.
 - We do not support AWS Keyspaces as an alternative of Cassandra.
 {{< /alert >}}
 
