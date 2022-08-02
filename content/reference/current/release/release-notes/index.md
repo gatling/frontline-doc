@@ -6,6 +6,21 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.17.2 (2022-08-03)
+
+### Gatling 3.8.3
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/109?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-1049, FL-1052: Simulation: Fix System Properties values when they contain special characters
+* FL-1053: Azure MarketPlace: Fix Azure MarketPlace offers after Azure certificates change
+* FL-1058: AWS Pool: Fix HTTP Proxy usage
+* FL-1055: Azure Pool: Fix managed identity configuration
+
 ## 1.17.1 (2022-07-11)
 
 ### Gatling 3.8.2
