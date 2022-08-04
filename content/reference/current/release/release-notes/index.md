@@ -18,8 +18,10 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 * FL-1049, FL-1052: Simulation: Fix System Properties values when they contain special characters
 * FL-1053: Azure MarketPlace: Fix Azure MarketPlace offers after Azure certificates change
-* FL-1058: AWS Pool: Fix HTTP Proxy usage
 * FL-1055: Azure Pool: Fix managed identity configuration
+* FL-1058: AWS Pool: Fix HTTP Proxy usage
+* FL-1059: Simulation: safe env var keys and correct value escaping
+* FL-1060: Azure Pool: Fix editing when Managed Identity is selected
 
 ## 1.17.1 (2022-07-11)
 
