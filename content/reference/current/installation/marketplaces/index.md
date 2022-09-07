@@ -3,13 +3,13 @@ title: "Installation on a Marketplace"
 description: "Learn how to install Gatling Enterprise on a Marketplace"
 lead: "Install or upgrade Gatling Enterprise on a Marketplace, and learn how to configure it"
 date: 2022-06-23T12:53:30+00:00
-lastmod: 2022-06-23T16:55:33+00:00
+lastmod: 2022-09-07T08:06:55:z
 weight: 1025
 ---
 
 ## AWS Marketplace
 
-## Installing on the AWS Marketplace {#aws-installation}
+### Installing on the AWS Marketplace {#aws-installation}
 
 We provide three offers on the AWS Marketplace:
 
@@ -21,7 +21,7 @@ The links could be updated by AWS so it is best to search for `gatling enterpris
 
 After selecting an offer, the AWS Marketplace will guide you through the installation on your own AWS account.
 
-## Upgrading on the AWS Marketplace {#aws-upgrade}
+### Upgrading on the AWS Marketplace {#aws-upgrade}
 
 You'll need two running instances to perform a migration. In order to avoid paying the subscription fee of two Gatling Enterprise instances at the same, we recommended starting the migration in the original instance, download every backup you made, shutdown the instance down, and finally start a fresh one with the latest version. The idea behing this process is that you only pay the AWS Marketplace fee when an instance is running.
 
@@ -48,7 +48,7 @@ On the new instance:
 * Start Gatling Enterprise `sudo systemctl start frontline`
 * Wait a few minutes
 
-### Azure Marketplace
+## Azure Marketplace
 
 ### Installation {#azure-installation}
 
