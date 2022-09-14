@@ -6,6 +6,29 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.17.3 (2022-09-14)
+
+### Gatling 3.8.4
+
+Please check the [full release note](https://github.com/gatling/gatling/milestone/110?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-1063: Pools: Support wildcards for non-proxy hosts in configuration
+* FL-1067: Pipeline: Exceptions happening during scenarios loading are not properly trapped and reported early, eg invalid zipped feeder file
+* FL-1071: Pipeline: Forcefully disassociate EIPs after run completes
+* FL-1072: Pipeline: With Gatling 3.8, grand-children scenarios (using andThen)' stats are not collected
+* FL-1079: MQTT: Subscribe timeout crashes Gatling Enterprise with "No key for scenarioPath"
+* FL-1082: Run logs: Stop autoscroll when user has scrolled
+* FL-1083: Users: Don't allow sending global system admin role when you're not a global system admin
+* FL-1085: PDF Exports: Improve legend on "Errors counts" chart
+* FL-1088: PDF Exports: * is missing from Connections and DNS menus when multiple entries
+* FL-1089: Users: System admin scoped on a team can't update his own team
+* FL-1092: Users: A system admin scoped on a team shouldn't be able to delete users
+* FL-1096: Pipeline: Incorrect injector start timeout, can cause failures when all the injectors don't take the same time to boot
+
 ## 1.17.2 (2022-08-03)
 
 ### Gatling 3.8.3

@@ -3,7 +3,7 @@ title: Reference
 description: "Gatling Enterprise Self-Hosted documentation"
 cascade:
   variables:
-    revnumber: "1.17.2"
+    revnumber: "1.17.3"
     ciPluginsVersion: "1.16.4"
     grafanaPluginVersion: "1.16.4"
 ordering:
