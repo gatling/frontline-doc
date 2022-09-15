@@ -6,6 +6,14 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.17.4 (2022-09-15)
+
+### Gatling Enterprise
+
+### Fixes
+
+* FL-1101: Pipelines: Add a delay between scp upload retries
+
 ## 1.17.3 (2022-09-14)
 
 ### Gatling 3.8.4
