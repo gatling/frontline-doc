@@ -228,7 +228,7 @@ Second method implies (as stated in Cassandra documentation) to add instances wi
 
 ### Download {#download-gatling-enterprise}
 
-Gatling Enterprise is packaged as a zip bundle that can be downloaded from our maven repository (only for on-premise customers):
+Gatling Enterprise is packaged as a zip bundle that can be downloaded from our downloads server (only for customers):
 
 ```
 REPLACE_WITH_YOUR_CUSTOM_GATLING_ENTERPRISE_BUNDLE_DOWNLOAD_LINK/frontline-bundle/{{< var revnumber >}}/frontline-bundle-{{< var revnumber >}}-bundle.zip
