@@ -101,7 +101,7 @@ Gatling Enterprise is currently managing five different cloud providers: AWS, GC
 
 ### AWS (On-premises license & AWS marketplace)
 
-Gatling Corp provides certified AMIs that you choose in the Gatling Enterprise AWS configuration. This AMI will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
+Gatling Corp provides certified AMIs that you choose in the Gatling Enterprise AWS configuration. This AMI will be used as a base for your injectors. However, you can still build a custom one with a JDK 8, 11 or 17 installed, a key pair without password configured and the port 22 and 9999 opened.
 
 You'll also need to configure AWS API access keys on the Gatling Enterprise host using one of these methods:
 
@@ -166,7 +166,7 @@ The OpenStack User might need some special permissions to launch instances.
 
 ### Microsoft Azure (On-premises license & Azure marketplace)
 
-Gatling Corp provides certified images that you choose in the Gatling Enterprise Microsoft Azure configuration. This image will be used as a base for your injectors. However, you can still build a custom one with a JDK from 8 to 11 installed, a key pair without password configured and the port 22 and 9999 opened.
+Gatling Corp provides certified images that you choose in the Gatling Enterprise Microsoft Azure configuration. This image will be used as a base for your injectors. However, you can still build a custom one with a JDK 8, 11 or 17 installed, a key pair without password configured and the port 22 and 9999 opened.
 
 There are requirements before creating an Azure pool:
 
