@@ -6,6 +6,28 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.0 (2022-XX-XX)
+
+### Gatling Enterprise
+
+### Features
+
+* FL-1106: AWS: Add support for c6i and c7g instance types
+* FL-1110: AWS: Support Ed25519 SSH keys
+* FL-1118: Core: Support running on Java 17
+* FL-1120: Cassandra: Support DataStax DSE and AstraDB
+* FL-1124: Docker: Image upgraded to Java 17
+* FL-1128: Repositories: Add region field for S3 buckets
+
+### Fixes
+
+* FL-1105: Reports: Pie chart legend is only drawn on the right side of the chart
+* FL-1100: Reports: Group cumulated response time titles overflows out of their chart headers
+* FL-1100: Reports: Use ellipsis for truncating Distribution title if needed
+* FL-1111: Reports: Selecting group doesn't close the dropdown
+* FL-1114: Reports: Fix bucket missing on Distribution chart
+* FL-1119: Run Logs: New lines are not displayed
+
 ## 1.17.4 (2022-09-15)
 
 ### Gatling Enterprise
