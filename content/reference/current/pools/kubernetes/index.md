@@ -39,6 +39,7 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Memory limit**: The maximum memory that you need for each injector
 - **Custom labels**: Optional labels to add to all injector pods, services, ingresses and routes
 - **Node selector**: An optional [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) to add to each injector pod (they will only run on nodes with matching labels) 
+- **Tolerations Settings**: Optional [tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration) to add to each injector pod (to match specific taints on your nodes) 
 
 Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point integer using one of these suffixes: E, P, T, G, M, K. You can also use the power-of-two equivalents: Ei, Pi, Ti, Gi, Mi, Ki.
 
