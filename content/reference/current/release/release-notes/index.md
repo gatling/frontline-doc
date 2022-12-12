@@ -8,6 +8,15 @@ weight: 6010
 
 ## 1.18.0 (2022-XX-XX)
 
+### Gatling 3.9.0
+
+{{< alert info >}}
+Gatling Enterprise 1.18.0 is compatible with Gatling from 3.3 to 3.9 included.
+Still, you're recommended to upgrade to 3.9.0, older versions are no longer maintained.
+{{< /alert >}}
+
+See full release note: https://github.com/gatling/gatling/milestone/112?closed=1
+
 ### Gatling Enterprise
 
 ### Features
@@ -18,6 +27,12 @@ weight: 6010
 * FL-1120: Cassandra: Support DataStax DSE and AstraDB
 * FL-1124: Docker: Image upgraded to Java 17
 * FL-1128: Repositories: Add region field for S3 buckets
+* CLD-3123: Docker: Upgrade docker containers to java 17.0.5
+* CLD-3210: Kubernetes: Add support for tolerations
+* CLD-3151: Kubernetes: Add support for annotations
+* CLD-3152: Kubernetes: Add support for containers env vars
+* CLD-3157: Kubernetes: Drop NodePort mode 
+* CLD-3156: Kubernetes: When the controller and the load generators are in the same cluster, directly connect though a Service and never through an Ingress
 
 ### Fixes
 
