@@ -28,6 +28,6 @@ If you're still using pools with the "Node Port" mode, you must first move to an
 {{< /alert >}}
 
 Then, we've revamped the way the Gatling Enterprise controller connects to Load Generators.
-When they sit in the same cluster, we now always create a Service. In this case, the Ingress and Route mode are not available.
+When they sit in the same cluster, we now always create a Service. In this case, the Ingress and Route modes are not available.
 
 Finally, we now support setting tolerations, annotations and container env vars.
