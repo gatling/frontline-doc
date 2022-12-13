@@ -13,23 +13,38 @@ A Kubernetes/OpenShift Pool is a reference to your Kubernetes infrastructure.
 Make sure you've fulfilled the requirements listed in the [Installation Guide]({{< ref "../../installation/injectors/#kubernetes--openshift" >}}).
 {{< /alert >}}
 
-To configure the type of instances you want to spawn, you need to fill the form below:
+## Credentials settings
 
-{{< img src="kubernetes.png" alt="Kubernetes Pool" >}}
+Kubernetes pools configuration gains access to the cluster through the credentials settings:
+{{< img src="credentials-settings.png" alt="Kubernetes credentials" >}}
 
-- **Team**: Set if the pool is global or owned by a team
 - **Kubernetes Url**: The url of your Kubernetes API with the protocol
 - **Service Account Token**: The token of your service account which has edit permissions on the namespace below (see [the minimal permissions](#minimal-permissions-for-gatling-enterprise-service-account))
 - **Namespace**: The namespace/project name in which injectors will be spawned
+
+If your instance of Gatling Enterprise is deployed inside a kubernetes cluster, and you want to deploy your injectors in the same cluster,
+you can enable the `local cluster mode`:
+{{< img src="local-credentials-settings.png" alt="Kubernetes local cluster mode" >}}
+
+### Instance settings
+
+To configure the type of instances you want to spawn, you need to fill the form below:
+{{< img src="instance-settings.png" alt="Kubernetes credentials" >}}
+
 - **Connection**:
-    - **NodePort**: exposes the Service on each injector Node's IP at a static port
     - **Ingress**: exposes HTTP and HTTPS routes from outside the cluster to injectors within the cluster
-    - **TLS secret name**: the optional secret containing a certificate used by the ingress [TLS secrets documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#tls-secrets)
+      - **TLS secret name**: the optional secret containing a certificate used by the ingress [TLS secrets documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#tls-secrets)
     - **Route**: (OpenShift extension) exposes HTTP routes (HTTPS not supported) from outside the cluster to injectors within the cluster.
         - **Secured**: allow you to add the desired certificate on the route [OpenShift secured routes documentation](https://docs.openshift.com/container-platform/4.5/networking/routes/secured-routes.html)
         - **Certificate**: Certificate associated with the route
         - **Certificate key**: Certificate key associated to certificate
         - **CA Certificate**: Certificate authority signing the certificate
+
+{{< alert info >}}
+In **local cluster mode**, pods are accessed directly inside the cluster using the associated service name and namespace.
+So **no need to configure outbound access** to the injectors through an ingress or a route, **this part of the form is hidden**.
+{{< /alert >}}
+
 
 - **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with [gatling/frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
 - **Image pull secret**: Recommended approach to run containers based on images in private registries and / or to not be limited by rate limits
@@ -39,19 +54,34 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Memory limit**: The maximum memory that you need for each injector
 - **Custom labels**: Optional labels to add to all injector pods, services, ingresses and routes
 - **Node selector**: An optional [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) to add to each injector pod (they will only run on nodes with matching labels) 
+- **Environment variables**: The environment variables configured for each injector
 
 Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point integer using one of these suffixes: E, P, T, G, M, K. You can also use the power-of-two equivalents: Ei, Pi, Ti, Gi, Mi, Ki.
 
-NOTE: If your Gatling Enterprise instance belongs to a Kubernetes cluster, you don't have to provide a **Kubernetes Url** and a **Service Account Token**.
-You can still choose to configure it, for example to create a pool in another cluster, by unticking `Use local cluster`.
-Also, you can specify preferring **Internal IP** over the **External IP** for connecting to Kubernetes nodes, by ticking `Prefer internal IP`.
+## Tolerations settings
 
-{{< img src="kubernetes-local.png" alt="Kubernetes local" >}}
+To configure [torelations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/), you may fill:
+
+{{< img src="tolerations-settings.png" alt="Kubernetes credentials" >}}
+
+- **Key**: toleration key
+- **Operator**: Either exists or equal
+  - **Exists**: Any node matching the key will have the effect applied, no need to specify the value
+  - **Equal**: Any node matching the key with the given value will have the effect applied
+- **Value**: The value associated with the key 
+- **Effect**: Applied effect based on key/value operator
+  - **\***: Match all effects
+  - **NoSchedule, PreferNoSchedule, NoExecute**: Match node taint with those effects
 
 ## Minimal permissions for Gatling Enterprise service account
 
 Service account associated to the service-account-token must be binded with permissions to manage services, nodes, routes, ingresses and pods (depending on your needs).
+
 Below, you can find a commented configuration file containing all needed permissions.
+
+{{< alert info >}}
+Above configuration assume the namespace `frontline`, must be updated accordingly based on the namespace you configure on your pool.
+{{< /alert >}}
 
 ```yaml
 # Dedicated namespace for Gatling Enterprise
@@ -126,18 +156,3 @@ rules:
     resources: ["nodes"]
     verbs: ["list"]
 ---
-# Only for usage of NodePort
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: frontline-cluster-role-binding
-subjects:
-  - kind: ServiceAccount
-    name: frontline-sa
-    namespace: frontline
-    apiGroup: ""
-roleRef:
-  kind: ClusterRole
-  name: frontline-manage-injectors
-  apiGroup: ""
-```
