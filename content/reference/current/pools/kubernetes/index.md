@@ -34,6 +34,7 @@ To configure the type of instances you want to spawn, you need to fill the form 
 - **Connection**:
     - **Ingress**: exposes HTTP and HTTPS routes from outside the cluster to injectors within the cluster
       - **TLS secret name**: the optional secret containing a certificate used by the ingress [TLS secrets documentation](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#tls-secrets)
+      - **Class name**: the optional class name of the ingress, used for the ingress controller [Ingress class documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#default-ingress-class) 
     - **Route**: (OpenShift extension) exposes HTTP routes (HTTPS not supported) from outside the cluster to injectors within the cluster.
         - **Secured**: allow you to add the desired certificate on the route [OpenShift secured routes documentation](https://docs.openshift.com/container-platform/4.5/networking/routes/secured-routes.html)
         - **Certificate**: Certificate associated with the route
