@@ -33,6 +33,7 @@ See full release note: https://github.com/gatling/gatling/milestone/112?closed=1
 * CLD-3152: Kubernetes: Add support for containers env vars
 * CLD-3157: Kubernetes: Drop NodePort mode 
 * CLD-3156: Kubernetes: When the controller and the load generators are in the same cluster, directly connect though a Service and never through an Ingress
+* FL-1139: Kubernetes: Add support for ingressClassName
 
 ### Fixes
 
