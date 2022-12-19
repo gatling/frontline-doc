@@ -1,10 +1,10 @@
 ---
-title: "Gatling Enterprise 1.17 Highlights"
-description: "Learn about the main new features of Gatling Enterprise 1.17"
-lead: "Gatling Enterprise 1.17 introduces Gatling 3.8 support and a redesign of the PDF export feature"
-date: 2022-07-05T11:00:00+02:00
-lastmod: 2022-07-05T11:00:00+02:00
-weight: 6014
+title: "Gatling Enterprise 1.18 Highlights"
+description: "Learn about the main new features of Gatling Enterprise 1.18"
+lead: "Gatling Enterprise 1.18 introduces Gatling 3.9 support and a redesign of the PDF export feature"
+date: 2022-12-19T11:00:00+02:00
+lastmod: 2022-12-19T11:00:00+02:00
+weight: 6013
 ---
 
 ## Gatling Enterprise 1.18
