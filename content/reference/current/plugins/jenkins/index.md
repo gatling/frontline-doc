@@ -21,19 +21,19 @@ To download the plugin, you need to get the hpi file located at:
 https://downloads.gatling.io/releases/frontline-jenkins-plugin/{{< var ciPluginsVersion >}}/frontline-jenkins-plugin-{{< var ciPluginsVersion >}}.hpi
 ```
 
-You need to be connected as an administrator of your Jenkins application to install it. Go **Manage Jenkins**, **Manage Plugins**, **Advanced**, **Upload Plugin**, and choose the hpi file.
+You need to be connected as an administrator of your Jenkins application to install it. Go to **Manage Jenkins**, **Manage Plugins**, **Advanced settings**, **Deploy Plugin**. Choose the hpi file you downloaded, or copy and paste the download URL to the URL field. Click Deploy.
 
 {{< img src="installation.png" alt="Installation" >}}
 
 ## Configuration
 
-The plugin needs some global configuration. Go **Manage Jenkins**, **Configure System**, then **Global Gatling Enterprise Plugin Configuration**.
+The plugin needs some global configuration. Go to **Manage Jenkins**, **Configure System**, then **Global Gatling Enterprise Plugin Configuration**.
 
 The [API token]({{< ref "../../admin/api-tokens" >}}) will allow Jenkins to authenticate to Gatling Enterprise. The API token needs the *All* role.
 
 You can configure the API Token globally in this page, or per CI project if each project has an API Token scoped on a specific team. We recommend storing the API Token in a secret text credential, but you can also copy the content of the API Token in the second field.
 
-The **Address** is the address of your Gatling Enterprise API, for example: https://cloud.gatling.io.
+The **Address** is the address of your Gatling Enterprise API, for example: https://cloud.gatling.io. You can also configure it per CI project if you have several instances of Gatling Enterprise.
 
 {{< img src="global-configuration.png" alt="Global Configuration" >}}
 
@@ -47,7 +47,7 @@ You can use the Pipeline Snippet Generator to help you use the Jenkins Plugin. C
 
 {{< img src="pipeline-generator.png" alt="Snippet Generator" >}}
 
-You can specify the id of an API Token stored in a secret text credential if you don't want to use the one configured globally. Choose one of the simulation in the drop-down, then click Generate Groovy. Copy and paste the result in your Pipeline script, eg:
+You can specify the Gatling Enterprise address and/or the id of an API Token stored in a secret text credential if you don't want to use the ones configured globally. Choose one of the simulations in the drop-down menu, then click Generate Groovy. Copy and paste the result in your Pipeline script, eg:
 ```groovy
 // Declarative Pipeline Syntax
 pipeline {
@@ -55,7 +55,7 @@ pipeline {
     stages {
         stage("Gatling Enterprise simulation") {
             steps {
-                gatlingFrontLineLauncherStep credentialId: '6737158c-0ff6-4033-91ad-6f3a811aab52', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+                gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'GATLING_API_TOKEN', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
             }
         }
     }
@@ -64,7 +64,7 @@ pipeline {
 // Scripted Pipeline Syntax
 node {
     stage("Gatling Enterprise simulation") {
-        gatlingFrontLineLauncherStep credentialId: '6737158c-0ff6-4033-91ad-6f3a811aab52', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+        gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'GATLING_API_TOKEN', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
     }
 }
 ```
@@ -90,7 +90,7 @@ If you don't have any assertions in your Gatling simulation, the JUnit step will
 
 ### Set-up for an old style job
 
-Add a new build step called **Gatling Enterprise Plugin**. Choose in the Simulation list the simulation you want to use. You can specify the id of an API Token stored in a credential if you don't want to use the one configured globally.
+Add a new build step called **Gatling Enterprise Plugin**. Choose in the Simulation list the simulation you want to use. You can specify the Gatling Enterprise address and/or the id of an API Token stored in a secret text credential if you don't want to use the ones configured globally.
 
 {{< img src="build-configuration.png" alt="Build configuration" >}}
 
