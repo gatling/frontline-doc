@@ -27,7 +27,7 @@ You need to be connected as an administrator of your Jenkins application to inst
 
 ## API Token and Jenkins credentials
 
-This plugin requires an [API token]({{< ref "../../admin/api_tokens" >}}) to allow Jenkins to authenticate with Gatling Enterprise. The API token needs the Start permission.
+This plugin requires an [API token]({{< ref "../../admin/api-tokens" >}}) to allow Jenkins to authenticate with Gatling Enterprise. The API token needs the Start permission.
 
 We recommend storing the API token using [Jenkins credentials](https://www.jenkins.io/doc/book/using/using-credentials/). Go to **Manage Jenkins**, then **Manage credentials**. You will see your existing credentials, as well as the credentials stores and domains configured on your Jenkins instance.
 
