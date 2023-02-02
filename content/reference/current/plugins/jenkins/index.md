@@ -25,13 +25,27 @@ You need to be connected as an administrator of your Jenkins application to inst
 
 {{< img src="installation.png" alt="Installation" >}}
 
+## API Token and Jenkins credentials
+
+This plugin requires an [API token]({{< ref "../../admin/api_tokens" >}}) to allow Jenkins to authenticate with Gatling Enterprise. The API token needs the Start permission.
+
+We recommend storing the API token using [Jenkins credentials](https://www.jenkins.io/doc/book/using/using-credentials/). Go to **Manage Jenkins**, then **Manage credentials**. You will see your existing credentials, as well as the credentials stores and domains configured on your Jenkins instance.
+
+{{< img src="manage-credentials.png" alt="Manage credentials" >}}
+
+To add new credentials, click on the name of the domain you want to use, then on the **Add Credentials** button. Choose the type **Secret text** and the scope you want to restrict the credentials to, copy and paste your API token to the **Secret** field, and enter an ID (and optionally a description). Click on **Create**.
+
+{{< img src="new-credentials.png" alt="New credentials" >}}
+
+{{< alert warning >}}
+If you don't use Jenkins credentials, you can still set an API token directly in the plugin global configuration, but this is not as secure as using the Jenkins credentials and is not recommended.
+{{< /alert >}}
+
 ## Configuration
 
 The plugin needs some global configuration. Go to **Manage Jenkins**, **Configure System**, then **Global Gatling Enterprise Plugin Configuration**.
 
-The [API token]({{< ref "../../admin/api-tokens" >}}) will allow Jenkins to authenticate to Gatling Enterprise. The API token needs the *All* role.
-
-You can configure the API Token globally in this page, or per CI project if each project has an API Token scoped on a specific team. We recommend storing the API Token in a secret text credential, but you can also copy the content of the API Token in the second field.
+Choose the Jenkins credentials where [you stored your API token]({{< ref "#api-token-and-jenkins-credentials" >}}).
 
 The **Address** is the address of your Gatling Enterprise API, for example: https://cloud.gatling.io. You can also configure it per CI project if you have several instances of Gatling Enterprise.
 
@@ -47,7 +61,7 @@ You can use the Pipeline Snippet Generator to help you use the Jenkins Plugin. C
 
 {{< img src="pipeline-generator.png" alt="Snippet Generator" >}}
 
-You can specify the Gatling Enterprise address and/or the id of an API Token stored in a secret text credential if you don't want to use the ones configured globally. Choose one of the simulations in the drop-down menu, then click Generate Groovy. Copy and paste the result in your Pipeline script, eg:
+You can specify the Gatling Enterprise address and/or the id of an API Token [stored in a Jenkins secret text credential]({{< ref "#api-token-and-jenkins-credentials" >}}) if you don't want to use the ones configured globally. Choose one of the simulations in the drop-down menu, then click Generate Groovy. Copy and paste the result in your Pipeline script, eg:
 ```groovy
 // Declarative Pipeline Syntax
 pipeline {
@@ -55,7 +69,7 @@ pipeline {
     stages {
         stage("Gatling Enterprise simulation") {
             steps {
-                gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'GATLING_API_TOKEN', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+                gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
             }
         }
     }
@@ -64,7 +78,7 @@ pipeline {
 // Scripted Pipeline Syntax
 node {
     stage("Gatling Enterprise simulation") {
-        gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'GATLING_API_TOKEN', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+        gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
     }
 }
 ```
@@ -90,7 +104,9 @@ If you don't have any assertions in your Gatling simulation, the JUnit step will
 
 ### Set-up for an old style job
 
-Add a new build step called **Gatling Enterprise Plugin**. Choose in the Simulation list the simulation you want to use. You can specify the Gatling Enterprise address and/or the id of an API Token stored in a secret text credential if you don't want to use the ones configured globally.
+Add a new build step called **Gatling Enterprise Plugin**.
+
+You can specify the Gatling Enterprise address and/or the id of an API Token [stored in a Jenkins secret text credential]({{< ref "#api-token-and-jenkins-credentials" >}}) if you don't want to use the ones configured globally. Choose one of the simulations in the drop-down menu.
 
 {{< img src="build-configuration.png" alt="Build configuration" >}}
 
