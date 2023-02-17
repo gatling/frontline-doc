@@ -53,6 +53,12 @@ kubectl create secret docker-registry docker-hub-credentials \
 This manifest sets up Gatling Enterprise, pre configured with your license key and admin credentials.
 You can then expose Gatling Enterprise using LoadBalancer/NodePort services, Ingress, etc...
 
+Gatling enterprise requires two persistent volumes:
+- `frontline-conf` contains your gatling enterprise configuration, license key included.
+- `ssh-keys` contains all your SSH private keys, possibly used for cloning git repositories and deploying tests on remote virtual machines.
+
+In the example below, `configMap` and `hostPath` are used, but you can use `secret` or setup [persistent volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
