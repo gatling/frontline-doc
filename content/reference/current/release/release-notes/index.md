@@ -6,6 +6,27 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.1 (2023-02-15)
+
+### Gatling 3.9.1
+
+See full release note: https://github.com/gatling/gatling/milestone/111?closed=1
+
+### Gatling Enterprise
+
+### Features
+
+* SH-936: Lift limitation on LTS Java versions on load generators (ie custom images can use Java 18+)
+
+### Fixes
+
+* SH-846: PDF Exports: Multiple fixes
+* SH-937: MQTT: Fix ActorNameException
+* SH-938: Reports: Selected percentiles mask is not applied on summaries
+* SH-940: Kubernetes: Fix disabling Hostname verification with k8s API server
+* SH-942: PDF Exports: Fix missing charts
+* SH-943: Kubernetes: Ingresses must be deleted after a run
+
 ## 1.18.0 (2022-12-15)
 
 ### Gatling 3.9.0
