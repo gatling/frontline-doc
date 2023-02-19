@@ -10,7 +10,7 @@ weight: 6010
 
 ### Gatling 3.9.1
 
-See full release note: https://github.com/gatling/gatling/milestone/111?closed=1
+Please check the [full release](https://github.com/gatling/gatling/milestone/111?closed=1) note for more details.
 
 ### Gatling Enterprise
 
