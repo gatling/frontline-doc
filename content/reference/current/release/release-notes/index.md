@@ -6,6 +6,20 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.2 (2023-02-22)
+
+### Gatling 3.9.2
+
+Please check the [full release](https://github.com/gatling/gatling/milestone/114?closed=1) note for more details.
+
+### Gatling Enterprise
+
+### Fixes
+
+* SH-944: Reports: Fix subgroups in groups menus
+* SH-945: Reports: Don't modify case when displaying Simulation and Request names
+* SH-948: Core: Restore hanging runs being passed to broken status on Gatling Enterprise reboot
+
 ## 1.18.1 (2023-02-15)
 
 ### Gatling 3.9.1
