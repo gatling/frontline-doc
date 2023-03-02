@@ -3,7 +3,7 @@ title: "Installation with Docker Compose"
 description: "Learn how to install Gatling Enterprise with Docker Compose"
 lead: "Learn how to install Gatling Enterprise with Docker Compose"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2022-06-23T12:16:40+00:00
+lastmod: 2023-03-02T23:05:11+00:00
 weight: 1040
 ---
 
@@ -20,6 +20,10 @@ You can reuse every configuration shown here to spawn your own Docker based envi
     - `frontline-conf` prepared with the default [`frontline.conf`]({{< ref "../configuration#default-configuration-file" >}}) and [`logback.xml`]({{< ref "#logging" >}})
     - `frontline-keys`, kept empty
 
+3. Optionally, create this subfolder:
+
+    - `repositories-cache`, kept empty
+
 You can skip to the [Docker Compose configuration section]({{< ref "#configuration" >}}) if you already know the details.
 
 ## Detailed Checklist
@@ -32,7 +36,11 @@ These volumes are meant to be backed up and reused when upgrading to one version
 * `frontline-conf` contains the core configuration of Gatling Enterprise
 * `frontline-keys` contains secrets that are used to either spawn injectors or get access to private sources used to run tests
 
-You can create all three folders inside the folder of your choice.
+Optionally, create this subfolder:
+
+* `repositories-cache` contains the cache of all the build tools that can be used with Gatling Enterprise, such as: Maven, Gradle and SBT
+
+You can create all three (or four) folders inside the folder of your choice.
 Later on, we will add the main Docker Compose configuration into this main folder.
 
 ### Getting Gatling Enterprise's Docker image
@@ -92,6 +100,16 @@ When contacting support about anything, it is useful to put this specific log le
 ### Prepare private keys folder
 
 Finally, we need to prepare a folder called `frontline-keys` that will hold uploaded private keys. It is required by features like Git cloning and by most cloud providers.
+
+You can leave it empty.
+
+### Prepare repositories cache folder
+
+This step is optional.
+
+Building a Gatling project for the first time, using Maven, Gradle, or SBT, will download some dependencies that will be stored on disk. It is possible to make a volume of these folders to avoid downloading the same files again each time you spin up a new Gatling Enterprise container.
+
+Prepare a folder called `repositories-cache` that will hold these downloaded dependencies.
 
 You can leave it empty.
 
@@ -164,6 +182,13 @@ services:
       # - <path to your frontline conf directory (default contains frontline.conf)>:/opt/frontline/conf
       - ./frontline-keys:/opt/frontline/keys
       # - <path to your frontline keys directory (default empty)>:/opt/frontline/keys
+      # If using Maven
+      - ./repositories-cache/maven:/opt/frontline/.m2
+      # If using Gradle
+      - ./repositories-cache/gradle:/opt/frontline/.gradle
+      # If using SBT
+      - ./repositories-cache/ivy2:/opt/frontline/.ivy2
+      - ./repositories-cache/sbt:/opt/frontline/.sbt
     depends_on:
       cassandra:
         condition: service_healthy
