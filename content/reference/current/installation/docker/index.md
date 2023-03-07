@@ -1,14 +1,16 @@
 ---
-title: "Installation with Docker Compose"
-description: "Learn how to install Gatling Enterprise with Docker Compose"
-lead: "Learn how to install Gatling Enterprise with Docker Compose"
+title: "Installation with Docker"
+description: "Learn how to install Gatling Enterprise with Docker"
+lead: "Learn how to install Gatling Enterprise with Docker"
 date: 2021-03-26T17:31:42+01:00
-lastmod: 2023-03-02T23:05:11+00:00
+lastmod: 2023-03-07T16:42:03+00:00
 weight: 1040
 ---
 
-Running Gatling Enterprise with [Docker Compose](https://docs.docker.com/compose/) is the recommended solution to get started quickly, as it requires the minimal amount of setup and is the easiest way to upgrade to newer versions.
-While it is a good start, it is not recommended for production workload.
+Running Gatling Enterprise with [Docker](https://docs.docker.com/engine/) is the recommended solution to get started quickly, as it requires the minimal amount of setup and is the easiest way to upgrade to newer versions.
+
+We provide a [Docker Compose](https://docs.docker.com/compose/) configuration as an example. While it is a good start, it is not recommended for production workload as it requires having the database and Gatling Enterprise in dedicated hosts for performance reasons.
+
 You can reuse every configuration shown here to spawn your own Docker based environment, could it be volumes that needs to be backed up, properties, ports mapping, and so on.
 
 ## Quick Checklist
