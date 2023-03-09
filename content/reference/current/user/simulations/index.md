@@ -3,7 +3,7 @@ title: "Simulations"
 description: "Learn how to configure and navigate through simulations."
 lead: "Navigate through simulations."
 date: 2021-03-10T09:29:43-05:00
-lastmod: 2022-03-23T14:25:23+00:00
+lastmod: 2023-03-09T17:00:00+00:00
 weight: 2060
 ---
 
@@ -98,7 +98,7 @@ You can provide optional settings if you toggle **Advanced build configuration**
 In this step, you'll describe how Gatling Enterprise will download a jar deployed in a previously added repository.
 This jar must have been built with the same maven/sbt/gradle configuration as described in the Developer section in this guide.
 
-{{< img src="create-simulation2c.png" alt="Create simulation - Step 2 - Binary" >}}
+{{< img src="create-simulation2b.png" alt="Create simulation - Step 2 - Binary" >}}
 
 - **Artifact Maven coordinates**: the maven coordinates of the desired artifact.
 
@@ -112,7 +112,7 @@ The following version markers can be used:
 In this step, you'll describe how Gatling Enterprise will download a jar deployed in an AWS S3 bucket.
 This jar must have been built with the same maven/sbt/gradle configuration as described in the Developer section in this guide.
 
-{{< img src="create-simulation2b.png" alt="Create simulation - Step 2 - S3" >}}
+{{< img src="create-simulation2c.png" alt="Create simulation - Step 2 - S3" >}}
 
 - **Key**: the key for the jar you want to download
 
