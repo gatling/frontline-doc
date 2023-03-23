@@ -40,7 +40,7 @@ jobs:
         # https://www.scala-sbt.org/1.x/docs/Publishing.html#Credentials
         run: |
           echo $SBT_CREDENTIALS > ~/.sbt/.credentials
-          ./gradlew publish
+          sbt publish
         env:
           # Retrieve credentials file content from a GitHub secret
           # See https://docs.github.com/en/actions/security-guides/encrypted-secrets
