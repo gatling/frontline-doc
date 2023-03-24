@@ -201,13 +201,13 @@ Maven: includes/use-case-binary-repo.maven.md
 Gradle: includes/use-case-binary-repo.gradle.md
 Gradle Wrapper: includes/use-case-binary-repo.gradlew.md
 Sbt: includes/use-case-binary-repo.sbt.md
-{{< /include-file  >}}
+{{< /include-file >}}
 
 {{< alert tip >}}
 For each build tool, there can be different ways to configure credentials for the target repository. We only provide some examples, with links to the relevant documentations they are based on.
 {{< /alert >}}
 
-###  Run the simulation weekly
+### Run the simulation weekly
 
 ```yaml
 name: Run Gatling Enterprise Simulation

@@ -52,7 +52,7 @@ jobs:
       - name: Gatling Enterprise Action
         uses: gatling/enterprise-action@v1
         with:
-          gatling_enterprise_url: https://cloud.gatling.io
+          gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
           simulation_id: '00000000-0000-0000-0000-000000000000'
 ```
