@@ -25,7 +25,7 @@ You can check out the latest releases available [from the GitHub project](https:
 
 You must first [create an API token]({{< ref "../../admin/api-tokens" >}}), with at least the **Start** permission. It will be used by the Action to authenticate with Gatling Enterprise. We recommend storing the API Token [in a GitHub encrypted secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#using-encrypted-secrets-in-a-workflow). In the following examples, we assume the **API Token** is stored in a secret called `GATLING_ENTERPRISE_API_TOKEN`.
 
-The Action will also need the **URL for your Gatling Enterprise instance**. In the following examples, we will use `https://cloud.gatling.io`, but you must replace it with the correct URL for your Gatling Enterprise Self-Hosted instance. Please also note that it **must be accessible** from the GitHub Action runners you plan to use (either the [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/) or your own [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/)).
+The Action will also need the **URL for your Gatling Enterprise instance**. In the following examples, we will use `http://my-gatling-instance.my-domain.tld`, but you must replace it with the correct URL for your Gatling Enterprise Self-Hosted instance. Please also note that it **must be accessible** from the GitHub Action runners you plan to use (either the [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/) or your own [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/)).
 
 We also assume that you have already [configured a simulation]({{< ref "../../user/simulations" >}}) on Gatling Enterprise. You can copy the simulation ID from the simulations list view. In the following examples, we will show the simulation ID as `00000000-0000-0000-0000-000000000000`.
 
@@ -50,7 +50,7 @@ jobs:
       - name: Gatling Enterprise Action
         uses: gatling/enterprise-action@v1
         with:
-          gatling_enterprise_url: https://cloud.gatling.io
+          gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
           simulation_id: ${{ inputs.simulation_id }}
 ```
@@ -71,7 +71,7 @@ Example:
 steps:
   - uses: gatling/enterprise-action@v1
     with:
-      gatling_enterprise_url: https://cloud.gatling.io
+      gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
       api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
       simulation_id: '00000000-0000-0000-0000-000000000000'
       extra_system_properties: >
@@ -113,7 +113,7 @@ steps:
   - id: gatling-enterprise-action
     uses: gatling/enterprise-action@v1
     with:
-      gatling_enterprise_url: https://cloud.gatling.io
+      gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
       api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
       simulation_id: '00000000-0000-0000-0000-000000000000'
   - run: |
@@ -182,7 +182,7 @@ jobs:
       - name: Gatling Enterprise Action
         uses: gatling/enterprise-action@v1
         with:
-          gatling_enterprise_url: https://cloud.gatling.io
+          gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
           simulation_id: '00000000-0000-0000-0000-000000000000'
 ```
@@ -224,7 +224,7 @@ jobs:
       - name: Gatling Enterprise Action
         uses: gatling/enterprise-action@v1
         with:
-          gatling_enterprise_url: https://cloud.gatling.io
+          gatling_enterprise_url: http://my-gatling-instance.my-domain.tld
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
           simulation_id: '00000000-0000-0000-0000-000000000000'
 ```
