@@ -3,8 +3,8 @@ title: "Grafana Datasource"
 description: "Learn how to configure the Gatling Enterprise Grafana datasource to display your simulations reports."
 lead: "Display Gatling Enterprise simulations reports in Grafana."
 date: 2021-03-08T13:50:08+01:00
-lastmod: 2023-03-21T14:00:00+00:00
-weight: 5060
+lastmod: 2023-02-28T14:00:00+00:00
+weight: 5070
 ---
 
 ## Requirements

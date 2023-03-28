@@ -3,8 +3,8 @@ title: "Bamboo Plugin"
 description: "Learn how to configure the Gatling Enterprise Bamboo plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your Bamboo CI."
 date: 2021-03-08T13:49:49+01:00
-lastmod: 2023-03-21T14:00:00+00:00
-weight: 5040
+lastmod: 2023-02-28T14:00:00+00:00
+weight: 5050
 ---
 
 ## Purpose of this plugin
