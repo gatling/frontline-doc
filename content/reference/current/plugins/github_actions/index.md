@@ -3,13 +3,13 @@ title: "GitHub Actions"
 description: "Learn how to configure the Gatling Enterprise GitHub Action and run your simulations."
 lead: "Run your Gatling Enterprise simulations from GitHub Actions."
 date: 2023-03-21T14:00:00+00:00
-lastmod: 2023-03-21T14:00:00+00:00
+lastmod: 2023-02-28T14:00:00+00:00
 weight: 5010
 ---
 
 ## Purpose of this GitHub Action
 
-This Action enables you to start a Gatling Enterprise simulation directly from your GitHub Actions workflows. This plugin links a workflow with one and only one Gatling Enterprise simulation.
+This Action enables you to start a Gatling Enterprise simulation directly from your GitHub Actions workflows.
 
 This plugin doesn't create a new Gatling Enterprise simulation, you have to create it using the Gatling Enterprise Dashboard before.
 
@@ -198,6 +198,7 @@ In this example, we assume that:
 
 {{< include-file >}}
 Maven: includes/use-case-binary-repo.maven.md
+Maven Wrapper: includes/use-case-binary-repo.mavenw.md
 Gradle: includes/use-case-binary-repo.gradle.md
 Gradle Wrapper: includes/use-case-binary-repo.gradlew.md
 Sbt: includes/use-case-binary-repo.sbt.md
