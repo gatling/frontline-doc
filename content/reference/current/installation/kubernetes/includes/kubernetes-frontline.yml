@@ -36,8 +36,9 @@ rules:
   - apiGroups: [""]
     resources: ["services", "pods", "pods/exec"]
     verbs: ["create","delete","get","list","patch","update","watch"]
-    # Only for usage of Ingresses
-  - apiGroups: ["extensions"]
+    # Only for usage of Ingresses, use "extensions" instead of "networking.k8s.io" before Kubernetes 1.22
+    # See https://kubernetes.github.io/ingress-nginx/user-guide/k8s-122-migration/
+  - apiGroups: ["networking.k8s.io"]
     resources: ["ingresses"]
     verbs: ["create", "delete", "get", "list", "watch"]
     # Only for usage of OpenShift Routes
