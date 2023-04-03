@@ -6,6 +6,29 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.3 (2023-04-03)
+
+### Gatling 3.9.3
+
+Please check the [full release](https://github.com/gatling/gatling/milestone/115?closed=1) note for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* SH-961: AWS/Azure/GCP/Docker: Introduce "latest" certified images with the latest to date Java version (20 as of now)
+* SH-969: Docker: Introduce certified images for ARM
+
+### Fixes
+
+* SH-956: Authentication: Invalid cookies shouldn't spam logs 
+* SH-957: Users: Team admins should be able to remove users from their team
+* SH-958: Maven Repositories: Concurrent downloads crash
+* SH-959: Users: It should be possible to save users without any permissions
+* SH-965: AWS: Form should not filter out EIP currently assigned
+* SH-966: API: `extraEnvironmentVariables` parameter was ignored when launching a run
+* SH-967: Global System Properties: Remove `-XX:-UseBiasedLocking` from defaults as this option is no longer supported since Java 19
+
 ## 1.18.2 (2023-02-22)
 
 ### Gatling 3.9.2
