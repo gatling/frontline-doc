@@ -3,7 +3,7 @@ title: "Kubernetes"
 description: "Kubernetes pools are a configuration of Kubernetes injectors"
 lead: "Deploy Gatling Enterprise injectors on Kubernetes"
 date: 2021-03-26T09:41:20+01:00
-lastmod: 2022-07-05T14:35:23+00:00
+lastmod: 2023-04-03T12:00:00+00:00
 weight: 4070
 ---
 
@@ -47,7 +47,7 @@ So **no need to configure outbound access** to the injectors through an ingress 
 {{< /alert >}}
 
 
-- **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with [gatling/frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
+- **Docker Image**: Docker image that will be used for injectors. You can use our certified Docker images if your Kubernetes cluster has access to Docker Hub, or build your own with [gatling/frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image). Our certified images are available for the `linux/amd64` and `linux/arm64` platforms (Docker will automatically select the correct image variant).
 - **Image pull secret**: Recommended approach to run containers based on images in private registries and / or to not be limited by rate limits
 - **CPU request**: The minimum number of cores that you need for each injector, express as cpus
 - **CPU limit**: The limit of cores that you don't want each injector pod to exceed, express as cpus

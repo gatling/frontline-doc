@@ -3,7 +3,7 @@ title: "Installation with Kubernetes"
 description: "Learn how to install Gatling Enterprise with Kubernetes"
 lead: "Install Gatling Enterprise and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
-lastmod: 2022-02-28T16:44:21+00:00
+lastmod: 2023-04-03T12:00:00+00:00
 weight: 1050
 ---
 
@@ -11,6 +11,8 @@ If you're using Kubernetes-based injector pools, it is recommended to run Gatlin
 
 * Less configuration is required than when connecting to a cluster from the outside
 * It is not necessary to open firewall rules so that Gatling Enterprise can contact injectors
+
+We currently support the `linux/amd64` and `linux/arm64` platforms and publish our official images for both (Docker will automatically select the correct image variant).
 
 ## Getting Gatling Enterprise's Docker image
 
