@@ -61,27 +61,3 @@ subjects:
     name: frontline-sa
     namespace: frontline
 ---
-# Only for usage of NodePort
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: frontline-manage-injectors
-rules:
-  - apiGroups: [""]
-    resources: ["nodes"]
-    verbs: ["list"]
----
-# Only for usage of NodePort
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: frontline-cluster-role-binding
-subjects:
-  - kind: ServiceAccount
-    name: frontline-sa
-    namespace: frontline
-    apiGroup: ""
-roleRef:
-  kind: ClusterRole
-  name: frontline-manage-injectors
-  apiGroup: ""
