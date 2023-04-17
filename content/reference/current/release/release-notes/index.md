@@ -8,6 +8,14 @@ weight: 6010
 
 ## 1.18.3 (2023-04-03)
 
+{{< alert warning >}}
+**If you run the Gatling Enterprise server in Docker (including Kubernetes) with the default user**: you will need to change the owner of your private key files. This is because the default user for the `gatlingcorp/frontline` container is no longer the root user (it now defaults to the uid:gid `1001:0`).
+
+- If you already explicitly override the user (e.g. by using the `user` key in Docker Compose, or the `runAsUser` directive in Kubernetes), you have nothing to do.
+- If you run Gatling Enterprise on OpenShift with the default user settings, you have nothing to do (OpenShift already overrides the user by default).
+- Otherwise, you need to change the ownership of your private key files (mounted to `/opt/frontline/keys` in the container): `chown 1001:0 <my_private_key_file>`
+{{< /alert >}}
+
 ### Gatling 3.9.3
 
 Please check the [full release](https://github.com/gatling/gatling/milestone/115?closed=1) note for more details.
