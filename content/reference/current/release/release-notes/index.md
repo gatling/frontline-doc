@@ -6,6 +6,25 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.4 (2023-05-10)
+
+### Gatling 3.9.4 and 3.9.5
+
+Please check the full release note [for 3.9.4](https://github.com/gatling/gatling/milestone/115?closed=1) and [for 3.9.5](https://github.com/gatling/gatling/milestone/116?closed=1) for more details.
+
+### Gatling Enterprise
+
+### Features
+
+* SH-201: On premises: Block adding a username in the hostname
+* SH-975: AWS: Enforce IDMSv2 on-demand AWS load generators
+* SH-977: AWS/Azure/GCP/Docker: Let users define a JAVA_HOME env var for the load generators
+* SH-971: Users: Trim username
+
+### Fixes
+
+* SH-972: Authentication: Store default permission on first OIDC connection
+
 ## 1.18.3 (2023-04-03)
 
 {{< alert warning >}}
