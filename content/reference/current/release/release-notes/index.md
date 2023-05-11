@@ -6,6 +6,18 @@ lastmod: 2022-03-03T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.5 (2023-05-11)
+
+### Gatling Enterprise
+
+### Features
+
+* SH-980: Kubernetes: Introduce `frontline.injector.kubernetes.ignoreDefaultKubeConfig` option (default `true`) to be able to honor the default kubeconfig file
+
+### Fixes
+
+* SH-979: AWS/Azure/GCP/Kubernetes: Fix regression introduced by SH-977 in 1.18.4
+
 ## 1.18.4 (2023-05-10)
 
 ### Gatling 3.9.4 and 3.9.5
@@ -18,7 +30,7 @@ Please check the full release note [for 3.9.4](https://github.com/gatling/gatlin
 
 * SH-201: On premises: Block adding a username in the hostname
 * SH-975: AWS: Enforce IDMSv2 on-demand AWS load generators
-* SH-977: AWS/Azure/GCP/Docker: Let users define a JAVA_HOME env var for the load generators
+* SH-977: AWS/Azure/GCP/Kubernetes: Let users define a JAVA_HOME env var for the load generators
 * SH-971: Users: Trim username
 
 ### Fixes
