@@ -2,9 +2,17 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2022-03-03T17:55:36+02:00
+lastmod: 2023-08-10T17:55:36+02:00
 weight: 6010
 ---
+
+## 1.18.6 (2023-08-10)
+
+### Gatling Enterprise
+
+### Fixes
+
+* SH-984: Load Generators: Remove unexpected cats-effect library that can clash with user defined version
 
 ## 1.18.5 (2023-05-11)
 
