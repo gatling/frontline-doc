@@ -77,7 +77,7 @@ For example, you might want to hit `https://mydomain.co.uk` `baseUrl` if injecto
 You can resolve in your simulation code the name of the pool a given injector is deployed on:
 
 ```scala
-val poolName = System.getProperty("gatling.frontline.poolName")
+val poolName = System.getProperty("gatling.enterprise.poolName")
 val baseUrl = if (poolName == "London") "https://domain.co.uk" else "https://domain.com"
 ```
 
