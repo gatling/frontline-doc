@@ -6,6 +6,14 @@ lastmod: 2023-08-10T17:55:36+02:00
 weight: 6010
 ---
 
+## 1.18.7 (2023-09-25)
+
+### Gatling Enterprise
+
+### Fixes
+
+* SH-988: Azure: Fix classloading crash
+
 ## 1.18.6 (2023-08-10)
 
 ### Gatling Enterprise
