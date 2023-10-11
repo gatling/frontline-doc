@@ -3,7 +3,7 @@ title: "Gitlab CI/CD"
 description: "Learn how to configure GitLab CI/CD to run your simulations on Gatling Enterprise."
 lead: "Run your Gatling Enterprise simulations from GitLab CI/CD."
 date: 2023-02-28T09:00:00+00:00
-lastmod: 2023-02-28T14:00:00+00:00
+lastmod: 2023-10-11T10:10:00+00:00
 weight: 5020
 ---
 
@@ -100,6 +100,10 @@ run-gatling-enterprise:
     FAIL_ACTION_ON_RUN_FAILURE: 'true'
     WAIT_FOR_RUN_END: 'true'
     OUTPUT_DOT_ENV_FILE_PATH: 'path/to/file.env'
+    RUN_SUMMARY_ENABLED: 'true'
+    RUN_SUMMARY_INITIAL_REFRESH_INTERVAL: '5'
+    RUN_SUMMARY_INITIAL_REFRESH_COUNT: '12'
+    RUN_SUMMARY_REFRESH_INTERVAL: '60'
 ```
 
 - `GATLING_ENTERPRISE_URL` {{< badge danger >}}required{{< /badge >}}: The URL for your Gatling Enterprise Self-Hosted instance (if not specified, it will point to Gatling Enterprise Cloud instead).
@@ -119,6 +123,14 @@ run-gatling-enterprise:
 - `WAIT_FOR_RUN_END` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): If `true`, the runner will wait for the end of te simulation run on Gatling Enterprise before terminating. Note: if set to `false`, some of the outputs may be missing (there will be no status nor assertion results).
 
 - `OUTPUT_DOT_ENV_FILE_PATH` {{< badge info >}}optional{{< /badge >}} (defaults to `gatlingEnterprise.env`): path to a dotenv file where output values will be written
+
+- `RUN_SUMMARY_ENABLED` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): Assuming `wait_for_run_end` is also true, will regularly log a summary of the ongoing run to the console until it finishes. See also the [logs section]({{< ref "#logs" >}}).
+
+- `RUN_SUMMARY_INITIAL_REFRESH_INTERVAL` {{< badge info >}}optional{{< /badge >}} (defaults to `5`): Initial interval before displaying a new summary of the ongoing run in the console, in seconds. Should be a multiple of 5 (otherwise it will be rounded up). Only used a limited number of times (set by `run_summary_initial_refresh_count`) before switching to the interval set by run_summary_refresh_interval. See also the [logs section]({{< ref "#logs" >}}).
+
+- `RUN_SUMMARY_INITIAL_REFRESH_COUNT` {{< badge info >}}optional{{< /badge >}} (defaults to `12`): Number of times to use `run_summary_initial_refresh_interval` as the interval before displaying a new summary of the ongoing run in the console. After that, `run_summary_refresh_interval` will be used. This allows to avoid spamming the log output once the test run is well underway. See also the [logs section]({{< ref "#logs" >}}).
+
+- `RUN_SUMMARY_REFRESH_INTERVAL` {{< badge info >}}optional{{< /badge >}} (defaults to `60`): Interval before displaying a new summary of the ongoing run in the console, in seconds. Should be a multiple of 5 (otherwise it will be rounded up). See also the [logs section]({{< ref "#logs" >}}).
 
 ### Outputs
 
@@ -175,6 +187,8 @@ Every few seconds, the Docker runner logs to the console output a summary of the
 {{< img src="reference_logs_start.png" alt="A run's logs in the GitLab CI/CD console (beginning)" >}}
 
 {{< img src="reference_logs_end.png" alt="A run's logs in the GitLab CI/CD console (end)" >}}
+
+By default, logs are printed every 5 seconds the first 12 times (i.e. during 60 seconds), then every 60 seconds. This can be adjusted using the input variables `RUN_SUMMARY_INITIAL_REFRESH_INTERVAL`, `RUN_SUMMARY_INITIAL_REFRESH_COUNT`, and `RUN_SUMMARY_REFRESH_INTERVAL`. The ongoing logs can also be completely disabled using the input variable `RUN_SUMMARY_ENABLED: 'false'`: in this case, only the final results will be printed.
 
 ## Sample use cases
 

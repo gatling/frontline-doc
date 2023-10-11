@@ -3,7 +3,7 @@ title: "GitHub Actions"
 description: "Learn how to configure the Gatling Enterprise GitHub Action and run your simulations."
 lead: "Run your Gatling Enterprise simulations from GitHub Actions."
 date: 2023-03-21T14:00:00+00:00
-lastmod: 2023-02-28T14:00:00+00:00
+lastmod: 2023-10-11T10:10:00+00:00
 weight: 5010
 ---
 
@@ -88,6 +88,10 @@ steps:
         }
       fail_action_on_run_failure: true
       wait_for_run_end: true
+      run_summary_enabled: true
+      run_summary_initial_refresh_interval: 5
+      run_summary_initial_refresh_count: 12
+      run_summary_refresh_interval: 60
 ```
 
 - `gatling_enterprise_url` {{< badge danger >}}required{{< /badge >}}: The URL for your Gatling Enterprise Self-Hosted instance (if not specified, it will point to Gatling Enterprise Cloud instead).
@@ -103,6 +107,14 @@ steps:
 - `fail_action_on_run_failure` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): If `true`, the Action will fail if the simulation run ends in an error (including failed assertions). Note: if set to `false` and the simulation ends in an error, some of the outputs may be missing (e.g. there will be no assertion results if the simulation crashed before the end).
 
 - `wait_for_run_end` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): If `true`, the Action will wait for the end of te simulation run on Gatling Enterprise before terminating. Note: if set to `false`, some of the outputs may be missing (there will be no status nor assertion results).
+
+- `run_summary_enabled` {{< badge info >}}optional{{< /badge >}} (defaults to `true`): Assuming `wait_for_run_end` is also true, will regularly log a summary of the ongoing run to the console until it finishes. See also the [logs section]({{< ref "#logs" >}}).
+
+- `run_summary_initial_refresh_interval` {{< badge info >}}optional{{< /badge >}} (defaults to `5`): Initial interval before displaying a new summary of the ongoing run in the console, in seconds. Should be a multiple of 5 (otherwise it will be rounded up). Only used a limited number of times (set by `run_summary_initial_refresh_count`) before switching to the interval set by run_summary_refresh_interval. See also the [logs section]({{< ref "#logs" >}}).
+
+- `run_summary_initial_refresh_count` {{< badge info >}}optional{{< /badge >}} (defaults to `12`): Number of times to use `run_summary_initial_refresh_interval` as the interval before displaying a new summary of the ongoing run in the console. After that, `run_summary_refresh_interval` will be used. This allows to avoid spamming the log output once the test run is well underway. See also the [logs section]({{< ref "#logs" >}}).
+
+- `run_summary_refresh_interval` {{< badge info >}}optional{{< /badge >}} (defaults to `60`): Interval before displaying a new summary of the ongoing run in the console, in seconds. Should be a multiple of 5 (otherwise it will be rounded up). See also the [logs section]({{< ref "#logs" >}}).
 
 ### Outputs
 
@@ -142,6 +154,8 @@ steps:
 Every few seconds, the action logs to the GitHub Action console a summary of the run's current status. When the run ends, the Action logs the status of the run and the results of any assertions. Here's a very short duration example:
 
 {{< img src="reference_logs.png" alt="A run's logs in the GitHub Actions console" >}}
+
+By default, logs are printed every 5 seconds the first 12 times (i.e. during 60 seconds), then every 60 seconds. This can be adjusted using the inputs `run_summary_initial_refresh_interval`, `run_summary_initial_refresh_count`, and `run_summary_refresh_interval`. The ongoing logs can also be completely disabled using the input `run_summary_enabled: false`: in this case, only the final results will be printed.
 
 ### Cancellation
 
