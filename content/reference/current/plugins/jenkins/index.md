@@ -3,7 +3,7 @@ title: "Jenkins Plugin"
 description: "Learn how to configure the Gatling Enterprise Jenkins plugin and run your simulations."
 lead: "Run your Gatling Enterprise simulations from your Jenkins CI."
 date: 2021-03-08T13:50:14+01:00
-lastmod: 2023-02-28T14:00:00+00:00
+lastmod: 2023-10-11T10:10:00+00:00
 weight: 5030
 ---
 
@@ -86,9 +86,25 @@ node {
 
 #### Passing parameters
 
-You can also specify a custom Map of Java System Properties which will be used in the Gatling Enterprise run. The syntax is the following:
+You can specify a custom Map of system properties which will be used in the Gatling Enterprise run. The syntax is the following:
+
 ```groovy
-gatlingFrontLineLauncherStep(simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e', systemProps: ["var": "$var1", "sensitive.var2": "this prop won't be displayed in the run snapshot"])
+gatlingFrontLineLauncherStep(
+    simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e',
+    systemProps: ["var": "$var1", "sensitive.var2": "this prop won't be displayed in the run snapshot"]
+)
+```
+
+This step regularly prints a summary of the run's current status to the build logs. By default, the summary is printed every 5 seconds the first 12 times (i.e. for the first 60 seconds), and then every 60 seconds. You can configure this behavior (or completely disable these logs) with the following parameters:
+
+```groovy
+gatlingFrontLineLauncherStep(
+    simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e',
+    runSummaryEnabled: true,
+    runSummaryInitialRefreshInterval: 5,
+    runSummaryInitialRefreshCount: 12,
+    runSummaryRefreshInterval: 60
+)
 ```
 
 #### Displaying assertions as JUnit
@@ -109,6 +125,10 @@ Add a new build step called **Gatling Enterprise Plugin**.
 You can specify the Gatling Enterprise address and/or the id of an API Token [stored in a Jenkins secret text credential]({{< ref "#api-token-and-jenkins-credentials" >}}) if you don't want to use the ones configured globally. Choose one of the simulations in the drop-down menu.
 
 {{< img src="build-configuration.png" alt="Build configuration" >}}
+
+This step regularly prints a summary of the run's current status to the build logs. By default, the summary is printed every 5 seconds the first 12 times (i.e. for the first 60 seconds), and then every 60 seconds. You can configure this behavior (or disable it completely) by clicking on the Show run summary logging options button.
+
+#### Displaying assertions as JUnit
 
 You can display the results of the Gatling Enterprise assertions with the JUnit plugin.
 

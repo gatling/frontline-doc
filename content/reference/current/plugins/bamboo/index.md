@@ -44,6 +44,8 @@ Add a new build task called __Gatling Enterprise__. Choose in the Gatling Enterp
 
 {{< img src="configuration-task.png" alt="Task configuration" >}}
 
+This job regularly prints a summary of the run's current status to the build logs. By default, the summary is printed every 5 seconds the first 12 times (i.e. for the first 60 seconds), and then every 60 seconds. You can configure this behavior (or disable it completely) in the job configuration.
+
 ### JUnit reporting
 
 You can display the results of the Gatling Enterprise assertions with the JUnit Parser plugin.
