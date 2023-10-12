@@ -3,7 +3,7 @@ title: "Manual Installation"
 description: "Learn how to install manually Gatling Enterprise"
 lead: "Install or upgrade manually Gatling Enterprise, and learn how to configure it"
 date: 2021-03-26T16:08:33+01:00
-lastmod: 2022-06-23T16:26:03+00:00
+lastmod: 2023-10-12T08:40:37+00:00
 weight: 1020
 ---
 
@@ -54,12 +54,36 @@ Go to the installation folder, and perform the following command: `./bin/frontli
 
 ### Upgrading from Cassandra 3 to Cassandra 4
 
-If you are currently using Cassandra 3 with Gatling Enterprise, you may want to upgrade to the latest version of Cassandra 4.
-The upgrade is pretty simple, keep the same `cassandra.yaml` and modify the following configuration:
+If you are currently using Cassandra 3 with Gatling Enterprise, consider upgrading to the latest version of Cassandra 4.
+As the configuration changes a lot between the two versions, we recommend starting from a fresh `cassandra.yaml` and
+copying your settings there directly.
+
+The most important settings to check and copy are:
 
 ```yaml
-num_tokens: 16
+cluster_name
+num_tokens # Changed from the default 256 to 16 in Cassandra 4, make sure you keep your original value
 ```
+
+In case they were not left commented out in your original configuration, check if these directories settings needs to
+be copied:
+
+```yaml
+hints_directory
+data_file_directories
+commitlog_directory
+cdc_raw_directory
+saved_caches_directory
+```
+
+The following settings could have been modified too:
+
+```yaml
+listen_address
+rpc_address
+```
+
+Best practice is to `diff` your original configuration against the new one and check what needs to be copied.
 
 ## Processor Architecture
 
