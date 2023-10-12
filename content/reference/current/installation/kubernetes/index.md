@@ -3,7 +3,7 @@ title: "Installation with Kubernetes"
 description: "Learn how to install Gatling Enterprise with Kubernetes"
 lead: "Install Gatling Enterprise and Cassandra easily with Kubernetes"
 date: 2021-03-26T17:37:11+01:00
-lastmod: 2023-04-03T12:00:00+00:00
+lastmod: 2023-10-12T08:44:13+00:00
 weight: 1050
 ---
 
@@ -88,7 +88,8 @@ data:
         </encoder>
         <immediateFlush>false</immediateFlush>
       </appender>
-      <root level="INFO">
+      <logger name="io.gatling.frontline" level="INFO"/>
+      <root level="WARN">
         <appender-ref ref="CONSOLE"/>
       </root>
     </configuration>
