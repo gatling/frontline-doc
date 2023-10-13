@@ -2,7 +2,7 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2023-08-10T17:55:36+02:00
+lastmod: 2023-10-13T15:20:52+00:00
 weight: 6010
 ---
 
@@ -56,11 +56,24 @@ Please check the full release note [for 3.9.4](https://github.com/gatling/gatlin
 ## 1.18.3 (2023-04-03)
 
 {{< alert warning >}}
-**If you run the Gatling Enterprise server in Docker (including Kubernetes) with the default user**: you will need to change the owner of your private key files. This is because the default user for the `gatlingcorp/frontline` container is no longer the root user (it now defaults to the uid:gid `1001:0`).
+If you run the Gatling Enterprise server in Docker (including Kubernetes) with the default user: you will need to change the owner of your private key files. This is because the default user for the `gatlingcorp/frontline` container is no longer the root user (it now defaults to the `uid:gid` of `1001:0`).
 
-- If you already explicitly override the user (e.g. by using the `user` key in Docker Compose, or the `runAsUser` directive in Kubernetes), you have nothing to do.
-- If you run Gatling Enterprise on OpenShift with the default user settings, you have nothing to do (OpenShift already overrides the user by default).
-- Otherwise, you need to change the ownership of your private key files (mounted to `/opt/frontline/keys` in the container): `chown 1001:0 <my_private_key_file>`
+You have nothing to do if:
+
+- you already explicitly override the user (e.g. by using the `user` key in Docker Compose, or the `runAsUser` directive in Kubernetes)
+- you run Gatling Enterprise on OpenShift with the default user settings (OpenShift already overrides the user by default)
+
+Otherwise, you need to change the ownership of:
+
+- your private key files, mounted to `/opt/frontline/keys` in the container
+- your configuration files, mounted to `/opt/frontline/conf` in the container
+- any other files that Gatling Enterprise needs write access to
+
+```bash
+chown -R 1001:0 <list of files or folders>
+```
+
+As the main user is no longer `root`, some other mount paths might need to be changed too. For example, AWS credentials previously mounted to `/root/.aws` should now be mounted to `/opt/frontline/.aws`.
 {{< /alert >}}
 
 ### Gatling 3.9.3
