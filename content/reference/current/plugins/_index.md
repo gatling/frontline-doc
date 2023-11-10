@@ -6,6 +6,7 @@ ordering:
   - github_actions
   - gitlab_ci
   - jenkins
+  - azure_devops
   - teamcity
   - bamboo
   - script
