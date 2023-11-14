@@ -31,7 +31,7 @@ Once the plugin is uploaded, you need to enable it.
 
 The plugin needs some global configuration. Go **Administration**, then **Gatling Enterprise**.
 
-The **Address** is the address of your Gatling Enterprise, for example: https://cloud.gatling.io.
+The **Address** is the address of your Gatling Enterprise server, for example: `http://my-gatling-instance.my-domain.tld`.
 
 The [Gatling Enterprise API Token]({{< ref "../../admin/api-tokens" >}}) is needed to authenticate to Gatling Enterprise. The API token needs the *All* role.
 

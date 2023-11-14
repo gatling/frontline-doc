@@ -47,7 +47,7 @@ The plugin needs some global configuration. Go to **Manage Jenkins**, **Configur
 
 Choose the Jenkins credentials where [you stored your API token]({{< ref "#api-token-and-jenkins-credentials" >}}).
 
-The **Address** is the address of your Gatling Enterprise API, for example: https://cloud.gatling.io. You can also configure it per CI project if you have several instances of Gatling Enterprise.
+The **Address** is the address of your Gatling Enterprise server, for example: `http://my-gatling-instance.my-domain.tld`. You can also configure it per CI project if you have several instances of Gatling Enterprise.
 
 {{< img src="global-configuration.png" alt="Global Configuration" >}}
 
@@ -69,7 +69,7 @@ pipeline {
     stages {
         stage("Gatling Enterprise simulation") {
             steps {
-                gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+                gatlingFrontLineLauncherStep address: 'http://my-gatling-instance.my-domain.tld', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
             }
         }
     }
@@ -78,7 +78,7 @@ pipeline {
 // Scripted Pipeline Syntax
 node {
     stage("Gatling Enterprise simulation") {
-        gatlingFrontLineLauncherStep address: 'https://cloud.gatling.io', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
+        gatlingFrontLineLauncherStep address: 'http://my-gatling-instance.my-domain.tld', credentialId: 'MY_JENKINS_CREDENTIAL_ID', simulationId: '00eacd1c-ef91-4076-ad57-99b4c6675a9e'
     }
 }
 ```
