@@ -1,5 +1,5 @@
 module github.com/gatling/frontline-doc
 
-go 1.18
+go 1.21
 
-require github.com/gatling/gatling.io-doc-theme v0.0.0-20231107094112-f6b5d70cfe07 // indirect
+require github.com/gatling/gatling.io-doc-theme v0.0.0-20231120163357-2bf3be01f70c // indirect
