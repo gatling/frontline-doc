@@ -21,7 +21,7 @@ This page consists of:
 - [Charts area]({{< ref "#charts" >}})
 - [The summary]({{< ref "#summary" >}}) (only for requests and groups tabs)
 - [Public links]({{< ref "#public-links" >}})
-- [Print to PDF]({{< ref "#pdf-print" >}})
+- [Print to PDF]({{< ref "#print-to-pdf" >}})
 - [Tips]({{< ref "#tips" >}})
 
 {{< img src="reports.png" alt="Reports" >}}
@@ -32,7 +32,7 @@ This bar is a combination of buttons:
 
 - **Start / Stop**: Use this button to start a new run of the simulation, or stop the ongoing run (not available if you have a Viewer permission)
 - **Generate public link**: To create a [public link]({{< ref "../reports#public-links" >}})
-- **Print to PDF**: To [print]({{< ref "#pdf-print" >}}) reports
+- **Print to PDF**: To [print]({{< ref "#print-to-pdf" >}}) reports
 
 {{< img src="run-bar.png" alt="Run bar" >}}
 
