@@ -6,6 +6,7 @@ cascade:
 weight: 6000
 ordering:
   - release-notes
+  - highlight-1-19
   - highlight-1-18
   - highlight-1-17
   - highlight-1-16

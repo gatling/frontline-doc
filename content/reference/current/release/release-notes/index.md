@@ -6,11 +6,42 @@ lastmod: 2023-10-13T15:20:52+00:00
 weight: 6010
 ---
 
+## 1.19.0 (2023-12-18)
+
+### Gatling 3.10.0
+
+{{< alert warning >}}
+Gatling Enterprise 1.19.0 is compatible with Gatling from 3.5 to 3.10 included.
+Support for Gatling 3.3 and 3.4 is dropped.
+We recommend that you upgrade yoyr tests to Gatling 3.10.0, older versions are no longer maintained.
+{{< /alert >}}
+
+See full release note: https://github.com/gatling/gatling/milestone/118?closed=1
+
+### Gatling Enterprise
+
+#### Features
+
+* SH-987: AWS, Azure, GCP, Kubernetes: Add Java 21 Load Generator images
+
+#### Fixes
+
+* SH-992: Teams: check team simulation quota when transferring simulation ownership
+* SH-997: OIDC: Prefer client_secret_post to client_secret_basic when the broker supports it
+
+## 1.18.8 (2023-11-25)
+
+### Gatling Enterprise
+
+#### Fixes
+
+* SH-996: Run duration could be missing when trying to fix ongoing runs on boot
+
 ## 1.18.7 (2023-09-25)
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * SH-988: Azure: Fix classloading crash
 
@@ -18,7 +49,7 @@ weight: 6010
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * SH-984: Load Generators: Remove unexpected cats-effect library that can clash with user defined version
 
@@ -30,7 +61,7 @@ weight: 6010
 
 * SH-980: Kubernetes: Introduce `frontline.injector.kubernetes.ignoreDefaultKubeConfig` option (default `true`) to be able to honor the default kubeconfig file
 
-### Fixes
+#### Fixes
 
 * SH-979: AWS/Azure/GCP/Kubernetes: Fix regression introduced by SH-977 in 1.18.4
 
@@ -42,14 +73,14 @@ Please check the full release note [for 3.9.4](https://github.com/gatling/gatlin
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * SH-201: On premises: Block adding a username in the hostname
 * SH-975: AWS: Enforce IDMSv2 on-demand AWS load generators
 * SH-977: AWS/Azure/GCP/Kubernetes: Let users define a JAVA_HOME env var for the load generators
 * SH-971: Users: Trim username
 
-### Fixes
+#### Fixes
 
 * SH-972: Authentication: Store default permission on first OIDC connection
 
@@ -82,12 +113,12 @@ Please check the [full release](https://github.com/gatling/gatling/milestone/115
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * SH-961: AWS/Azure/GCP/Docker: Introduce "latest" certified images with the latest to date Java version (20 as of now)
 * SH-969: Docker: Introduce certified images for ARM
 
-### Fixes
+#### Fixes
 
 * SH-956: Authentication: Invalid cookies shouldn't spam logs 
 * SH-957: Users: Team admins should be able to remove users from their team
@@ -105,7 +136,7 @@ Please check the [full release](https://github.com/gatling/gatling/milestone/114
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * SH-944: Reports: Fix subgroups in groups menus
 * SH-945: Reports: Don't modify case when displaying Simulation and Request names
@@ -119,11 +150,11 @@ Please check the [full release](https://github.com/gatling/gatling/milestone/111
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * SH-936: Lift limitation on LTS Java versions on load generators (ie custom images can use Java 18+)
 
-### Fixes
+#### Fixes
 
 * SH-846: PDF Exports: Multiple fixes
 * SH-937: MQTT: Fix ActorNameException
@@ -134,7 +165,7 @@ Please check the [full release](https://github.com/gatling/gatling/milestone/111
 
 ## 1.18.0 (2022-12-15)
 
-### Gatling 3.9.0
+#### Gatling 3.9.0
 
 {{< alert info >}}
 Gatling Enterprise 1.18.0 is compatible with Gatling from 3.3 to 3.9 included.
@@ -145,7 +176,7 @@ See full release note: https://github.com/gatling/gatling/milestone/112?closed=1
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * FL-1106: AWS: Add support for c6i and c7g instance types
 * FL-1110: AWS: Support Ed25519 SSH keys
@@ -161,7 +192,7 @@ See full release note: https://github.com/gatling/gatling/milestone/112?closed=1
 * CLD-3156: Kubernetes: When the controller and the load generators are in the same cluster, directly connect though a Service and never through an Ingress
 * FL-1139: Kubernetes: Add support for ingressClassName
 
-### Fixes
+#### Fixes
 
 * FL-1105: Reports: Pie chart legend is only drawn on the right side of the chart
 * FL-1100: Reports: Group cumulated response time titles overflows out of their chart headers
@@ -174,7 +205,7 @@ See full release note: https://github.com/gatling/gatling/milestone/112?closed=1
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-1101: Pipelines: Add a delay between scp upload retries
 
@@ -186,7 +217,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-1063: Pools: Support wildcards for non-proxy hosts in configuration
 * FL-1067: Pipeline: Exceptions happening during scenarios loading are not properly trapped and reported early, eg invalid zipped feeder file
@@ -203,13 +234,13 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ## 1.17.2 (2022-08-03)
 
-### Gatling 3.8.3
+#### Gatling 3.8.3
 
 Please check the [full release note](https://github.com/gatling/gatling/milestone/109?closed=1) for more details.
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-1049, FL-1052: Simulation: Fix System Properties values when they contain special characters
 * FL-1053: Azure MarketPlace: Fix Azure MarketPlace offers after Azure certificates change
@@ -232,14 +263,14 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * FL-1015: Team: in the list of users belonging to a team, mention the role they have (team-specific role only, not global one)
 * FL-1016: Openshift: Make custom cert not mandatory when configuring a route, fallback to the default JVM cert
 * FL-1021: Ops: Add `frontline.http.maxRequestSize` option in `frontline.conf` to allow configuring the max request size
 * FL-1022: PDF Export: Preferences are available in the NavBar
 
-### Fixes
+#### Fixes
 
 * FL-80: PDF Export: Non US-ASCII chars get mangled
 * FL-152: PDF Export: Variable legend unreadable in PDF if too many values / too long values
@@ -260,7 +291,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-1012: Kubernetes Pool: Fix custom image validation
 
@@ -268,7 +299,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-922: PDF Export: Fix scn, group, request dropdown appearing on graph without those metrics
 * FL-950: Reports: Log scale skips steps and doesn't show graduation
@@ -284,7 +315,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 * FL-999: Reports: Fix NoSuchElementException when group doesn't exist on a given time window
 * FL-996: Handle silently ChannelClosedException on API
 
-### Features
+#### Features
 
 * FL-948: Save repository and build information in run snapshot
 * FL-955: Remove public key field in GCP pool form (derived from private key)
@@ -306,7 +337,7 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-783: Repositories: Downloading an artifact from a Binary Repository actually downloads all the dependencies
 * FL-921: Trends: Wrong values for the means of response time percentiles
@@ -323,11 +354,11 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * FL-949: Cassandra: modify some queries to set ALLOW FILTERING and hopefully work on ScyllaDB (not officially suppported though)
 
-### Fixes
+#### Fixes
 
 * FL-951: GCE Pool: Fix NPE when using the host's service account instead of a JSON file
 
@@ -339,12 +370,12 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * FL-913: Reports: Lock summaries column headers when scrolling down
 * FL-915: Pipeline: split waiting for injectors to listen over HTTP and to instantiate the Simulation in 2 distinct steps with distinct timeouts
 
-### Fixes
+#### Fixes
 
 * FL-918: Pipeline: Stop waiting for missing node stats when node has actually finished earlier than the other nodes
 
@@ -356,14 +387,14 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Fixes
+#### Fixes
 
 * FL-907: Injectors: Cope with MemoryUsage JDK bug, see https://bugs.openjdk.java.net/browse/JDK-8207200
 * FL-910: Public API: request and groups values are swapped in /run
 
 ## 1.16.0 (2021-11-24)
 
-### Gatling 3.7.1
+#### Gatling 3.7.1
 
 {{< alert info >}}
 Gatling Enterprise 1.16.0 is compatible with Gatling 3.3, 3.4, 3.5, 3.6 and 3.7.
@@ -379,13 +410,13 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ### Gatling Enterprise
 
-### Features
+#### Features
 
 * FL-91: Injectors: Support running injectors on ARM + support ARM based instance types on AWS
 * FL-861: AWS/GCE/Azure/Kubernetes: Add certified images for Java 17
 * FL-837: Deprecate "frontline" maven/gradle/sbt plugins as all the features are moved to the standard OSS plugins, drop Enterprise-specific samples and add pointers to the standard ones
 
-### Fixes
+#### Fixes
 
 * FL-826: Login: Fix login button that stayed disabled when auto-filled on Firefox
 * FL-839: OpenAPI: Make run status a documented enum
@@ -399,21 +430,21 @@ Please check the [full release note](https://github.com/gatling/gatling/mileston
 
 ## 1.15.3 (2021-09-02)
 
-### Fixes
+#### Fixes
 
 * FL-841: Run: Can't delete a run
 * FL-844: Simulation: Can't duplicate a simulation
 
 ## 1.15.2 (2021-08-31)
 
-### Fixes
+#### Fixes
 
 * FL-825: Dashboard: "Abort run" is now labelled "Stop run"
 * FL-836: Boot: flush all responses before rebooting the API after first configuration
 
 ## 1.15.1 (2021-08-26)
 
-### Fixes
+#### Fixes
 
 * FL-831: Grafana: Improve documentation wrt unsigned plugins
 * FL-833: Kubernetes/OpenShift: pod creation crash due to invalid character because of the "Gatling Enterprise" renaming
@@ -428,7 +459,7 @@ FrontLine has been renamed to Gatling Enterprise.
 The official documentation is now hosted [here](https://gatling.io/docs/enterprise/self-hosted/reference/current/user/login/).
 {{< /alert >}}
 
-### Features
+#### Features
 
 * FL-740: The tables have been reshaped
 * FL-774: Gradle: new gradlew built-in
@@ -436,7 +467,7 @@ The official documentation is now hosted [here](https://gatling.io/docs/enterpri
 * FL-806: Reports: page has been reshaped
 * FL-814: New public API to retrieve the license details and limits: /license
 
-### Fixes
+#### Fixes
 
 * FL-660: Reports: Improved label color generation
 * FL-730: API now responds a correct 401 status when the cookie has expired
