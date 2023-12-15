@@ -8,13 +8,25 @@ weight: 6010
 
 ## 1.19.0 (2023-12-18)
 
+{{< alert warning >}}
+Starting from this release, Gatling Enterprise requires at least Java 11.
+
+If you're still running the Gatling Enterprise server or your Load Generators with an older version such as Java 8,
+you must first upgrade these installations prior to upgrading to Gatling Enterprise 1.19.0.
+{{< /alert >}}
+
 ### Gatling 3.10.0
 
 {{< alert warning >}}
-Gatling Enterprise 1.19.0 is compatible with Gatling from 3.5 to 3.10 included.
-Support for Gatling 3.3 and 3.4 is dropped.
-We recommend that you upgrade yoyr tests to Gatling 3.10.0, older versions are no longer maintained.
+Support for Gatling 3.3 and 3.4 is planned for removal in Gatling Enterprise 1.20.0.
+
+We recommend that you upgrade your tests to Gatling 3.10.0, older versions are no longer maintained.
 {{< /alert >}}
+
+Gatling Enterprise 1.19 supports Gatling versions:
+* 3.3 and 3.4 (planned for removal)
+* 3.5 to 3.10 included
+
 
 See full release note: https://github.com/gatling/gatling/milestone/118?closed=1
 
