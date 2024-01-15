@@ -47,13 +47,13 @@ Unless your simulation keeps huge amounts of data in memory (eg. for feeders wit
 Therefore, we recommend the following instances:
 
 * AWS: `c5.xlarge` or `c6g.xlarge` (4 cores), or `c5.2xlarge` or `c6g.2xlarge` (8 cores)
-* GCE: `n1-highcpu-4` (4 cores) or `n1-highcpu-8` (8 cores)
+* GCP: `n1-highcpu-4` (4 cores) or `n1-highcpu-8` (8 cores)
 * Azure: `F4` (4 cores) or `F8` (8 cores)
 
 We strongly discourage the use of CPU-burstable instance types:
 
 * AWS: `T2`/`T3` instances
-* GCE: `f1-micro`, `g1-small`
+* GCP: `f1-micro`, `g1-small`
 * Azure: `Bs` instances
 
 These instance types target light workloads, but sporadic peaks of activity where they can benefit from a temporary increase in CPU performance.
@@ -62,11 +62,11 @@ Gatling is more likely to use 100% of the CPU cores and will not benefit from CP
 
 ## Certified images
 
-We provide certified, pre-built images for AWS, Azure, GCE & Docker.
+We provide certified, pre-built images for AWS, Azure, GCP & Docker.
 Those images are available for OpenJDK 8, 11 and 17, and include all recommended optimisations.
 If you can't use our certified images, we provide the templates from which our certified images are built:
 
-* For AWS & GCE: [frontline-injector-playbook](https://github.com/gatling/frontline-injector-playbook/) (requires Ansible & Packer)
+* For AWS & GCP: [frontline-injector-playbook](https://github.com/gatling/frontline-injector-playbook/) (requires Ansible & Packer)
 * For Docker: [frontline-injector-docker-image](https://github.com/gatling/frontline-injector-docker-image)
 ## Local
 
@@ -97,7 +97,7 @@ It's very easy to configure on-premises pools from Gatling Enterprise:
 
 ## On Demand
 
-Gatling Enterprise is currently managing five different cloud providers: AWS, GCE, OpenStack and Microsoft Azure.
+Gatling Enterprise is currently managing five different cloud providers: AWS, GCP, OpenStack and Microsoft Azure.
 
 ### AWS (On-premises license & AWS marketplace)
 
@@ -141,7 +141,7 @@ Gatling Enterprise requires the following permissions (or grant `AmazonEC2FullAc
 
 <1> ONLY REQUIRED WHEN SETTING INSTANCE PROFILE ON INJECTORS
 
-### GCE (On-premises license only)
+### GCP (On-premises license only)
 
 There are requirements before creating a GCE pool:
 
@@ -150,7 +150,7 @@ There are requirements before creating a GCE pool:
 * If not using Application Default credentials, create a Service Account key from Google console: API & Services => Credentials => Create credentials => Service account key (only JSON is supported).
 
 {{< alert tip >}}
-The GCE Account used must have the `instanceAdmin` role.
+The GCP Account used must have the `instanceAdmin` role.
 {{< /alert >}}
 
 ### OpenStack (On-premises license only)
