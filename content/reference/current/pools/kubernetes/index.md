@@ -78,6 +78,9 @@ To configure [torelations](https://kubernetes.io/docs/concepts/scheduling-evicti
 
 Service account associated to the service-account-token must be binded with permissions to manage services, nodes, routes, ingresses and pods (depending on your needs).
 
+To obtain the service account token, use the following `kubectl` command:
+`kubectl --namespace=frontline get secret frontline-sa-token --output jsonpath={.data.token} | base64 --decode`
+
 Below, you can find a commented configuration file containing all needed permissions.
 
 {{< alert info >}}
@@ -148,4 +151,11 @@ subjects:
     name: frontline-sa
     namespace: frontline
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: frontline-sa-token
+  annotations:
+    kubernetes.io/service-account.name: frontline-sa
+type: kubernetes.io/service-account-token
 ```
