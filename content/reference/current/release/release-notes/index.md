@@ -6,6 +6,17 @@ lastmod: 2023-10-13T15:20:52+00:00
 weight: 6010
 ---
 
+## 1.19.1 (2024-01-23)
+
+### Gatling 3.10.3
+
+### Gatling Enterprise
+
+#### Fixes
+
+* SH-1007: Azure: upgrade to SDKv2 as SDKv1 is no longer maintained and frequently crashes on error handling (eg bad policies configuration)
+* SH-1008: Azure: fix crash when switching credentials type on existing pool
+
 ## 1.19.0 (2023-12-18)
 
 {{< alert warning >}}
@@ -15,7 +26,7 @@ If you're still running the Gatling Enterprise server or your Load Generators wi
 you must first upgrade these installations prior to upgrading to Gatling Enterprise 1.19.0.
 {{< /alert >}}
 
-### Gatling 3.10.0
+### Gatling 3.10.2
 
 {{< alert warning >}}
 Support for Gatling 3.3 and 3.4 is planned for removal in Gatling Enterprise 1.20.0.
