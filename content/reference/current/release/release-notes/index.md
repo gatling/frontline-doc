@@ -14,6 +14,7 @@ weight: 6010
 
 #### Fixes
 
+* SH-998: About: fix wrong diplayed Gatling version
 * SH-1007: Azure: upgrade to SDKv2 as SDKv1 is no longer maintained and frequently crashes on error handling (eg bad policies configuration)
 * SH-1008: Azure: fix crash when switching credentials type on existing pool
 
