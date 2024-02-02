@@ -2,9 +2,17 @@
 title: "Release Notes"
 description: "Find the detailed release notes of Gatling Enterprise"
 date: 2021-04-06T16:38:41+02:00
-lastmod: 2023-10-13T15:20:52+00:00
+lastmod: 2024-02-02T15:20:52+00:00
 weight: 6010
 ---
+
+## 1.19.2 (2024-02-02)
+
+### Gatling Enterprise
+
+#### Fixes
+
+* SH-1009: Azure: disabling public IP addresses doesn't work for custom images
 
 ## 1.19.1 (2024-01-23)
 
